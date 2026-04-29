@@ -64,7 +64,7 @@ export default function Header() {
         ))}
       </ul>
 
-      {/* Desktop Buttons - Hidden on mobile (hidden on screens smaller than md) */}
+      {/* Desktop Buttons - Hidden on mobile (hidden on screens smaller ) */}
       <div className="hidden md:flex space-x-3">
         <button className="bg-white border border-gray-300 px-5 py-2 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
           Sign up
