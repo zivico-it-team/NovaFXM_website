@@ -1,4 +1,4 @@
-import Header from "../src/components/layout/Navbar";
+import Header from "./components/layout/Navbar.jsx";
 
 function App() {
   return (

@@ -5,7 +5,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
 
-  // Dropdown content for each menu item
+  // Dropdown content for each menu items
   const dropdownContent = {
     Home: ['Dashboard', 'Trading View', 'Economic Calendar'],
     Market: ['Forex', 'Commodities', 'Indices', 'Cryptocurrencies'],
