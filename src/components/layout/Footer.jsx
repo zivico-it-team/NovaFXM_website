@@ -1,7 +1,34 @@
 import React from "react";
-import image1 from "../../public/logo1.png";
-import image2 from "../../public/QR.PNG";
-import { Mail, Phone, MapPin } from "lucide-react";
+
+const iconProps = {
+  className: "text-green-700 shrink-0",
+  fill: "none",
+  stroke: "currentColor",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: 2,
+  viewBox: "0 0 24 24",
+};
+
+const MailIcon = () => (
+  <svg {...iconProps} width="14" height="14" aria-hidden="true">
+    <path d="m4 4 8 8 8-8" />
+    <rect width="18" height="14" x="3" y="5" rx="2" />
+  </svg>
+);
+
+const PhoneIcon = () => (
+  <svg {...iconProps} width="14" height="14" aria-hidden="true">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z" />
+  </svg>
+);
+
+const MapPinIcon = () => (
+  <svg {...iconProps} className="text-green-700 mt-1 shrink-0" width="14" height="14" aria-hidden="true">
+    <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
 
 const Footer = () => {
   return (
@@ -13,7 +40,7 @@ const Footer = () => {
         {/* Logo + Description */}
         <div className="flex flex-col items-center md:items-start">
           <img
-            src={image1}
+            src="/logo1.png"
             alt="Logo"
             className="w-28 h-28 sm:w-32 sm:h-32"
           />
@@ -23,7 +50,7 @@ const Footer = () => {
           </p>
 
           <img
-            src={image2}
+            src="/QR.PNG"
             alt="QR Code"
             className="w-20 h-20 sm:w-24 sm:h-24 mt-5"
           />
@@ -58,21 +85,21 @@ const Footer = () => {
           <div className="space-y-3 text-gray-700">
 
             <p className="flex items-center justify-center md:justify-start gap-2">
-              <Mail size={14} className="text-green-700" />
+              <MailIcon />
               <a href="mailto:support@fxtrade.com" className="hover:text-green-700 break-all">
                 support@fxtrade.com
               </a>
             </p>
 
             <p className="flex items-center justify-center md:justify-start gap-2">
-              <Phone size={14} className="text-green-700" />
+              <PhoneIcon />
               <a href="tel:+15551234567" className="hover:text-green-700">
                 +1 (555) 123-4567
               </a>
             </p>
 
             <p className="flex items-start justify-center md:justify-start gap-2">
-              <MapPin size={14} className="text-green-700 mt-1" />
+              <MapPinIcon />
               <a
                 href="https://maps.google.com"
                 target="_blank"
