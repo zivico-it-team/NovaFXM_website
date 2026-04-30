@@ -1,5 +1,5 @@
-import Review from "../src/components/Review.jsx";
-import Footer from "../src/components/Footer.jsx";
+import Review from "./components/Review.jsx";
+import Footer from "./components/layout/Footer.jsx";
 function App() {
   return (
     <div>
