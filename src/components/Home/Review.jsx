@@ -5,42 +5,37 @@ const reviews = [
     name: "David Chen",
     role: "Day Trader",
     image: "/src/assets/images/1.jpeg",
-    text:
-      "Execution speed is extremely fast and reliable. Perfect for short-term trading strategies.",
+    text: "Execution speed is extremely fast and reliable. Perfect for short-term trading strategies.",
   },
   {
     name: "Sarah Jenkins",
     role: "Forex Analyst",
     image: "/src/assets/images/2.jpeg",
-    text:
-      "Customer support is very responsive and professional. Always available even during market volatility.",
+    text: "Customer support is very responsive and professional. Always available even during market volatility.",
   },
   {
     name: "John Silva",
     role: "Investor",
     image: "/src/assets/images/1.jpeg",
-    text:
-      "Stable and secure trading platform. Clean UI makes trading smooth and easy.",
+    text: "Stable and secure trading platform. Clean UI makes trading smooth and easy.",
   },
   {
     name: "Amal Perera",
     role: "Retail Trader",
     image: "/src/assets/images/2.jpeg",
-    text:
-      "Very beginner-friendly platform. Simple tools helped me start trading quickly.",
+    text: "Very beginner-friendly platform. Simple tools helped me start trading quickly.",
   },
   {
     name: "Nimal Fernando",
     role: "Crypto Trader",
     image: "/src/assets/images/1.jpeg",
-    text:
-      "Great performance across crypto & forex markets. Reliable execution even in volatility.",
+    text: "Great performance across crypto & forex markets. Reliable execution even in volatility.",
   },
 ];
 
 // ✅ REUSABLE REVIEW CARD
 const ReviewCard = ({ name, role, image, text }) => (
-  <div className="w-[260px] sm:w-[300px] md:w-[350px] flex-shrink-0 bg-gray-100 p-5 md:p-6 rounded-2xl shadow-sm">
+  <div className="w-[260px] sm:w-[300px] md:w-[350px] flex-shrink-0 bg-gray-100 p-5 md:p-6 rounded-2xl">
     <div className="text-yellow-400 mb-3 text-sm">★★★★★</div>
 
     <p className="text-gray-700 text-xs sm:text-sm leading-6 mb-4 text-justify">
@@ -86,7 +81,7 @@ const stats = [
 
 // ✅ REUSABLE STAT BOX
 const StatBox = ({ icon: Icon, value, title, desc }) => (
-  <div className="flex flex-col items-center text-center">
+  <div className="interactive-card flex flex-col items-center rounded-2xl p-4 text-center">
     <div className="bg-yellow-400 w-11 h-11 md:w-12 md:h-12 rounded-lg mb-4 flex items-center justify-center">
       <Icon size={20} color="black" />
     </div>
@@ -99,8 +94,7 @@ const StatBox = ({ icon: Icon, value, title, desc }) => (
 
 export default function Review() {
   return (
-    <section className="bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
-
+    <section className="reveal-section bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
       {/* TITLE */}
       <h2 className="mb-10 text-center text-xl font-bold sm:text-2xl md:mb-14 md:text-3xl">
         Traders Experience With Us

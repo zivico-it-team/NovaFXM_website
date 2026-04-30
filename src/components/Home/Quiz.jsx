@@ -37,7 +37,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex justify-center bg-gray-100 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+    <section className="reveal-section flex justify-center bg-gray-100 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <div className="w-full max-w-4xl">
         
         {/* Heading */}
@@ -48,7 +48,7 @@ export default function FAQ() {
         {/* FAQ */}
         <div className="space-y-5">
           {faqData.map((item) => (
-            <div key={item.id} className="border-b border-gray-300 pb-4">
+            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-4">
               
               {/* FIXED ROW */}
               <div

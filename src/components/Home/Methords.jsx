@@ -72,7 +72,7 @@ const MetalsSection = () => {
   const visibleData = data[activeTab].slice(0, 3);
 
   return (
-    <section className="w-full bg-[#f5f6f7] px-4 py-10 sm:px-6 md:py-16 lg:px-8">
+    <section className="reveal-section w-full bg-[#f5f6f7] px-4 py-10 sm:px-6 md:py-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
       {/* 🔹 Payment Section */}
@@ -102,7 +102,7 @@ const MetalsSection = () => {
         {visibleData.map((item, index) => (
           <div
             key={index}
-            className="bg-[#e9ecef] rounded-2xl p-5 sm:p-6 flex justify-between items-center gap-4 shadow-sm hover:shadow-md transition"
+            className="interactive-card bg-[#e9ecef] rounded-2xl p-5 sm:p-6 flex justify-between items-center gap-4 shadow-sm hover:shadow-md transition"
           >
             <div className="w-full">
 

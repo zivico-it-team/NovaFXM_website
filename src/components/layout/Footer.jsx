@@ -40,7 +40,7 @@ const MapPinIcon = () => (
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f5f5f5] px-3 py-0 text-sm text-black sm:px-5 sm:text-base lg:px-6">
+    <footer className="reveal-section bg-[#f5f5f5] px-3 py-10 text-sm text-black sm:px-5 sm:text-base lg:px-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-left md:grid-cols-4 md:items-start">
         <div className="flex flex-col items-start">
           <img

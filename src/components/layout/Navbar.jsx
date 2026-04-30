@@ -55,7 +55,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
           >
             <button
               type="button"
-              className="hover:text-green-600 cursor-pointer transition-colors"
+              className="nav-link cursor-pointer transition-colors hover:text-green-600"
               onClick={() => {
                 if (item === 'Home') {
                   onHomeClick?.()
@@ -95,7 +95,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         <button
           type="button"
           onClick={onSignUpClick}
-          className="px-4 py-2 rounded-full text-xs font-medium 
+          className="button-shine px-4 py-2 rounded-full text-xs font-medium 
         bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
         shadow-sm transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:border-green-700 hover:bg-green-50 hover:text-green-700 hover:shadow-md
@@ -107,7 +107,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         <button
           type="button"
           onClick={onLoginClick}
-          className="px-6 py-2 rounded-full text-xs font-medium 
+          className="button-shine px-6 py-2 rounded-full text-xs font-medium 
         bg-[#014421] text-white
         shadow-md transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20

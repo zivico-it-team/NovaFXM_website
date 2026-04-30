@@ -2,15 +2,15 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <section className="relative bg-[#f5f6f7] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+    <section className="reveal-section relative bg-[#f5f6f7] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
         
         {/* Left side - Image */}
-        <div className="relative">
+        <div className="interactive-card relative overflow-hidden rounded-lg">
           <img
             src="/image1.png"
             alt="Laptop with code"
-            className="rounded-lg shadow-lg object-cover w-full h-64 sm:h-80 md:h-[400px]"
+            className="rounded-lg shadow-lg object-cover w-full h-64 sm:h-80 md:h-[400px] transition duration-500 hover:scale-105"
           />
         </div>
 

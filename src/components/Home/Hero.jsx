@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 sm:gap-3 bg-white border border-gray-200 rounded-full px-3 sm:px-6 py-2 mb-6 sm:mb-10 shadow-sm">
+        <div className="reveal-up inline-flex items-center gap-2 sm:gap-3 bg-white border border-gray-200 rounded-full px-3 sm:px-6 py-2 mb-6 sm:mb-10 shadow-sm">
           <div className="flex -space-x-2">
             <img
               src="https://i.pravatar.cc/32?img=1"
@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="leading-tight">
+        <h1 className="reveal-up reveal-delay-1 leading-tight">
           <span className="block text-3xl sm:text-5xl md:text-8xl font-bold text-[#014421]">
             Unlock the Future <span className="text-3xl sm:text-5xl md:text-8xl font-light text-gray-900">of</span>
           </span>
@@ -52,7 +52,7 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-        <p className="mx-auto mt-4 max-w-2xl px-2 text-sm leading-relaxed text-gray-500 sm:mt-6 sm:text-base md:text-lg">
+        <p className="reveal-up reveal-delay-2 mx-auto mt-4 max-w-2xl px-2 text-sm leading-relaxed text-gray-500 sm:mt-6 sm:text-base md:text-lg">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. It has
           survived not only five centuries, but also the leap into electronic
           typesetting.
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Button */}
         <div className="mt-6 sm:mt-10">
-          <button className="bg-[#014421] hover:bg-[#01351a] cursor-pointer text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto">
+          <button className="button-shine bg-[#014421] hover:bg-[#01351a] cursor-pointer text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto hover:-translate-y-1 hover:shadow-xl">
             Trade Now
           </button>
         </div>
