@@ -30,3 +30,119 @@ body {
 button {
   font: inherit;
 }
+
+.hero-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  background: rgb(229 231 235 / 0.5);
+  filter: drop-shadow(0 24px 45px rgb(15 23 42 / 0.08));
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.hero-circle-left {
+  clip-path: inset(0 50% 0 0);
+  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
+    hero-circle-breathe-left 27s ease-in-out 22s infinite;
+}
+
+.hero-circle-right {
+  clip-path: inset(0 0 0 50%);
+  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
+    hero-circle-breathe-right 27s ease-in-out 22s infinite;
+}
+
+@keyframes hero-circle-left {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(-18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-right {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-breathe-left {
+  0%,
+  100% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@keyframes hero-circle-breathe-right {
+  0%,
+  100% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-circle-left,
+  .hero-circle-right {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-circle-left {
+    transform: translate(calc(50vw - 50%), -50%);
+  }
+
+  .hero-circle-right {
+    transform: translate(calc(-50vw - 50%), -50%);
+  }
+}

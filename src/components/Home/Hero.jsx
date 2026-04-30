@@ -4,10 +4,14 @@ export default function Hero() {
   return (
     <div className="relative bg-gray-100 min-h-screen flex items-center justify-center px-4 py-12 overflow-hidden">
 
-      {/* Background circles (mobile optimized) */}
-      <div className="absolute w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-gray-200 rounded-full -left-24 md:-left-40 top-20 opacity-30 md:opacity-50"></div>
+      {/* Background circles */}
+      <div className="hero-circle hero-circle-left w-[220px] sm:w-[340px] md:w-[560px]">
+        <div className="absolute inset-[24%] rounded-full bg-gray-100"></div>
+      </div>
 
-      <div className="absolute w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] bg-gray-200 rounded-full -right-24 md:-right-40 top-20 opacity-30 md:opacity-50"></div>
+      <div className="hero-circle hero-circle-right w-[220px] sm:w-[340px] md:w-[560px]">
+        <div className="absolute inset-[24%] rounded-full bg-gray-100"></div>
+      </div>
 
       <div className="max-w-5xl text-center relative z-10">
 
@@ -38,15 +42,11 @@ export default function Hero() {
 
         {/* Heading */}
         <h1 className="leading-tight">
-          <span className="block text-3xl sm:text-5xl md:text-6xl font-bold text-[#014421]">
-            Unlock the Future
+          <span className="block text-3xl sm:text-5xl md:text-8xl font-bold text-[#014421]">
+            Unlock the Future <span className="text-3xl sm:text-5xl md:text-8xl font-light text-gray-900">of</span>
           </span>
 
-          <span className="block text-2xl sm:text-4xl md:text-6xl font-normal text-gray-800">
-            of
-          </span>
-
-          <span className="block text-3xl sm:text-5xl md:text-7xl font-light text-gray-900">
+          <span className="block mt-5 sm:mt-8 text-3xl sm:text-5xl md:text-7xl font-light text-gray-900">
             Forex Trading
           </span>
         </h1>

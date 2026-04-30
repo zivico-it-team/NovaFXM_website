@@ -4,35 +4,35 @@ const reviews = [
   {
     name: "David Chen",
     role: "Day Trader",
-    image: "/images/user1.jpg",
+    image: "/src/assets/images/1.jpeg",
     text:
       "Execution speed is extremely fast and reliable. Perfect for short-term trading strategies.",
   },
   {
     name: "Sarah Jenkins",
     role: "Forex Analyst",
-    image: "/images/user2.jpg",
+    image: "/src/assets/images/2.jpeg",
     text:
       "Customer support is very responsive and professional. Always available even during market volatility.",
   },
   {
     name: "John Silva",
     role: "Investor",
-    image: "/images/user3.jpg",
+    image: "/src/assets/images/1.jpeg",
     text:
       "Stable and secure trading platform. Clean UI makes trading smooth and easy.",
   },
   {
     name: "Amal Perera",
     role: "Retail Trader",
-    image: "/images/user4.jpg",
+    image: "/src/assets/images/2.jpeg",
     text:
       "Very beginner-friendly platform. Simple tools helped me start trading quickly.",
   },
   {
     name: "Nimal Fernando",
     role: "Crypto Trader",
-    image: "/images/user5.jpg",
+    image: "/src/assets/images/1.jpeg",
     text:
       "Great performance across crypto & forex markets. Reliable execution even in volatility.",
   },
