@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { FaUser } from "react-icons/fa";
+import logo from "../logo2.png"; // adjust path if needed
 
 export default function Header() {
   const [hoveredMenu, setHoveredMenu] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
+  const [showMobileLogin, setShowMobileLogin] = useState(false)
 
   // Dropdown content for each menu item
   const dropdownContent = {
@@ -24,13 +27,19 @@ export default function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between px-4 md:px-8 py-4 bg-white shadow-sm relative">
+    <header className="flex items-center justify-between px-4 md:px-10 py-4 bg-white shadow-sm relative">
       {/* Logo */}
-      <div className="text-green-700 font-bold text-xl md:text-2xl">
-        NOVAFX<span className="text-black"></span>
-      </div>
-
-
+      
+<div className="flex items-center">
+  <img 
+  src={logo} 
+  alt="NOVAFX Logo"
+  className="h-6 md:h-9 object-contain"
+/>
+  <div className="text-green-700 font-bold text-xl md:text-2xl">
+    
+  </div>
+</div>
       {/* Desktop Menu - Hidden on mobile */}
       <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
         {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
@@ -64,37 +73,60 @@ export default function Header() {
         ))}
       </ul>
 
-      {/* Desktop Buttons - Hidden on mobile (hidden on screens smaller ) */}
-      <div className="hidden md:flex space-x-3">
-        <button className="bg-white border border-gray-300 px-5 py-2 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
-          Sign up
+      {/* Desktop Buttons - Hidden on mobile */}
+     <div className="hidden md:flex space-x-1.5">
+  <button className="bg-white border border-gray-300 px-2 py-0.5 rounded text-gray-700 hover:bg-gray-50 transition-colors text-xs">
+    Sign up
+  </button>
+  <button className="bg-green-700 text-white px-2 py-0.5 rounded hover:bg-green-800 transition-colors text-xs">
+    Login
+  </button>
+</div>
+
+      {/* Mobile Right Section - Login Icon and Hamburger */}
+      <div className="flex items-center gap-3 md:hidden">
+        {/* Mobile Login Icon Button */}
+        <button 
+          className="p-2 rounded-full hover:bg-gray-100 transition-colors relative"
+          onClick={() => setShowMobileLogin(!showMobileLogin)}
+        >
+          <FaUser className="w-6 h-6 text-gray-700" />
         </button>
-        <button className="bg-green-700 text-white px-5 py-2 rounded-md hover:bg-green-800 transition-colors">
-          Login
+
+        {/* Hamburger Button */}
+        <button 
+          className="flex flex-col space-y-1.5 p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2 bg-green-600' : 'bg-gray-700'}`}></span>
+          <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'bg-gray-700'}`}></span>
+          <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2 bg-green-600' : 'bg-gray-700'}`}></span>
         </button>
       </div>
 
-      {/* Mobile Hamburger Button - Only visible on mobile */}
-      <button 
-        className="md:hidden flex flex-col space-y-1.5 p-2 z-50"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2 bg-green-600' : 'bg-gray-700'}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'bg-gray-700'}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2 bg-green-600' : 'bg-gray-700'}`}></span>
-      </button>
+      {/* Mobile Login Panel */}
+      {showMobileLogin && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-white bg-opacity-50 z-40 md:hidden"
+            onClick={() => setShowMobileLogin(false)}
+          />
+          
+         
+        </>
+      )}
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <>
           {/* Overlay */}
           <div 
-             className="text-green-700 font-bold text-xl md:text-2xl">
-            <span className="text-black">M.</span>
-          </div>
+            className="fixed inset-0 bg-white bg-opacity-50 z-40 md:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          />
           
-          
-          {/* Mobile Menu Panel - No buttons here anymore */}
+          {/* Mobile Menu Panel */}
           <div className="absolute top-full left-0 right-0 bg-white shadow-2xl z-50 md:hidden animate-slideDown">
             {/* Mobile Navigation Items */}
             <div className="flex flex-col py-2 max-h-[80vh] overflow-y-auto">
