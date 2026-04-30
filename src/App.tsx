@@ -1,12 +1,11 @@
-// App.tsx
-
-import React from "react";
-import Footer from "./components/Footer";
-
+import Review from "../src/components/Review.jsx";
+import Footer from "../src/components/Footer.jsx";
 function App() {
   return (
     <div>
-      <Footer />
+       
+      <Review />
+      <Footer /> 
     </div>
   );
 }
