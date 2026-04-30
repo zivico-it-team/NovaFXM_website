@@ -1,4 +1,5 @@
 import React from "react";
+import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const iconProps = {
   className: "text-green-700 shrink-0",
@@ -109,6 +110,36 @@ const Footer = () => {
                 Global Tech Hub, London
               </a>
             </p>
+
+            <div className="flex items-center justify-center md:justify-start gap-4 pt-3">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={16} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={16} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-white transition duration-300 hover:-translate-y-1 hover:bg-green-700"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn size={16} />
+              </a>
+            </div>
 
           </div>
         </div>
