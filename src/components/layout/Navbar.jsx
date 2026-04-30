@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
-export default function Header() {
+export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
   const [hoveredMenu, setHoveredMenu] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
@@ -30,16 +30,20 @@ export default function Header() {
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 py-4 bg-white shadow-sm">
       {/* Logo */}
       
-<div className="flex items-center">
-  <img 
-  src={logo} 
-  alt="NOVAFX Logo"
-  className="h-6 md:h-9 object-contain"
-/>
-  <div className="text-green-700 font-bold text-xl md:text-2xl">
-    
-  </div>
-</div>
+      <button
+        type="button"
+        className="flex items-center"
+        onClick={onHomeClick}
+      >
+        <img 
+        src={logo} 
+        alt="NOVAFX Logo"
+        className="h-6 md:h-9 object-contain"
+      />
+        <div className="text-green-700 font-bold text-xl md:text-2xl">
+          
+        </div>
+      </button>
       {/* Desktop Menu - Hidden on mobile */}
       <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
         {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
@@ -49,9 +53,21 @@ export default function Header() {
             onMouseEnter={() => setHoveredMenu(item)}
             onMouseLeave={() => setHoveredMenu(null)}
           >
-            <div className="hover:text-green-600 cursor-pointer transition-colors">
+            <button
+              type="button"
+              className="hover:text-green-600 cursor-pointer transition-colors"
+              onClick={() => {
+                if (item === 'Home') {
+                  onHomeClick?.()
+                }
+
+                if (item === 'Register Now') {
+                  onSignUpClick?.()
+                }
+              }}
+            >
               {item}
-            </div>
+            </button>
             
             {/* Dropdown Menu on Hover - Desktop only */}
             {hoveredMenu === item && (
@@ -76,19 +92,27 @@ export default function Header() {
       {/* Desktop Buttons - Hidden on mobile */}
     <div className="hidden md:flex items-center gap-3">
   
-        <button className="px-4 py-1.5 rounded-full text-xs font-medium 
+        <button
+          type="button"
+          onClick={onSignUpClick}
+          className="px-4 py-1.5 rounded-full text-xs font-medium 
         bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
         shadow-sm transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:border-green-700 hover:bg-green-50 hover:text-green-700 hover:shadow-md
-        active:translate-y-0">
+        active:translate-y-0"
+        >
           Sign up
         </button>
 
-        <button className="px-4 py-1.5 rounded-full text-xs font-medium 
+        <button
+          type="button"
+          onClick={onLoginClick}
+          className="px-4 py-1.5 rounded-full text-xs font-medium 
         bg-green-700 text-white
         shadow-md transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20
-        active:translate-y-0">
+        active:translate-y-0"
+        >
           Login
         </button>
 
@@ -99,7 +123,10 @@ export default function Header() {
         {/* Mobile Login Icon Button */}
         <button 
           className="p-2 rounded-full hover:bg-gray-100 transition-colors relative"
-          onClick={() => setShowMobileLogin(!showMobileLogin)}
+          onClick={() => {
+            setShowMobileLogin(false)
+            onLoginClick?.()
+          }}
         >
           <FaUser className="w-6 h-6 text-gray-700" />
         </button>
@@ -146,7 +173,21 @@ export default function Header() {
                   {/* Main Menu Item with Arrow */}
                   <div 
                     className="flex items-center justify-between px-6 py-4 hover:bg-green-50 active:bg-green-100 cursor-pointer transition-colors"
-                    onClick={() => toggleMobileDropdown(item)}
+                    onClick={() => {
+                      if (item === 'Home') {
+                        onHomeClick?.()
+                        setMobileMenuOpen(false)
+                        return
+                      }
+
+                      if (item === 'Register Now') {
+                        onSignUpClick?.()
+                        setMobileMenuOpen(false)
+                        return
+                      }
+
+                      toggleMobileDropdown(item)
+                    }}
                   >
                     <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
                       {item}
