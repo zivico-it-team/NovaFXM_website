@@ -5,7 +5,7 @@ const RegisterPage = ({ onLoginClick }) => {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
       <section className="auth-card relative w-full max-w-md rounded-2xl bg-white px-6 py-5 text-center shadow-xl sm:px-8">
-        <div className="absolute -top-9 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
+        <div className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
           <img src={logo} alt="NOVAFX Logo" className="h-9 object-contain" />
         </div>
 
@@ -24,7 +24,7 @@ const RegisterPage = ({ onLoginClick }) => {
           onSubmit={(event) => event.preventDefault()}
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <label className="block">
+            <label className="block ">
               <span className="mb-1.5 block text-xs font-medium text-gray-600">
                 First Name
               </span>

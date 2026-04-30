@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="relative bg-gray-100 min-h-screen flex items-center justify-center px-4 py-12 overflow-hidden">
+    <section id="hero" className="relative flex min-h-[calc(100vh-72px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
 
       {/* Background circles */}
       <div className="hero-circle hero-circle-left w-[220px] sm:w-[340px] md:w-[560px]">
@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="absolute inset-[24%] rounded-full bg-gray-100"></div>
       </div>
 
-      <div className="max-w-5xl text-center relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 sm:gap-3 bg-white border border-gray-200 rounded-full px-3 sm:px-6 py-2 mb-6 sm:mb-10 shadow-sm">
@@ -52,7 +52,7 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-        <p className="mt-4 sm:mt-6 text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
+        <p className="mx-auto mt-4 max-w-2xl px-2 text-sm leading-relaxed text-gray-500 sm:mt-6 sm:text-base md:text-lg">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. It has
           survived not only five centuries, but also the leap into electronic
           typesetting.
@@ -60,12 +60,12 @@ export default function Hero() {
 
         {/* Button */}
         <div className="mt-6 sm:mt-10">
-          <button className="bg-[#014421] hover:bg-[#01351a] text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto">
+          <button className="bg-[#014421] hover:bg-[#01351a] cursor-pointer text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto">
             Trade Now
           </button>
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

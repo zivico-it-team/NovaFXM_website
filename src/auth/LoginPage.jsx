@@ -5,7 +5,7 @@ const LoginPage = ({ onSignUpClick }) => {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
       <section className="auth-card relative w-full max-w-md rounded-2xl bg-white px-6 py-8 text-center shadow-xl sm:px-8">
-        <div className="absolute -top-9 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
+        <div className="absolute -top-7 left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-2 shadow-md">
           <img src={logo} alt="NOVAFX Logo" className="h-9 object-contain" />
         </div>
 

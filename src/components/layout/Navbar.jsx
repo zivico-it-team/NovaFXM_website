@@ -27,14 +27,14 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
   }
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 py-4 bg-white shadow-sm">
-      {/* Logo */}
-      
-      <button
-        type="button"
-        className="flex items-center"
-        onClick={onHomeClick}
-      >
+    <header className="sticky top-0 z-50 bg-white px-4 py-4 shadow-sm sm:px-6 lg:px-8 relative">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+        {/* Logo */}
+        <button
+          type="button"
+          className="flex items-center"
+          onClick={onHomeClick}
+        >
         <img 
         src={logo} 
         alt="NOVAFX Logo"
@@ -45,7 +45,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         </div>
       </button>
       {/* Desktop Menu - Hidden on mobile */}
-      <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <ul className="hidden items-center gap-5 text-sm font-medium text-gray-700 lg:flex xl:gap-8">
         {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
           <li 
             key={item} 
@@ -90,12 +90,12 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
       </ul>
 
       {/* Desktop Buttons - Hidden on mobile */}
-    <div className="hidden md:flex items-center gap-3">
+    <div className="hidden items-center gap-3 lg:flex">
   
         <button
           type="button"
           onClick={onSignUpClick}
-          className="px-4 py-1.5 rounded-full text-xs font-medium 
+          className="px-4 py-2 rounded-full text-xs font-medium 
         bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
         shadow-sm transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:border-green-700 hover:bg-green-50 hover:text-green-700 hover:shadow-md
@@ -107,8 +107,8 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         <button
           type="button"
           onClick={onLoginClick}
-          className="px-4 py-1.5 rounded-full text-xs font-medium 
-        bg-green-700 text-white
+          className="px-6 py-2 rounded-full text-xs font-medium 
+        bg-[#014421] text-white
         shadow-md transition-all duration-300 ease-out
         hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20
         active:translate-y-0"
@@ -119,7 +119,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
       </div>
 
       {/* Mobile Right Section - Login Icon and Hamburger */}
-      <div className="flex items-center gap-3 md:hidden">
+      <div className="flex items-center gap-3 lg:hidden">
         {/* Mobile Login Icon Button */}
         <button 
           className="p-2 rounded-full hover:bg-gray-100 transition-colors relative"
@@ -147,7 +147,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         <>
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 bg-white bg-opacity-50 z-40 md:hidden"
+            className="fixed inset-0 bg-white bg-opacity-50 z-40 lg:hidden"
             onClick={() => setShowMobileLogin(false)}
           />
           
@@ -160,12 +160,12 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
         <>
           {/* Overlay */}
           <div 
-            className="fixed inset-0 bg-white bg-opacity-50 z-40 md:hidden"
+            className="fixed inset-0 bg-white bg-opacity-50 z-40 lg:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
           
           {/* Mobile Menu Panel */}
-          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl z-50 md:hidden animate-slideDown">
+          <div className="absolute left-0 right-0 top-full z-50 animate-slideDown bg-white shadow-2xl lg:hidden">
             {/* Mobile Navigation Items */}
             <div className="flex flex-col py-2 max-h-[80vh] overflow-y-auto">
               {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
@@ -226,6 +226,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
           </div>
         </>
       )}
+      </div>
     </header>
   )
 }

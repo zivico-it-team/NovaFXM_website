@@ -31,30 +31,14 @@ button {
   font: inherit;
 }
 
-.auth-card {
-  animation: auth-card-in 0.55s ease both;
-}
-
-@keyframes auth-card-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 .hero-circle {
   position: absolute;
   left: 50%;
   top: 50%;
   aspect-ratio: 1 / 1;
   border-radius: 9999px;
-  background: rgb(229 231 235 / 0.5);
-  filter: drop-shadow(0 24px 45px rgb(15 23 42 / 0.08));
+  background: rgba(217, 219, 223, 0.416);
+  /* filter: drop-shadow(0 24px 45px rgb(15 23 42 / 0.08)); */
   opacity: 0;
   will-change: transform, opacity;
 }

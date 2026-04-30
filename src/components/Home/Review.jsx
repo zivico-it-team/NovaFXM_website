@@ -99,15 +99,15 @@ const StatBox = ({ icon: Icon, value, title, desc }) => (
 
 export default function Review() {
   return (
-    <div className="bg-white py-12 md:py-20">
+    <section className="bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
 
       {/* TITLE */}
-      <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-10 md:mb-14 px-4">
+      <h2 className="mb-10 text-center text-xl font-bold sm:text-2xl md:mb-14 md:text-3xl">
         Traders Experience With Us
       </h2>
 
       {/* CAROUSEL */}
-      <div className="overflow-hidden max-w-6xl mx-auto px-4 md:px-10">
+      <div className="mx-auto max-w-7xl overflow-hidden">
         <div className="flex gap-5 md:gap-8 w-max animate-scroll">
           {[...reviews, ...reviews].map((r, i) => (
             <ReviewCard key={i} {...r} />
@@ -116,7 +116,7 @@ export default function Review() {
       </div>
 
       {/* STATS */}
-      <div className="mt-16 md:mt-24 text-center px-4">
+      <div className="mt-16 text-center md:mt-24">
         <h2 className="text-xl md:text-2xl font-bold mb-10 md:mb-14">
           Built on Trust & Performance
         </h2>
@@ -145,6 +145,6 @@ export default function Review() {
           }
         `}
       </style>
-    </div>
+    </section>
   );
 }

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <section className="relative bg-[#f5f6f7] py-12 px-4 sm:px-6 lg:px-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <section className="relative bg-[#f5f6f7] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
         
         {/* Left side - Image */}
         <div className="relative">
@@ -15,7 +15,7 @@ export default function AboutUs() {
         </div>
 
         {/* Right side - Text */}
-        <div className="space-y-5 text-center md:text-left">
+        <div className="mx-auto max-w-xl space-y-5 text-center md:mx-0 md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             About Us
           </h2>

@@ -72,7 +72,8 @@ const MetalsSection = () => {
   const visibleData = data[activeTab].slice(0, 3);
 
   return (
-    <div className="w-full bg-[#f5f6f7] py-10 md:py-16 px-4 sm:px-6 md:px-20">
+    <section className="w-full bg-[#f5f6f7] px-4 py-10 sm:px-6 md:py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl">
 
       {/* 🔹 Payment Section */}
       <div className="text-center mb-10 md:mb-14">
@@ -97,7 +98,7 @@ const MetalsSection = () => {
       </div>
 
       {/* 🔹 Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
         {visibleData.map((item, index) => (
           <div
             key={index}
@@ -155,7 +156,7 @@ const MetalsSection = () => {
       </div>
 
       {/* 🔹 Tabs */}
-      <div className="flex gap-3 md:gap-4 justify-start sm:justify-center mt-10 md:mt-12 overflow-x-auto pb-2">
+      <div className="mt-10 flex justify-start gap-3 overflow-x-auto pb-2 sm:justify-center md:mt-12 md:gap-4">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -170,8 +171,8 @@ const MetalsSection = () => {
           </button>
         ))}
       </div>
-
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -29,6 +29,18 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const navigateHome = () => {
+    window.history.pushState({}, "", "/");
+    setPath("/");
+
+    requestAnimationFrame(() => {
+      document.getElementById("hero")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
   const isLoginPage = path === "/login";
   const isSignUpPage = path === "/signup";
   const isHomePage = !isLoginPage && !isSignUpPage;
@@ -37,7 +49,7 @@ function App() {
     <div>
       {isHomePage && (
         <Navbar
-          onHomeClick={() => navigate("/")}
+          onHomeClick={navigateHome}
           onSignUpClick={() => navigate("/signup")}
           onLoginClick={() => navigate("/login")}
         />
