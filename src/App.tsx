@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Review from "./components/Home/Review.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Navbar from "./components/layout/Navbar.jsx";
+import ChatBox from "./components/layout/ChatBox.jsx";
 import Hero from "./components/Home/Hero.jsx";
 import AboutUs from "./components/Home/AboutUs.jsx";
 import Methords from "./components/Home/Methords.jsx";
@@ -64,6 +65,7 @@ function App() {
           <Review />
           <Quiz />
           <Footer />
+          <ChatBox />
         </>
       )}
 

@@ -128,7 +128,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
             onLoginClick?.()
           }}
         >
-          <FaUser className="w-6 h-6 text-gray-700" />
+          <FaUser className="w-5 h-5 text-gray-700" />
         </button>
 
         {/* Hamburger Button */}
