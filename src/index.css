@@ -165,17 +165,13 @@ button {
   color: #01351a;
 }
 
-.account-feature-check {
-  transition: transform 0.25s ease, color 0.25s ease;
-}
-
-.account-plan-card:hover .account-feature-check {
-  color: #d4af37;
-  transform: scale(1.18);
-}
-
 .account-popular-badge {
   animation: popular-badge-pulse 2.4s ease-in-out infinite;
+}
+
+.process-gold-tab {
+  transform-origin: center;
+  animation: process-gold-tab-pulse 2.2s ease-in-out infinite;
 }
 
 @keyframes gold-border-flow {
@@ -206,6 +202,19 @@ button {
 
   50% {
     box-shadow: 0 0 0 7px rgb(212 175 55 / 0);
+  }
+}
+
+@keyframes process-gold-tab-pulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(1);
+    box-shadow: 0 0 0 rgb(212 175 55 / 0);
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(1.18);
+    box-shadow: 0 0 18px rgb(212 175 55 / 0.45);
   }
 }
 

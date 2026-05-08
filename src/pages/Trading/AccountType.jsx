@@ -19,35 +19,35 @@ const accounts = [
     Icon: FaRegStar,
     features: [
       "Minimum Deposit $100",
-      "Spreads from 1.8 pips",
+      "Spreads from 1.5 pips",
       "No Commission",
       "Leverage up to 1:400",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
   {
     title: "Standard Account",
     price: "$200",
     Icon: FaMedal,
-    popular: true,
     features: [
       "Minimum Deposit $200",
-      "Spreads from 1.6 pips",
+      "Spreads from 1.3 pips",
       "No Commission",
       "Leverage up to 1:400",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
   {
     title: "Silver Account",
     price: "$1,000",
     Icon: FaShieldAlt,
+    popular: true,
     features: [
       "Minimum Deposit $1000",
-      "Spreads from 1.2 pips",
+      "Spreads from 1 pips",
       "No Commission",
       "Leverage up to 1:500",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
   {
@@ -59,7 +59,7 @@ const accounts = [
       "Spreads from 0.8 pips",
       "Low Commission",
       "Leverage up to 1:500",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
   {
@@ -68,10 +68,10 @@ const accounts = [
     Icon: FaGem,
     features: [
       "Minimum Deposit $10,000",
-      "Spreads from 0.4 pips",
+      "Spreads from 0.6 pips",
       "Low Commission",
       "Leverage up to 1:500",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
   {
@@ -83,7 +83,7 @@ const accounts = [
       "Spreads from 0.2 pips",
       "Low Commission",
       "Leverage up to 1:500",
-      "Support 24/5",
+      "Support 24/7",
     ],
   },
 ];
@@ -97,21 +97,21 @@ export default function AccountTypesPage() {
           <img
             src="/accounttype.png"
             alt=""
-            className="account-hero-image h-full w-full object-cover object-center"
+            className="account-hero-image h-full w-full object-cover object-center brightness-110"
           />
         </div>
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)]" />
 
         <div className="relative z-10 w-full max-w-4xl">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-green-500/40 px-4 py-2 text-xs text-green-400 sm:mb-6 sm:px-5">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
             <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
             Account Type
           </span>
 
           <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
             Find Your Perfect <br className="hidden sm:block" />
-            <span className="text-green-500">Trading Account</span>
+            <span className="text-[#D4AF37]">Trading Account</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
@@ -257,8 +257,8 @@ export default function AccountTypesPage() {
             {step.desc}
           </p>
 
-          {/* Bottom Yellow Line */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#D4AF37] rounded-t-full"></div>
+          {/* Bottom Gold Line */}
+          <div className="process-gold-tab absolute bottom-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-t-full bg-[#D4AF37]"></div>
         </div>
       </div>
     ))}
