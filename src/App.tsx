@@ -10,9 +10,11 @@ import Packeges from "./components/Home/Packeges.jsx";
 import Quiz from "./components/Home/Quiz.jsx";
 import LoginPage from "./auth/LoginPage.jsx";
 import RegisterPage from "./auth/RegisterPage.jsx";
+import AccountType from "./pages/Trading/AccountType.jsx";
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
+  const normalizedPath = decodeURIComponent(path).toLowerCase();
 
   useEffect(() => {
     const handleRouteChange = () => setPath(window.location.pathname);
@@ -44,15 +46,18 @@ function App() {
 
   const isLoginPage = path === "/login";
   const isSignUpPage = path === "/signup";
-  const isHomePage = !isLoginPage && !isSignUpPage;
+  const isAccountTypePage = normalizedPath === "/account type";
+  const isHomePage = path === "/";
+  const showMainNavbar = !isLoginPage && !isSignUpPage;
 
   return (
     <div>
-      {isHomePage && (
+      {showMainNavbar && (
         <Navbar
           onHomeClick={navigateHome}
           onSignUpClick={() => navigate("/signup")}
           onLoginClick={() => navigate("/login")}
+          onAccountTypeClick={() => navigate("/Account type")}
         />
       )}
 
@@ -64,6 +69,14 @@ function App() {
           <Packeges />
           <Review />
           <Quiz />
+          <Footer />
+          <ChatBox />
+        </>
+      )}
+
+      {isAccountTypePage && (
+        <>
+          <AccountType />
           <Footer />
           <ChatBox />
         </>

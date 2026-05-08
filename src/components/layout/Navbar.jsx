@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
-export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
+export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAccountTypeClick }) {
   const [hoveredMenu, setHoveredMenu] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
@@ -10,11 +10,11 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
 
   // Dropdown content for each menu item
   const dropdownContent = {
-    Home: ['Dashboard', 'Trading View', 'Economic Calendar'],
-    Market: ['Forex', 'Commodities', 'Indices', 'Cryptocurrencies'],
-    'Trading Tool': ['Calculator', 'Chart Tools', 'Signals', 'Analysis'],
-    Partners: ['Affiliate Program', 'IB Program', 'White Label'],
-    'About Us': ['Company', 'Contact', 'Careers', 'Legal'],
+    Home: ['Platform', 'Account Type', 'Deposits & Withdrawals','Promotions','Terms & Conditions'],
+    Market: ['Indices','Crypto','Stocks','Forex', 'Commodities'],
+    'Trading Tool': ['Economic Calender', 'Automated Trading'],
+    Partners: ['Introducing Brokers'],
+    'About Us': ['Why Us', "FAQ's", 'Contact Us'],
     'Register Now': ['Open Live Account', 'Demo Account', 'Islamic Account']
   }
 
@@ -77,7 +77,9 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
                     key={index}
                     className="px-4 py-2 hover:bg-green-50 hover:text-green-600 cursor-pointer transition-colors text-sm"
                     onClick={() => {
-                      console.log(`Clicked: ${option}`)
+                      if (option === 'Account Type') {
+                        onAccountTypeClick?.()
+                      }
                     }}
                   >
                     {option}
@@ -211,7 +213,9 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick }) {
                           key={index}
                           className="px-4 py-3 hover:bg-green-100 active:bg-green-200 hover:text-green-700 cursor-pointer transition-colors text-sm text-gray-600 border-l-2 border-transparent hover:border-green-600 active:border-green-700"
                           onClick={() => {
-                            console.log(`Clicked: ${option}`)
+                            if (option === 'Account Type') {
+                              onAccountTypeClick?.()
+                            }
                             setMobileMenuOpen(false)
                           }}
                         >

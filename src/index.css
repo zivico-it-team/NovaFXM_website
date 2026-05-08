@@ -60,6 +60,155 @@ button {
   box-shadow: 0 24px 45px rgb(15 23 42 / 0.12);
 }
 
+.process-card {
+  overflow: visible;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgb(1 68 33 / 0.1), transparent 48%, rgb(212 175 55 / 0.12));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgb(1 68 33 / 0.55);
+  box-shadow: 0 26px 48px rgb(1 68 33 / 0.16);
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+.process-icon {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.process-card:hover .process-icon {
+  transform: translateY(-3px) scale(1.08);
+  background-color: #014421;
+  box-shadow: 0 18px 30px rgb(1 68 33 / 0.35);
+}
+
+.account-plan-card {
+  isolation: isolate;
+  transform-origin: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.account-plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 20%, #d4af37, transparent 80%);
+  background-size: 220% 220%;
+  opacity: 0;
+  padding: 1px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.account-plan-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 0%, rgb(212 175 55 / 0.08) 42%, rgb(255 255 255 / 0.5) 50%, transparent 62%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-80%);
+}
+
+.account-plan-card:hover::before {
+  opacity: 1;
+  animation: gold-border-flow 1.5s linear infinite;
+}
+
+.account-plan-card:hover::after {
+  opacity: 1;
+  animation: account-card-sheen 1.25s ease;
+}
+
+.account-plan-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: transparent;
+  box-shadow: 0 24px 45px rgb(1 68 33 / 0.12);
+}
+
+.account-plan-icon {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.account-plan-card:hover .account-plan-icon {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgb(1 68 33 / 0.24);
+}
+
+.account-plan-price {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.account-plan-card:hover .account-plan-price {
+  transform: translateX(3px);
+  color: #01351a;
+}
+
+.account-feature-check {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.account-plan-card:hover .account-feature-check {
+  color: #d4af37;
+  transform: scale(1.18);
+}
+
+.account-popular-badge {
+  animation: popular-badge-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes gold-border-flow {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 220% 50%;
+  }
+}
+
+@keyframes account-card-sheen {
+  from {
+    transform: translateX(-85%);
+  }
+
+  to {
+    transform: translateX(85%);
+  }
+}
+
+@keyframes popular-badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(212 175 55 / 0.28);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgb(212 175 55 / 0);
+  }
+}
+
 .button-shine {
   position: relative;
   isolation: isolate;
@@ -214,6 +363,13 @@ button {
     hero-circle-breathe-right 27s ease-in-out 22s infinite;
 }
 
+.account-hero-image {
+  animation: account-hero-image-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) both,
+    account-hero-image-pan 18s ease-in-out 1.8s infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
 @keyframes hero-circle-left {
   0% {
     opacity: 0;
@@ -290,6 +446,28 @@ button {
   }
 }
 
+@keyframes account-hero-image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes account-hero-image-pan {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -301,7 +479,8 @@ button {
   }
 
   .hero-circle-left,
-  .hero-circle-right {
+  .hero-circle-right,
+  .account-hero-image {
     animation: none;
     opacity: 1;
   }
