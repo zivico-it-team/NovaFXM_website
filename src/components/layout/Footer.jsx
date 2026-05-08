@@ -184,8 +184,45 @@ const Footer = () => {
       <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700 ">
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
-            NOVAFXM - Registered with the Financial Services Authority (FSA) of
-            St. Vincent and the Grenadines, Registration No 1627 BC.
+            NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
+            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.
+          </p>
+
+          <p>
+            Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks, and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital, and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience, and risk appetite. It is strongly recommended to seek independent financial, legal, and tax advice before making any investment decisions.
+          </p>
+
+          <p>
+            Trading in financial markets offers potential rewards but also involves significant risk. Do not trade with funds you cannot afford to lose. Certain financial products or services may not be permitted in some jurisdictions. It is the responsibility of each client to ensure that trading activities comply with their local laws and regulations.
+          </p>
+          <p>
+            Nothing contained on this website should be considered as financial advice, investment advice, or a recommendation by NOVAFXM, Nova Finance Tech Ltd, or any of its affiliates, directors, officers, employees, or representatives.
+          </p>
+          <p>
+            Restricted Regions: NOVAFXM does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea, and Sudan.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between border-t border-gray-300 pt-5 mt-4 text-base">
+          <p>© 2026 NOVAFXM. All rights reserved.</p>
+          <p className="max-w-xl md:text-right">
+            Risk Warning: Trading foreign exchange and CFDs on margin carries a
+            high level of risk and may not be suitable for all investors.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+/* <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700 ">
+        <div className="mt-5 space-y-4 text-base text-justify">
+          <p>
+            NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
+            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.
+             NOVAFXM is operated under Nova Finance Tech Ltd, 
+             registered as a BC-Business Company with 
+             Registration No. 27139. Registered Agent: EURO-CARIBBEAN TRUSTEES LTD.
           </p>
 
           <p>
@@ -224,9 +261,4 @@ const Footer = () => {
             high level of risk and may not be suitable for all investors.
           </p>
         </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+      </div> */
