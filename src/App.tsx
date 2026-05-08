@@ -10,7 +10,7 @@ import Packeges from "./components/Home/Packeges.jsx";
 import Quiz from "./components/Home/Quiz.jsx";
 import LoginPage from "./auth/LoginPage.jsx";
 import RegisterPage from "./auth/RegisterPage.jsx";
-
+import Market from "./pages/Market/Cryptography.jsx";
 import WhyUs from "./pages/AboutUS/WhyUs.jsx"
 
 import AccountType from "./pages/Trading/AccountType.jsx";
@@ -53,7 +53,9 @@ function App() {
   const isAccountTypePage = normalizedPath === "/account type";
   const isWhyUsPage = normalizedPath === "/why-us";
   const isHomePage = path === "/";
+  const isCryptoPage = path === "/crypto1";
   const showMainNavbar = !isLoginPage && !isSignUpPage;
+  
 
   return (
     <div>
@@ -64,6 +66,8 @@ function App() {
           onLoginClick={() => navigate("/login")}
           onAccountTypeClick={() => navigate("/Account type")}
           onWhyUsClick={() => navigate("/why-us")}
+          onCryptoClick={() => navigate("/crypto1")}
+          
         />
       )}
 
@@ -105,8 +109,12 @@ function App() {
       {isSignUpPage && (
         <RegisterPage onLoginClick={() => navigate("/login")} />
       )}
+       {isCryptoPage  && <Market />}
     </div>
   );
 }
 
 export default App;
+
+
+

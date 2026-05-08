@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
-export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAccountTypeClick, onWhyUsClick }) {
+export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAccountTypeClick, onWhyUsClick, onCryptoClick }) {
   const [hoveredMenu, setHoveredMenu] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
@@ -82,6 +82,9 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
                       }
                       if (option === 'Why Us') {
                         onWhyUsClick?.()
+                      }
+                      if (option === 'Crypto') {
+                        onCryptoClick?.()
                       }
                     }}
                   >
@@ -221,6 +224,9 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
                             }
                             if (option === 'Why Us') {
                               onWhyUsClick?.()
+                            }
+                            if (option === 'Crypto') {
+                              onCryptoClick?.()
                             }
                             setMobileMenuOpen(false)
                           }}
