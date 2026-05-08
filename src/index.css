@@ -30,3 +30,287 @@ body {
 button {
   font: inherit;
 }
+
+.reveal-section {
+  animation: reveal-section 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-up {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.interactive-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 45px rgb(15 23 42 / 0.12);
+}
+
+.button-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.button-shine::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto -120% -45%;
+  width: 38%;
+  pointer-events: none;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+  transition: left 0.6s ease;
+}
+
+.button-shine:hover::after {
+  left: 120%;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  border-radius: 9999px;
+  background: #014421;
+  transition: transform 0.28s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.animate-slideDown {
+  animation: slide-down 0.26s ease both;
+}
+
+.auth-card {
+  animation: auth-card-in 0.55s ease both;
+}
+
+.chat-panel {
+  animation: chat-panel-in 0.28s ease both;
+}
+
+.chat-toggle {
+  animation: chat-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes reveal-section {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes auth-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chat-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chat-pulse {
+  0%,
+  100% {
+    box-shadow: 0 18px 35px rgb(1 68 33 / 0.25);
+  }
+
+  50% {
+    box-shadow: 0 18px 45px rgb(1 68 33 / 0.45);
+  }
+}
+
+.hero-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  background: rgba(217, 219, 223, 0.416);
+  /* filter: drop-shadow(0 24px 45px rgb(15 23 42 / 0.08)); */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.hero-circle-left {
+  clip-path: inset(0 50% 0 0);
+  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
+    hero-circle-breathe-left 27s ease-in-out 22s infinite;
+}
+
+.hero-circle-right {
+  clip-path: inset(0 0 0 50%);
+  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
+    hero-circle-breathe-right 27s ease-in-out 22s infinite;
+}
+
+@keyframes hero-circle-left {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(-18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-right {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  28% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  46% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate(calc(18vw - 50%), -50%) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+}
+
+@keyframes hero-circle-breathe-left {
+  0%,
+  100% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@keyframes hero-circle-breathe-right {
+  0%,
+  100% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(calc(-50vw - 50%), -50%) scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-circle-left,
+  .hero-circle-right {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-circle-left {
+    transform: translate(calc(50vw - 50%), -50%);
+  }
+
+  .hero-circle-right {
+    transform: translate(calc(-50vw - 50%), -50%);
+  }
+}
