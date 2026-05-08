@@ -10,6 +10,7 @@ import Packeges from "./components/Home/Packeges.jsx";
 import Quiz from "./components/Home/Quiz.jsx";
 import LoginPage from "./auth/LoginPage.jsx";
 import RegisterPage from "./auth/RegisterPage.jsx";
+import WhyUs from "./pages/AboutUs/WhyUs.jsx";
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -64,8 +65,10 @@ function App() {
           <Packeges />
           <Review />
           <Quiz />
+          <WhyUs />
           <Footer />
           <ChatBox />
+          
         </>
       )}
 
