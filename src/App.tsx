@@ -1,10 +1,94 @@
+import { useEffect, useState } from "react";
+import Review from "./components/Home/Review.jsx";
+import Footer from "./components/layout/Footer.jsx";
+import Navbar from "./components/layout/Navbar.jsx";
+import ChatBox from "./components/layout/ChatBox.jsx";
+import Hero from "./components/Home/Hero.jsx";
+import AboutUs from "./components/Home/AboutUs.jsx";
+import Methords from "./components/Home/Methords.jsx";
 import Packeges from "./components/Home/Packeges.jsx";
+import Quiz from "./components/Home/Quiz.jsx";
+import LoginPage from "./auth/LoginPage.jsx";
+import RegisterPage from "./auth/RegisterPage.jsx";
+import AccountType from "./pages/Trading/AccountType.jsx";
 
 function App() {
+  const [path, setPath] = useState(window.location.pathname);
+  const normalizedPath = decodeURIComponent(path).toLowerCase();
+
+  useEffect(() => {
+    const handleRouteChange = () => setPath(window.location.pathname);
+
+    window.addEventListener("popstate", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleRouteChange);
+    };
+  }, []);
+
+  const navigate = (nextPath: string) => {
+    window.history.pushState({}, "", nextPath);
+    setPath(nextPath);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navigateHome = () => {
+    window.history.pushState({}, "", "/");
+    setPath("/");
+
+    requestAnimationFrame(() => {
+      document.getElementById("hero")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
+  const isLoginPage = path === "/login";
+  const isSignUpPage = path === "/signup";
+  const isAccountTypePage = normalizedPath === "/account type";
+  const isHomePage = path === "/";
+  const showMainNavbar = !isLoginPage && !isSignUpPage;
+
   return (
     <div>
-      < Packeges/>
+      {showMainNavbar && (
+        <Navbar
+          onHomeClick={navigateHome}
+          onSignUpClick={() => navigate("/signup")}
+          onLoginClick={() => navigate("/login")}
+          onAccountTypeClick={() => navigate("/Account type")}
+        />
+      )}
 
+      {isHomePage && (
+        <>
+          <Hero />
+          <AboutUs />
+          <Methords />
+          <Packeges />
+          <Review />
+          <Quiz />
+          <Footer />
+          <ChatBox />
+        </>
+      )}
+
+      {isAccountTypePage && (
+        <>
+          <AccountType />
+          <Footer />
+          <ChatBox />
+        </>
+      )}
+
+      {isLoginPage && (
+        <LoginPage onSignUpClick={() => navigate("/signup")} />
+      )}
+
+      {isSignUpPage && (
+        <RegisterPage onLoginClick={() => navigate("/login")} />
+      )}
     </div>
   );
 }

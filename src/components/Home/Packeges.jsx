@@ -42,8 +42,8 @@ const plans = [
 
 export default function PricingSection() {
   return (
-    <div className="bg-gray-100 py-10 sm:py-14 md:py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="reveal-section bg-gray-100 px-4 py-10 sm:px-6 sm:py-14 md:py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl text-center">
 
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
@@ -58,7 +58,7 @@ export default function PricingSection() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex flex-col justify-between rounded-2xl p-6 sm:p-8 shadow-md transition-all duration-300
+              className={`interactive-card relative flex flex-col justify-between rounded-2xl p-6 sm:p-8 shadow-md transition-all duration-300
               ${
                 plan.highlight
                   ? "bg-[#014421] text-white md:scale-105 shadow-xl"
@@ -121,7 +121,7 @@ export default function PricingSection() {
 
               {/* Button */}
               <button
-                className={`w-full py-3.5 sm:py-4 rounded-xl border text-sm sm:text-base transition-all duration-300
+                className={`button-shine w-full py-3.5 sm:py-4 rounded-xl border text-sm sm:text-base transition-all duration-300
                 ${
                   plan.highlight
                     ? "bg-white text-[#D4AF37] font-semibold hover:bg-gray-200"
@@ -135,6 +135,6 @@ export default function PricingSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
