@@ -11,7 +11,7 @@ import Quiz from "./components/Home/Quiz.jsx";
 import LoginPage from "./auth/LoginPage.jsx";
 import RegisterPage from "./auth/RegisterPage.jsx";
 
-
+import WhyUs from "./pages/AboutUS/WhyUs.jsx"
 
 import AccountType from "./pages/Trading/AccountType.jsx";
 
@@ -51,6 +51,7 @@ function App() {
   const isLoginPage = path === "/login";
   const isSignUpPage = path === "/signup";
   const isAccountTypePage = normalizedPath === "/account type";
+  const isWhyUsPage = normalizedPath === "/why-us";
   const isHomePage = path === "/";
   const showMainNavbar = !isLoginPage && !isSignUpPage;
 
@@ -62,6 +63,7 @@ function App() {
           onSignUpClick={() => navigate("/signup")}
           onLoginClick={() => navigate("/login")}
           onAccountTypeClick={() => navigate("/Account type")}
+          onWhyUsClick={() => navigate("/why-us")}
         />
       )}
 
@@ -77,6 +79,14 @@ function App() {
           <Footer />
           <ChatBox />
           
+        </>
+      )}
+
+      {isWhyUsPage && (
+        <>
+          <WhyUs />
+          <Footer />
+          <ChatBox />
         </>
       )}
 
