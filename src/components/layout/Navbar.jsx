@@ -2,7 +2,15 @@ import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
-export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAccountTypeClick, onWhyUsClick, onCryptoClick }) {
+export default function Header({
+  onHomeClick,
+  onSignUpClick,
+  onLoginClick,
+  onAccountTypeClick,
+  onTermsConditionsClick,
+  onWhyUsClick,
+  onCryptoClick,
+}) {
   const [hoveredMenu, setHoveredMenu] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
@@ -17,6 +25,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
     'About Us': ['Why Us', "FAQ's", 'Contact Us'],
     'Register Now': ['Open Live Account', 'Demo Account', 'Islamic Account']
   }
+  const menuItems = Object.keys(dropdownContent)
 
   const toggleMobileDropdown = (item) => {
     if (openMobileDropdown === item) {
@@ -24,6 +33,34 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
     } else {
       setOpenMobileDropdown(item)
     }
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+    setOpenMobileDropdown(null)
+  }
+
+  const handleDropdownOptionClick = (option) => {
+    const actions = {
+      Platform: onHomeClick,
+      'Account Type': onAccountTypeClick,
+      'Terms & Conditions': onTermsConditionsClick,
+      Crypto: onCryptoClick,
+      'Why Us': onWhyUsClick,
+      'Open Live Account': onSignUpClick,
+      'Demo Account': onSignUpClick,
+      'Islamic Account': onSignUpClick,
+    }
+
+    const action = actions[option]
+
+    if (!action) {
+      return
+    }
+
+    action()
+    setHoveredMenu(null)
+    closeMobileMenu()
   }
 
   return (
@@ -46,7 +83,7 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
       </button>
       {/* Desktop Menu - Hidden on mobile */}
       <ul className="hidden items-center gap-5 text-sm font-medium text-gray-700 lg:flex xl:gap-8">
-        {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
+        {menuItems.map((item) => (
           <li 
             key={item} 
             className="relative"
@@ -59,38 +96,32 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
               onClick={() => {
                 if (item === 'Home') {
                   onHomeClick?.()
+                  setHoveredMenu(null)
+                  return
                 }
 
-                if (item === 'Register Now') {
-                  onSignUpClick?.()
-                }
+                setHoveredMenu(hoveredMenu === item ? null : item)
               }}
+              onFocus={() => setHoveredMenu(item)}
             >
               {item}
             </button>
             
             {/* Dropdown Menu on Hover - Desktop only */}
             {hoveredMenu === item && (
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+              <div className="absolute left-0 top-full z-50 w-52 pt-2">
+                <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg">
                 {dropdownContent[item].map((option, index) => (
-                  <div
+                  <button
+                    type="button"
                     key={index}
-                    className="px-4 py-2 hover:bg-green-50 hover:text-green-600 cursor-pointer transition-colors text-sm"
-                    onClick={() => {
-                      if (option === 'Account Type') {
-                        onAccountTypeClick?.()
-                      }
-                      if (option === 'Why Us') {
-                        onWhyUsClick?.()
-                      }
-                      if (option === 'Crypto') {
-                        onCryptoClick?.()
-                      }
-                    }}
+                    className="block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-green-50 hover:text-green-600"
+                    onClick={() => handleDropdownOptionClick(option)}
                   >
                     {option}
-                  </div>
+                  </button>
                 ))}
+                </div>
               </div>
             )}
           </li>
@@ -169,28 +200,23 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
           {/* Overlay */}
           <div 
             className="fixed inset-0 bg-white bg-opacity-50 z-40 lg:hidden"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
           />
           
           {/* Mobile Menu Panel */}
           <div className="absolute left-0 right-0 top-full z-50 animate-slideDown bg-white shadow-2xl lg:hidden">
             {/* Mobile Navigation Items */}
             <div className="flex flex-col py-2 max-h-[80vh] overflow-y-auto">
-              {['Home', 'Market', 'Trading Tool', 'Partners', 'About Us', 'Register Now'].map((item) => (
+              {menuItems.map((item) => (
                 <div key={item} className="border-b border-gray-100">
                   {/* Main Menu Item with Arrow */}
-                  <div 
-                    className="flex items-center justify-between px-6 py-4 hover:bg-green-50 active:bg-green-100 cursor-pointer transition-colors"
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
                     onClick={() => {
                       if (item === 'Home') {
                         onHomeClick?.()
-                        setMobileMenuOpen(false)
-                        return
-                      }
-
-                      if (item === 'Register Now') {
-                        onSignUpClick?.()
-                        setMobileMenuOpen(false)
+                        closeMobileMenu()
                         return
                       }
 
@@ -209,30 +235,20 @@ export default function Header({ onHomeClick, onSignUpClick, onLoginClick, onAcc
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
-                  </div>
+                  </button>
                   
                   {/* Mobile Dropdown Items - Collapsible */}
                   {openMobileDropdown === item && (
                     <div className="bg-green-50 pl-8 animate-slideDown">
                       {dropdownContent[item].map((option, index) => (
-                        <div
+                        <button
+                          type="button"
                           key={index}
-                          className="px-4 py-3 hover:bg-green-100 active:bg-green-200 hover:text-green-700 cursor-pointer transition-colors text-sm text-gray-600 border-l-2 border-transparent hover:border-green-600 active:border-green-700"
-                          onClick={() => {
-                            if (option === 'Account Type') {
-                              onAccountTypeClick?.()
-                            }
-                            if (option === 'Why Us') {
-                              onWhyUsClick?.()
-                            }
-                            if (option === 'Crypto') {
-                              onCryptoClick?.()
-                            }
-                            setMobileMenuOpen(false)
-                          }}
+                          className="block w-full border-l-2 border-transparent px-4 py-3 text-left text-sm text-gray-600 transition-colors hover:border-green-600 hover:bg-green-100 hover:text-green-700 active:border-green-700 active:bg-green-200"
+                          onClick={() => handleDropdownOptionClick(option)}
                         >
                           {option}
-                        </div>
+                        </button>
                       ))}
                     </div>
                   )}
