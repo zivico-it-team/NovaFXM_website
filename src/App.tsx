@@ -1,25 +1,32 @@
 import { useEffect, useState } from "react";
+
+// ================= HOME COMPONENTS =================
 import Review from "./components/Home/Review.jsx";
-import Footer from "./components/layout/Footer.jsx";
-import Navbar from "./components/layout/Navbar.jsx";
-import ChatBox from "./components/layout/ChatBox.jsx";
 import Hero from "./components/Home/Hero.jsx";
 import AboutUs from "./components/Home/AboutUs.jsx";
 import Methords from "./components/Home/Methords.jsx";
 import Packeges from "./components/Home/Packeges.jsx";
 import Quiz from "./components/Home/Quiz.jsx";
+
+// ================= LAYOUT =================
+import Footer from "./components/layout/Footer.jsx";
+import Navbar from "./components/layout/Navbar.jsx";
+import ChatBox from "./components/layout/ChatBox.jsx";
+
+// ================= PAGES =================
 import LoginPage from "./auth/LoginPage.jsx";
 import RegisterPage from "./auth/RegisterPage.jsx";
 import Market from "./pages/Market/Cryptography.jsx";
-import WhyUs from "./pages/AboutUS/WhyUs.jsx"
-
+import WhyUs from "./pages/AboutUS/WhyUs.jsx";
+import PrivancyPolicy from "./pages/PrivancyPolicy.jsx";
 import AccountType from "./pages/Trading/AccountType.jsx";
-
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
+
   const normalizedPath = decodeURIComponent(path).toLowerCase();
 
+  // ================= ROUTE LISTENER =================
   useEffect(() => {
     const handleRouteChange = () => setPath(window.location.pathname);
 
@@ -30,7 +37,8 @@ function App() {
     };
   }, []);
 
-  const navigate = (nextPath: string) => {
+  // ================= NAVIGATION =================
+  const navigate = (nextPath) => {
     window.history.pushState({}, "", nextPath);
     setPath(nextPath);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -43,34 +51,41 @@ function App() {
     requestAnimationFrame(() => {
       document.getElementById("hero")?.scrollIntoView({
         behavior: "smooth",
-        block: "start",
       });
     });
   };
 
+  // ================= ROUTES =================
+  const isHomePage = path === "/";
   const isLoginPage = path === "/login";
   const isSignUpPage = path === "/signup";
-  const isAccountTypePage = normalizedPath === "/account type";
-  const isWhyUsPage = normalizedPath === "/why-us";
-  const isHomePage = path === "/";
   const isCryptoPage = path === "/crypto1";
-  const showMainNavbar = !isLoginPage && !isSignUpPage;
-  
+
+  const isWhyUsPage = normalizedPath === "/why-us";
+  const isAccountTypePage = normalizedPath === "/account-type";
+  const isPrivacyPage = normalizedPath === "/privacy";
+
+  // ================= NAVBAR CONTROL =================
+  const showMainNavbar =
+    !isLoginPage &&
+    !isSignUpPage;
 
   return (
     <div>
+
+      {/* ================= NAVBAR ================= */}
       {showMainNavbar && (
         <Navbar
           onHomeClick={navigateHome}
           onSignUpClick={() => navigate("/signup")}
           onLoginClick={() => navigate("/login")}
-          onAccountTypeClick={() => navigate("/Account type")}
+          onAccountTypeClick={() => navigate("/account-type")}
           onWhyUsClick={() => navigate("/why-us")}
           onCryptoClick={() => navigate("/crypto1")}
-          
         />
       )}
 
+      {/* ================= HOME ================= */}
       {isHomePage && (
         <>
           <Hero />
@@ -79,42 +94,53 @@ function App() {
           <Packeges />
           <Review />
           <Quiz />
-          <WhyUs />
-          <Footer />
+          <Footer navigate={navigate} />
           <ChatBox />
-          
         </>
       )}
 
+      {/* ================= PRIVACY ================= */}
+      {isPrivacyPage && (
+        <>
+          <PrivancyPolicy />
+          <Footer navigate={navigate} />
+          <ChatBox />
+        </>
+      )}
+
+      {/* ================= WHY US ================= */}
       {isWhyUsPage && (
         <>
           <WhyUs />
-          <Footer />
+          <Footer navigate={navigate} />
           <ChatBox />
         </>
       )}
 
+      {/* ================= ACCOUNT TYPE ================= */}
       {isAccountTypePage && (
         <>
           <AccountType />
-          <Footer />
+          <Footer navigate={navigate} />
           <ChatBox />
         </>
       )}
 
+      {/* ================= LOGIN ================= */}
       {isLoginPage && (
         <LoginPage onSignUpClick={() => navigate("/signup")} />
       )}
 
+      {/* ================= SIGNUP ================= */}
       {isSignUpPage && (
         <RegisterPage onLoginClick={() => navigate("/login")} />
       )}
-       {isCryptoPage  && <Market />}
+
+      {/* ================= CRYPTO ================= */}
+      {isCryptoPage && <Market />}
+
     </div>
   );
 }
 
 export default App;
-
-
-

@@ -1,6 +1,8 @@
 import React from "react";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const iconProps = {
   className: "text-green-700 shrink-0",
@@ -38,7 +40,9 @@ const MapPinIcon = () => (
   </svg>
 );
 
-const Footer = () => {
+const Footer = ({ navigate }) => {
+ 
+
   return (
     <footer className="reveal-section bg-[#f5f5f5] px-3 py-10 text-sm text-black sm:px-5 sm:text-base lg:px-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-left md:grid-cols-4 md:items-start">
@@ -102,9 +106,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-700">
-                  Privacy Policy
-                </a>
+          <button onClick={() => navigate("/privacy")} className="hover:text-green-700">
+                Privacy Policy
+              </button>
               </li>
               <li>
                 <a href="#" className="hover:text-green-700">
@@ -262,3 +266,4 @@ export default Footer;
           </p>
         </div>
       </div> */
+       
