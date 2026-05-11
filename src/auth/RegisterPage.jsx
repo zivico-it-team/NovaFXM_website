@@ -1,7 +1,47 @@
-import { FaEyeSlash, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from "../assets/images/logo.png";
+
+import { useState } from "react";
+import axios from "axios";
 
 const RegisterPage = ({ onLoginClick }) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [country, setCountry] = useState("");
+  const [agree, setAgree] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError("");
+    if (!agree) {
+      setError("You must agree to the Terms of service and Privacy policies.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/register", {
+        firstName,
+        lastName,
+        email,
+        password,
+        country,
+      });
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        // Optionally redirect or update UI here
+        window.location.reload();
+      }
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Registration failed. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
       <section className="auth-card interactive-card relative w-full max-w-md rounded-2xl bg-white px-6 py-5 text-center shadow-xl sm:px-8">
@@ -21,7 +61,7 @@ const RegisterPage = ({ onLoginClick }) => {
 
         <form
           className="mt-7 space-y-4 text-left"
-          onSubmit={(event) => event.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label className="block ">
@@ -32,6 +72,9 @@ const RegisterPage = ({ onLoginClick }) => {
                 type="text"
                 placeholder="Full Name"
                 className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
               />
             </label>
 
@@ -43,6 +86,9 @@ const RegisterPage = ({ onLoginClick }) => {
                 type="text"
                 placeholder="Last Name"
                 className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
               />
             </label>
           </div>
@@ -55,6 +101,9 @@ const RegisterPage = ({ onLoginClick }) => {
               type="email"
               placeholder="example@gmail.com"
               className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </label>
 
@@ -67,6 +116,9 @@ const RegisterPage = ({ onLoginClick }) => {
                 type="password"
                 placeholder="********"
                 className="w-full rounded-lg border border-gray-300 px-4 py-2.5 pr-11 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <FaEyeSlash className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400" />
             </div>
@@ -80,11 +132,19 @@ const RegisterPage = ({ onLoginClick }) => {
               type="text"
               placeholder="Country"
               className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-700 outline-none transition focus:border-green-700 focus:ring-2 focus:ring-green-700/10"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              required
             />
           </label>
 
           <label className="flex items-start gap-2 text-xs leading-relaxed text-gray-500">
-            <input type="checkbox" className="mt-1 accent-green-700" />
+            <input
+              type="checkbox"
+              className="mt-1 accent-green-700"
+              checked={agree}
+              onChange={(e) => setAgree(e.target.checked)}
+            />
             <span>
               I agree to the{" "}
               <span className="font-medium text-green-700">Terms of service</span>{" "}
@@ -92,11 +152,16 @@ const RegisterPage = ({ onLoginClick }) => {
             </span>
           </label>
 
+          {error && (
+            <div className="text-red-600 text-xs mb-2">{error}</div>
+          )}
+
           <button
             type="submit"
             className="button-shine w-full rounded-lg bg-green-800 py-2.5 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-green-900 hover:shadow-lg active:translate-y-0"
+            disabled={loading}
           >
-            Sign Up
+            {loading ? "Signing up..." : "Sign Up"}
           </button>
         </form>
 
