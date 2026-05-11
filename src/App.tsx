@@ -20,6 +20,7 @@ import Market from "./pages/Market/Cryptography.jsx";
 import WhyUs from "./pages/AboutUS/WhyUs.jsx";
 import PrivancyPolicy from "./pages/PrivancyPolicy.jsx";
 import AccountType from "./pages/Trading/AccountType.jsx";
+import Stock from "./pages/Market/Stock";
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -38,7 +39,7 @@ function App() {
   }, []);
 
   // ================= NAVIGATION =================
-  const navigate = (nextPath) => {
+  const navigate = (nextPath: string) => {
     window.history.pushState({}, "", nextPath);
     setPath(nextPath);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -64,6 +65,7 @@ function App() {
   const isWhyUsPage = normalizedPath === "/why-us";
   const isAccountTypePage = normalizedPath === "/account-type";
   const isPrivacyPage = normalizedPath === "/privacy";
+  const isStockPage = path === "/stock";
 
   // ================= NAVBAR CONTROL =================
   const showMainNavbar =
@@ -82,6 +84,7 @@ function App() {
           onAccountTypeClick={() => navigate("/account-type")}
           onWhyUsClick={() => navigate("/why-us")}
           onCryptoClick={() => navigate("/crypto1")}
+          onStockClick={() => navigate("/stock")}
         />
       )}
 
@@ -93,6 +96,7 @@ function App() {
           <Methords />
           <Packeges />
           <Review />
+          
           <Quiz />
           <Footer navigate={navigate} />
           <ChatBox />
@@ -112,6 +116,15 @@ function App() {
       {isWhyUsPage && (
         <>
           <WhyUs />
+          <Footer navigate={navigate} />
+          <ChatBox />
+        </>
+      )}
+
+      {/* ================= STOCK ================= */}
+      {isStockPage && (
+        <>
+          <Stock />
           <Footer navigate={navigate} />
           <ChatBox />
         </>

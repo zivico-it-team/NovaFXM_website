@@ -517,3 +517,148 @@ button {
 .pulse-image {
   animation: pulseSoft 6s ease-in-out infinite;
 }
+
+.stock-hero {
+  isolation: isolate;
+}
+
+.stock-hero-image {
+  animation: stock-hero-zoom 18s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.stock-hero-grid {
+  background-image:
+    linear-gradient(rgb(1 68 33 / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(1 68 33 / 0.09) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: stock-grid-drift 18s linear infinite;
+}
+
+.stock-hero-sheen {
+  animation: stock-hero-sheen 6.5s ease-in-out infinite;
+}
+
+.stock-hero-title,
+.stock-hero-subtitle,
+.stock-hero-badge {
+  animation: stock-hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stock-hero-subtitle {
+  animation-delay: 0.16s;
+}
+
+.stock-hero-badge {
+  animation-delay: 0.28s;
+}
+
+.stock-floating-card {
+  position: absolute;
+  z-index: 5;
+  will-change: transform;
+}
+
+.stock-floating-card-one {
+  left: clamp(1.5rem, 6vw, 5rem);
+  bottom: clamp(3rem, 10vh, 7rem);
+  animation: stock-card-float 7s ease-in-out infinite;
+}
+
+.stock-floating-card-two {
+  right: clamp(1.5rem, 7vw, 6rem);
+  top: clamp(7rem, 19vh, 12rem);
+  animation: stock-card-float 7.5s ease-in-out 0.8s infinite;
+}
+
+.stock-hero-line {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: stock-line-draw 2.2s ease-out 0.4s forwards;
+}
+
+.stock-volume-bar {
+  transform-origin: bottom;
+  animation: stock-volume-pulse 1.7s ease-in-out infinite;
+}
+
+@keyframes stock-hero-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08) translate3d(-1.2%, -1%, 0);
+  }
+}
+
+@keyframes stock-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+@keyframes stock-hero-sheen {
+  0%,
+  35% {
+    transform: translateX(0) rotate(12deg);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75%,
+  100% {
+    transform: translateX(290%) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes stock-hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stock-card-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes stock-line-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stock-volume-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.72);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
