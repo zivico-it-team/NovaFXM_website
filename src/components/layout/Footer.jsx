@@ -1,4 +1,6 @@
+// src/components/layout/Footer.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
 
@@ -39,15 +41,42 @@ const MapPinIcon = () => (
 );
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  // ─── Same route map as Navbar ─────────────────────────────────────────────
+  const quickLinks = [
+    { label: "Home", path: "/" },
+    { label: "Market", path: "/crypto" },
+    { label: "Trading Tools", path: "/tools/economic-calendar" },
+    { label: "About Us", path: "/why-us" },
+    { label: "Account Type", path: "/account-type" },
+  ];
+
+  const supportLinks = [
+    { label: "FAQ", path: "/faqs" },
+    { label: "Contact Us", path: "/contact" },
+    { label: "Privacy Policy", path: "/privacy" },
+    { label: "Terms of Service", path: "/terms-conditions" },
+  ];
+
+  const handleNav = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="reveal-section bg-[#f5f5f5] px-3 py-10 text-sm text-black sm:px-5 sm:text-base lg:px-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-left md:grid-cols-4 md:items-start">
+
+        {/* ── Brand ─────────────────────────────────────────────────────────── */}
         <div className="flex flex-col items-start">
-          <img
-            src={logo}
-            alt="Logo"
-            className="mt-10 h-8 w-32 object-contain sm:h-10 sm:w-40"
-          />
+          <button onClick={() => handleNav("/")} className="mt-10">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-8 w-32 object-contain sm:h-10 sm:w-40"
+            />
+          </button>
 
           <p className="mt-3 max-w-sm leading-6 text-gray-700">
             Empowering traders globally with next-generation tools, tight
@@ -61,60 +90,45 @@ const Footer = () => {
           />
         </div>
 
+        {/* ── Quick Links + Support ─────────────────────────────────────────── */}
         <div className="grid grid-cols-2 gap-8 md:contents">
+
+          {/* Quick Links */}
           <div className="md:mt-10">
             <h3 className="mb-4 font-semibold">Quick Links</h3>
             <ul className="space-y-3 text-gray-700">
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Market
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Trading Tools
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  About Us
-                </a>
-              </li>
+              {quickLinks.map(({ label, path }) => (
+                <li key={label}>
+                  <button
+                    onClick={() => handleNav(path)}
+                    className="hover:text-green-700 transition-colors text-left"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Support */}
           <div className="md:mt-10">
             <h3 className="mb-4 font-semibold">Support</h3>
             <ul className="space-y-3 text-gray-700">
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-700">
-                  Terms of Service
-                </a>
-              </li>
+              {supportLinks.map(({ label, path }) => (
+                <li key={label}>
+                  <button
+                    onClick={() => handleNav(path)}
+                    className="hover:text-green-700 transition-colors text-left"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
+        {/* ── Contact ───────────────────────────────────────────────────────── */}
         <div className="md:mt-10">
           <h3 className="mb-4 font-semibold">Contact</h3>
 
@@ -148,6 +162,7 @@ const Footer = () => {
               </a>
             </p>
 
+            {/* Social Icons */}
             <div className="flex items-center gap-4 pt-3">
               <a
                 href="https://twitter.com"
@@ -181,17 +196,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700 ">
+      {/* ── Legal Block ─────────────────────────────────────────────────────── */}
+      <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700">
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
             NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
             EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.
           </p>
-
           <p>
             Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks, and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital, and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience, and risk appetite. It is strongly recommended to seek independent financial, legal, and tax advice before making any investment decisions.
           </p>
-
           <p>
             Trading in financial markets offers potential rewards but also involves significant risk. Do not trade with funds you cannot afford to lose. Certain financial products or services may not be permitted in some jurisdictions. It is the responsibility of each client to ensure that trading activities comply with their local laws and regulations.
           </p>
@@ -202,6 +216,8 @@ const Footer = () => {
             Restricted Regions: NOVAFXM does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea, and Sudan.
           </p>
         </div>
+
+        {/* ── Bottom Bar ────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-3 md:flex-row md:justify-between border-t border-gray-300 pt-5 mt-4 text-base">
           <p>© 2026 NOVAFXM. All rights reserved.</p>
           <p className="max-w-xl md:text-right">
@@ -215,50 +231,3 @@ const Footer = () => {
 };
 
 export default Footer;
-/* <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700 ">
-        <div className="mt-5 space-y-4 text-base text-justify">
-          <p>
-            NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
-            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.
-             NOVAFXM is operated under Nova Finance Tech Ltd, 
-             registered as a BC-Business Company with 
-             Registration No. 27139. Registered Agent: EURO-CARIBBEAN TRUSTEES LTD.
-          </p>
-
-          <p>
-            Risk statement: An investment in derivatives may mean investors may
-            lose an amount even greater than their original investment. Anyone
-            wishing to invest in any of the products mentioned in
-            www.novafxm.com should seek their own financial or professional
-            advice. Trading of securities, CFD, stock market, commodities,
-            options and futures may not be suitable for everyone and involves
-            the risk of losing part or all of your money. Trading in the
-            financial markets has large potential rewards, but also large
-            potential risk. You must be aware of the risks and be willing to
-            accept them in order to invest in the markets. Don't invest and
-            trade with money which you can't afford to lose. CFD Trading are not
-            allowed in some countries, before investing your money, make sure
-            whether your country is allowing this or not. You are strongly
-            advised to obtain independent financial, legal and tax advice before
-            proceeding with any CFD or spot metals trade.
-          </p>
-
-          <p>
-            Nothing in this site should be read or construed as constituting
-            advice on the part of NOVAFXM or any of its affiliates, directors,
-            officers or employees. Restricted Regions: NOVAFXM does not provide
-            services for citizens/residents of the United States, Cuba, Iraq,
-            Myanmar, North Korea, Sudan. The services of NOVAFXM are not
-            intended for distribution to, or use by, any person in any country
-            or jurisdiction where such distribution or use would be contrary to
-            local law or regulation.
-          </p>
-        </div>
-        <div className="flex flex-col gap-3 md:flex-row md:justify-between border-t border-gray-300 pt-5 mt-4 text-base">
-          <p>© 2026 NOVAFXM. All rights reserved.</p>
-          <p className="max-w-xl md:text-right">
-            Risk Warning: Trading foreign exchange and CFDs on margin carries a
-            high level of risk and may not be suitable for all investors.
-          </p>
-        </div>
-      </div> */
