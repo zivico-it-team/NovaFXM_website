@@ -28,7 +28,7 @@ import Stock from "./pages/Market/Stock";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
-
+import FAQ from "./pages/AboutUS/Faqs";
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
@@ -212,6 +212,17 @@ function App() {
             </MainLayout>
           }
         />
+
+             <Route
+          path="/faq"
+          element={
+            <MainLayout>
+              <FAQ />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+           />
 
           
 
