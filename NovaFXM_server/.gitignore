@@ -14,8 +14,6 @@ pids
 # coverage
 coverage
 
-# environment variables
-.env
 
 # build files
 dist
