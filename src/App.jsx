@@ -66,45 +66,6 @@ function HomePage() {
   );
 }
 
-function AccountTypePage() {
-  return (
-    <>
-      <AccountType />
-      <Footer />
-      <ChatBox />
-    </>
-  );
-}
-
-function TermsConditionsPage() {
-  return (
-    <>
-      <TermsConditions />
-      <Footer />
-      <ChatBox />
-    </>
-  );
-}
-
-function WhyUsPage() {
-  return (
-    <>
-      <WhyUs />
-      <Footer />
-      <ChatBox />
-    </>
-  );
-}
-
-function CryptoPage() {
-  return (
-    <>
-      <Market />
-      <Footer />
-      <ChatBox />
-    </>
-  );
-}
 
 // ─── App ─────────────────────────────────────────────────────────────────────
 
@@ -154,7 +115,7 @@ function App() {
           path="/account-type"
           element={
             <MainLayout>
-              <AccountTypePage />
+              <AccountType />
             </MainLayout>
           }
         />
@@ -162,7 +123,7 @@ function App() {
           path="/terms-conditions"
           element={
             <MainLayout>
-              <TermsConditionsPage />
+              <TermsConditions />
             </MainLayout>
           }
         />
@@ -170,7 +131,7 @@ function App() {
           path="/why-us"
           element={
             <MainLayout>
-              <WhyUsPage />
+              <WhyUs />
             </MainLayout>
           }
         />
@@ -178,21 +139,44 @@ function App() {
           path="/crypto"
           element={
             <MainLayout>
-              <CryptoPage />
+              <Market />
             </MainLayout>
           }
         />
         
+
         <Route
           path="/indices"
-          element={       <MainLayout>        <Indices />     </MainLayout> }       /> 
+          element={
+            <MainLayout>
+              <Indices />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
 
-        <Route          path="/stocks"       element={       <MainLayout>        <Stock />     </MainLayout> }       /> 
-
+        <Route
+          path="/stocks"
+          element={
+            <MainLayout>
+              <Stock />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
 
         <Route
           path="/privacy"
-          element={    <MainLayout>        <Privacy />     </MainLayout> }       />
+          element={
+            <MainLayout>
+              <Privacy />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
 
         
 
