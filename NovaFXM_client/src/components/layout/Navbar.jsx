@@ -33,7 +33,7 @@ export default function Navbar() {
     "Introducing Brokers": "/partners/introducing-brokers",
     // About Us dropdown
     "Why Us": "/why-us",
-    "FAQ's": "/faqs",
+    "FAQ's": "/faq",
     "Contact Us": "/contact",
     // Register Now dropdown
     "Open Live Account": "/signup",
