@@ -21,7 +21,7 @@ export default function Navbar() {
     Promotions: "/promotions",
     "Terms & Conditions": "/terms-conditions",
     // Market dropdown
-    Indices: "/markets/indices",
+    Indices: "indices",
     Crypto: "/crypto",
     Stocks: "/markets/stocks",
     Forex: "/markets/forex",

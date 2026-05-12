@@ -23,6 +23,7 @@ import AccountType from "./pages/Trading/AccountType";
 import TermsConditions from "./pages/Trading/Terms&Conditions";
 import WhyUs from "./pages/AboutUS/WhyUs";
 import Market from "./pages/Market/Cryptography";
+import Indices from "./pages/Market/Indices";
 
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
 
@@ -176,6 +177,9 @@ function App() {
           }
         />
         
+        <Route
+          path="/indices"
+          element={       <MainLayout>        <Indices />     </MainLayout> }       />  
 
         
 
