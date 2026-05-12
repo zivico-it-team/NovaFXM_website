@@ -225,6 +225,7 @@ const WhyUs = () => {
         Welcome To NOVAFXM
       </p>
 
+
       <h1 className="text-4xl md:text-6xl font-bold leading-tight">
         Why Choose <br />
         <span className="text-green-400 text-2xl">NOVAFXM</span>
