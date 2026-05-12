@@ -27,7 +27,7 @@ import Indices from "./pages/Market/Indices";
 import Stock from "./pages/Market/Stock";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
-
+import Forex from "./pages/Market/Forex";
 
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
@@ -195,6 +195,18 @@ function App() {
           element={
             <MainLayout>
               <Promotions />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+          
+
+           <Route
+          path="/forex"
+          element={
+            <MainLayout>
+              <Forex />
               <Footer />
               <ChatBox />
             </MainLayout>
