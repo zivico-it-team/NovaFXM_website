@@ -24,6 +24,7 @@ import TermsConditions from "./pages/Trading/Terms&Conditions";
 import WhyUs from "./pages/AboutUS/WhyUs";
 import Market from "./pages/Market/Cryptography";
 import Indices from "./pages/Market/Indices";
+import Stock from "./pages/Market/Stock";
 
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
 
@@ -179,7 +180,9 @@ function App() {
         
         <Route
           path="/indices"
-          element={       <MainLayout>        <Indices />     </MainLayout> }       />  
+          element={       <MainLayout>        <Indices />     </MainLayout> }       /> 
+
+        <Route          path="/stocks"       element={       <MainLayout>        <Stock />     </MainLayout> }       /> 
 
         
 

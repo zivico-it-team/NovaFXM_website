@@ -23,7 +23,7 @@ export default function Navbar() {
     // Market dropdown
     Indices: "indices",
     Crypto: "/crypto",
-    Stocks: "/markets/stocks",
+    Stocks: "/stocks",
     Forex: "/markets/forex",
     Commodities: "/markets/commodities",
     // Trading Tool dropdown
