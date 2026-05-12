@@ -1,0 +1,62 @@
+/* Smooth transitions for interactive elements */
+.interactive-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-card:active {
+  transform: scale(0.98);
+}
+
+/* Animated border styling */
+.group {
+  position: relative;
+}
+
+.group .animate-gradient-border {
+  background-size: 200% 200%;
+}
+
+/* Border glow effect on card hover */
+.group:hover .interactive-card {
+  border-color: rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), inset 0 0 10px rgba(34, 197, 94, 0.1);
+}
+
+/* Improved mobile card layout */
+@media (max-width: 640px) {
+  .interactive-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interactive-card > div:last-child {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+}
+
+/* Scroll behavior for tab container */
+.tab-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Enhanced hover effects for better UX */
+@media (hover: hover) {
+  .interactive-card:hover {
+    cursor: pointer;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+/* Accessibility - prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

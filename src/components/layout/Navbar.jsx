@@ -7,6 +7,7 @@ export default function Header({
   onSignUpClick,
   onLoginClick,
   onAccountTypeClick,
+  onDepositsWithdrawalsClick,
   onTermsConditionsClick,
   onWhyUsClick,
   onCryptoClick,
@@ -44,6 +45,7 @@ export default function Header({
     const actions = {
       Platform: onHomeClick,
       'Account Type': onAccountTypeClick,
+      'Deposits & Withdrawals': onDepositsWithdrawalsClick,
       'Terms & Conditions': onTermsConditionsClick,
       Crypto: onCryptoClick,
       'Why Us': onWhyUsClick,
@@ -210,32 +212,57 @@ export default function Header({
               {menuItems.map((item) => (
                 <div key={item} className="border-b border-gray-100">
                   {/* Main Menu Item with Arrow */}
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
-                    onClick={() => {
-                      if (item === 'Home') {
-                        onHomeClick?.()
-                        closeMobileMenu()
-                        return
-                      }
+                  {item === 'Home' ? (
+                    <div className="flex items-center transition-colors hover:bg-green-50 active:bg-green-100">
+                      <button
+                        type="button"
+                        className="flex-1 px-6 py-4 text-left font-medium text-gray-700 transition-colors hover:text-green-600 active:text-green-700"
+                        onClick={() => {
+                          onHomeClick?.()
+                          closeMobileMenu()
+                        }}
+                      >
+                        {item}
+                      </button>
 
-                      toggleMobileDropdown(item)
-                    }}
-                  >
-                    <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
-                      {item}
-                    </span>
-                    {/* Arrow Icon */}
-                    <svg 
-                      className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${openMobileDropdown === item ? 'rotate-180' : ''}`}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+                      <button
+                        type="button"
+                        className="px-6 py-4"
+                        onClick={() => toggleMobileDropdown(item)}
+                        aria-label="Toggle Home menu"
+                      >
+                        <svg
+                          className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${openMobileDropdown === item ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
+                      onClick={() => {
+                        toggleMobileDropdown(item)
+                      }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                      <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
+                        {item}
+                      </span>
+                      {/* Arrow Icon */}
+                      <svg
+                        className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${openMobileDropdown === item ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  )}
                   
                   {/* Mobile Dropdown Items - Collapsible */}
                   {openMobileDropdown === item && (
