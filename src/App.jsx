@@ -191,7 +191,7 @@ function App() {
 
 
         <Route
-          path="/privacy-policy"
+          path="/privacy"
           element={    <MainLayout>        <Privacy />     </MainLayout> }       />
 
         
