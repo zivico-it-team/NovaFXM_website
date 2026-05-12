@@ -17,7 +17,7 @@ export default function Navbar() {
     // Home dropdown
     Platform: "/",
     "Account Type": "/account-type",
-    "Deposits & Withdrawals": "/deposits-withdrawals",
+    "Deposits & Withdrawals": "/deposit",
     Promotions: "/promotions",
     "Terms & Conditions": "/terms-conditions",
     // Market dropdown

@@ -25,7 +25,7 @@ import WhyUs from "./pages/AboutUS/WhyUs";
 import Market from "./pages/Market/Cryptography";
 import Indices from "./pages/Market/Indices";
 import Stock from "./pages/Market/Stock";
-
+import Deposit from "./pages/Trading/Deposits&Withdrawals";
 
 
 
@@ -178,7 +178,16 @@ function App() {
           }
         />
 
-        
+         <Route
+          path="/deposit"
+          element={
+            <MainLayout>
+              <Deposit />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
 
         {/* ── Catch-all ── */}
         <Route path="*" element={<Navigate to="/" replace />} />
