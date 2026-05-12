@@ -1,6 +1,6 @@
 import React from "react";
-import heroBg from "../../assets/images/image 90.jpeg";
-import heroBg2 from "../../assets/images/image 90.jpeg";
+import heroBg from "../../assets/images/tech-analysis-1024x577 1.png";
+import heroBg2 from "../../assets/images/image 106.png";
 import TradingViewWidget from "../../pages/Market/TradingViewWidget";
 
 import {
