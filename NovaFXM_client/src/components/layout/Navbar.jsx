@@ -24,7 +24,7 @@ export default function Navbar() {
     Indices: "indices",
     Crypto: "/crypto",
     Stocks: "/stocks",
-    Forex: "/markets/forex",
+    Forex: "/forex",
     Commodities: "/markets/commodities",
     // Trading Tool dropdown
     "Economic Calender": "/tools/economic-calendar",
