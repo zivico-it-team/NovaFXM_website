@@ -21,6 +21,7 @@ import WhyUs from "./pages/AboutUS/WhyUs.jsx";
 import PrivancyPolicy from "./pages/PrivancyPolicy.jsx";
 import AccountType from "./pages/Trading/AccountType.jsx";
 import Stock from "./pages/Market/Stock";
+import Forex from "./pages/Market/Forex.jsx";
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
@@ -66,6 +67,7 @@ function App() {
   const isAccountTypePage = normalizedPath === "/account-type";
   const isPrivacyPage = normalizedPath === "/privacy";
   const isStockPage = path === "/stock";
+  const isForexPage = normalizedPath === "/forex";
 
   // ================= NAVBAR CONTROL =================
   const showMainNavbar =
@@ -85,6 +87,7 @@ function App() {
           onWhyUsClick={() => navigate("/why-us")}
           onCryptoClick={() => navigate("/crypto1")}
           onStockClick={() => navigate("/stock")}
+          onForexClick={() => navigate("/forex")}
         />
       )}
 
@@ -125,6 +128,15 @@ function App() {
       {isStockPage && (
         <>
           <Stock />
+          <Footer navigate={navigate} />
+          <ChatBox />
+        </>
+      )}
+
+      {/* ================= FOREX ================= */}
+      {isForexPage && (
+        <>
+          <Forex />
           <Footer navigate={navigate} />
           <ChatBox />
         </>

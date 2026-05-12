@@ -522,8 +522,38 @@ button {
   isolation: isolate;
 }
 
+.stock-hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto -20% -45%;
+  z-index: 1;
+  width: 34%;
+  pointer-events: none;
+  transform: rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.12) 24%,
+    rgb(255 255 255 / 0.75) 50%,
+    rgb(212 175 55 / 0.24) 64%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  mix-blend-mode: screen;
+  animation: stock-icon-shine 4.8s ease-in-out infinite;
+}
+
+.stock-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 48%, rgb(255 255 255 / 0.28), transparent 34%);
+}
+
 .stock-hero-image {
-  animation: stock-hero-zoom 18s ease-in-out infinite alternate;
+  animation: stock-hero-zoom 16s ease-in-out infinite alternate;
   transform-origin: center;
   will-change: transform;
 }
@@ -546,8 +576,13 @@ button {
   animation: stock-hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.stock-hero-title {
+  text-shadow: 0 5px 18px rgb(255 255 255 / 0.76), 0 18px 36px rgb(1 68 33 / 0.2);
+}
+
 .stock-hero-subtitle {
   animation-delay: 0.16s;
+  text-shadow: 0 4px 16px rgb(255 255 255 / 0.78);
 }
 
 .stock-hero-badge {
@@ -621,15 +656,37 @@ button {
   }
 }
 
+@keyframes stock-icon-shine {
+  0%,
+  28% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  38% {
+    opacity: 0.85;
+  }
+
+  62% {
+    opacity: 0.7;
+  }
+
+  78%,
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
 @keyframes stock-hero-rise {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(28px) scale(0.985);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
