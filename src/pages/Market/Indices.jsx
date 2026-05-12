@@ -1,7 +1,7 @@
 import React from "react";
 import heroBg from "../../assets/images/tech-analysis-1024x577 1.png";
 import heroBg2 from "../../assets/images/image 106.png";
-import TradingViewWidget from "./TradingViewWidget";
+import TradingViewWidget from "../../pages/Market/TradingViewWidget";
 
 import {
   Star,
@@ -201,11 +201,14 @@ const IndicesPage = () => {
       <section className="bg-[#f8faf9] px-6 py-20">
 
         {/* TRADINGVIEW WIDGET CARD */}
-        <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
-          <div className="h-[500px] w-full">
-            <TradingViewWidget />
-          </div>
-        </div>
+       <section className="bg-[#f8faf9] px-6 py-20">
+  <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+    <div className="h-[500px] w-full">
+      <TradingViewWidget />
+     
+    </div>
+  </div>
+</section>
 
         {/* TITLE */}
         <div className="text-center mt-24">
