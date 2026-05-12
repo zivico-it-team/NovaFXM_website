@@ -15,6 +15,7 @@ import WhyUs from "./pages/AboutUS/WhyUs.jsx"
 
 import AccountType from "./pages/Trading/AccountType.jsx";
 import DepositsWithdrawals from "./pages/Trading/Deposits&Withdrawals.jsx";
+import Promotions from "./pages/Trading/Promotions.jsx";
 import TermsConditions from "./pages/Trading/Terms&Conditions.jsx";
 
 
@@ -54,6 +55,7 @@ function App() {
   const isSignUpPage = path === "/signup";
   const isAccountTypePage = normalizedPath === "/account type";
   const isDepositsWithdrawalsPage = normalizedPath === "/deposits-withdrawals";
+  const isPromotionsPage = normalizedPath === "/promotions";
   const isTermsConditionsPage = normalizedPath === "/terms-conditions";
   const isWhyUsPage = normalizedPath === "/why-us";
   const isHomePage = path === "/";
@@ -70,6 +72,7 @@ function App() {
           onLoginClick={() => navigate("/login")}
           onAccountTypeClick={() => navigate("/Account type")}
           onDepositsWithdrawalsClick={() => navigate("/deposits-withdrawals")}
+          onPromotionsClick={() => navigate("/promotions")}
           onTermsConditionsClick={() => navigate("/terms-conditions")}
           onWhyUsClick={() => navigate("/why-us")}
           onCryptoClick={() => navigate("/crypto1")}
@@ -111,6 +114,14 @@ function App() {
       {isDepositsWithdrawalsPage && (
         <>
           <DepositsWithdrawals />
+          <Footer />
+          <ChatBox />
+        </>
+      )}
+
+      {isPromotionsPage && (
+        <>
+          <Promotions />
           <Footer />
           <ChatBox />
         </>

@@ -209,6 +209,37 @@ button {
   animation: popular-badge-pulse 2.4s ease-in-out infinite;
 }
 
+.bonus-card {
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.bonus-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 26px 54px rgb(1 68 33 / 0.18);
+}
+
+.bonus-card-sheen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bonus-card:hover .bonus-card-sheen {
+  animation: bonus-card-sheen 0.9s ease;
+}
+
+.bonus-diamond {
+  animation: bonus-diamond-float 3.2s ease-in-out infinite;
+  transition: box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.bonus-card:hover .bonus-diamond {
+  filter: brightness(1.08);
+  box-shadow: 0 22px 38px rgb(1 68 33 / 0.42);
+}
+
 .process-gold-tab {
   transform-origin: center;
   animation: process-gold-tab-pulse 2.2s ease-in-out infinite;
@@ -231,6 +262,33 @@ button {
 
   to {
     transform: translateX(85%);
+  }
+}
+
+@keyframes bonus-card-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(0) rotate(12deg);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(460%) rotate(12deg);
+  }
+}
+
+@keyframes bonus-diamond-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(45deg);
   }
 }
 
@@ -540,7 +598,8 @@ button {
 
   .hero-circle-left,
   .hero-circle-right,
-  .account-hero-image {
+  .account-hero-image,
+  .bonus-diamond {
     animation: none;
     opacity: 1;
   }
