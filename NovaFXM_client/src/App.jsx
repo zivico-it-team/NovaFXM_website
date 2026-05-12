@@ -26,7 +26,7 @@ import Market from "./pages/Market/Cryptography";
 import Indices from "./pages/Market/Indices";
 import Stock from "./pages/Market/Stock";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
-
+import Promotions from "./pages/Trading/Promotions";
 
 
 //footer pages
@@ -188,6 +188,20 @@ function App() {
             </MainLayout>
           }
         />
+
+        
+         <Route
+          path="/promotions"
+          element={
+            <MainLayout>
+              <Promotions />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
+          
 
         {/* ── Catch-all ── */}
         <Route path="*" element={<Navigate to="/" replace />} />
