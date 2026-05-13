@@ -28,6 +28,7 @@ import Stock from "./pages/Market/Stock";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
+import ContactPage from "./pages/AboutUS/ContacUs";
 
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
@@ -216,6 +217,17 @@ function App() {
           
 
         {/* ── Catch-all ── */}
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <ContactPage />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
