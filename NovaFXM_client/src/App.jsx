@@ -30,11 +30,16 @@ import Commodities from "./pages/Market/Commodities";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
+
 import FAQ from "./pages/AboutUS/Faqs";
 import Partners from "./pages/Partners/Brokers.jsx";
 
 import EconomicCalendar from "./pages/Trading Tools/EconomicCalender";
 
+
+
+import ContactPage from "./pages/AboutUS/ContacUs";
+import AutomatedTrading from "./pages/Trading Tools/AutomatedTrading";
 
 
 //footer pages
@@ -211,6 +216,16 @@ function App() {
           }
         />
 
+        <Route
+          path="/tools/automated-trading"
+          element={
+            <MainLayout>
+              <AutomatedTrading />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
         
          <Route
           path="/promotions"
@@ -288,6 +303,17 @@ function App() {
           
 
         {/* ── Catch-all ── */}
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <ContactPage />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
