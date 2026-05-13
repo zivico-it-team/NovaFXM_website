@@ -1,0 +1,349 @@
+import React from "react";
+import heroBg5 from "../../assets/images/bg7.jpg";
+import heroBg6 from "../../assets/images/Rectangle 90.png";
+import {
+  BarChart3,
+  UserRound,
+  Zap,
+  CheckCircle,
+} from "lucide-react";
+
+
+export default function TradingPage() {
+  const cards = [
+    {
+      title: "Real-Time Market Insights & Analytics",
+      icon: <BarChart3 size={22} />,
+      color: "green",
+      description:
+        "At Novafxm we equip you with cutting-edge tools and data to make smart trading decisions with ease.",
+      points: [
+        "Real-time data updates",
+        "Advanced charting solutions",
+        "Comprehensive technical analysis tools",
+      ],
+    },
+
+    {
+      title: "Seamless and User-Friendly Interface",
+      icon: <UserRound size={22} />,
+      color: "yellow",
+      description:
+        "Designed to enhance your trading journey, Novafxm provides an intuitive experience for both beginners and pros.",
+      points: [
+        "Customizable dashboard options",
+        "Quick access to preferred tools",
+        "Personalized alerts and notifications",
+      ],
+    },
+
+    {
+      title: "Swift and Reliable Execution",
+      icon: <Zap size={22} />,
+      color: "orange",
+      description:
+        "Experience unmatched speed and dependability in every trade with Novafxm.",
+      points: [
+        "Ultra-fast execution speeds",
+        "Minimal delays or slippage",
+        "Stability even during high-volume trading hours",
+      ],
+    },
+  ];
+
+  return (
+    <div className="w-full bg-white overflow-hidden">
+
+      {/* ================= HERO SECTION ================= */}
+
+      <section
+        className="relative h-[550px] md:h-[650px] bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage:
+            `url(${heroBg5})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70"></div>
+      
+
+        {/* Overlay */}
+
+        <div className="absolute inset-0 bg-black/70"></div>
+
+        {/* Content */}
+
+        <div className="relative z-10 text-center px-6 max-w-5xl">
+
+          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
+            The Perfect Map to Navigate
+            <br />
+
+            <span className="text-[#014421]">
+              Your Trading Success!
+            </span>
+          </h1>
+
+          <p className="text-gray-200 mt-6 text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
+            Trade smarter with a fast, secure, and user-friendly platform.
+            Everything you need to navigate the markets with confidence.
+          </p>
+
+          {/* Buttons */}
+
+          
+        </div>
+      </section>
+
+      {/* ================= SECOND SECTION ================= */}
+
+      <section className="py-20 px-6 md:px-16 bg-[#f8f8f8]">
+
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+          {/* LEFT CONTENT */}
+
+          <div>
+
+            <p className="text-sm uppercase tracking-widest text-gray-500 mb-3">
+              The Perfect Map
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+              Navigate Your
+              <br />
+
+              <span className="text-[#D4AF37]">
+                Trading Success!
+              </span>
+            </h2>
+
+            <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
+
+            <p className="text-gray-600 leading-relaxed text-lg">
+              <span className="font-bold text-black">Novafxm</span> is your
+              gateway to mastering the financial markets. Whether you're an
+              experienced trader or just starting your journey, our
+              cutting-edge platform offers a smooth and intuitive trading
+              experience designed to adapt to your unique needs.
+            </p>
+
+            {/* Features */}
+
+            <div className="mt-10 space-y-5">
+
+              {[
+                "Real-Time Market Insights & Analytics",
+                "Seamless and User-Friendly Interface",
+                "Swift and Reliable Execution",
+              ].map((item, index) => (
+
+                <div
+                  key={index}
+                  className="flex items-center gap-4 bg-white shadow-md rounded-full px-5 py-4 hover:shadow-xl transition duration-300"
+                >
+
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <span className="text-[#014421] text-lg">✓</span>
+                  </div>
+
+                  <p className="text-gray-700 font-medium">
+                    {item}
+                  </p>
+
+                </div>
+              ))}
+
+            </div>
+          </div>
+
+          {/* RIGHT IMAGE */}
+
+          <div className="relative flex justify-center">
+
+           
+
+            {/* Tablet Image */}
+
+            <img
+              src={heroBg6}
+              alt="Trading"
+              className="relative z-10 w-[380px]  "
+            />
+
+           
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= THIRD SECTION ================= */}
+
+      <section className="w-full bg-[#efefe7] py-20 px-6">
+
+        <div className="max-w-6xl mx-auto">
+
+          {/* Heading */}
+
+          <div className="text-center mb-16">
+
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
+              Why Novafxm is Your Perfect Trading Partner?
+            </h2>
+
+            {/* Decorative Line */}
+
+            <div className="flex items-center justify-center gap-3 mt-5">
+
+              <div className="w-16 h-[2px] bg-[#014421]"></div>
+
+              <div className="w-2 h-2 rounded-full bg-[#D4AF37]"></div>
+
+              <div className="w-16 h-[2px] bg-[#D4AF37]"></div>
+
+            </div>
+          </div>
+
+          {/* Top Cards */}
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {cards.slice(0, 2).map((card, index) => (
+
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300"
+              >
+
+                {/* Header */}
+
+                <div className="flex items-center gap-4 mb-6">
+
+                  <div
+                    className={`w-12 h-12 rounded-full flex items-center justify-center border ${
+                      card.color === "green"
+                        ? "border-[#014421] text-[#014421] bg-[#014421]/10"
+                        : "border-[#D4AF37] text-[#D4AF37] bg-[#D4AF37]/10"
+                    }`}
+                  >
+                    {card.icon}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#1f1f1f] leading-snug">
+                    {card.title}
+                  </h3>
+
+                </div>
+
+                {/* Description */}
+
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {card.description}
+                </p>
+
+                {/* Bullet Points */}
+
+                <div className="space-y-3">
+
+                  {card.points.map((point, i) => (
+
+                    <div
+                      key={i}
+                      className="flex items-start gap-3"
+                    >
+
+                      <CheckCircle
+                        size={18}
+                        className={`mt-1 ${
+                          card.color === "green"
+                            ? "text-[#014421]"
+                            : "text-[#D4AF37]"
+                        }`}
+                      />
+
+                      <p className="text-gray-700">
+                        {point}
+                      </p>
+
+                    </div>
+                  ))}
+
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+          {/* Bottom Center Card */}
+
+          <div className="flex justify-center mt-10">
+
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 max-w-2xl w-full">
+
+              {/* Header */}
+
+              <div className="flex items-center gap-4 mb-6">
+
+                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-orange-500 text-orange-500 bg-orange-50">
+                  {cards[2].icon}
+                </div>
+
+                <h3 className="text-lg font-bold text-[#1f1f1f]">
+                  {cards[2].title}
+                </h3>
+
+              </div>
+
+              {/* Description */}
+
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {cards[2].description}
+              </p>
+
+              {/* Bullet Points */}
+
+              <div className="space-y-3">
+
+                {cards[2].points.map((point, i) => (
+
+                  <div
+                    key={i}
+                    className="flex items-start gap-3"
+                  >
+
+                    <CheckCircle
+                      size={18}
+                      className="text-[#014421] mt-1"
+                    />
+
+                    <p className="text-gray-700">
+                      {point}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Text */}
+
+          <div className="text-center mt-14">
+
+            <p className="text-xl md:text-2xl font-medium text-[#1f1f1f] leading-relaxed">
+
+              Novafxm is where innovation meets precision helping you thrive in
+              the{" "}
+
+              <span className="text-[#D4AF37] font-semibold">
+                fast-paced world of trading!
+              </span>
+
+            </p>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
