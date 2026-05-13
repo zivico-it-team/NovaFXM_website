@@ -30,9 +30,10 @@ export default function Navbar() {
     "Economic Calender": "/tools/economic-calendar",
     "Automated Trading": "/tools/automated-trading",
     // Partners dropdown
-    "Introducing Brokers": "/partners/introducing-brokers",
+    "Introducing Brokers": "/partners",
     // About Us dropdown
     "Why Us": "/why-us",
+    
     "FAQ's": "/faq",
     "Contact Us": "/contact",
     // Register Now dropdown

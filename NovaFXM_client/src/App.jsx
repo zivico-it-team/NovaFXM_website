@@ -30,10 +30,14 @@ import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
 import FAQ from "./pages/AboutUS/Faqs";
+import Partners from "./pages/Partners/Brokers.jsx";
+
+
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
 import Platform from "./components/Home/Platform.jsx";  
+
 /** Pages that share the top Header */
 
 
@@ -231,6 +235,17 @@ function App() {
           element={
             <MainLayout>
               <Platform />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+           />
+
+            <Route
+          path="/partners"
+          element={
+            <MainLayout>
+              <Partners />
               <Footer />
               <ChatBox />
             </MainLayout>
