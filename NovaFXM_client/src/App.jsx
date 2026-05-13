@@ -29,6 +29,9 @@ import Commodities from "./pages/Market/Commodities";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 
+import EconomicCalendar from "./pages/Trading Tools/EconomicCalender";
+
+
 
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
@@ -212,6 +215,18 @@ function App() {
             </MainLayout>
           }
         />
+        <Route
+          path="/economic-calendar"
+          element={
+            <MainLayout>
+              <EconomicCalendar />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
+       
 
           
 

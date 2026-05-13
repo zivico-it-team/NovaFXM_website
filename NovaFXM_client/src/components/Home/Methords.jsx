@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const tabs = ["Metals", "Forex", "Crypto", "Shares", "Commodities"];
+const tabs = ["Metals", "Forex", "Crypto", "Indices", "Energies"];
 
 const MARKET_DATA = {
   Metals: [
@@ -18,15 +18,15 @@ const MARKET_DATA = {
     { symbol: "ETHUSD", name: "Ethereum", tag: "ETH", tradingViewSymbol: "BINANCE:ETHUSDT" },
     { symbol: "XRPUSD", name: "Ripple", tag: "XRP", tradingViewSymbol: "BINANCE:XRPUSDT" },
   ],
-  Shares: [
-    { symbol: "AAPL", name: "Apple Inc", tag: "ST", tradingViewSymbol: "NASDAQ:AAPL" },
-    { symbol: "TSLA", name: "Tesla", tag: "ST", tradingViewSymbol: "NASDAQ:TSLA" },
-    { symbol: "AMZN", name: "Amazon", tag: "ST", tradingViewSymbol: "NASDAQ:AMZN" },
+  Indices: [
+    { symbol: "US100", name: "Nasdaq 100", tag: "IDX", tradingViewSymbol: "NASDAQ:NDX" },
+    { symbol: "US500", name: "S&P 500", tag: "IDX", tradingViewSymbol: "SP:SPX" },
+    { symbol: "US30", name: "Dow Jones", tag: "IDX", tradingViewSymbol: "DJ:DJI" },
   ],
-  Commodities: [
-    { symbol: "USOIL", name: "Crude Oil", tag: "CM", tradingViewSymbol: "NYMEX:CL1!" },
-    { symbol: "NGAS", name: "Natural Gas", tag: "CM", tradingViewSymbol: "NYMEX:NG1!" },
-    { symbol: "CORN", name: "Corn", tag: "CM", tradingViewSymbol: "CBOT:ZC1!" },
+  Energies: [
+    { symbol: "USOIL", name: "Crude Oil", tag: "EN", tradingViewSymbol: "TVC:USOIL" },
+    { symbol: "UKOIL", name: "Brent Crude Oil", tag: "EN", tradingViewSymbol: "TVC:UKOIL" },
+    { symbol: "NGAS", name: "Natural Gas", tag: "EN", tradingViewSymbol: "NYMEX:NG1!" },
   ],
 };
 
@@ -77,7 +77,13 @@ const Methords = () => {
   useEffect(() => {
     const autoPlayInterval = setInterval(() => {
       setActiveTab((currentTab) => {
-        const nextIndex = (tabs.indexOf(currentTab) + 1) % tabs.length;
+        const currentIndex = tabs.indexOf(currentTab);
+        const nextIndex = (currentIndex + 1) % tabs.length;
+
+        if (currentIndex === -1) {
+          return tabs[0];
+        }
+
         return tabs[nextIndex];
       });
     }, 10000);
@@ -129,7 +135,10 @@ const Methords = () => {
               <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
 
               <div className="w-full min-w-0">
-                <TradingViewQuote symbol={item.tradingViewSymbol} />
+                <TradingViewQuote
+                  key={`${activeTab}-${item.tradingViewSymbol}`}
+                  symbol={item.tradingViewSymbol}
+                />
 
                 <a
                   href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(
