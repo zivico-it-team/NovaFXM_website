@@ -15,7 +15,7 @@ export default function Navbar() {
   // Add new pages here. Options not listed here do nothing when clicked.
   const optionRoutes = {
     // Home dropdown
-    Platform: "/",
+    Platform: "/platform",
     "Account Type": "/account-type",
     "Deposits & Withdrawals": "/deposit",
     Promotions: "/promotions",

@@ -15,6 +15,7 @@ import Packeges from "./components/Home/Packeges";
 import Review from "./components/Home/Review";
 import Quiz from "./components/Home/Quiz";
 
+
 // Pages
 import Profile from "./auth/profile";
 import LoginPage from "./auth/LoginPage";
@@ -32,8 +33,10 @@ import FAQ from "./pages/AboutUS/Faqs";
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
-
+import Platform from "./components/Home/Platform.jsx";  
 /** Pages that share the top Header */
+
+
 function MainLayout({ children }) {
   return (
     <>
@@ -223,6 +226,19 @@ function App() {
             </MainLayout>
           }
            />
+ <Route
+          path="/platform"
+          element={
+            <MainLayout>
+              <Platform />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+           />
+
+           
+
 
           
 
