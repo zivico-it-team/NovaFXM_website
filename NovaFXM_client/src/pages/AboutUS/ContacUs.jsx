@@ -294,6 +294,165 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+    
+  
+
+      {/* FORM SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-16 md:pb-20">
+        <div className="relative overflow-hidden bg-white rounded-xl border border-gray-100 p-6 sm:p-8 md:p-12 shadow-[0_10px_35px_rgba(15,23,42,0.10)]">
+          <div className="pointer-events-none absolute right-5 top-5 h-28 w-28 bg-[radial-gradient(#d9eadc_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-80"></div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.65fr] gap-8 lg:gap-12">
+            <div className="border-b border-gray-200 pb-8 lg:border-b-0 lg:border-r lg:pr-10 lg:pb-0">
+              <div className="mb-5 flex items-center gap-2">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100 text-[#014421]">
+                  <Headphones size={19} />
+                </span>
+                <span className="rounded-full bg-green-50 px-3 py-1 text-[11px] font-bold uppercase text-[#014421]">
+                  Get in touch
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-gray-950">
+                Send Your <span className="text-[#014421]">Message</span> to Us
+              </h2>
+
+              <div className="mt-6 h-1 w-14 rounded-full bg-green-700"></div>
+
+              <p className="mt-6 max-w-sm text-sm leading-7 text-gray-600">
+                We're here to help and answer any questions you may have. Fill
+                out the form and our team will get back to you as soon as
+                possible.
+              </p>
+
+              <div className="mt-9 flex justify-center lg:justify-start">
+                <img
+                  src="/ContacUs 2.PNG"
+                  alt=""
+                  className="w-56 sm:w-64"
+                />
+              </div>
+            </div>
+
+            <form className="grid grid-cols-1 md:grid-cols-[0.95fr_1.35fr] gap-5 md:gap-6">
+              <div className="space-y-5">
+                <label className="flex h-14 items-center gap-3 rounded-md border border-gray-200 bg-white px-4 text-gray-500 shadow-sm transition focus-within:border-green-600">
+                  <User className="text-[#014421]" size={19} />
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full bg-transparent text-sm outline-none placeholder:text-gray-500"
+                  />
+                </label>
+
+                <label className="flex h-14 items-center gap-3 rounded-md border border-gray-200 bg-white px-4 text-gray-500 shadow-sm transition focus-within:border-green-600">
+                  <Mail className="text-[#014421]" size={19} />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full bg-transparent text-sm outline-none placeholder:text-gray-500"
+                  />
+                </label>
+
+                <label className="flex h-14 items-center gap-3 rounded-md border border-gray-200 bg-white px-4 text-gray-500 shadow-sm transition focus-within:border-green-600">
+                  <Phone className="text-[#014421]" size={19} />
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    className="w-full bg-transparent text-sm outline-none placeholder:text-gray-500"
+                  />
+                </label>
+
+                <label className="flex h-14 items-center gap-3 rounded-md border border-gray-200 bg-white px-4 text-gray-500 shadow-sm transition focus-within:border-green-600">
+                  <MessageSquare className="text-[#014421]" size={19} />
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    className="w-full bg-transparent text-sm outline-none placeholder:text-gray-500"
+                  />
+                  <ChevronDown className="shrink-0 text-gray-500" size={18} />
+                </label>
+              </div>
+
+              <div className="flex min-h-[300px] flex-col">
+                <label className="relative flex-1 rounded-md border border-gray-200 bg-white shadow-sm transition focus-within:border-green-600">
+                  <textarea
+                    maxLength="1000"
+                    placeholder="Message..."
+                    className="h-full min-h-[260px] w-full resize-none rounded-md bg-transparent p-5 text-sm outline-none placeholder:text-gray-500"
+                  ></textarea>
+                  <span className="absolute bottom-4 right-5 text-xs text-gray-500">
+                    0 / 1000
+                  </span>
+                </label>
+              </div>
+
+              <div className="md:col-span-2 flex flex-col items-center">
+                <label className="flex items-center gap-3 text-xs text-gray-600">
+                  <span className="flex h-5 w-5 items-center justify-center rounded bg-green-700 text-white">
+                    <Check size={15} />
+                  </span>
+                  <span>
+                    I agree to our{" "}
+                    <span className="font-semibold text-[#014421]">
+                      Privacy Policy & Terms of Service
+                    </span>
+                  </span>
+                </label>
+
+                <button className="mt-5 flex h-14 w-full max-w-md items-center justify-center gap-3 rounded-md bg-green-700 px-8 text-sm font-bold text-white shadow-lg shadow-green-900/15 transition hover:bg-green-800">
+                  <Send size={18} />
+                  Send Now
+                </button>
+
+                <p className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                  <span className="text-[#014421]">Safe</span>
+                  Your information is safe with us.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div className="relative mt-8 overflow-hidden rounded-xl border border-green-50 bg-[#f3faf4] px-6 py-7 shadow-[0_8px_24px_rgba(15,23,42,0.08)] sm:px-9">
+          <div className="pointer-events-none absolute left-4 top-4 h-24 w-24 bg-[radial-gradient(#cfe6d4_1.5px,transparent_1.5px)] [background-size:11px_11px] opacity-90"></div>
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-2/5 rounded-l-full bg-white/45"></div>
+
+          <div className="relative z-10 flex flex-col items-center gap-7 lg:flex-row lg:justify-between">
+            <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+              <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-lg">
+                <img
+                  src="/ContacUs 3.PNG"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              <div>
+                <span className="rounded-full bg-green-100 px-4 py-1.5 text-[11px] font-bold uppercase text-[#014421]">
+                  We're here to help
+                </span>
+
+                <h3 className="mt-4 text-2xl font-extrabold leading-snug text-gray-950 md:text-3xl">
+                  We're here to <span className="text-[#014421]">help</span>{" "}
+                  you succeed
+                </h3>
+
+                <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">
+                  Our team is ready to assist you with any questions or support
+                  you need.
+                </p>
+              </div>
+            </div>
+
+            <button className="flex h-14 w-full items-center justify-center gap-3 rounded-md bg-yellow-400 px-7 text-sm font-bold text-gray-950 transition hover:bg-yellow-300 sm:w-auto">
+              <Headphones size={18} />
+              Chat with Support
+              <span aria-hidden="true">-&gt;</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
