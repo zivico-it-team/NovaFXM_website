@@ -33,6 +33,9 @@ import Forex from "./pages/Market/Forex";
 import FAQ from "./pages/AboutUS/Faqs";
 import Partners from "./pages/Partners/Brokers.jsx";
 
+import EconomicCalendar from "./pages/Trading Tools/EconomicCalender";
+
+
 
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
@@ -219,6 +222,7 @@ function App() {
             </MainLayout>
           }
         />
+
           
 
            <Route
@@ -226,11 +230,25 @@ function App() {
           element={
             <MainLayout>
               <Forex />
+                <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
+
+        <Route
+          path="/economic-calendar"
+          element={
+            <MainLayout>
+              <EconomicCalendar />
+
               <Footer />
               <ChatBox />
             </MainLayout>
           }
         />
+
 
              <Route
           path="/faq"
@@ -242,7 +260,7 @@ function App() {
             </MainLayout>
           }
            />
- <Route
+      <Route
           path="/platform"
           element={
             <MainLayout>

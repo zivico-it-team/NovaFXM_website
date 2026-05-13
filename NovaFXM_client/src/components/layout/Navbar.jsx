@@ -27,8 +27,8 @@ export default function Navbar() {
     Forex: "/forex",
     Commodities: "/markets/commodities",
     // Trading Tool dropdown
-    "Economic Calender": "/tools/economic-calendar",
-    "Automated Trading": "/tools/automated-trading",
+    "Economic Calender": "/economic-calendar",
+    "Automated Trading": "/Trading Tools/automated-trading",
     // Partners dropdown
     "Introducing Brokers": "/partners",
     // About Us dropdown
