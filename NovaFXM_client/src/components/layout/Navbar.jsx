@@ -19,7 +19,7 @@ export default function Navbar() {
     "Account Type": "/account-type",
     "Deposits & Withdrawals": "/deposit",
     Promotions: "/promotions",
-    "Terms & Conditions": "/terms-conditions",
+    
     // Market dropdown
     Indices: "indices",
     Crypto: "/crypto",
@@ -48,7 +48,7 @@ export default function Navbar() {
       "Account Type",
       "Deposits & Withdrawals",
       "Promotions",
-      "Terms & Conditions",
+      
     ],
     Market: ["Indices", "Crypto", "Stocks", "Forex", "Commodities"],
     "Trading Tool": ["Economic Calender", "Automated Trading"],

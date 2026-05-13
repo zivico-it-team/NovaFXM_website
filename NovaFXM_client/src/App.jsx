@@ -25,6 +25,7 @@ import WhyUs from "./pages/AboutUS/WhyUs";
 import Market from "./pages/Market/Cryptography";
 import Indices from "./pages/Market/Indices";
 import Stock from "./pages/Market/Stock";
+import Commodities from "./pages/Market/Commodities";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 
@@ -161,6 +162,17 @@ function App() {
           element={
             <MainLayout>
               <Stock />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/markets/commodities"
+          element={
+            <MainLayout>
+              <Commodities />
               <Footer />
               <ChatBox />
             </MainLayout>
