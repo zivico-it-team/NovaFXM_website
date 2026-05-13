@@ -15,7 +15,7 @@ export default function Navbar() {
   // Add new pages here. Options not listed here do nothing when clicked.
   const optionRoutes = {
     // Home dropdown
-    Platform: "/",
+    Platform: "/platform",
     "Account Type": "/account-type",
     "Deposits & Withdrawals": "/deposit",
     Promotions: "/promotions",
@@ -30,9 +30,10 @@ export default function Navbar() {
     "Economic Calender": "/tools/economic-calendar",
     "Automated Trading": "/tools/automated-trading",
     // Partners dropdown
-    "Introducing Brokers": "/partners/introducing-brokers",
+    "Introducing Brokers": "/partners",
     // About Us dropdown
     "Why Us": "/why-us",
+    
     "FAQ's": "/faq",
     "Contact Us": "/contact",
     // Register Now dropdown
