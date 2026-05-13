@@ -29,6 +29,7 @@ import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
 import ContactPage from "./pages/AboutUS/ContacUs";
+import AutomatedTrading from "./pages/Trading Tools/AutomatedTrading";
 
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
@@ -190,6 +191,16 @@ function App() {
           }
         />
 
+        <Route
+          path="/tools/automated-trading"
+          element={
+            <MainLayout>
+              <AutomatedTrading />
+              <Footer />
+              <ChatBox />
+            </MainLayout>
+          }
+        />
         
          <Route
           path="/promotions"
