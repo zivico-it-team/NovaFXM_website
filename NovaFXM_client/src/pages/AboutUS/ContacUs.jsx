@@ -23,7 +23,7 @@ export default function ContactPage() {
       
       {/* HERO SECTION */}
 <section
-  className="relative min-h-[350px] md:min-h-[520px] lg:min-h-[calc(100vh-76px)] bg-cover bg-center bg-no-repeat lg:bg-[length:100%_100%] flex items-center overflow-hidden"
+  className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden bg-cover bg-center bg-no-repeat py-16 sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)] lg:bg-[length:100%_100%]"
   style={{
     backgroundImage: "url('/contact Us.jpeg')",
   }}

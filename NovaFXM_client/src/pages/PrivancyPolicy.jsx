@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
     <div className="w-full bg-[#f5f5f5] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[620px] overflow-hidden rounded-b-[80px]">
+      <section className="relative min-h-[calc(100vh-72px)] w-full overflow-hidden rounded-b-[80px] sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)]">
 
         {/* Background Image with ANIMATION */}
         <img
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center px-6 sm:px-12 lg:px-20">
+        <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center px-6 py-16 sm:min-h-[calc(100vh-80px)] sm:px-12 lg:min-h-[calc(100vh-84px)] lg:px-20">
           <div className="max-w-[600px]">
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight">

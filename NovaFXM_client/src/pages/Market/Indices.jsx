@@ -114,7 +114,7 @@ const IndicesPage = () => {
           HERO SECTION
       ========================================= */}
 
-      <section className="relative flex h-[450px] w-full items-center justify-center overflow-hidden text-center md:h-[550px]">
+      <section className="relative flex min-h-[calc(100vh-72px)] w-full items-center justify-center overflow-hidden px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
         <img
           src={heroBg}
           alt="Indices Hero"
@@ -122,12 +122,12 @@ const IndicesPage = () => {
         />
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="market-hero-content relative z-10 px-6">
-          <h1 className="market-hero-title text-5xl font-bold text-white md:text-7xl">
+        <div className="market-hero-content relative z-10 mx-auto max-w-5xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Indices
           </h1>
 
-          <p className="market-hero-copy mx-auto mt-6 max-w-3xl text-sm leading-8 text-gray-200 md:text-lg">
+          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 sm:mt-6 md:text-lg md:leading-8">
             Unlock a Wide Range of Indices from the World's Leading
             Economies with AS Markets
           </p>
@@ -138,54 +138,54 @@ const IndicesPage = () => {
           ABOUT SECTION
       ========================================= */}
 
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 
           {/* IMAGE */}
           <div>
             <img
               src={heroBg2}
               alt="Indices"
-              className="rounded-3xl shadow-xl w-full object-cover"
+              className="h-auto max-h-[420px] w-full rounded-2xl object-cover shadow-xl lg:max-h-[480px]"
             />
           </div>
 
           {/* TEXT */}
           <div>
             <h2 className="leading-tight">
-              <span className="block text-0.5xl md:text-1xl font-bold text-[#111827]">
+              <span className="block text-base font-bold text-[#111827] sm:text-lg">
                 Elevate Your Trading Experience with
               </span>
 
-              <span className="block text-1xl md:text-3xl font-semibold text-[#014421] mt-3">
+              <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
                 Key Global Indices at Zivico Solutions
               </span>
             </h2>
 
-            <p className="text-gray-600 mt-8 leading-8 text-lg">
+            <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:text-lg lg:leading-8">
               Stock market indices offer a powerful overview of market
               performance by tracking the collective value of selected
               stocks. These benchmarks provide deep insights into market
               trends, economic conditions, and sector growth.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-5 mt-10">
-              <div className="flex items-center gap-3 text-lg font-medium">
+            <div className="mt-7 grid gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="flex items-center gap-3 text-base font-medium sm:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 Market Exposure
               </div>
 
-              <div className="flex items-center gap-3 text-lg font-medium">
+              <div className="flex items-center gap-3 text-base font-medium sm:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 Simplicity
               </div>
 
-              <div className="flex items-center gap-3 text-lg font-medium">
+              <div className="flex items-center gap-3 text-base font-medium sm:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 High Liquidity
               </div>
 
-              <div className="flex items-center gap-3 text-lg font-medium">
+              <div className="flex items-center gap-3 text-base font-medium sm:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 Portfolio Diversification
               </div>
@@ -207,27 +207,27 @@ const IndicesPage = () => {
         </div>
 
         {/* TITLE */}
-        <div className="text-center mt-24">
+        <div className="mt-12 text-center sm:mt-16">
           <button className="px-5 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 text-sm font-medium">
             📈 Market Overview
           </button>
 
-          <h2 className="text-5xl font-bold mt-6">
+          <h2 className="mt-5 text-3xl font-bold sm:text-4xl lg:text-5xl">
             Popular <span className="text-[#014421]">Indices</span>
           </h2>
 
-          <p className="text-gray-500 mt-5 max-w-2xl mx-auto leading-7">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
             Track major market benchmarks and stay updated with key index
             performance.
           </p>
         </div>
 
         {/* INDEX CARDS */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
           {indices.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-lg transition"
+              className="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-lg lg:p-7"
             >
               <div className="w-20 h-20 bg-[#014421] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="text-white fill-white" size={34} />
@@ -251,36 +251,36 @@ const IndicesPage = () => {
           HOW INDICES ARE CALCULATED
       ========================================= */}
 
-      <section className="bg-white px-6 py-24">
+      <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
 
         {/* HEADER */}
         <div className="text-center">
-          <h2 className="text-5xl font-bold text-[#111827]">
+          <h2 className="text-3xl font-bold leading-tight text-[#111827] sm:text-4xl lg:text-5xl">
             How Are Indices{" "}
             <span className="text-[#014421]">Calculated?</span>
           </h2>
 
-          <p className="text-gray-500 mt-5">
+          <p className="mt-4 text-sm text-gray-500 sm:text-base">
             Indices are calculated in two primary ways
           </p>
         </div>
 
         {/* TOP CARDS */}
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 mt-16">
+        <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:mt-12 lg:grid-cols-2">
           {topCards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#f8faf9] rounded-3xl border border-gray-100 overflow-hidden shadow-sm"
+              className="overflow-hidden rounded-2xl border border-gray-100 bg-[#f8faf9] shadow-sm"
             >
               <div className="h-2 bg-[#014421]"></div>
 
-              <div className="p-8 flex items-start gap-5">
-                <div className="w-16 h-16 rounded-full bg-[#014421] text-white flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-4 p-6 sm:gap-5 lg:p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white sm:h-16 sm:w-16">
                   {card.icon}
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-[#014421]">
+                  <h3 className="text-xl font-semibold text-[#014421] sm:text-2xl">
                     {card.title}
                   </h3>
 
@@ -296,18 +296,18 @@ const IndicesPage = () => {
         </div>
 
         {/* MIDDLE SECTION */}
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-4 gap-8 mt-24 items-center">
+        <div className="mx-auto mt-12 grid max-w-7xl items-center gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-8">
 
           {/* LEFT TEXT */}
           <div className="lg:col-span-1">
-            <h2 className="text-4xl font-bold leading-tight text-[#111827]">
+            <h2 className="text-3xl font-bold leading-tight text-[#111827] lg:text-4xl">
               Benefits of{" "}
               <span className="text-[#014421]">Index Trading</span>
             </h2>
 
-            <div className="w-16 h-1 bg-[#014421] rounded-full mt-8 mb-6"></div>
+            <div className="mb-5 mt-6 h-1 w-16 rounded-full bg-[#014421]"></div>
 
-            <p className="text-gray-500">
+            <p className="text-sm leading-7 text-gray-500 sm:text-base">
               Index trading offers several advantages for investors.
             </p>
           </div>
@@ -316,7 +316,7 @@ const IndicesPage = () => {
           {middleCards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 text-center hover:shadow-lg transition"
+              className="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm transition hover:shadow-lg lg:p-8"
             >
               <div
                 className={`w-16 h-16 rounded-full mx-auto flex items-center justify-center text-white ${
@@ -366,15 +366,15 @@ const IndicesPage = () => {
           WHAT MOVES INDEX PRICE
       ========================================= */}
 
-      <section className="bg-[#f6f7f6] py-24 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-14 items-center">
+      <section className="bg-[#f6f7f6] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-3 lg:gap-12">
 
           {/* LEFT CARDS */}
-          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
+          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:gap-6">
             {factors.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 text-center hover:shadow-lg transition-all duration-300"
+                className="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg lg:p-8"
               >
                 <div className="w-16 h-16 rounded-full bg-[#014421] text-white flex items-center justify-center mx-auto">
                   {item.icon}
@@ -395,12 +395,12 @@ const IndicesPage = () => {
 
           {/* RIGHT TEXT */}
           <div className="lg:pl-10">
-            <h2 className="text-4xl font-bold leading-tight text-[#111827]">
+            <h2 className="text-3xl font-bold leading-tight text-[#111827] lg:text-4xl">
               What Moves an{" "}
               <span className="text-[#014421]">Index Price</span>
             </h2>
 
-            <div className="w-20 h-1 bg-[#014421] rounded-full mt-8 mb-6"></div>
+            <div className="mb-5 mt-6 h-1 w-20 rounded-full bg-[#014421]"></div>
 
             <p className="text-gray-500 text-sm leading-7">
               Several factors influence index prices including economic data,

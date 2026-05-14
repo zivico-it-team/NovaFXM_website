@@ -60,7 +60,7 @@ export default function IntroducingBrokers() {
     <div className="w-full bg-[#f7f8fc] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative flex h-[450px] items-center justify-center overflow-hidden bg-black md:h-[600px]">
+      <section className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
         <img
           src={heroBg}
           alt="Introducing Brokers Hero"
@@ -69,7 +69,7 @@ export default function IntroducingBrokers() {
         <div className="absolute inset-0 bg-black/45"></div>
 
         {/* Hero Content */}
-        <div className="market-hero-content relative z-10 max-w-5xl px-6 text-center">
+        <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center">
 
           <p className="market-hero-copy mb-5 text-sm font-semibold uppercase tracking-[6px] text-[#D4AF37] md:text-base">
             NOVAFXM Partnership Program

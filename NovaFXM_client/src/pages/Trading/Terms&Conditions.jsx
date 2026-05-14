@@ -184,7 +184,7 @@ const TermsConditions = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans">
       {/* Hero Section */}
-      <section className="relative bg-black overflow-hidden">
+      <section className="relative overflow-hidden bg-black">
   
   {/* Animated Background Image */}
   <img
@@ -208,7 +208,7 @@ const TermsConditions = () => {
   </div>
 
   {/* Content */}
-  <div className="relative z-10 mx-auto flex min-h-[460px] max-w-7xl items-center px-4 py-20 sm:min-h-[560px] sm:px-6 sm:py-24 lg:min-h-[700px] lg:px-12 lg:py-28">
+  <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-12">
     
     <div className="max-w-2xl text-white animate-fadeInUp">
       
