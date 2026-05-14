@@ -108,12 +108,12 @@ export default function FaqPage() {
       }}
     >
       {/* ── HERO BANNER ── */}
-      <div
+<div
   style={{
     position: "relative",
     width: "100%",
     minHeight: 600,
-    backgroundImage: `url(${heroBg4})`,
+    backgroundImage: `url('/Faq.png')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -124,144 +124,112 @@ export default function FaqPage() {
     padding: "60px 60px",
   }}
 >
-        {/* code lines background texture */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.18,
-            background: `repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(80,200,120,0.08) 28px, rgba(80,200,120,0.08) 29px)`,
-            pointerEvents: "none",
-          }}
-        />
 
-        {/* glowing orb */}
-        <div
-          style={{
-            position: "absolute",
-            right: 80,
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: 280,
-            height: 280,
-            background:
-              "radial-gradient(circle at 40% 40%, rgba(180,220,80,0.25) 0%, rgba(80,180,60,0.12) 45%, transparent 70%)",
-            borderRadius: "50%",
-            border: "1px solid rgba(120,200,80,0.15)",
-          }}
-        />
+  {/* Overlay */}
+  <div className="faq-overlay"></div>
 
-        {/* question mark decoration */}
-        <div
-          style={{
-            position: "absolute",
-            right: 100,
-            top: "50%",
-            transform: "translateY(-55%)",
-            fontSize: 120,
-            fontWeight: 900,
-            color: "rgba(100,180,60,0.25)",
-            lineHeight: 1,
-            userSelect: "none",
-            textShadow: "0 0 40px rgba(80,160,40,0.3)",
-          }}
-        >
-          ?
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            right: 200,
-            top: "35%",
-            fontSize: 60,
-            fontWeight: 900,
-            color: "rgba(100,180,60,0.15)",
-            lineHeight: 1,
-            userSelect: "none",
-          }}
-        >
-          ?
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            right: 60,
-            top: "30%",
-            fontSize: 50,
-            fontWeight: 900,
-            color: "rgba(100,180,60,0.15)",
-            lineHeight: 1,
-            userSelect: "none",
-          }}
-        >
-          ?
-        </div>
+  {/* texture */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      opacity: 0.18,
+      background: `repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(20,120,60,0.08) 28px,
+        rgba(20,120,60,0.08) 29px
+      )`,
+      pointerEvents: "none",
+    }}
+  />
 
-        {/* Hero text */}
-        {/* Hero text */}
-<div style={{ position: "relative", zIndex: 2 }}>
-  <h1
-  style={{
-    fontSize: 56,
-    fontWeight: 750,
-    color: "#fff",
-    marginBottom: 16,
-    lineHeight: 1.1,
-    textShadow: "0 2px 12px rgba(0,0,0,0.3)",
-    fontFamily: "sans-serif",
-  }}
->
-  Faq's
+  {/* content */}
+  <div className="faq-content">
+
+    <h1 className="faq-title text-6xl">
+  FAQ'S
 </h1>
-  <p
-    style={{
-      fontSize: 16,
-      color: "rgba(255,255,255,0.85)",
-      fontWeight: 400,
-      maxWidth: 560,
-      lineHeight: 1.5,
-      marginBottom: 30,
-    }}
-  >
-    Reaching of the great explorer of the truth the builder
-  </p>
 
-  {/* EXPLORE MORE BUTTON */}
-  <button
-    style={{
-      background: "#D4AF37",
-      color: "#000",
-      padding: "14px 34px",
-      border: "none",
-      borderRadius: "999px",
-      fontSize: 16,
-      fontWeight: 700,
-      cursor: "pointer",
-      transition: "0.3s ease",
-      boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
-    }}
-    onMouseOver={(e) => {
-      e.target.style.background = "#c89b1d";
-      e.target.style.transform = "translateY(-2px)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.background = "#D4AF37";
-      e.target.style.transform = "translateY(0px)";
-    }}
-     onClick={() => {
-    document.getElementById("faq-questions")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }}
-  >
-    Explore More
-  </button>
+    <p className="faq-subtitle">
+      Reaching of the great explorer of the truth the builder
+    </p>
+
+    <button
+      className="faq-btn"
+      onClick={() => {
+        document.getElementById("faq-questions")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }}
+    >
+      Explore More
+    </button>
+
+  </div>
+
+  {/* ANIMATION STYLE */}
+  <style>
+    {`
+      .faq-overlay{
+        position:absolute;
+        inset:0;
+        background:#021b14cc;
+      }
+
+      .faq-content{
+        position:relative;
+        z-index:2;
+        animation: faqFade 1.6s ease forwards;
+        opacity:0;
+        transform: translateY(35px);
+      }
+
+      .faq-title{
+        font-size:56px;
+        font-weight:750;
+        color:#fff;
+        margin-bottom:16px;
+        line-height:1.1;
+        text-shadow:0 2px 12px rgba(0,0,0,0.3);
+      }
+
+      .faq-subtitle{
+        font-size:16px;
+        color:rgba(255,255,255,0.85);
+        max-width:560px;
+        margin-bottom:30px;
+        line-height:1.5;
+      }
+
+      .faq-btn{
+        background:#D4AF37;
+        color:#000;
+        padding:14px 34px;
+        border:none;
+        border-radius:999px;
+        font-size:16px;
+        font-weight:700;
+        cursor:pointer;
+        transition:0.3s ease;
+      }
+
+      .faq-btn:hover{
+        background:#c89b1d;
+        transform:translateY(-2px);
+      }
+
+      @keyframes faqFade {
+        to {
+          opacity:1;
+          transform:translateY(0);
+        }
+      }
+    `}
+  </style>
+
 </div>
-      </div>
-<div
-  id="faq-questions"
-  style={{ maxWidth: 1000, margin: "0 auto", padding: "30px 24px" }}
-></div>
       {/* ── FAQ SECTION ── */}
       <div style={{ maxWidth: 1000, margin: "0 auto", padding: "30px 24px" }}>
         {/* Section label */}
