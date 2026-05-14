@@ -1,6 +1,8 @@
 import React from "react";
-import heroBg5 from "/platform.png";
+import heroBg5 from "../../../public/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
+import { useNavigate } from "react-router-dom";
+
 import {
   BarChart3,
   UserRound,
@@ -8,8 +10,10 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-
 export default function TradingPage() {
+
+  const navigate = useNavigate();
+
   const cards = [
     {
       title: "Real-Time Market Insights & Analytics",
@@ -55,55 +59,95 @@ export default function TradingPage() {
     <div className="w-full bg-white overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:px-6 md:min-h-[580px] lg:min-h-[640px]">
-        <div className="absolute inset-0">
-          <img
-            src={heroBg5}
-            alt="Trading Platform"
-            className="h-full w-full object-cover object-center brightness-110"
-          />
-        </div>
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)]" />
+     <section className="relative flex min-h-[650px] items-center justify-center overflow-hidden bg-black px-4  text-center sm:px-6 md:min-h-[600px]">
 
-        <div className="relative z-10 w-full max-w-4xl">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
-            <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
-            Platform
-          </span>
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src={heroBg5}
+      alt="Trading Platform"
+      className="h-full w-full object-cover object-center brightness-110"
+    />
+  </div>
 
-          <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
-            Navigate Your <br className="hidden sm:block" />
-            <span className="text-[#D4AF37]">Trading Success!</span>
-          </h1>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/80"></div>
 
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
-            Trade smarter with a fast, secure, and user-friendly platform.
-            <br className="hidden sm:block" />
-            Everything you need to navigate the markets with confidence.
-          </p>
+  {/* Green Glow */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(1,68,33,0.35),transparent_65%)]"></div>
 
-          <button
-            className="button-shine mt-8 w-full max-w-[280px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
-            onClick={() => {
-              document.getElementById("platform-overview")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }}
-          >
-            Explore Platform
-          </button>
-        </div>
-      </section>
+  {/* Animated Waves */}
+  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+    <svg
+      viewBox="0 0 1440 320"
+      className="w-full h-[260px]"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* <path
+        fill="rgba(212,175,55,0.15)"
+        d="M0,224L48,218.7C96,213,192,203,288,197.3C384,192,480,192,576,202.7C672,213,768,235,864,224C960,213,1056,171,1152,170.7C1248,171,1344,213,1392,234.7L1440,256L1440,320L0,320Z"
+      ></path>
+
+      <path
+        fill="rgba(1,68,33,0.25)"
+        d="M0,288L60,266.7C120,245,240,203,360,192C480,181,600,203,720,224C840,245,960,267,1080,245.3C1200,224,1320,160,1380,128L1440,96L1440,320L0,320Z"
+      ></path> */}
+    </svg>
+  </div>
+
+  {/* Hero Content */}
+  <div className="relative z- w-full pt-1 max-w-5xl">
+
+    {/* Badge */}
+    <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 bg-[#0a2417]/70 px-4 py-2 text-xs text-[#D4AF37] backdrop-blur-sm sm:mb-16 sm:px-5">
+
+      <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
+
+      The Perfect Trading Map
+
+    </span>
+
+    {/* Heading */}
+    <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
+
+      Navigate Your
+      <br className="hidden sm:block" />
+
+      <span className="text-[#D4AF37]">
+        Trading Success!
+      </span>
+
+    </h1>
+
+    {/* Description */}
+    <h1 className="text-4xl font-bold text-white mb-8">
+ 
+</h1>
+
+<p className="text-xs leading-relaxed text-gray-200 md:text-base">
+  Trade smarter with a fast, secure, and user-friendly platform.
+  <br className="hidden sm:block" />
+  Everything you need to navigate the markets with confidence.
+</p>
+
+    {/* Button */}
+    <button
+      onClick={() => navigate("/platform")}
+      className="button-shine mt-8 w-full max-w-[280px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
+    >
+      Explore Platform
+    </button>
+
+  </div>
+
+</section>
+
       {/* ================= SECOND SECTION ================= */}
-
-      <section id="platform-overview" className="py-20 px-6 md:px-16 bg-[#f8f8f8]">
+      <section className="py-20 px-6 md:px-16 bg-[#f8f8f8]">
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 
           {/* LEFT CONTENT */}
-
           <div>
 
             <p className="text-sm uppercase tracking-widest text-gray-500 mb-3">
@@ -117,6 +161,7 @@ export default function TradingPage() {
               <span className="text-[#D4AF37]">
                 Trading Success!
               </span>
+
             </h2>
 
             <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
@@ -130,7 +175,6 @@ export default function TradingPage() {
             </p>
 
             {/* Features */}
-
             <div className="mt-10 space-y-5">
 
               {[
@@ -156,43 +200,35 @@ export default function TradingPage() {
               ))}
 
             </div>
+
           </div>
 
           {/* RIGHT IMAGE */}
-
           <div className="relative flex justify-center">
-
-           
-
-            {/* Tablet Image */}
 
             <img
               src={heroBg6}
               alt="Trading"
-              className="relative z-10 w-[380px]  "
+              className="relative z-10 w-[380px] md:w-[500px]"
             />
 
-           
-
           </div>
+
         </div>
+
       </section>
 
       {/* ================= THIRD SECTION ================= */}
-
       <section className="w-full bg-[#efefe7] py-20 px-6">
 
         <div className="max-w-6xl mx-auto">
 
           {/* Heading */}
-
           <div className="text-center mb-16">
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
               Why Novafxm is Your Perfect Trading Partner?
             </h2>
-
-            {/* Decorative Line */}
 
             <div className="flex items-center justify-center gap-3 mt-5">
 
@@ -203,10 +239,10 @@ export default function TradingPage() {
               <div className="w-16 h-[2px] bg-[#D4AF37]"></div>
 
             </div>
+
           </div>
 
           {/* Top Cards */}
-
           <div className="grid md:grid-cols-2 gap-8">
 
             {cards.slice(0, 2).map((card, index) => (
@@ -217,7 +253,6 @@ export default function TradingPage() {
               >
 
                 {/* Header */}
-
                 <div className="flex items-center gap-4 mb-6">
 
                   <div
@@ -237,13 +272,11 @@ export default function TradingPage() {
                 </div>
 
                 {/* Description */}
-
                 <p className="text-gray-600 leading-relaxed mb-6">
                   {card.description}
                 </p>
 
-                {/* Bullet Points */}
-
+                {/* Points */}
                 <div className="space-y-3">
 
                   {card.points.map((point, i) => (
@@ -270,19 +303,18 @@ export default function TradingPage() {
                   ))}
 
                 </div>
+
               </div>
             ))}
 
           </div>
 
-          {/* Bottom Center Card */}
-
+          {/* Bottom Card */}
           <div className="flex justify-center mt-10">
 
             <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 max-w-2xl w-full">
 
               {/* Header */}
-
               <div className="flex items-center gap-4 mb-6">
 
                 <div className="w-12 h-12 rounded-full flex items-center justify-center border border-orange-500 text-orange-500 bg-orange-50">
@@ -296,13 +328,11 @@ export default function TradingPage() {
               </div>
 
               {/* Description */}
-
               <p className="text-gray-600 leading-relaxed mb-6">
                 {cards[2].description}
               </p>
 
-              {/* Bullet Points */}
-
+              {/* Points */}
               <div className="space-y-3">
 
                 {cards[2].points.map((point, i) => (
@@ -325,11 +355,12 @@ export default function TradingPage() {
                 ))}
 
               </div>
+
             </div>
+
           </div>
 
           {/* Bottom Text */}
-
           <div className="text-center mt-14">
 
             <p className="text-xl md:text-2xl font-medium text-[#1f1f1f] leading-relaxed">
@@ -344,8 +375,11 @@ export default function TradingPage() {
             </p>
 
           </div>
+
         </div>
+
       </section>
+
     </div>
   );
 }

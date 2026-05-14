@@ -198,13 +198,17 @@ const IndicesPage = () => {
           MARKET OVERVIEW WITH TRADINGVIEW
       ========================================= */}
 
-      <section className="bg-[#f8faf9] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <section className="bg-[#f8faf9] px-6 py-20">
+
         {/* TRADINGVIEW WIDGET CARD */}
-        <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
-          <div className="h-[360px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-            <TradingViewWidget />
-          </div>
-        </div>
+       <section className="bg-[#f8faf9] px-6 py-20">
+  <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+    <div className="h-[500px] w-full">
+      <TradingViewWidget />
+     
+    </div>
+  </div>
+</section>
 
         {/* TITLE */}
         <div className="text-center mt-24">

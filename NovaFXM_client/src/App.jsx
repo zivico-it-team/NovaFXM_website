@@ -1,7 +1,6 @@
 // src/App.jsx
 // import type { ReactNode } from "react";
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Layout
 import Header from "./components/layout/Navbar";
@@ -31,7 +30,6 @@ import Commodities from "./pages/Market/Commodities";
 import Deposit from "./pages/Trading/Deposits&Withdrawals";
 import Promotions from "./pages/Trading/Promotions";
 import Forex from "./pages/Market/Forex";
-
 import FAQ from "./pages/AboutUS/Faqs";
 import Partners from "./pages/Partners/Brokers.jsx";
 
@@ -39,26 +37,13 @@ import EconomicCalendar from "./pages/Trading Tools/EconomicCalender";
 
 
 
-import ContactPage from "./pages/AboutUS/ContacUs";
-import AutomatedTrading from "./pages/Trading Tools/AutomatedTrading";
-
-
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
-import Platform from "./pages/Trading/Platform.jsx";  
+import Platform from "./components/Home/Platform.jsx";  
 
 /** Pages that share the top Header */
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 function MainLayout({ children }) {
   return (
@@ -85,7 +70,7 @@ function HomePage() {
       <Packeges />
       <Review />
       <Quiz />
-     
+      <WhyUs />
       <Footer />
       <ChatBox />
     </>
@@ -98,7 +83,6 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Routes>
         {/* ── Auth routes (no header) ── */}
         <Route
@@ -143,8 +127,6 @@ function App() {
           element={
             <MainLayout>
               <AccountType />
-              <Footer />
-              <ChatBox />
             </MainLayout>
           }
         />
@@ -153,8 +135,6 @@ function App() {
           element={
             <MainLayout>
               <TermsConditions />
-              <Footer />
-              <ChatBox />
             </MainLayout>
           }
         />
@@ -163,8 +143,6 @@ function App() {
           element={
             <MainLayout>
               <WhyUs />
-              <Footer />
-              <ChatBox />
             </MainLayout>
           }
         />
@@ -173,8 +151,6 @@ function App() {
           element={
             <MainLayout>
               <Market />
-              <Footer />
-              <ChatBox />
             </MainLayout>
           }
         />
@@ -235,16 +211,6 @@ function App() {
           }
         />
 
-        <Route
-          path="/tools/automated-trading"
-          element={
-            <MainLayout>
-              <AutomatedTrading />
-              <Footer />
-              <ChatBox />
-            </MainLayout>
-          }
-        />
         
          <Route
           path="/promotions"
@@ -322,17 +288,6 @@ function App() {
           
 
         {/* ── Catch-all ── */}
-        <Route
-          path="/contact"
-          element={
-            <MainLayout>
-              <ContactPage />
-              <Footer />
-              <ChatBox />
-            </MainLayout>
-          }
-        />
-
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

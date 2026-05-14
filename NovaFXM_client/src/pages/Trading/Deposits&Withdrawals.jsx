@@ -46,7 +46,7 @@ export default function DepositWithdrawSection() {
       {/* HERO SECTION */}
       <div className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-black px-4 py-14 text-center sm:min-h-[520px] sm:px-6 sm:py-16 md:min-h-[580px] lg:min-h-[640px]">
         <img
-          src="/deposit.png"
+          src="/accounttype.png"
           alt=""
           className="account-hero-image absolute inset-0 h-full w-full object-cover object-center brightness-110"
         />
