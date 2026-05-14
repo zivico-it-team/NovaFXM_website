@@ -70,7 +70,7 @@ function HomePage() {
       <Packeges />
       <Review />
       <Quiz />
-      <WhyUs />
+     
       <Footer />
       <ChatBox />
     </>
