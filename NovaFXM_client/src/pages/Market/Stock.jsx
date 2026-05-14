@@ -300,25 +300,25 @@ const Stock = () => {
     <div className="bg-[#f5f5f5] font-sans">
 
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative h-[72vh] min-h-[520px] w-full overflow-hidden sm:h-[82vh] lg:h-screen">
-
-
-        {/* Background Image */}
-        <img
-          src="/Stock1.png"
-          alt="Stock Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative h-[460px] w-full overflow-hidden bg-black md:h-[560px]">
+        <div className="absolute inset-0 hero-parallax">
+          <img
+            src="/Stock1.png"
+            alt="Stock Hero"
+            className="market-hero-image h-full w-full object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/35"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
+        <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
 
-          <h1 className="text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
             Stocks
           </h1>
 
 
-          <p className="mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
+          <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm font-medium leading-6 text-white drop-shadow-sm sm:text-base md:mt-5 md:leading-7">
             Start Stock Trading Today with NOVAFXM
           </p>
 
