@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaBolt,
   FaLock,
@@ -10,6 +11,8 @@ import {
 } from "react-icons/fa";
 
 export default function DepositWithdrawSection() {
+  const navigate = useNavigate();
+
   const paymentMethods = [
     {
       title: "Credit/Debit Card",
@@ -290,7 +293,11 @@ export default function DepositWithdrawSection() {
                 </div>
 
                 {/* Button */}
-                <button className="button-shine mt-7 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0">
+                <button
+                  type="button"
+                  onClick={() => navigate("/signup")}
+                  className="button-shine mt-7 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0"
+                >
                   Open Your Account
                 </button>
               </div>

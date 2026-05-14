@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaChartLine,
   FaCheck,
@@ -89,6 +90,8 @@ const accounts = [
 ];
 
 export default function AccountTypesPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16]">
       {/* Hero */}
@@ -170,6 +173,8 @@ export default function AccountTypesPage() {
 </ul>
 
               <button
+                type="button"
+                onClick={() => navigate("/signup")}
                 className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
                   account.popular
                     ? "border-[#014421] bg-[#014421] text-white hover:shadow-[#014421]/20"
@@ -270,7 +275,11 @@ export default function AccountTypesPage() {
   </p>
 
   {/* Button */}
-  <button className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto">
+  <button
+    type="button"
+    onClick={() => navigate("/login")}
+    className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
+  >
     Trade Now
   </button>
 </section>

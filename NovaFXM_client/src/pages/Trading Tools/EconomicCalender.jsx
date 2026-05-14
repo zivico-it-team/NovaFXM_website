@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaChartLine, FaCreditCard, FaUserAlt } from "react-icons/fa";
 
 const steps = [
@@ -76,6 +77,8 @@ const TradingViewEconomicCalendar = memo(function TradingViewEconomicCalendar() 
 });
 
 export default function EconomicCalendar() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full overflow-x-hidden bg-white text-[#0b1f16]">
       {/* Hero Section with Parallax Effect */}
@@ -160,7 +163,11 @@ export default function EconomicCalendar() {
           Everything you need to trade Forex in one place.
         </p>
 
-        <button className="reveal-up reveal-delay-3 mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto">
+        <button
+          type="button"
+          onClick={() => navigate("/login")}
+          className="reveal-up reveal-delay-3 mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
+        >
           Trade Now
         </button>
       </section>

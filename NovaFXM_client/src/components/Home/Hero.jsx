@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section id="hero" className="relative flex min-h-[calc(100vh-72px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-16 sm:px-6 lg:px-8">
 
@@ -60,7 +63,11 @@ export default function Hero() {
 
         {/* Button */}
         <div className="mt-6 sm:mt-10">
-          <button className="button-shine bg-[#014421] hover:bg-[#01351a] cursor-pointer text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto hover:-translate-y-1 hover:shadow-xl">
+          <button
+            type="button"
+            onClick={() => navigate("/login")}
+            className="button-shine bg-[#014421] hover:bg-[#01351a] cursor-pointer text-white px-6 sm:px-10 py-3 rounded-lg shadow-md transition duration-300 text-sm sm:text-base w-full sm:w-auto hover:-translate-y-1 hover:shadow-xl"
+          >
             Trade Now
           </button>
         </div>

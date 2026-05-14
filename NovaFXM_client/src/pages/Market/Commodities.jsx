@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaGlobe,
   FaShieldAlt,
@@ -34,6 +35,8 @@ import {
 } from "react-icons/tb";
 
 export default function CommoditiesSection() {
+  const navigate = useNavigate();
+
   const [isVisible, setIsVisible] = useState({
     whyTrade: false,
     howTraded: false,
@@ -506,12 +509,14 @@ export default function CommoditiesSection() {
             advanced trading tools, and dedicated support.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <button className="rounded-full bg-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-[#014421] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95">
+            <button
+              type="button"
+              onClick={() => navigate("/signup")}
+              className="rounded-full bg-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-[#014421] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95"
+            >
               Open Account
             </button>
-            <button className="rounded-full border-2 border-white bg-transparent px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:bg-white hover:text-[#014421] hover:scale-105 active:scale-95">
-              Demo Account
-            </button>
+            
           </div>
         </div>
       </section>

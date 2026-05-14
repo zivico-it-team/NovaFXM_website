@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
   return (
@@ -28,12 +29,12 @@ export default function AboutUs() {
             Built by traders for traders, our mission is to empower your financial decisions with 
             cutting-edge tools, transparent pricing, and robust security.
           </p>
-           <a
-            href="#"
+           <Link
+            to="/why-us"
             className="inline-block text-[#014421] font-semibold hover:underline transition"
           >
             More About Us →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

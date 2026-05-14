@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const plans = [
   {
@@ -41,6 +42,8 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 overflow-hidden">
       <div className="mx-auto max-w-7xl text-center">
@@ -126,6 +129,8 @@ export default function PricingSection() {
 
               {/* Button */}
               <button
+                type="button"
+                onClick={() => navigate("/login")}
                 className="
                   relative overflow-hidden
                   w-full py-4 rounded-xl

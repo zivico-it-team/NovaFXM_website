@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaGift } from "react-icons/fa";
 
 const promotions = [
@@ -38,6 +39,8 @@ const faqs = [
 ];
 
 function PromoCard({ promo }) {
+  const navigate = useNavigate();
+
   return (
     <article className="bonus-card reveal-up group relative grid min-h-[260px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:grid-cols-[1fr_360px]">
       <div className="relative overflow-hidden bg-[linear-gradient(135deg,#004b27_0%,#003d20_42%,#012414_100%)] px-8 py-8 text-white sm:px-12 md:py-10">
@@ -59,7 +62,11 @@ function PromoCard({ promo }) {
           {promo.description}
         </p>
 
-        <button className="button-shine relative mt-7 inline-flex items-center gap-4 rounded-md bg-[#D4AF37] px-7 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26]">
+        <button
+          type="button"
+          onClick={() => navigate("/signup")}
+          className="button-shine relative mt-7 inline-flex items-center gap-4 rounded-md bg-[#D4AF37] px-7 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26]"
+        >
           View Bonus
           <FaArrowRight className="text-xs" />
         </button>
