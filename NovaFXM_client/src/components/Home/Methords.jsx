@@ -1,6 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Bitcoin, Building2, CircleDollarSign, Landmark, Repeat2 } from "lucide-react";
 
 const tabs = ["Metals", "Forex", "Crypto", "Indices", "Energies"];
+
+const PAYMENT_METHODS = [
+  { name: "UPI", type: "text", logo: "UPI", color: "text-gray-700" },
+  { name: "Google Pay", type: "gpay" },
+  { name: "PhonePe", type: "phonepe" },
+  { name: "RuPay", type: "text", logo: "RuPay", color: "text-blue-800" },
+  { name: "Visa", type: "image", src: "/Visa.png", imageClass: "h-7" },
+  {
+    name: "Mastercard",
+    type: "image",
+    src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
+    imageClass: "h-8",
+  },
+  { name: "Net Banking", type: "icon", icon: Landmark, color: "text-[#0b2545]" },
+  { name: "IMPS", type: "text", logo: "IMPS", color: "text-gray-700" },
+  { name: "NEFT", type: "text", logo: "NEFT", color: "text-emerald-700" },
+  { name: "RTGS", type: "text", logo: "RTGS", color: "text-blue-800" },
+  { name: "Bank Transfer", type: "icon", icon: Repeat2, color: "text-[#0b2545]" },
+  { name: "USDT", type: "icon", icon: CircleDollarSign, color: "text-emerald-600" },
+  { name: "Bitcoin", type: "icon", icon: Bitcoin, color: "text-orange-500" },
+  { name: "Ethereum", type: "text", logo: "ETH", color: "text-gray-700" },
+  { name: "TRC20", type: "text", logo: "TRC20", color: "text-red-600" },
+  { name: "ERC20", type: "icon", icon: Building2, color: "text-gray-700" },
+];
 
 const MARKET_DATA = {
   Metals: [
@@ -71,6 +96,49 @@ const TradingViewQuote = ({ symbol }) => {
   );
 };
 
+const PaymentLogo = ({ method }) => {
+  if (method.type === "image") {
+    return (
+      <img
+        src={method.src}
+        alt={method.name}
+        className={`${method.imageClass} max-w-16 object-contain`}
+      />
+    );
+  }
+
+  if (method.type === "gpay") {
+    return (
+      <div className="flex items-center gap-1 text-xl font-semibold text-gray-700">
+        <span className="font-bold text-blue-600">G</span>
+        <span>Pay</span>
+      </div>
+    );
+  }
+
+  if (method.type === "phonepe") {
+    return (
+      <div className="flex flex-col items-center gap-1">
+        <div className="flex h-10 w-10 items-center justify-center text-3xl font-bold text-purple-700">
+          p
+        </div>
+        <span className="text-base font-extrabold text-purple-700">PhonePe</span>
+      </div>
+    );
+  }
+
+  if (method.type === "icon") {
+    const Icon = method.icon;
+    return <Icon className={`h-10 w-10 ${method.color}`} strokeWidth={1.8} />;
+  }
+
+  return (
+    <span className={`text-xl font-extrabold italic tracking-tight ${method.color}`}>
+      {method.logo}
+    </span>
+  );
+};
+
 const Methords = () => {
   const [activeTab, setActiveTab] = useState("Metals");
 
@@ -101,22 +169,17 @@ const Methords = () => {
             Secure <span className="text-yellow-600">Methods</span> for Deposits & Withdrawals
           </h2>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-              alt="Mastercard"
-              className="h-8 w-auto object-contain"
-            />
-            <img
-              src="/Visa.png"
-              alt="Visa"
-              className="h-7 w-auto object-contain"
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-              alt="PayPal"
-              className="h-8 w-auto object-contain"
-            />
+          <div className="mx-auto mt-6 grid max-w-4xl grid-cols-4 gap-x-2 gap-y-4 md:grid-cols-8 lg:gap-x-3">
+            {PAYMENT_METHODS.map((method) => (
+              <div
+                key={method.name}
+                className="group flex min-h-[56px] flex-col items-center justify-center px-0 text-center transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex h-12 items-center justify-center transition duration-300 group-hover:scale-105">
+                  <PaymentLogo method={method} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
