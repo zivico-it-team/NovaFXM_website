@@ -1,29 +1,28 @@
 // TradingViewWidget.jsx
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef, memo } from 'react';
 
 function TradingViewWidget() {
   const container = useRef();
 
-  useEffect(() => {
-    if (!container.current) return;
+ useEffect(() => {
+  if (!container.current) return;
 
-    // Prevent duplicate widget
-    container.current.innerHTML = "";
+  // Prevent duplicate widget
+  container.current.innerHTML = "";
 
-    const widget = document.createElement("div");
-    widget.className = "tradingview-widget-container__widget";
-    widget.style.height = "100%";
-    widget.style.width = "100%";
-    widget.style.minWidth = "0";
+  const widget = document.createElement("div");
+  widget.className = "tradingview-widget-container__widget";
+  widget.style.height = "calc(100% - 32px)";
+  widget.style.width = "100%";
 
-    const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+  const script = document.createElement("script");
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
 
-    script.type = "text/javascript";
-    script.async = true;
+  script.type = "text/javascript";
+  script.async = true;
 
-    script.innerHTML = `
+  script.innerHTML = `
   {
     "lineWidth": 2,
     "lineType": 0,
@@ -41,21 +40,35 @@ function TradingViewWidget() {
     ]
   }`;
 
-    widget.appendChild(script);
-    container.current.appendChild(widget);
+  widget.appendChild(script);
+  container.current.appendChild(widget);
 
-    return () => {
-      if (container.current) {
-        container.current.innerHTML = "";
-      }
-    };
-  }, []);
+  return () => {
+    if (container.current) {
+      container.current.innerHTML = "";
+    }
+  };
+}, []);
 
   return (
-    <div
-      ref={container}
-      className="tradingview-widget-container h-full min-h-[340px] w-full min-w-0 overflow-hidden"
-    />
+    <div className="tradingview-widget-container" ref={container} style={{ height: '100%', width: '100%' }}>
+      <div className="tradingview-widget-container__widget" style={{ height: 'calc(100% - 32px)', width: '100%' }}></div>
+      <div className="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">Apple</span>
+        </a>
+        <span className="comma">,</span>&nbsp;
+        <a href="https://www.tradingview.com/symbols/NASDAQ-GOOGL/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">Google</span>
+        </a>
+        <span className="comma">,</span>
+        <span className="and">&nbsp;and&nbsp;</span>
+        <a href="https://www.tradingview.com/symbols/NASDAQ-MSFT/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">Microsoft stock price</span>
+        </a>
+        <span className="trademark">&nbsp;by TradingView</span>
+      </div>
+    </div>
   );
 }
 

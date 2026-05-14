@@ -1,5 +1,5 @@
 import { useState } from "react";
-import heroBg4 from "../../assets/images/faq.jpg";
+import heroBg4 from "../../assets/images/plt3.jpg";
 
 const faqs = [
   {
