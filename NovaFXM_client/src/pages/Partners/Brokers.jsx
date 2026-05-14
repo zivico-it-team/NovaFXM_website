@@ -90,19 +90,7 @@ export default function IntroducingBrokers() {
         </div>
 
         {/* Breadcrumb */}
-        <div className="absolute bottom-8 left-6 md:left-16 z-10 flex items-center gap-3 text-white text-sm md:text-lg font-medium">
-
-          <span className="hover:text-[#D4AF37] cursor-pointer transition">
-            Home
-          </span>
-
-          <ChevronRight size={18} />
-
-          <span className="text-[#D4AF37]">
-            Introducing Brokers
-          </span>
-
-        </div>
+        
 
       </section>
 
