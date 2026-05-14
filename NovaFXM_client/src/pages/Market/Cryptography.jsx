@@ -151,7 +151,7 @@ const CryptocurrencyPage = () => {
             </p>
             <p className="text-gray-600 leading-7 mb-6 text-sm md:text-base">
               Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum,
-              Ripple, and more through Contract for Difference (CFD) trading.
+              Ripple and more through Contract for Difference (CFD) trading.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div className="flex items-center gap-2">
@@ -289,9 +289,9 @@ const CryptocurrencyPage = () => {
         <p className="leading-7 md:leading-8 px-4 md:px-12 pb-4 text-sm md:text-base max-w-6xl mx-auto">
           The media frenzy surrounding Bitcoin and Ethereum has driven the rise
           in Crypto CFD trading. Cryptocurrencies do not rely on central banks
-          or interest rates, and their value is not subject to traditional
+          or interest rates and their value is not subject to traditional
           economic drivers. Crypto CFDs can be traded against popular currencies
-          such as the US Dollar, British Pound, or Euro, offering unique trading
+          such as the US Dollar, British Pound or Euro offering unique trading
           opportunities without the complexities of ownership.
         </p>
       </div>

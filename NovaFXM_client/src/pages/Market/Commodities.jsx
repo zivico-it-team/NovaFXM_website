@@ -96,7 +96,7 @@ export default function CommoditiesSection() {
           </h1>
 
           <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm leading-6 text-white sm:text-base md:mt-5 md:leading-7">
-            Trade global commodities like gold, oil, and silver with Novafxm.
+            Trade global commodities like gold, oil and silver with Novafxm.
             Diversify your portfolio and capture opportunities in fast-moving
             markets.
           </p>
@@ -135,7 +135,7 @@ export default function CommoditiesSection() {
                 Step into the dynamic world of commodities and discover lucrative
                 opportunities in Earth's most essential resources. Commodities are
                 the raw materials that fuel the global economy, including oil,
-                gold, and agricultural products. By trading these vital goods, you
+                gold and agricultural products. By trading these vital goods, you
                 tap into the core of our economy.
               </p>
 
@@ -187,7 +187,7 @@ export default function CommoditiesSection() {
             <div className="mt-3 sm:mt-4 h-[2px] w-[75px] sm:w-[95px] bg-[#014421] animate-expand-width"></div>
 
             <p className="mt-4 sm:mt-6 text-sm sm:text-base font-medium leading-6 text-gray-600 sm:pl-7">
-              Commodities are basic goods used in commerce, and they can be
+              Commodities are basic goods used in commerce and they can be
               classified into two main categories:
             </p>
 
@@ -212,7 +212,7 @@ export default function CommoditiesSection() {
                 <span className="font-extrabold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Soft Commodities</span>
                 <span className="font-bold text-black">:</span>
                 <span className="font-medium text-gray-600 text-sm sm:text-base flex-1">
-                  Agricultural products or livestock, such as wheat, coffee, and sugar.
+                  Agricultural products or livestock, such as wheat, coffee and sugar.
                 </span>
               </div>
             </div>
@@ -370,7 +370,7 @@ export default function CommoditiesSection() {
                 </h3>
                 <div className="mx-auto mt-2 h-[2px] w-8 bg-[#014421] transition-all duration-300 group-hover:w-12" />
                 <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
-                  Data like GDP growth, inflation, and employment rates can
+                  Data like GDP growth, inflation and employment rates can
                   indicate market direction and commodity values.
                 </p>
               </div>
@@ -385,7 +385,7 @@ export default function CommoditiesSection() {
                 </h3>
                 <div className="mx-auto mt-2 h-[2px] w-8 bg-[#014421] transition-all duration-300 group-hover:w-12" />
                 <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
-                  Political instability, natural disasters, and trade policies
+                  Political instability, natural disasters and trade policies
                   can cause price volatility in the commodity markets.
                 </p>
               </div>
@@ -505,7 +505,7 @@ export default function CommoditiesSection() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-white/90 animate-fade-up">
             Join Novafxm and access global commodity markets with competitive spreads,
-            advanced trading tools, and dedicated support.
+            advanced trading tools and dedicated support.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <button

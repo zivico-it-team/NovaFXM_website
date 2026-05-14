@@ -71,7 +71,7 @@ export default function AutomatedTradingPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
-            Automated trading, also known as algorithmic trading, is transforming the financial markets by leveraging the power of technology to execute trades with precision and speed. This innovative approach eliminates the emotional biases of manual trading and enables traders to capitalize on  opportunities across global markets, even while they sleep.
+            Automated trading, also known as algorithmic trading is transforming the financial markets by leveraging the power of technology to execute trades with precision and speed. This innovative approach eliminates the emotional biases of manual trading and enables traders to capitalize on  opportunities across global markets, even while they sleep.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function AutomatedTradingPage() {
             </h2>
 
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-              Automated trading relies on technical indicators, statistical models, and pre-defined conditions set by the trader.Once the system is activated:
+              Automated trading relies on technical indicators, statistical models and pre-defined conditions set by the trader.Once the system is activated:
             </p>
           </div>
 
@@ -113,7 +113,7 @@ export default function AutomatedTradingPage() {
               {
                 icon: <ShieldCheck className="w-8 h-8" />,
                 title: "Risk Management",
-                text: "Implements stop-loss, take-profit, and portfolio protection strategies to reduce exposure.",
+                text: "Implements stop-loss, take-profit and portfolio protection strategies to reduce exposure.",
                 bg: "from-[#c8f3dd] to-gray-50",
               },
             ].map((card, index) => (
@@ -237,7 +237,7 @@ style={{
                 {
                   icon: <Scale />,
                   title: "Emotion-Free Decisions",
-                  text: "Trade based on data, logic, and disciplined strategies.",
+                  text: "Trade based on data, logic and disciplined strategies.",
                 },
                 {
                   icon: <ClipboardList />,

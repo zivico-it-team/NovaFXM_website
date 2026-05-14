@@ -39,7 +39,7 @@ const features = [
   },
   {
     title: "Multiple Trading Platforms",
-    desc: "Trade via desktop, mobile, and web-based applications.",
+    desc: "Trade via desktop, mobile and web-based applications.",
     icon: MonitorSmartphone,
   },
   {
@@ -64,9 +64,9 @@ const fundingMethods = [
 
 // Forex products listed in the market offerings section.
 const marketOfferings = [
-  ["Major Currency Pairs", "Trade EUR/USD, GBP/USD, USD/JPY, and more with tight spreads."],
-  ["Minor Currency Pairs", "Access pairs like EUR/AUD, GBP/NZD, and CAD/CHF."],
-  ["Exotic Currency Pairs", "Explore high-volatility pairs such as USD/ZAR, EUR/TRY, and more."],
+  ["Major Currency Pairs", "Trade EUR/USD, GBP/USD, USD/JPY  and more with tight spreads."],
+  ["Minor Currency Pairs", "Access pairs like EUR/AUD, GBP/NZD  and CAD/CHF."],
+  ["Exotic Currency Pairs", "Explore high-volatility pairs such as USD/ZAR, EUR/TRY and more."],
   ["Forex CFDs", "Trade Forex without owning the underlying asset."],
   ["Scalping & Hedging Allowed", "Use advanced strategies with no restrictions."],
 ];
@@ -169,7 +169,7 @@ function HeroSection() {
       <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">Forex</h1>
         <p className="market-hero-copy mt-4 text-sm text-gray-200 md:text-base">
-          Trade the world's most liquid market with A5 Markets.
+          Trade the world's most liquid market with NOVAFXM.
         </p>
       </div>
     </section>
@@ -194,8 +194,8 @@ function AboutSection() {
           <h3 className="mt-3 text-4xl font-bold text-[#014421]">NOVAFXM</h3>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             At NOVAFXM, we specialize in providing an exceptional Forex trading
-            experience. Our platform offers access to major, minor, and exotic
-            currency pairs with deep liquidity, competitive spreads, and
+            experience. Our platform offers access to major, minor and exotic
+            currency pairs with deep liquidity, competitive spreads and
             cutting-edge trading tools.
           </p>
         </div>
@@ -292,7 +292,7 @@ function FundingSection() {
           </h2>
           <p className="mt-4 max-w-3xl leading-7 text-slate-600">
             Choose secure payment options designed for fast deposits,
-            controlled withdrawals, and transparent processing.
+            controlled withdrawals and transparent processing.
           </p>
         </div>
 
