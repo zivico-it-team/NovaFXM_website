@@ -283,7 +283,7 @@ const Stock = () => {
     <div className="bg-[#f5f5f5] font-sans">
 
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative h-[460px] w-full overflow-hidden bg-black md:h-[560px]">
+      <section className="relative flex min-h-[calc(100vh-72px)] w-full items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src="/Stock1.png"
@@ -294,61 +294,61 @@ const Stock = () => {
         <div className="absolute inset-0 bg-black/35"></div>
 
         {/* Content */}
-        <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
+        <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
 
-          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl lg:text-7xl">
             Stocks
           </h1>
-          <p className="mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
+          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm font-medium leading-7 text-white drop-shadow-sm sm:mt-6 md:text-lg md:leading-8">
             Start Stock Trading Today with NOVAFXM
           </p>
         </div>
       </section>
 
       {/* ================= INTRO ================= */}
-      <section className="grid gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 md:items-center md:gap-10 lg:px-10 lg:py-16">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-2 md:items-center md:gap-10 lg:py-16">
         <div>
-          <p className="text-yellow-600 text-sm">
+          <p className="text-sm font-medium text-yellow-600">
             Ever Dreamed Of Investing In Your Favourite Companies?
           </p>
-          <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-bold leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
             Start Stock Trading Today <br />
             <span className="text-green-700">with Markets</span>
           </h2>
-          <p className="mt-4 text-gray-600 leading-relaxed">
+          <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
             Unlock the potential of stock trading and build your portfolio by investing in the world's leading companies. Keep in mind, all dividends are subject to adjustment—when a company pays out dividends, the stock price will reflect a decrease to account for the payout.
           </p>
         </div>
         <img
           src="/Stock2.jpeg"
           alt="chart"
-          className="h-auto w-full rounded-2xl object-cover shadow-lg sm:h-[260px] md:max-w-[420px] md:justify-self-end"
+          className="h-auto max-h-[420px] w-full rounded-2xl object-cover shadow-lg md:justify-self-end lg:max-h-[480px]"
         />
       </section>
 
       {/* ================= LIVE CHART ================= */}
-      <section className="px-4 py-10 sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
         <TradingViewChart />
       </section>
 
       {/* ================= WHAT ARE STOCKS ================= */}
-      <section className="px-4 py-6 sm:px-6 lg:px-10">
-        <div className="bg-[#f0eee9] p-6 rounded-xl border-b-4 border-yellow-600">
-          <h3 className="text-green-800 text-lg font-semibold">
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <div className="rounded-2xl border-b-4 border-yellow-600 bg-[#f0eee9] p-5 sm:p-6 lg:p-8">
+          <h3 className="text-lg font-semibold text-green-800 sm:text-xl">
             What are Stocks?
           </h3>
-          <p className="text-gray-600 mt-2">
+          <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
             A stock represents a unit of ownership in a company. By purchasing shares, you become a part-owner. If the company thrives, its stock price rises, offering you potential gains. If the company underperforms, the stock price may fall.
           </p>
         </div>
       </section>
 
       {/* ================= EXCHANGES ================= */}
-      <section className="px-4 py-10 sm:px-6 lg:px-10">
-        <h3 className="mb-6 text-lg font-semibold sm:text-xl">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-12">
+        <h3 className="mb-6 text-xl font-semibold sm:text-2xl">
           Where Are <span className="text-green-700">Stocks Traded?</span>
         </h3>
-        <div className="grid gap-5 md:grid-cols-2 md:gap-10">
+        <div className="grid gap-5 md:grid-cols-2 lg:gap-8">
           {[
             {
               name: "New York Stock Exchange (NYSE)",
@@ -369,21 +369,21 @@ const Stock = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="relative min-h-[165px] overflow-hidden rounded-lg border-b-4 border-green-700 bg-white px-5 py-7 shadow-sm sm:px-8 sm:py-8"
+              className="relative min-h-[165px] overflow-hidden rounded-2xl border-b-4 border-green-700 bg-white px-5 py-7 shadow-sm sm:px-8 sm:py-8"
             >
-              <div className="flex gap-4 sm:gap-7">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <div className="flex gap-4 sm:gap-6">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700 sm:h-16 sm:w-16">
                   {React.createElement(exchangeIcons[i], {
                     className: "h-7 w-7",
                     strokeWidth: 2.4,
                   })}
                 </div>
                 <div className="pt-2">
-                  <h4 className="max-w-[260px] text-sm font-bold leading-tight text-slate-950">
+                  <h4 className="text-sm font-bold leading-tight text-slate-950 sm:text-base">
                     {item.name}
                   </h4>
                   <div className="mt-4 h-[3px] w-10 rounded-full bg-green-700"></div>
-                  <p className="mt-5 max-w-[285px] text-xs leading-relaxed text-slate-700">
+                  <p className="mt-4 text-xs leading-relaxed text-slate-700 sm:text-sm">
                     {item.desc}
                   </p>
                 </div>
@@ -399,24 +399,24 @@ const Stock = () => {
       </section>
 
       {/* ================= WHY TRADE ================= */}
-      <section className="px-4 py-6 sm:px-6 lg:px-10">
-        <div className="bg-green-900 text-white p-6 rounded-xl">
-          <h3 className="text-yellow-400 font-semibold">
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <div className="rounded-2xl bg-green-900 p-5 text-white sm:p-6 lg:p-8">
+          <h3 className="font-semibold text-yellow-400 sm:text-lg">
             Why Trade Stocks?
           </h3>
-          <p className="mt-2 text-sm">
+          <p className="mt-3 text-sm leading-7 sm:text-base">
             Stock trading offers access to a broad range of companies across various sectors, allowing you to diversify your investment strategy and manage risk. With the right stock trading approach, you can maximize returns and build wealth over time.
           </p>
         </div>
       </section>
 
       {/* ================= HOW IT WORKS ================= */}
-      <section className="px-4 py-6 pb-16 sm:px-6 lg:px-10">
-        <div className="bg-[#f0eee9] p-6 rounded-xl border-b-4 border-yellow-600">
-          <h3 className="text-green-800 font-semibold">
+      <section className="mx-auto max-w-7xl px-4 py-6 pb-16 sm:px-6">
+        <div className="rounded-2xl border-b-4 border-yellow-600 bg-[#f0eee9] p-5 sm:p-6 lg:p-8">
+          <h3 className="font-semibold text-green-800 sm:text-lg">
             How Does Stock Trading Work?
           </h3>
-          <p className="text-gray-600 mt-2">
+          <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
             Stock trading involves buying and selling shares of companies on exchanges. You can also trade stocks CFDs (Contracts for Difference), which allow you to speculate on price movements with leverage. Many traders diversify their portfolios by investing in a variety of sectors, balancing risk across industries and companies.
           </p>
         </div>
