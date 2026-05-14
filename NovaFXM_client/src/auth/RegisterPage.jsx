@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import axios from "axios";
+import logo from "../assets/images/logo.png";
+import { FaEye, FaEyeSlash, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const RegisterPage = ({ onLoginClick }) => {
   const [firstName, setFirstName] = useState("");
