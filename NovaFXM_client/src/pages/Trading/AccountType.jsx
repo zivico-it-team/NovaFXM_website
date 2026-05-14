@@ -95,7 +95,7 @@ export default function AccountTypesPage() {
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16]">
       {/* Hero */}
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:px-6 md:min-h-[580px] lg:min-h-[640px]">
+      <section className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
         <div className="absolute inset-0">
           <img
             src="/accounttype.png"

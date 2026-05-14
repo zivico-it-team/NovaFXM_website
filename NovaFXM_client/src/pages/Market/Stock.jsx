@@ -300,7 +300,7 @@ const Stock = () => {
     <div className="bg-[#f5f5f5] font-sans">
 
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative h-[460px] w-full overflow-hidden bg-black md:h-[560px]">
+      <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-black sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src="/Stock1.png"
@@ -313,7 +313,7 @@ const Stock = () => {
         {/* Content */}
         <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
 
-          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl lg:text-7xl">
             Stocks
           </h1>
 

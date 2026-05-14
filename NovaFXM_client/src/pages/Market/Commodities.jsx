@@ -80,7 +80,7 @@ export default function CommoditiesSection() {
   return (
     <div className="w-full bg-white overflow-x-hidden">
       {/* Hero Section with Parallax Effect */}
-      <section className="relative h-[460px] md:h-[560px] w-full overflow-hidden bg-black">
+      <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-black sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src="/Commodities.png.jpeg"
@@ -91,7 +91,7 @@ export default function CommoditiesSection() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center md:px-6">
-          <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Commodities
           </h1>
 

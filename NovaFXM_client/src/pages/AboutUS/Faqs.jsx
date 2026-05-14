@@ -112,7 +112,7 @@ export default function FaqPage() {
   style={{
     position: "relative",
     width: "100%",
-    minHeight: 600,
+    minHeight: "calc(100vh - 72px)",
     backgroundImage: `url('/Faq.png')`,
     backgroundSize: "cover",
     backgroundPosition: "center",

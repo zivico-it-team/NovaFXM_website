@@ -47,7 +47,7 @@ export default function DepositWithdrawSection() {
     <section className="w-full bg-[#f4f1ea] overflow-hidden">
       
       {/* HERO SECTION */}
-      <div className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-black px-4 py-14 text-center sm:min-h-[520px] sm:px-6 sm:py-16 md:min-h-[580px] lg:min-h-[640px]">
+      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
         <img
           src="/deposit.png"
           alt=""
