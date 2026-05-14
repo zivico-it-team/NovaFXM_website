@@ -36,10 +36,10 @@ export default function Navbar() {
     
     "FAQ's": "/faq",
     "Contact Us": "/contact",
-    // Register Now dropdown
-    "Open Live Account": "/signup",
-    "Demo Account": "/signup",
-    "Islamic Account": "/signup",
+    // // Register Now dropdown
+    // "Open Live Account": "/signup",
+    // "Demo Account": "/signup",
+    // "Islamic Account": "/signup",
   };
 
   // ─── Dropdown structure ──────────────────────────────────────────────────────
@@ -55,7 +55,7 @@ export default function Navbar() {
     "Trading Tool": ["Economic Calender", "Automated Trading"],
     Partners: ["Introducing Brokers"],
     "About Us": ["Why Us", "FAQ's", "Contact Us"],
-    "Register Now": ["Open Live Account", "Demo Account", "Islamic Account"],
+    // "Register Now": ["Open Live Account", "Demo Account", "Islamic Account"],
   };
 
   const menuItems = Object.keys(dropdownContent);
