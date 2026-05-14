@@ -42,7 +42,7 @@ function PromoCard({ promo }) {
   const navigate = useNavigate();
 
   return (
-    <article className="bonus-card reveal-up group relative grid min-h-[260px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:grid-cols-[1fr_360px]">
+    <article className="bonus-card account-plan-card reveal-up group relative grid min-h-[260px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:grid-cols-[1fr_360px]">
       <div className="relative overflow-hidden bg-[linear-gradient(135deg,#004b27_0%,#003d20_42%,#012414_100%)] px-8 py-8 text-white sm:px-12 md:py-10">
         <div className="absolute inset-y-0 right-[-1px] hidden w-24 bg-white [clip-path:polygon(100%_0,100%_100%,0_100%,48%_50%,0_0)] md:block" />
         <div className="bonus-card-sheen absolute inset-y-0 left-[-45%] w-1/3 rotate-12 bg-white/15 blur-sm" />

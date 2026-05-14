@@ -263,7 +263,7 @@ export default function AccountTypesPage() {
           </p>
 
           {/* Bottom Gold Line */}
-          <div className="process-gold-tab absolute bottom-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-t-full bg-[#D4AF37]"></div>
+          <div className="absolute bottom-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-t-full bg-[#D4AF37]"></div>
         </div>
       </div>
     ))}
