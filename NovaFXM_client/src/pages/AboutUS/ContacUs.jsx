@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Phone,
   Mail,
@@ -15,6 +16,8 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-[#f7f8f7] min-h-screen overflow-hidden">
       
@@ -476,7 +479,11 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <button className="flex h-14 w-full items-center justify-center gap-3 rounded-md bg-yellow-400 px-7 text-sm font-bold text-gray-950 transition hover:bg-yellow-300 sm:w-auto">
+            <button
+              type="button"
+              onClick={() => navigate("/chatbot")}
+              className="flex h-14 w-full items-center justify-center gap-3 rounded-md bg-yellow-400 px-7 text-sm font-bold text-gray-950 transition hover:bg-yellow-300 sm:w-auto"
+            >
               <Headphones size={18} />
               Chat with Support
               <span aria-hidden="true">-&gt;</span>

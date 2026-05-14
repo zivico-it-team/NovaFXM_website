@@ -41,6 +41,7 @@ import EconomicCalendar from "./pages/Trading Tools/EconomicCalender";
 
 import ContactPage from "./pages/AboutUS/ContacUs";
 import AutomatedTrading from "./pages/Trading Tools/AutomatedTrading";
+import ChatbotPage from "./pages/Chatbot";
 
 
 //footer pages
@@ -329,6 +330,16 @@ function App() {
               <ContactPage />
               <Footer />
               <ChatBox />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/chatbot"
+          element={
+            <MainLayout>
+              <ChatbotPage />
+              <Footer />
             </MainLayout>
           }
         />

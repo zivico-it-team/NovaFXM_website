@@ -60,27 +60,26 @@ export default function IntroducingBrokers() {
     <div className="w-full bg-[#f7f8fc] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section
-        className="relative h-[450px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-        }}
-      >
-
-       
+      <section className="relative flex h-[450px] items-center justify-center overflow-hidden bg-black md:h-[600px]">
+        <img
+          src={heroBg}
+          alt="Introducing Brokers Hero"
+          className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/45"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl">
+        <div className="market-hero-content relative z-10 max-w-5xl px-6 text-center">
 
-          <p className="uppercase tracking-[6px] text-[#D4AF37] text-sm md:text-base font-semibold mb-5">
+          <p className="market-hero-copy mb-5 text-sm font-semibold uppercase tracking-[6px] text-[#D4AF37] md:text-base">
             NOVAFXM Partnership Program
           </p>
 
-          <h1 className="text-white text-4xl md:text-7xl font-bold leading-tight">
+          <h1 className="market-hero-title text-4xl font-bold leading-tight text-white md:text-7xl">
             Introducing Brokers
           </h1>
 
-          <p className="text-white/90 mt-6 text-lg md:text-2xl font-light leading-relaxed">
+          <p className="market-hero-copy mt-6 text-lg font-light leading-relaxed text-white/90 md:text-2xl">
             Build a powerful passive income stream by referring traders
             to NOVAFXM and earning commissions from every successful trade.
           </p>
@@ -89,20 +88,7 @@ export default function IntroducingBrokers() {
 
         </div>
 
-        {/* Breadcrumb */}
-        <div className="absolute bottom-8 left-6 md:left-16 z-10 flex items-center gap-3 text-white text-sm md:text-lg font-medium">
-
-          <span className="hover:text-[#D4AF37] cursor-pointer transition">
-            Home
-          </span>
-
-          <ChevronRight size={18} />
-
-          <span className="text-[#D4AF37]">
-            Introducing Brokers
-          </span>
-
-        </div>
+       
 
       </section>
 

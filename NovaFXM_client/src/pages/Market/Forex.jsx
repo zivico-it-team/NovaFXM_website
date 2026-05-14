@@ -159,16 +159,16 @@ function ForexRatesWidget() {
 // Main hero banner for the Forex page.
 function HeroSection() {
   return (
-    <section
-      className="relative h-[520px] min-h-[520px] bg-cover bg-center lg:h-screen"
-      style={{
-        backgroundImage: "url('/Forex%201.jpeg')",
-      }}
-    >
+    <section className="relative h-[520px] min-h-[520px] overflow-hidden lg:h-screen">
+      <img
+        src="/Forex 1.jpeg"
+        alt="Forex Hero"
+        className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div className="absolute inset-0 bg-black/70" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-6xl font-bold text-white">Forex</h1>
-        <p className="mt-4 text-sm text-gray-200 md:text-base">
+      <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+        <h1 className="market-hero-title text-6xl font-bold text-white">Forex</h1>
+        <p className="market-hero-copy mt-4 text-sm text-gray-200 md:text-base">
           Trade the world's most liquid market with A5 Markets.
         </p>
       </div>

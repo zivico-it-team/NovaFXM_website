@@ -110,17 +110,19 @@ const CryptocurrencyPage = () => {
   return (
     <div className="bg-[#f5f5f5] min-h-screen font-sans">
       {/* Hero Section */}
-      <div
-        className="relative h-[400px] md:h-[602px] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+      <div className="relative flex h-[400px] items-center justify-center overflow-hidden md:h-[602px]">
+        <img
+          src={heroBg}
+          alt="Cryptocurrency Hero"
+          className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Cryptocurrency</h1>
-          <p className="text-base md:text-lg mb-2">
+        <div className="market-hero-content relative z-10 px-4 text-center text-white">
+          <h1 className="market-hero-title mb-4 text-3xl font-bold md:text-5xl">Cryptocurrency</h1>
+          <p className="market-hero-copy mb-2 text-base md:text-lg">
             Step into Crypto CFD Trading with Zivico Solutions
           </p>
-          <p className="text-xs md:text-sm text-gray-300">
+          <p className="market-hero-copy text-xs text-gray-300 md:text-sm">
             Access the digital asset market with flexibility and confidence.
           </p>
         </div>

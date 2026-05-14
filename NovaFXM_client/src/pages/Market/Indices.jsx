@@ -114,20 +114,20 @@ const IndicesPage = () => {
           HERO SECTION
       ========================================= */}
 
-      <section
-        className="relative w-full h-[450px] md:h-[550px] bg-cover bg-center flex items-center justify-center text-center"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-        }}
-      >
+      <section className="relative flex h-[450px] w-full items-center justify-center overflow-hidden text-center md:h-[550px]">
+        <img
+          src={heroBg}
+          alt="Indices Hero"
+          className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative z-10 px-6">
-          <h1 className="text-5xl md:text-7xl font-bold text-white">
+        <div className="market-hero-content relative z-10 px-6">
+          <h1 className="market-hero-title text-5xl font-bold text-white md:text-7xl">
             Indices
           </h1>
 
-          <p className="mt-6 text-gray-200 max-w-3xl mx-auto text-sm md:text-lg leading-8">
+          <p className="market-hero-copy mx-auto mt-6 max-w-3xl text-sm leading-8 text-gray-200 md:text-lg">
             Unlock a Wide Range of Indices from the World's Leading
             Economies with AS Markets
           </p>

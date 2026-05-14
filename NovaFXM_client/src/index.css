@@ -269,6 +269,60 @@ button {
   }
 }
 
+.market-hero-image {
+  animation: market-hero-zoom 1.5s ease-out both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.market-hero-content {
+  animation: market-hero-fade-up 0.8s ease-out both;
+}
+
+.market-hero-title {
+  animation: market-hero-fade-down 0.85s ease-out both;
+}
+
+.market-hero-copy {
+  animation: market-hero-fade-up 0.85s ease-out 0.18s both;
+}
+
+@keyframes market-hero-zoom {
+  from {
+    opacity: 0.92;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes market-hero-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes market-hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .button-shine {
   position: relative;
   isolation: isolate;
@@ -540,7 +594,11 @@ button {
 
   .hero-circle-left,
   .hero-circle-right,
-  .account-hero-image {
+  .account-hero-image,
+  .market-hero-image,
+  .market-hero-content,
+  .market-hero-title,
+  .market-hero-copy {
     animation: none;
     opacity: 1;
   }

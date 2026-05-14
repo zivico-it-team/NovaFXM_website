@@ -85,17 +85,17 @@ export default function CommoditiesSection() {
           <img
             src="/Commodities.png.jpeg"
             alt="Commodities Hero"
-            className="h-full w-full object-cover object-center hero-image"
+            className="market-hero-image h-full w-full object-cover object-center"
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 md:px-6 text-center hero-content">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white animate-fade-down">
+        <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center md:px-6">
+          <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl">
             Commodities
           </h1>
 
-          <p className="mt-4 md:mt-5 max-w-3xl text-sm sm:text-base leading-6 md:leading-7 text-white px-2 animate-fade-up">
+          <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm leading-6 text-white sm:text-base md:mt-5 md:leading-7">
             Trade global commodities like gold, oil, and silver with Novafxm.
             Diversify your portfolio and capture opportunities in fast-moving
             markets.
@@ -260,8 +260,7 @@ export default function CommoditiesSection() {
               {/* Card 3 - Market Dynamics */}
               <div className={`commodity-card-animate relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 rounded-lg bg-[#fffde9] px-5 sm:px-8 py-6 sm:py-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_35px_rgba(193,167,25,0.14)] ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
                 <div className="absolute left-0 top-0 h-full w-[6px] rounded-l-lg bg-[#D4AF37] transition-all duration-300 hover:w-[8px]" />
-                <div className="commodity-icon-animate flex h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] shrink-0 items-center justify-center rounded-full bg-[#D4AF37]
-                ] text-white shadow-[0_8px_18px_rgba(193,167,25,0.2)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                <div className="commodity-icon-animate flex h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-white shadow-[0_8px_18px_rgba(193,167,25,0.2)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
                   <BiTrendingUp className="text-xl sm:text-[22px]" />
                 </div>
                 <div>

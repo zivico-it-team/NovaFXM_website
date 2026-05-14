@@ -253,17 +253,17 @@ const Stock = () => {
   <img
     src="/Stock1.png"
     alt="Stock Hero"
-    className="absolute inset-0 w-full h-full object-cover"
+    className="market-hero-image absolute inset-0 h-full w-full object-cover"
   />
 
   {/* Content */}
-  <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
+  <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
     
-    <h1 className="text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
+    <h1 className="market-hero-title text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
       Stocks
     </h1>
 
-    <p className="mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
+    <p className="market-hero-copy mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
       Start Stock Trading Today with NOVAFXM
     </p>
 

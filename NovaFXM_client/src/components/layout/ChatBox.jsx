@@ -25,8 +25,8 @@ const getBotReply = (message) => {
   return "Ask me about account, deposit or support.";
 };
 
-export default function ChatBox() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function ChatBox({ embedded = false, initialOpen = false }) {
+  const [isOpen, setIsOpen] = useState(embedded || initialOpen);
   const [input, setInput] = useState("");
 
   const [messages, setMessages] = useState([
@@ -110,9 +110,15 @@ export default function ChatBox() {
   };
 
   return (
-    <div className="fixed bottom-5 right-4 z-[70] sm:bottom-6 sm:right-6">
-      {isOpen && (
-        <div className="flex h-[520px] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl sm:w-96">
+    <div className={embedded ? "w-full" : "fixed bottom-5 right-4 z-[70] sm:bottom-6 sm:right-6"}>
+      {(embedded || isOpen) && (
+        <div
+          className={
+            embedded
+              ? "mx-auto flex h-[620px] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+              : "flex h-[520px] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl sm:w-96"
+          }
+        >
           
           {/* Header */}
           <div className="flex items-center justify-between bg-[#014421] px-4 py-4 text-white">
@@ -124,9 +130,11 @@ export default function ChatBox() {
               </div>
             </div>
 
-            <button onClick={() => setIsOpen(false)}>
-              <X size={18} />
-            </button>
+            {!embedded && (
+              <button onClick={() => setIsOpen(false)}>
+                <X size={18} />
+              </button>
+            )}
           </div>
 
           {/* Messages */}
@@ -200,12 +208,14 @@ export default function ChatBox() {
       )}
 
       {/* Toggle */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="h-14 w-14 rounded-full bg-[#014421] text-white flex items-center justify-center"
-      >
-        {isOpen ? <X size={24} /> : <MessageCircle size={26} />}
-      </button>
+      {!embedded && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="h-14 w-14 rounded-full bg-[#014421] text-white flex items-center justify-center"
+        >
+          {isOpen ? <X size={24} /> : <MessageCircle size={26} />}
+        </button>
+      )}
     </div>
   );
 }
