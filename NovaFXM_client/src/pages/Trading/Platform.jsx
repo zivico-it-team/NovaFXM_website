@@ -1,5 +1,5 @@
 import React from "react";
-import heroBg5 from "../../assets/images/bg7.jpg";
+import heroBg5 from "/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
 import {
   BarChart3,
@@ -55,48 +55,50 @@ export default function TradingPage() {
     <div className="w-full bg-white overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
+      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:px-6 md:min-h-[580px] lg:min-h-[640px]">
+        <div className="absolute inset-0">
+          <img
+            src={heroBg5}
+            alt="Trading Platform"
+            className="h-full w-full object-cover object-center brightness-110"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)]" />
 
-      <section
-        className="relative h-[550px] md:h-[650px] bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage:
-            `url(${heroBg5})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-black/70"></div>
-      
+        <div className="relative z-10 w-full max-w-4xl">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
+            <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
+            Platform
+          </span>
 
-        {/* Overlay */}
-
-        <div className="absolute inset-0 bg-black/70"></div>
-
-        {/* Content */}
-
-        <div className="relative z-10 text-center px-6 max-w-5xl">
-
-          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
-            The Perfect Map to Navigate
-            <br />
-
-            <span className="text-[#014421]">
-              Your Trading Success!
-            </span>
+          <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
+            Navigate Your <br className="hidden sm:block" />
+            <span className="text-[#D4AF37]">Trading Success!</span>
           </h1>
 
-          <p className="text-gray-200 mt-6 text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
             Trade smarter with a fast, secure, and user-friendly platform.
+            <br className="hidden sm:block" />
             Everything you need to navigate the markets with confidence.
           </p>
 
-          {/* Buttons */}
-
-          
+          <button
+            className="button-shine mt-8 w-full max-w-[280px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
+            onClick={() => {
+              document.getElementById("platform-overview")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            Explore Platform
+          </button>
         </div>
       </section>
-
       {/* ================= SECOND SECTION ================= */}
 
-      <section className="py-20 px-6 md:px-16 bg-[#f8f8f8]">
+      <section id="platform-overview" className="py-20 px-6 md:px-16 bg-[#f8f8f8]">
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 

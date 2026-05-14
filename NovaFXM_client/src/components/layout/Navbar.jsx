@@ -21,7 +21,7 @@ export default function Navbar() {
     Promotions: "/promotions",
     
     // Market dropdown
-    Indices: "indices",
+    Indices: "/indices",
     Crypto: "/crypto",
     Stocks: "/stocks",
     Forex: "/forex",
@@ -80,10 +80,17 @@ export default function Navbar() {
     setOpenMobileDropdown((prev) => (prev === item ? null : item));
   };
 
+  const scrollPageTop = () => {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    });
+  };
+
   const handleDropdownOptionClick = (option) => {
     const route = optionRoutes[option];
     if (route) {
       navigate(route);
+      scrollPageTop();
     }
     setHoveredMenu(null);
     closeMobileMenu();
@@ -151,7 +158,10 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <button
             type="button"
-            onClick={() => navigate("/signup")}
+            onClick={() => {
+              navigate("/signup");
+              scrollPageTop();
+            }}
             className="button-shine px-4 py-2 rounded-full text-xs font-medium
               bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
               shadow-sm transition-all duration-300 ease-out
@@ -163,7 +173,10 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/login")}
+            onClick={() => {
+              navigate("/login");
+              scrollPageTop();
+            }}
             className="button-shine px-6 py-2 rounded-full text-xs font-medium
               bg-[#014421] text-white
               shadow-md transition-all duration-300 ease-out
@@ -178,7 +191,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3 lg:hidden">
           <button
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-            onClick={() => navigate("/login")}
+            onClick={() => {
+              navigate("/login");
+              scrollPageTop();
+            }}
           >
             <FaUser className="w-5 h-5 text-gray-700" />
           </button>
@@ -275,14 +291,22 @@ export default function Navbar() {
                 <div className="flex gap-3 px-6 py-4">
                   <button
                     type="button"
-                    onClick={() => { navigate("/signup"); closeMobileMenu(); }}
+                    onClick={() => {
+                      navigate("/signup");
+                      closeMobileMenu();
+                      scrollPageTop();
+                    }}
                     className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700 transition-colors"
                   >
                     Sign up
                   </button>
                   <button
                     type="button"
-                    onClick={() => { navigate("/login"); closeMobileMenu(); }}
+                    onClick={() => {
+                      navigate("/login");
+                      closeMobileMenu();
+                      scrollPageTop();
+                    }}
                     className="flex-1 py-2 rounded-full text-xs font-medium bg-[#014421] text-white hover:bg-green-800 transition-colors"
                   >
                     Login
