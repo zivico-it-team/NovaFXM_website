@@ -98,7 +98,7 @@ export default function EconomicCalendar() {
           </h1>
 
           <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-fade-up sm:text-base md:mt-5 md:leading-7">
-            Track high-impact market events, economic releases, and global
+            Track high-impact market events, economic releases and global
             announcements with Novafxm.
           </p>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { ChartNoAxesCombined, Clock3, Landmark, Star, SunMedium, Torus, TrendingUp } from "lucide-react";
+import { ChartNoAxesCombined, Clock3, Landmark, SunMedium, Torus } from "lucide-react";
 import {
   Area,
   CartesianGrid,
@@ -10,7 +10,7 @@ import {
   YAxis,
 } from "recharts";
 
-const TradingViewWidget = () => {
+const TradingViewChart = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -34,14 +34,16 @@ const TradingViewWidget = () => {
       locale: "en",
       allow_symbol_change: true,
       calendar: false,
-      support_host: "https://www.tradingview.com",
+      support_host: "https://www.tradingview.com"
     });
 
     containerRef.current.appendChild(script);
   }, []);
 
   return (
-    <div ref={containerRef} className="tradingview-widget-container w-full h-full" />
+    <div className="w-full h-[360px] sm:h-[420px] lg:h-[500px]">
+      <div ref={containerRef} className="tradingview-widget-container w-full h-full" />
+    </div>
   );
 };
 
@@ -54,25 +56,6 @@ const companies = [
 ];
 
 const timeframes = ["1D", "1M", "3M", "1Y", "5Y", "All"];
-
-const indices = [
-  {
-    title: "S&P 500",
-    desc: "Tracks 500 of the largest U.S. publicly traded companies, widely regarded as the best gauge of the U.S. equity market.",
-  },
-  {
-    title: "Dow Jones Industrial Average",
-    desc: "A price-weighted index of 30 prominent U.S. companies, one of the oldest and most-watched benchmarks in the world.",
-  },
-  {
-    title: "NASDAQ Composite",
-    desc: "Covers over 3,000 stocks listed on the NASDAQ exchange, with a heavy weighting toward technology and growth companies.",
-  },
-  {
-    title: "FTSE 100",
-    desc: "Represents the 100 largest companies listed on the London Stock Exchange by market capitalisation.",
-  },
-];
 
 const buildChartData = () => {
   const labelMap = {
@@ -300,31 +283,21 @@ const Stock = () => {
     <div className="bg-[#f5f5f5] font-sans">
 
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative h-[460px] w-full overflow-hidden bg-black md:h-[560px]">
-        <div className="absolute inset-0 hero-parallax">
-          <img
-            src="/Stock1.png"
-            alt="Stock Hero"
-            className="market-hero-image h-full w-full object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-black/35"></div>
-
-        {/* Content */}
-        <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
-
-          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
+      <section className="relative h-[72vh] min-h-[520px] w-full overflow-hidden sm:h-[82vh] lg:h-screen">
+        <img
+          src="/Stock1.png"
+          alt="Stock Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
+          <h1 className="text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
             Stocks
           </h1>
-
-
-          <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm font-medium leading-6 text-white drop-shadow-sm sm:text-base md:mt-5 md:leading-7">
+          <p className="mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
             Start Stock Trading Today with NOVAFXM
           </p>
-
         </div>
       </section>
-
 
       {/* ================= INTRO ================= */}
       <section className="grid gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 md:items-center md:gap-10 lg:px-10 lg:py-16">
@@ -332,17 +305,14 @@ const Stock = () => {
           <p className="text-yellow-600 text-sm">
             Ever Dreamed Of Investing In Your Favourite Companies?
           </p>
-
           <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
             Start Stock Trading Today <br />
             <span className="text-green-700">with Markets</span>
           </h2>
-
           <p className="mt-4 text-gray-600 leading-relaxed">
             Unlock the potential of stock trading and build your portfolio by investing in the world's leading companies. Keep in mind, all dividends are subject to adjustment—when a company pays out dividends, the stock price will reflect a decrease to account for the payout.
           </p>
         </div>
-
         <img
           src="/Stock2.jpeg"
           alt="chart"
@@ -350,50 +320,10 @@ const Stock = () => {
         />
       </section>
 
-
-      {/* ================= TRADINGVIEW + INDICES ================= */}
-      <section className="bg-[#f8faf9] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-        {/* TRADINGVIEW WIDGET CARD */}
-        <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
-          <div className="h-[360px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-            <TradingViewWidget />
-          </div>
-        </div>
-        {/* TITLE */}
-        <div className="text-center mt-24">
-          <button className="px-5 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 text-sm font-medium">
-            📈 Market Overview
-          </button>
-          <h2 className="text-5xl font-bold mt-6">
-            Popular <span className="text-[#014421]">Indices</span>
-          </h2>
-          <p className="text-gray-500 mt-5 max-w-2xl mx-auto leading-7">
-            Track major market benchmarks and stay updated with key index
-            performance.
-          </p>
-        </div>
-        {/* INDEX CARDS */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {indices.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-lg transition"
-            >
-              <div className="w-20 h-20 bg-[#014421] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Star className="text-white fill-white" size={34} />
-              </div>
-              <h3 className="font-semibold text-[#014421] text-xl leading-snug">
-                {item.title}
-              </h3>
-              <p className="text-gray-500 text-sm mt-5 leading-7">
-                {item.desc}
-              </p>
-              <div className="w-20 h-2 bg-[#014421] rounded-full mx-auto mt-8"></div>
-            </div>
-          ))}
-        </div>
+      {/* ================= LIVE CHART ================= */}
+      <section className="px-4 py-10 sm:px-6 lg:px-10">
+        <TradingViewChart />
       </section>
-
 
       {/* ================= WHAT ARE STOCKS ================= */}
       <section className="px-4 py-6 sm:px-6 lg:px-10">
@@ -407,13 +337,11 @@ const Stock = () => {
         </div>
       </section>
 
-
       {/* ================= EXCHANGES ================= */}
       <section className="px-4 py-10 sm:px-6 lg:px-10">
         <h3 className="mb-6 text-lg font-semibold sm:text-xl">
           Where Are <span className="text-green-700">Stocks Traded?</span>
         </h3>
-
         <div className="grid gap-5 md:grid-cols-2 md:gap-10">
           {[
             {
@@ -444,7 +372,6 @@ const Stock = () => {
                     strokeWidth: 2.4,
                   })}
                 </div>
-
                 <div className="pt-2">
                   <h4 className="max-w-[260px] text-sm font-bold leading-tight text-slate-950">
                     {item.name}
@@ -455,20 +382,15 @@ const Stock = () => {
                   </p>
                 </div>
               </div>
-
               <div className="absolute bottom-7 left-8 grid grid-cols-3 gap-2">
                 {Array.from({ length: 9 }).map((_, dotIndex) => (
-                  <span
-                    key={dotIndex}
-                    className="h-2 w-2 rounded-full bg-green-100"
-                  />
+                  <span key={dotIndex} className="h-2 w-2 rounded-full bg-green-100" />
                 ))}
               </div>
             </div>
           ))}
         </div>
       </section>
-
 
       {/* ================= WHY TRADE ================= */}
       <section className="px-4 py-6 sm:px-6 lg:px-10">
@@ -481,7 +403,6 @@ const Stock = () => {
           </p>
         </div>
       </section>
-
 
       {/* ================= HOW IT WORKS ================= */}
       <section className="px-4 py-6 pb-16 sm:px-6 lg:px-10">

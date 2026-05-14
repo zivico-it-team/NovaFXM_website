@@ -83,22 +83,22 @@ const factors = [
   {
     icon: <Landmark size={26} />,
     title: "Political Events",
-    desc: "Elections, policy shifts, and international tensions can all move market prices.",
+    desc: "Elections, policy shifts and international tensions can all move market prices.",
   },
   {
     icon: <TrendingUp size={26} />,
     title: "Corporate Announcements",
-    desc: "Major company news, such as leadership changes, mergers, and earnings reports, impacts the indices they are part of.",
+    desc: "Major company news, such as leadership changes, mergers and earnings reports, impacts the indices they are part of.",
   },
   {
     icon: <BarChart3 size={26} />,
     title: "Economic Data",
-    desc: "Employment reports, inflation, and central bank policies shape investor sentiment and index performance.",
+    desc: "Employment reports, inflation and central bank policies shape investor sentiment and index performance.",
   },
   {
     icon: <Briefcase size={26} />,
     title: "Industry News",
-    desc: "News affecting key sectors or industries (e.g., energy or tech) can influence the indices related to those sectors.",
+    desc: "News affecting key sectors or industries (e.g. energy or tech) can influence the indices related to those sectors.",
   },
 ];
 
@@ -166,7 +166,7 @@ const IndicesPage = () => {
               Stock market indices offer a powerful overview of market
               performance by tracking the collective value of selected
               stocks. These benchmarks provide deep insights into market
-              trends, economic conditions, and sector growth.
+              trends, economic conditions and sector growth.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-5 mt-10">
@@ -404,7 +404,7 @@ const IndicesPage = () => {
 
             <p className="text-gray-500 text-sm leading-7">
               Several factors influence index prices including economic data,
-              political events, corporate announcements, and industry trends.
+              political events, corporate announcements and industry trends.
             </p>
           </div>
         </div>

@@ -78,7 +78,7 @@ export default function TradingPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
-            Trade smarter with a fast, secure, and user-friendly platform.
+            Trade smarter with a fast, secure and user-friendly platform.
             <br className="hidden sm:block" />
             Everything you need to navigate the markets with confidence.
           </p>
