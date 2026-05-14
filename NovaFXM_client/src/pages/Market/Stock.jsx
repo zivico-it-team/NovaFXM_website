@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { ChartNoAxesCombined, Clock3, Landmark, SunMedium, Torus, TrendingUp } from "lucide-react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { ChartNoAxesCombined, Clock3, Landmark, Star, SunMedium, Torus, TrendingUp } from "lucide-react";
 import {
   Area,
   CartesianGrid,
@@ -10,6 +10,41 @@ import {
   YAxis,
 } from "recharts";
 
+const TradingViewWidget = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    containerRef.current.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.type = "text/javascript";
+    script.async = true;
+
+    script.innerHTML = JSON.stringify({
+      autosize: true,
+      symbol: "NASDAQ:AAPL",
+      interval: "D",
+      timezone: "Etc/UTC",
+      theme: "light",
+      style: "1",
+      locale: "en",
+      allow_symbol_change: true,
+      calendar: false,
+      support_host: "https://www.tradingview.com",
+    });
+
+    containerRef.current.appendChild(script);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="tradingview-widget-container w-full h-full" />
+  );
+};
+
 const exchangeIcons = [Landmark, ChartNoAxesCombined, Clock3, Torus];
 
 const companies = [
@@ -19,6 +54,25 @@ const companies = [
 ];
 
 const timeframes = ["1D", "1M", "3M", "1Y", "5Y", "All"];
+
+const indices = [
+  {
+    title: "S&P 500",
+    desc: "Tracks 500 of the largest U.S. publicly traded companies, widely regarded as the best gauge of the U.S. equity market.",
+  },
+  {
+    title: "Dow Jones Industrial Average",
+    desc: "A price-weighted index of 30 prominent U.S. companies, one of the oldest and most-watched benchmarks in the world.",
+  },
+  {
+    title: "NASDAQ Composite",
+    desc: "Covers over 3,000 stocks listed on the NASDAQ exchange, with a heavy weighting toward technology and growth companies.",
+  },
+  {
+    title: "FTSE 100",
+    desc: "Represents the 100 largest companies listed on the London Stock Exchange by market capitalisation.",
+  },
+];
 
 const buildChartData = () => {
   const labelMap = {
@@ -168,7 +222,7 @@ const LiveStockChart = () => {
         ))}
       </div>
 
-      <div className="mt-4 h-[360px] w-full sm:h-[430px] lg:h-[500px]">
+      <div className="h-[280px] sm:h-[320px] lg:h-[360px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 8, right: 8, bottom: 0, left: 4 }}>
             <defs>
@@ -245,30 +299,31 @@ const Stock = () => {
   return (
     <div className="bg-[#f5f5f5] font-sans">
 
-      
       {/* ================= FULL SCREEN HERO ================= */}
-<section className="relative h-[72vh] min-h-[520px] w-full overflow-hidden sm:h-[82vh] lg:h-screen">
+      <section className="relative h-[72vh] min-h-[520px] w-full overflow-hidden sm:h-[82vh] lg:h-screen">
 
-  {/* Background Image */}
-  <img
-    src="/Stock1.png"
-    alt="Stock Hero"
-    className="market-hero-image absolute inset-0 h-full w-full object-cover"
-  />
 
-  {/* Content */}
-  <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
-    
-    <h1 className="market-hero-title text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
-      Stocks
-    </h1>
+        {/* Background Image */}
+        <img
+          src="/Stock1.png"
+          alt="Stock Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-    <p className="market-hero-copy mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
-      Start Stock Trading Today with NOVAFXM
-    </p>
+        {/* Content */}
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6">
 
-  </div>
-</section>
+          <h1 className="text-4xl font-bold text-[#014421] drop-shadow-sm sm:text-5xl lg:text-6xl">
+            Stocks
+          </h1>
+
+
+          <p className="mt-3 max-w-[22rem] text-base font-medium text-black-500 drop-shadow-sm sm:mt-4 sm:max-w-none sm:text-xl">
+            Start Stock Trading Today with NOVAFXM
+          </p>
+
+        </div>
+      </section>
 
 
       {/* ================= INTRO ================= */}
@@ -284,21 +339,59 @@ const Stock = () => {
           </h2>
 
           <p className="mt-4 text-gray-600 leading-relaxed">
-            Unlock the potential of stock trading and build your portfolio by investing in the world’s leading companies. Keep in mind, all dividends are subject to adjustment—when a company pays out dividends, the stock price will reflect a decrease to account for the  payout.
+            Unlock the potential of stock trading and build your portfolio by investing in the world's leading companies. Keep in mind, all dividends are subject to adjustment—when a company pays out dividends, the stock price will reflect a decrease to account for the payout.
           </p>
         </div>
 
         <img
-  src="/Stock2.jpeg"
-  alt="chart"
-  className="h-auto w-full rounded-2xl object-cover shadow-lg sm:h-[260px] md:max-w-[420px] md:justify-self-end"
-/>
+          src="/Stock2.jpeg"
+          alt="chart"
+          className="h-auto w-full rounded-2xl object-cover shadow-lg sm:h-[260px] md:max-w-[420px] md:justify-self-end"
+        />
       </section>
 
 
-      {/* ================= LIVE CHART ================= */}
-      <section className="px-4 py-10 sm:px-6 lg:px-10">
-        <LiveStockChart />
+      {/* ================= TRADINGVIEW + INDICES ================= */}
+      <section className="bg-[#f8faf9] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+        {/* TRADINGVIEW WIDGET CARD */}
+        <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
+          <div className="h-[360px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
+            <TradingViewWidget />
+          </div>
+        </div>
+        {/* TITLE */}
+        <div className="text-center mt-24">
+          <button className="px-5 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 text-sm font-medium">
+            📈 Market Overview
+          </button>
+          <h2 className="text-5xl font-bold mt-6">
+            Popular <span className="text-[#014421]">Indices</span>
+          </h2>
+          <p className="text-gray-500 mt-5 max-w-2xl mx-auto leading-7">
+            Track major market benchmarks and stay updated with key index
+            performance.
+          </p>
+        </div>
+        {/* INDEX CARDS */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          {indices.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-lg transition"
+            >
+              <div className="w-20 h-20 bg-[#014421] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="text-white fill-white" size={34} />
+              </div>
+              <h3 className="font-semibold text-[#014421] text-xl leading-snug">
+                {item.title}
+              </h3>
+              <p className="text-gray-500 text-sm mt-5 leading-7">
+                {item.desc}
+              </p>
+              <div className="w-20 h-2 bg-[#014421] rounded-full mx-auto mt-8"></div>
+            </div>
+          ))}
+        </div>
       </section>
 
 
@@ -309,7 +402,7 @@ const Stock = () => {
             What are Stocks?
           </h3>
           <p className="text-gray-600 mt-2">
-            A stock represents a unit of ownership in a company. By purchasing shares, you become a part-owner. If the company thrives, its stock price rises,offering you potential gains. If the company underperforms, the stock price may fall..
+            A stock represents a unit of ownership in a company. By purchasing shares, you become a part-owner. If the company thrives, its stock price rises, offering you potential gains. If the company underperforms, the stock price may fall.
           </p>
         </div>
       </section>
@@ -337,7 +430,7 @@ const Stock = () => {
             },
             {
               name: "Tokyo Stock Exchange (TSE)",
-              desc: "Asia’s largest exchange, home to companies like Toyota and Sony.",
+              desc: "Asia's largest exchange, home to companies like Toyota and Sony.",
             },
           ].map((item, i) => (
             <div
@@ -384,7 +477,7 @@ const Stock = () => {
             Why Trade Stocks?
           </h3>
           <p className="mt-2 text-sm">
-            Stock trading offers access to a broad range of companies across various sectors, allowing you to diversify your investment strategy and manage risk. With the right stock trading approach, you can maximize returns and build wealth over time..
+            Stock trading offers access to a broad range of companies across various sectors, allowing you to diversify your investment strategy and manage risk. With the right stock trading approach, you can maximize returns and build wealth over time.
           </p>
         </div>
       </section>
@@ -397,7 +490,7 @@ const Stock = () => {
             How Does Stock Trading Work?
           </h3>
           <p className="text-gray-600 mt-2">
-            Stock trading involves buying and selling shares of companies  on exchanges. You can also trade stocks CFDs (Contracts for Difference), which allow you to speculate on price movements with leverage. Many traders diversify their portfolios by investing in a variety of sectors, balancing risk across industries and companies. 
+            Stock trading involves buying and selling shares of companies on exchanges. You can also trade stocks CFDs (Contracts for Difference), which allow you to speculate on price movements with leverage. Many traders diversify their portfolios by investing in a variety of sectors, balancing risk across industries and companies.
           </p>
         </div>
       </section>
