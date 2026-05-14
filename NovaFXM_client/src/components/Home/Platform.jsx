@@ -1,5 +1,5 @@
 import React from "react";
-import heroBg5 from "../../assets/images/plt4.jpg";
+import heroBg5 from "../../../public/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
 import { useNavigate } from "react-router-dom";
 
