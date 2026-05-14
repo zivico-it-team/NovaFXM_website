@@ -47,13 +47,13 @@ const Footer = () => {
   const quickLinks = [
     { label: "Home", path: "/" },
     { label: "Market", path: "/crypto" },
-    { label: "Trading Tools", path: "/tools/economic-calendar" },
+    { label: "Trading Tools", path: "/economic-calendar" },
     { label: "About Us", path: "/why-us" },
     { label: "Account Type", path: "/account-type" },
   ];
 
   const supportLinks = [
-    { label: "FAQ", path: "/faqs" },
+    { label: "FAQ", path: "/faq" },
     { label: "Contact Us", path: "/contact" },
     { label: "Privacy Policy", path: "/privacy" },
     { label: "Terms of Service", path: "/terms-conditions" },

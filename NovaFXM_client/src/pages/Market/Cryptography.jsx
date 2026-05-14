@@ -327,47 +327,7 @@ const CryptocurrencyPage = () => {
         </div>
       </div>
 
-      {/* Footer Section */}
-      <footer className="bg-gray-900 text-gray-300 p-6 md:p-8 mt-8 md:mt-10">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 md:gap-8">
-          <div>
-            <h4 className="text-white font-bold mb-3 md:mb-4">FX Trade</h4>
-            <p className="text-sm md:text-base">
-              Empowering traders globally with next-generation tools, tight
-              spreads, and uncompromising security.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-3 md:mb-4">Quick Links</h4>
-            <ul className="space-y-1 md:space-y-2">
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Home</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Market</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Trading Tools</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">About Us</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-3 md:mb-4">Support</h4>
-            <ul className="space-y-1 md:space-y-2">
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">FAQ</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Contact Us</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Privacy Policy</li>
-              <li className="hover:text-white cursor-pointer transition text-sm md:text-base">Terms of Service</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-6 md:mt-8 text-center border-t border-gray-800 pt-6 md:pt-8">
-          <p className="text-sm md:text-base">📧 support@fxtrade.com</p>
-          <p className="text-sm md:text-base mt-1 md:mt-2">📞 +1 (555) 123-4567</p>
-          <p className="text-sm md:text-base mt-1 md:mt-2">📍 Global Tech Hub, London</p>
-          <p className="mt-3 md:mt-4 text-xs md:text-sm text-gray-500">
-            A5 Markets Limited – Registered with the Financial Services
-            Authority (FSA) of St. Vincent and the Grenadines, Registration No
-            1627 BC.
-          </p>
-        </div>
-      </footer>
+      
     </div>
   );
 };

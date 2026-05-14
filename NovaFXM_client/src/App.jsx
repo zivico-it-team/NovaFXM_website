@@ -75,7 +75,7 @@ function HomePage() {
       <Packeges />
       <Review />
       <Quiz />
-      <WhyUs />
+     
       <Footer />
       <ChatBox />
     </>
@@ -132,6 +132,8 @@ function App() {
           element={
             <MainLayout>
               <AccountType />
+              <Footer />
+              <ChatBox />
             </MainLayout>
           }
         />
@@ -140,6 +142,8 @@ function App() {
           element={
             <MainLayout>
               <TermsConditions />
+              <Footer />
+              <ChatBox />
             </MainLayout>
           }
         />
@@ -148,6 +152,8 @@ function App() {
           element={
             <MainLayout>
               <WhyUs />
+              <Footer />
+              <ChatBox />
             </MainLayout>
           }
         />
@@ -156,6 +162,8 @@ function App() {
           element={
             <MainLayout>
               <Market />
+              <Footer />
+              <ChatBox />
             </MainLayout>
           }
         />
