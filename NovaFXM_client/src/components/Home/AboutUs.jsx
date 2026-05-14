@@ -3,35 +3,37 @@ import { Link } from "react-router-dom";
 
 export default function AboutUs() {
   return (
-    <section className="reveal-section relative bg-[#f5f6f7] px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
+    <section className="reveal-section relative bg-[#f5f6f7] px-4 py-14 sm:px-6 md:py-20 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
         
         {/* Left side - Image */}
-        <div className="interactive-card relative overflow-hidden rounded-lg">
+        <div className="interactive-card relative overflow-hidden rounded-xl border border-gray-200 bg-white p-2 shadow-sm">
           <img
             src="/image1.png"
             alt="Laptop with code"
-            className="rounded-lg shadow-lg object-cover w-full h-64 sm:h-80 md:h-[400px] transition duration-500 hover:scale-105"
+            className="h-64 w-full rounded-lg object-cover shadow-md transition duration-500 hover:scale-105 sm:h-80 md:h-[420px]"
           />
         </div>
 
         {/* Right side - Text */}
-        <div className="mx-auto max-w-xl space-y-5 text-center md:mx-0 md:text-left">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+        <div className="mx-auto max-w-xl text-center md:mx-0 md:text-left">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             About Us
           </h2>
-          <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#014421] md:mx-0"></div>
+
+          <p className="mt-7 text-base leading-relaxed text-gray-600 sm:text-lg">
             We are a technology-driven broker committed to providing exceptional trading conditions. 
             Our platform bridges the gap between retail and institutional trading, offering unparalleled 
             access to global financial markets.
           </p>
-          <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg">
             Built by traders for traders, our mission is to empower your financial decisions with 
             cutting-edge tools, transparent pricing, and robust security.
           </p>
            <Link
             to="/why-us"
-            className="inline-block text-[#014421] font-semibold hover:underline transition"
+            className="button-shine mt-8 inline-flex items-center justify-center rounded-full bg-[#014421] px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-green-800 hover:shadow-lg sm:text-base"
           >
             More About Us →
           </Link>
