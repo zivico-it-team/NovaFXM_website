@@ -1,6 +1,7 @@
 // src/App.jsx
 // import type { ReactNode } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // Layout
 import Header from "./components/layout/Navbar";
@@ -45,10 +46,19 @@ import AutomatedTrading from "./pages/Trading Tools/AutomatedTrading";
 //footer pages
 import Privacy from "./pages/PrivancyPolicy";
 // ─── Layout Wrappers ──────────────────────────────────────────────────────────
-import Platform from "./components/Home/Platform.jsx";  
+import Platform from "./pages/Trading/Platform.jsx";  
 
 /** Pages that share the top Header */
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function MainLayout({ children }) {
   return (
@@ -88,6 +98,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* ── Auth routes (no header) ── */}
         <Route
