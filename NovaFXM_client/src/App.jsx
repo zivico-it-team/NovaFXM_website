@@ -1,6 +1,13 @@
 // src/App.jsx
 // import type { ReactNode } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
 // Layout
 import Header from "./components/layout/Navbar";
@@ -59,6 +66,16 @@ function AuthLayout({ children }) {
   return <>{children}</>;
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
+  return null;
+}
+
 // ─── Page Compositions ────────────────────────────────────────────────────────
 
 function HomePage() {
@@ -83,6 +100,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* ── Auth routes (no header) ── */}
         <Route
