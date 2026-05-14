@@ -19,25 +19,56 @@ export default function ContactPage() {
     <div className="bg-[#f7f8f7] min-h-screen overflow-hidden">
       
       {/* HERO SECTION */}
-      <section
-        className="relative min-h-[350px] md:min-h-[520px] lg:min-h-[calc(100vh-76px)] bg-cover bg-center bg-no-repeat lg:bg-[length:100%_100%] flex items-center"
-        style={{
-          backgroundImage: "url('/contact Us.jpeg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#021b14]/75"></div>
+      {/* HERO SECTION */}
+<section
+  className="relative min-h-[350px] md:min-h-[520px] lg:min-h-[calc(100vh-76px)] bg-cover bg-center bg-no-repeat lg:bg-[length:100%_100%] flex items-center overflow-hidden"
+  style={{
+    backgroundImage: "url('/contact Us.jpeg')",
+  }}
+>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-12 py-20 lg:py-28 w-full">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white">
-            Contact <span className="text-[#1fa15a]">Us</span>
-          </h1>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-[#021b14]/75"></div>
 
-          <p className="mt-5 lg:mt-7 text-gray-300 max-w-xl lg:max-w-2xl text-sm sm:text-base md:text-xl lg:text-2xl leading-7 lg:leading-9">
-            Our dedicated support team is here to assist you through various
-            channels.
-          </p>
-        </div>
-      </section>
+  {/* Soft animated glow (professional) */}
+  <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-500/10 blur-3xl rounded-full animate-pulse"></div>
+  <div className="absolute bottom-0 right-0 w-72 h-72 bg-yellow-400/10 blur-3xl rounded-full animate-pulse"></div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-12 py-20 lg:py-28 w-full">
+
+    {/* TEXT WRAPPER (ANIMATION) */}
+    <div className="animate-[heroFade_1.4s_ease]">
+
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white">
+        Contact <span className="text-[#1fa15a]">Us</span>
+      </h1>
+
+      <p className="mt-5 lg:mt-7 text-gray-300 max-w-xl lg:max-w-2xl text-sm sm:text-base md:text-xl lg:text-2xl leading-7 lg:leading-9 animate-[heroFade_1.8s_ease]">
+        Our dedicated support team is here to assist you through various
+        channels.
+      </p>
+
+    </div>
+
+  </div>
+
+  {/* Animation CSS */}
+  <style>
+    {`
+      @keyframes heroFade {
+        0% {
+          opacity: 0;
+          transform: translateY(35px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `}
+  </style>
+
+</section>
 
       {/* CONTACT SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-14 md:py-20">

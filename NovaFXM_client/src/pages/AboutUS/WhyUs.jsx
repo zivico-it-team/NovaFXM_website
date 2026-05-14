@@ -7,7 +7,7 @@ import {
   ChevronDown,
   TrendingUp,
   Globe,
- Headphones,
+  Headphones,
 } from "lucide-react";
 
 /* ================= DATA ================= */
@@ -206,42 +206,77 @@ const WhyUs = () => {
   return (
     <div className="font-sans bg-white text-gray-800 overflow-hidden">
 
+      
+
       {/* ================= HERO ================= */}
 
-      <section
-  className="relative h-screen bg-cover bg-center flex items-center justify-start px-6 md:px-20"
+{/* ================= HERO ================= */}
+
+<section
+  className="relative h-screen bg-cover bg-center flex items-center justify-start px-6 md:px-20 overflow-hidden"
   style={{
     backgroundImage:
       "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop')",
   }}
 >
+
+  {/* Soft Overlay */}
   <div className="absolute inset-0 bg-black/60"></div>
 
-  <div className="relative z-10 w-full max-w-7xl flex justify-start">
+  {/* Content */}
+  <div className="relative z-10 w-full max-w-7xl mx-auto flex justify-start">
 
-    <div className="max-w-xl text-left text-white">
+    <div className="max-w-2xl text-left text-white">
 
-      <p className="uppercase tracking-[4px] text-yellow-400 text-sm mb-4">
+      {/* Small Heading */}
+      <p className="uppercase tracking-[4px] text-yellow-400 text-sm md:text-base font-medium mb-5 hero-fade">
         Welcome To NOVAFXM
       </p>
 
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+      {/* Main Heading */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] hero-fade delay-150">
         Why Choose <br />
-        <span className="text-green-400 text-2xl">NOVAFXM</span>
+
+        <span className="text-[#014421] text-2xl md:text-4xl">
+          NOVAFXM
+        </span>
       </h1>
 
-      <p className="mt-6 text-gray-200 leading-relaxed">
-        Trusted by traders. Driven by excellence. Secure and innovative
-        trading solutions.
+      {/* Description */}
+      <p className="mt-6 text-gray-200 text-base md:text-lg leading-relaxed max-w-xl hero-fade delay-300">
+        Trusted by traders worldwide, NOVAFXM delivers secure innovative trading solutions designed for confidence and long-term success.
       </p>
-
-      <button className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-7 py-3 rounded-full shadow-lg">
-        Explore More
-      </button>
 
     </div>
 
   </div>
+
+  {/* ===== Smooth Professional Animation ===== */}
+  <style>
+    {`
+      .hero-fade {
+        opacity: 0;
+        transform: translateY(25px);
+        animation: heroFade 1.6s ease forwards;
+      }
+
+      .delay-150 {
+        animation-delay: 0.15s;
+      }
+
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes heroFade {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `}
+  </style>
+
 </section>
       {/* ================= ABOUT ================= */}
 
@@ -276,7 +311,7 @@ const WhyUs = () => {
 
             <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight">
               Why Choose <br />
-              <span className="text-green-700 text-3xl">NOVAFXM</span>
+              <span className="text-[#014421] text-3xl">NOVAFXM</span>
             </h2>
 
             <div className="w-24 h-[3px] bg-yellow-500 rounded-full mt-5"></div>
@@ -302,10 +337,6 @@ const WhyUs = () => {
 
             </div>
 
-            <button className="mt-8 bg-green-700 hover:bg-green-800 text-white px-7 py-3 rounded-full shadow-lg">
-              Learn More About Us
-            </button>
-
           </div>
         </div>
       </section>
@@ -321,7 +352,7 @@ const WhyUs = () => {
             title={
               <>
                 What Sets{" "}
-                <span className="text-green-700">NOVAFXM</span> Apart?
+                <span className="text-[#014421]">NOVAFXM</span> Apart?
               </>
             }
           />
