@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const plans = [
@@ -153,6 +154,28 @@ export default function PricingSection() {
               </button>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center sm:justify-end">
+          <button
+            type="button"
+            onClick={() => navigate("/account-type")}
+            className="
+              group inline-flex items-center gap-2
+              text-sm font-semibold text-[#014421]
+              transition-colors duration-300
+              hover:text-[#D4AF37]
+              focus:outline-none focus-visible:text-[#D4AF37]
+            "
+          >
+            See more
+            <ArrowRight
+              size={18}
+              strokeWidth={2.2}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </button>
         </div>
       </div>
 

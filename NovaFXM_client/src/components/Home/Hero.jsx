@@ -46,19 +46,17 @@ export default function Hero() {
         {/* Heading */}
         <h1 className="reveal-up reveal-delay-1 leading-tight">
           <span className="block text-3xl sm:text-5xl md:text-8xl font-bold text-[#014421]">
-            Unlock the Future <span className="text-3xl sm:text-5xl md:text-8xl font-light text-gray-900">of</span>
+            Your Gateway <span className="text-3xl sm:text-5xl md:text-8xl font-light text-gray-900">to</span>
           </span>
 
           <span className="block mt-5 sm:mt-8 text-3xl sm:text-5xl md:text-7xl font-light text-gray-900">
-            Forex Trading
+            Smarter Trading
           </span>
         </h1>
 
         {/* Description */}
         <p className="reveal-up reveal-delay-2 mx-auto mt-4 max-w-2xl px-2 text-sm leading-relaxed text-gray-500 sm:mt-6 sm:text-base md:text-lg">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. It has
-          survived not only five centuries, but also the leap into electronic
-          typesetting.
+          Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
         </p>
 
         {/* Button */}

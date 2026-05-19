@@ -231,7 +231,7 @@ export default function FaqPage() {
 
 </div>
       {/* ── FAQ SECTION ── */}
-      <div style={{ maxWidth: 1000, margin: "0 auto", padding: "30px 24px" }}>
+      <div id="faq-questions" style={{ maxWidth: 1000, margin: "0 auto", padding: "30px 24px" }}>
         {/* Section label */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <span

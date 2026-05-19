@@ -291,7 +291,7 @@ const Stock = () => {
             className="market-hero-image h-full w-full object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
 
         {/* Content */}
         <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
