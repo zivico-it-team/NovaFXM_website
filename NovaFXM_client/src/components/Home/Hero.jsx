@@ -22,21 +22,21 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[22rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
-        <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm reveal-up sm:mb-8 sm:gap-3 sm:px-6">
+        <div className="inline-flex items-center max-w-full gap-2 px-3 py-2 mb-4 bg-white border border-gray-200 rounded-full shadow-sm reveal-up sm:mb-8 sm:gap-3 sm:px-6">
           <div className="flex -space-x-2">
             <img
               src="https://i.pravatar.cc/32?img=1"
-              className="h-6 w-6 shrink-0 rounded-full border-2 border-white sm:h-8 sm:w-8"
+              className="w-6 h-6 border-2 border-white rounded-full shrink-0 sm:h-8 sm:w-8"
               alt=""
             />
             <img
               src="https://i.pravatar.cc/32?img=2"
-              className="h-6 w-6 shrink-0 rounded-full border-2 border-white sm:h-8 sm:w-8"
+              className="w-6 h-6 border-2 border-white rounded-full shrink-0 sm:h-8 sm:w-8"
               alt=""
             />
             <img
               src="https://i.pravatar.cc/32?img=3"
-              className="h-6 w-6 shrink-0 rounded-full border-2 border-white sm:h-8 sm:w-8"
+              className="w-6 h-6 border-2 border-white rounded-full shrink-0 sm:h-8 sm:w-8"
               alt=""
             />
           </div>
@@ -52,13 +52,17 @@ export default function Hero() {
             Your Gateway <span className="font-light text-gray-900">to</span>
           </span>
 
+
           <span className="mt-2 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-6 sm:text-5xl md:text-7xl">
+
             Smarter Trading
           </span>
         </h1>
 
         {/* Description */}
+
         <p className="mx-auto mt-3 max-w-[19rem] text-sm leading-6 text-gray-500 reveal-up reveal-delay-2 sm:mt-5 sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg">
+
           Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
         </p>
 
