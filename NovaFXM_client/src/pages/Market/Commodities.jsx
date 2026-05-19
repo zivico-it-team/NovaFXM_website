@@ -78,24 +78,24 @@ export default function CommoditiesSection() {
   }, []);
 
   return (
-    <div className="w-full bg-white overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-white">
       {/* Hero Section with Parallax Effect */}
       <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-black sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src="/Commodities.png.jpeg"
             alt="Commodities Hero"
-            className="market-hero-image h-full w-full object-cover object-center"
+            className="object-cover object-center w-full h-full market-hero-image"
           />
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center md:px-6">
-          <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center market-hero-content md:px-6">
+          <h1 className="text-4xl font-bold text-white market-hero-title sm:text-5xl md:text-6xl lg:text-7xl">
             Commodities
           </h1>
 
-          <p className="market-hero-copy mt-4 max-w-3xl px-2 text-sm leading-6 text-white sm:text-base md:mt-5 md:leading-7">
+          <p className="max-w-3xl px-2 mt-4 text-sm leading-6 text-white market-hero-copy sm:text-base md:mt-5 md:leading-7">
             Trade global commodities like gold, oil and silver with Novafxm.
             Diversify your portfolio and capture opportunities in fast-moving
             markets.
@@ -108,7 +108,7 @@ export default function CommoditiesSection() {
         <div className="mx-auto max-w-[1160px] px-4 sm:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-[1.03fr_1fr] items-center gap-8 lg:gap-[64px]">
             {/* Left Image */}
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1 about-image animate-slide-right">
+            <div className="flex justify-center order-2 lg:justify-start lg:order-1 about-image animate-slide-right">
               <img
                 src="/Commodities1.png.jpeg"
                 alt="Commodities Trading"
@@ -118,7 +118,7 @@ export default function CommoditiesSection() {
 
             {/* Right Content */}
             <div className="max-w-[575px] order-1 lg:order-2 animate-slide-left">
-              <p className="text-sm sm:text-base font-medium leading-6 text-gray-600">
+              <p className="text-sm font-medium leading-6 text-gray-600 sm:text-base">
                 Trade the Building Blocks of the Economy
               </p>
 
@@ -178,7 +178,7 @@ export default function CommoditiesSection() {
       <section className="bg-[#f7f7f7] pb-12 sm:pb-20">
         <div className="mx-auto max-w-[1160px] px-4 sm:px-5 lg:px-6">
           {/* What are Commodities */}
-          <div className="bg-white px-5 sm:px-8 lg:px-12 py-6 sm:py-7 rounded-xl sm:rounded-none animate-fade-up">
+          <div className="px-5 py-6 bg-white sm:px-8 lg:px-12 sm:py-7 rounded-xl sm:rounded-none animate-fade-up">
             <h2 className="text-2xl sm:text-[28px] font-extrabold leading-tight text-black">
               What are{" "}
               <span className="text-[#014421]">Commodities?</span>
@@ -186,32 +186,32 @@ export default function CommoditiesSection() {
 
             <div className="mt-3 sm:mt-4 h-[2px] w-[75px] sm:w-[95px] bg-[#014421] animate-expand-width"></div>
 
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base font-medium leading-6 text-gray-600 sm:pl-7">
+            <p className="mt-4 text-sm font-medium leading-6 text-gray-600 sm:mt-6 sm:text-base sm:pl-7">
               Commodities are basic goods used in commerce and they can be
               classified into two main categories:
             </p>
 
             <div className="mt-4 space-y-4 sm:space-y-3 sm:pl-7">
               {/* Hard Commodities */}
-              <div className="flex flex-wrap items-start gap-x-2 gap-y-2 text-sm leading-6 group cursor-pointer">
+              <div className="flex flex-wrap items-start text-sm leading-6 cursor-pointer gap-x-2 gap-y-2 group">
                 <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#014421] text-white shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-[#014421]">
                   <GiGoldBar className="text-[10px]" />
                 </div>
                 <span className="font-extrabold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Hard Commodities</span>
                 <span className="font-bold text-black">:</span>
-                <span className="font-medium text-gray-600 text-sm sm:text-base flex-1">
+                <span className="flex-1 text-sm font-medium text-gray-600 sm:text-base">
                   Natural resources like oil, gold and metals gas, which are extracted from the Earth.
                 </span>
               </div>
 
               {/* Soft Commodities */}
-              <div className="flex flex-wrap items-start gap-x-2 gap-y-2 text-sm leading-6 group cursor-pointer">
+              <div className="flex flex-wrap items-start text-sm leading-6 cursor-pointer gap-x-2 gap-y-2 group">
                 <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#014421] text-white shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-[#0D7A43]">
                   <GiWheat className="text-[10px]" />
                 </div>
                 <span className="font-extrabold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Soft Commodities</span>
                 <span className="font-bold text-black">:</span>
-                <span className="font-medium text-gray-600 text-sm sm:text-base flex-1">
+                <span className="flex-1 text-sm font-medium text-gray-600 sm:text-base">
                   Agricultural products or livestock, such as wheat, coffee and sugar.
                 </span>
               </div>
@@ -220,11 +220,11 @@ export default function CommoditiesSection() {
 
           {/* Why Trade Commodities */}
           <div ref={sectionRefs.whyTrade} className="mt-8 sm:mt-12">
-            <h2 className="text-center text-2xl sm:text-[28px] font-extrabold leading-tight text-black px-4">
+            <h2 className="text-center text-2xl sm:text-[28px] font-bold leading-tight text-black px-4">
               Why Trade <span className="text-[#014421]">Commodities?</span>
             </h2>
 
-            <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-9 grid-cols-1 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 mt-8 sm:mt-12 sm:gap-9 md:grid-cols-3">
               {/* Card 1 - Diversification */}
               <div className={`commodity-card-animate relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 rounded-lg bg-[#ecfff0] px-5 sm:px-8 py-6 sm:py-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_35px_rgba(1,68,33,0.14)] ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
                 <div className="absolute left-0 top-0 h-full w-[6px] rounded-l-lg bg-[#014421] transition-all duration-300 hover:w-[8px]" />
@@ -248,7 +248,7 @@ export default function CommoditiesSection() {
                   <FaShieldAlt className="text-xl sm:text-[22px]" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-extrabold leading-tight text-black underline decoration-black decoration-2 underline-offset-4">
+                  <h3 className="text-sm font-extrabold leading-tight text-black underline sm:text-base decoration-black decoration-2 underline-offset-4">
                     Hedging
                   </h3>
                   <p className="mt-2 sm:mt-4 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.55] text-gray-600">
@@ -281,14 +281,14 @@ export default function CommoditiesSection() {
               How Are <span className="text-[#014421]">Commodities Traded?</span>
             </h2>
 
-            <div className="mt-8 sm:mt-11 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 mt-8 sm:mt-11 sm:gap-8 md:grid-cols-3">
               {/* Card 1 - Spot Market */}
               <div className={`commodity-card-animate overflow-hidden rounded-md border border-[#014421] bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_35px_rgba(1,68,33,0.13)] ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
-                <div className="flex flex-col sm:flex-row h-full">
+                <div className="flex flex-col h-full sm:flex-row">
                   <div className="flex h-12 sm:h-auto sm:w-[70px] items-center justify-center bg-[#014421] text-white sm:flex-col transition-all duration-300 hover:bg-[#014421]">
                     <FaStore className="text-xl sm:text-2xl animate-bounce-slow" />
                   </div>
-                  <div className="flex flex-1 flex-col justify-start p-5 sm:p-6">
+                  <div className="flex flex-col justify-start flex-1 p-5 sm:p-6">
                     <h3 className="min-h-[40px] sm:min-h-[42px] text-sm sm:text-base font-extrabold leading-tight sm:leading-[1.3] text-[#014421]">
                       Spot Market
                     </h3>
@@ -301,11 +301,11 @@ export default function CommoditiesSection() {
 
               {/* Card 2 - Futures Market */}
               <div className={`commodity-card-animate overflow-hidden rounded-md border border-black bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_35px_rgba(0,0,0,0.12)] ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '150ms' }}>
-                <div className="flex flex-col sm:flex-row h-full">
+                <div className="flex flex-col h-full sm:flex-row">
                   <div className="flex h-12 sm:h-auto sm:w-[70px] items-center justify-center bg-black text-white sm:flex-col transition-all duration-300 hover:bg-gray-800">
                     <RiExchangeFundsLine className="text-xl sm:text-2xl animate-pulse-slow" />
                   </div>
-                  <div className="flex flex-1 flex-col justify-start p-5 sm:p-6">
+                  <div className="flex flex-col justify-start flex-1 p-5 sm:p-6">
                     <h3 className="min-h-[40px] sm:min-h-[42px] text-sm sm:text-base font-extrabold leading-tight sm:leading-[1.3] text-black">
                       Futures Market
                     </h3>
@@ -319,11 +319,11 @@ export default function CommoditiesSection() {
 
               {/* Card 3 - ETFs */}
               <div className={`commodity-card-animate overflow-hidden rounded-md border border-[#D4AF37] bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_35px_rgba(193,167,25,0.14)] ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-                <div className="flex flex-col sm:flex-row h-full">
+                <div className="flex flex-col h-full sm:flex-row">
                   <div className="flex h-12 sm:h-auto sm:w-[70px] items-center justify-center bg-[#D4AF37] text-white sm:flex-col transition-all duration-300 hover:bg-[#D4AF37]">
                     <RiStockLine className="text-xl sm:text-2xl animate-float" />
                   </div>
-                  <div className="flex flex-1 flex-col justify-start p-5 sm:p-6">
+                  <div className="flex flex-col justify-start flex-1 p-5 sm:p-6">
                     <h3 className="min-h-[40px] sm:min-h-[42px] text-sm sm:text-base font-extrabold leading-tight sm:leading-[1.3] text-[#D4AF37] break-words">
                       Exchange-Traded Funds (ETFs)
                     </h3>
@@ -419,7 +419,7 @@ export default function CommoditiesSection() {
 
               <div className="mt-5 sm:mt-7 h-[2px] w-[70px] sm:w-[84px] rounded-full bg-[#014421]"></div>
 
-              <div className="mt-6 sm:mt-9 overflow-hidden rounded-lg floating-image">
+              <div className="mt-6 overflow-hidden rounded-lg sm:mt-9 floating-image">
                 <img
                   src="https://www.suttergoldmining.com/wp-content/uploads/2023/10/where-to-buy-gold-coins-and-bars.jpg"
                   alt="Gold bars representing commodity prices"
@@ -437,11 +437,11 @@ export default function CommoditiesSection() {
           <h2 className="text-center text-2xl sm:text-[28px] font-extrabold leading-tight text-black px-4">
             Popular <span className="text-[#014421]">Commodities</span>
           </h2>
-          <div className="mt-3 flex justify-center">
+          <div className="flex justify-center mt-3">
             <div className="h-[2px] w-[70px] sm:w-[84px] rounded-full bg-[#014421]"></div>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-6 mt-10 sm:gap-8 md:grid-cols-3 lg:grid-cols-5">
             {/* Gold */}
             <div className={`commodity-card-animate group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${isVisible.popular ? 'animate-scale-up' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#014421] to-[#0D7A43] text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
@@ -453,8 +453,8 @@ export default function CommoditiesSection() {
 
             {/* Silver */}
             <div className={`commodity-card-animate group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${isVisible.popular ? 'animate-scale-up' : 'opacity-0'}`} style={{ transitionDelay: '100ms' }}>
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-gray-500 to-gray-400 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12">
-                <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-br from-gray-500 to-gray-400 group-hover:scale-110 group-hover:-rotate-12">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="1" fill="none" />
                   <circle cx="12" cy="12" r="3" fill="white" />
                 </svg>
@@ -465,7 +465,7 @@ export default function CommoditiesSection() {
 
             {/* Oil */}
             <div className={`commodity-card-animate group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${isVisible.popular ? 'animate-scale-up' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-gray-800 to-gray-700 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-br from-gray-800 to-gray-700 group-hover:scale-110 group-hover:rotate-12">
                 <GiOilPump className="text-3xl" />
               </div>
               <h3 className="mt-4 text-base font-extrabold text-black transition-colors duration-300 group-hover:text-gray-700">Crude Oil</h3>
@@ -474,7 +474,7 @@ export default function CommoditiesSection() {
 
             {/* Wheat */}
             <div className={`commodity-card-animate group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${isVisible.popular ? 'animate-scale-up' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-500 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-br from-amber-600 to-amber-500 group-hover:scale-110 group-hover:-rotate-12">
                 <GiWheat className="text-3xl" />
               </div>
               <h3 className="mt-4 text-base font-extrabold text-black transition-colors duration-300 group-hover:text-amber-600">Wheat</h3>
@@ -483,7 +483,7 @@ export default function CommoditiesSection() {
 
             {/* Coffee */}
             <div className={`commodity-card-animate group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${isVisible.popular ? 'animate-scale-up' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-800 to-amber-700 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-br from-amber-800 to-amber-700 group-hover:scale-110 group-hover:rotate-12">
                 <GiCoffeeBeans className="text-3xl" />
               </div>
               <h3 className="mt-4 text-base font-extrabold text-black transition-colors duration-300 group-hover:text-amber-800">Coffee</h3>
@@ -496,18 +496,18 @@ export default function CommoditiesSection() {
       {/* Trading Benefits Section */}
       <section className="bg-gradient-to-r from-[#014421] to-[#014421] px-4 sm:px-5 py-12 sm:py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-white/5 animate-pulse-slow"></div>
-        <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute w-64 h-64 rounded-full -top-24 -right-24 bg-white/10 blur-3xl animate-float"></div>
+        <div className="absolute w-64 h-64 rounded-full -bottom-24 -left-24 bg-white/10 blur-3xl animate-float-delayed"></div>
         
         <div className="mx-auto max-w-[1160px] text-center relative z-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white animate-fade-down">
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl animate-fade-down">
             Start Trading Commodities Today
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-white/90 animate-fade-up">
+          <p className="max-w-2xl mx-auto mt-4 text-sm sm:text-base text-white/90 animate-fade-up">
             Join Novafxm and access global commodity markets with competitive spreads,
             advanced trading tools and dedicated support.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <button
               type="button"
               onClick={() => navigate("/signup")}

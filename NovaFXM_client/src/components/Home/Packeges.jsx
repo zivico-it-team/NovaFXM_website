@@ -46,19 +46,19 @@ export default function PricingSection() {
 
   return (
     <section className="bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 overflow-hidden">
-      <div className="mx-auto max-w-7xl text-center">
+      <div className="mx-auto text-center max-w-7xl">
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#014421] mb-4 animate-fadeUp">
           Choose Your Account
         </h2>
 
-        <p className="text-gray-600 mb-12 text-sm sm:text-base max-w-2xl mx-auto animate-fadeUp delay-100">
+        <p className="max-w-2xl mx-auto mb-12 text-sm text-gray-600 delay-100 sm:text-base animate-fadeUp">
           Tailored trading conditions to suit every trader's style and experience level.
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+        <div className="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
 
           {plans.map((plan, index) => (
             <div
@@ -104,13 +104,13 @@ export default function PricingSection() {
                   <span className="text-4xl font-extrabold text-gray-900">
                     {plan.price}
                   </span>
-                  <div className="text-sm text-gray-500 mt-1">
+                  <div className="mt-1 text-sm text-gray-500">
                     {plan.deposit}
                   </div>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 mb-10 text-left">
+                <ul className="mb-10 space-y-4 text-left">
                   {plan.features.map((feature, i) => (
                     <li
                       key={i}
@@ -154,7 +154,11 @@ export default function PricingSection() {
             </div>
           ))}
         </div>
+
+
+        
       </div>
+
 
       {/* Animations */}
       <style jsx>{`
