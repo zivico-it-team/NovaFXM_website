@@ -59,19 +59,16 @@ const middleCards = [
     icon: <Clock3 size={28} />,
     title: "Diversification",
     desc: "Represents a broad market sector without the need to invest in individual stocks.",
-    color: "green",
   },
   {
     icon: <TrendingUp size={28} />,
     title: "Lower Volatility",
     desc: "Since indices track multiple companies, they tend to be more stable than individual stocks.",
-    color: "yellow",
   },
   {
     icon: <Search size={28} />,
     title: "Accessibility",
     desc: "Easier to analyze and trade due to their reflection of overall market performance.",
-    color: "green",
   },
 ];
 
@@ -208,11 +205,8 @@ const IndicesPage = () => {
 
         {/* TITLE */}
         <div className="mt-12 text-center sm:mt-16">
-          <button className="px-5 py-2 text-sm font-medium text-green-700 border border-green-200 rounded-full bg-green-50">
-            📈 Market Overview
-          </button>
 
-          <h2 className="mt-5 text-2xl font-bold sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
             Popular <span className="text-[#014421]">Indices</span>
           </h2>
 
@@ -223,25 +217,23 @@ const IndicesPage = () => {
         </div>
 
         {/* INDEX CARDS */}
-        <div className="grid grid-cols-1 gap-5 mx-auto mt-10 max-w-7xl sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 mx-auto mt-8 max-w-6xl sm:grid-cols-2 lg:mt-10 lg:grid-cols-4 lg:gap-5">
           {indices.map((item, index) => (
             <div
               key={index}
-              className="rounded-2xl border border-gray-100 bg-white p-5 text-center shadow-sm transition hover:shadow-lg sm:p-6 lg:p-7"
+              className="w-full rounded-2xl border-b-[4px] border-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5"
             >
-              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#014421] sm:mb-6 sm:h-20 sm:w-20">
-                <Star className="text-white fill-white" size={34} />
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] sm:h-16 sm:w-16">
+                <Star className="fill-[#014421] text-[#014421]" size={28} />
               </div>
 
-              <h3 className="font-semibold text-[#014421] text-xl leading-snug">
+              <h3 className="text-lg font-bold leading-snug text-gray-800">
                 {item.title}
               </h3>
 
-              <p className="mt-5 text-sm leading-7 text-gray-500">
+              <p className="mt-3 text-sm leading-6 text-gray-500">
                 {item.desc}
               </p>
-
-              <div className="w-20 h-2 bg-[#014421] rounded-full mx-auto mt-8"></div>
             </div>
           ))}
         </div>
@@ -270,21 +262,17 @@ const IndicesPage = () => {
           {topCards.map((card, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl border border-gray-100 bg-[#f8faf9] shadow-sm"
+              className="rounded-2xl border-b-[4px] border-[#014421] bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px]"
             >
-              <div className="h-2 bg-[#014421]"></div>
-
               <div className="flex items-start gap-4 p-5 sm:gap-5 sm:p-6 lg:p-8">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white sm:h-16 sm:w-16">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-16 sm:w-16">
                   {card.icon}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-[#014421] sm:text-xl">
+                  <h3 className="text-lg font-bold text-gray-800 sm:text-xl">
                     {card.title}
                   </h3>
-
-                  <div className="w-14 h-1 bg-[#014421] rounded-full mt-4 mb-5"></div>
 
                   <p className="text-sm leading-7 text-gray-600">
                     {card.desc}
@@ -316,47 +304,19 @@ const IndicesPage = () => {
           {middleCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-2xl border border-gray-100 bg-white p-5 text-center shadow-sm transition hover:shadow-lg sm:p-6 lg:p-8"
+              className="rounded-2xl border-b-[4px] border-[#014421] bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] lg:p-8"
             >
-              <div
-                className={`w-16 h-16 rounded-full mx-auto flex items-center justify-center text-white ${
-                  card.color === "yellow"
-                    ? "bg-[#D4AF37]"
-                    : "bg-[#014421]"
-                }`}
-              >
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
                 {card.icon}
               </div>
 
-              <h3
-                className={`font-semibold text-xl mt-6 ${
-                  card.color === "yellow"
-                    ? "text-[#D4AF37]"
-                    : "text-[#014421]"
-                }`}
-              >
+              <h3 className="mt-6 text-xl font-bold text-gray-800">
                 {card.title}
               </h3>
-
-              <div
-                className={`w-14 h-1 rounded-full mx-auto mt-4 mb-5 ${
-                  card.color === "yellow"
-                    ? "bg-[#D4AF37]"
-                    : "bg-[#014421]"
-                }`}
-              ></div>
 
               <p className="text-sm leading-7 text-gray-600">
                 {card.desc}
               </p>
-
-              <div
-                className={`w-20 h-2 rounded-full mx-auto mt-8 ${
-                  card.color === "yellow"
-                    ? "bg-[#D4AF37]"
-                    : "bg-[#014421]"
-                }`}
-              ></div>
             </div>
           ))}
         </div>
@@ -374,17 +334,15 @@ const IndicesPage = () => {
             {factors.map((item, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-gray-100 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:shadow-lg sm:p-6 lg:p-8"
+                className="rounded-2xl bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl lg:p-8"
               >
-                <div className="w-16 h-16 rounded-full bg-[#014421] text-white flex items-center justify-center mx-auto">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
                   {item.icon}
                 </div>
 
-                <h3 className="text-[#014421] font-semibold text-xl mt-6 leading-snug">
+                <h3 className="mt-6 text-xl font-bold leading-snug text-gray-800">
                   {item.title}
                 </h3>
-
-                <div className="w-14 h-1 bg-[#014421] rounded-full mx-auto mt-4 mb-5"></div>
 
                 <p className="text-sm leading-7 text-gray-600">
                   {item.desc}

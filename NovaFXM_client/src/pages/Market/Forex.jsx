@@ -16,7 +16,7 @@ import {
 const tradingViewCurrencies = ["EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD"];
 
 const cardAnimation =
-  "transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#c89d32]/70 hover:shadow-xl hover:shadow-slate-900/10";
+  "transition duration-300 hover:-translate-y-2 hover:shadow-xl";
 
 const features = [
   {
@@ -85,7 +85,7 @@ function SectionTitle({ children, accent = false }) {
           <h2 className={`text-2xl font-bold sm:text-3xl lg:text-4xl ${accent ? "text-[#014421]" : "text-[#1f1f1f]"}`}>
         {children}
       </h2>
-      {!accent && <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-[#c89d32]" />}
+      {!accent && <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-[#014421]" />}
     </div>
   );
 }
@@ -123,10 +123,10 @@ function ForexRatesWidget() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-[1500px] px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+    <section className="mx-auto max-w-[1280px] px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
       <div className="mb-5 flex flex-col items-start justify-between gap-3 sm:mb-6 sm:flex-row sm:items-end">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
             Live Forex Rates
           </p>
           <h2 className="mt-1 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
@@ -142,7 +142,7 @@ function ForexRatesWidget() {
         {/* Height increased: mobile 900px → tablet 1050px → desktop 1200px */}
         <div
           ref={containerRef}
-          className="tradingview-widget-container h-[430px] overflow-hidden rounded-xl bg-white sm:h-[580px] lg:h-[780px]"
+          className="tradingview-widget-container h-[430px] overflow-hidden rounded-xl bg-white sm:h-[520px] lg:h-[600px]"
         />
       </div>
     </section>
@@ -172,14 +172,14 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-      <div className={`grid items-center gap-8 rounded-2xl border border-transparent bg-white p-5 shadow-sm sm:p-8 lg:grid-cols-2 lg:gap-14 lg:rounded-[30px] ${cardAnimation}`}>
+      <div className={`grid items-center gap-8 rounded-2xl bg-white p-5 shadow-md sm:p-8 lg:grid-cols-2 lg:gap-14 lg:rounded-[30px] ${cardAnimation}`}>
         <img
           src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
           alt="forex"
           className="h-[240px] w-full rounded-2xl object-cover sm:h-[320px] lg:h-[350px] lg:rounded-[30px]"
         />
         <div>
-          <p className="mb-4 text-sm font-semibold text-[#c89d32]">Forex Trading</p>
+          <p className="mb-4 text-sm font-semibold text-[#014421]">Forex Trading</p>
           <h2 className="text-3xl font-bold leading-tight text-[#1f1f1f] sm:text-4xl">
             Your Trusted Forex Trading Partner
           </h2>
@@ -202,22 +202,21 @@ function FeatureGrid() {
       <SectionTitle>
         Why Trade Forex with <span className="text-[#014421]">NOVAFXM</span>
       </SectionTitle>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {features.map((item) => {
           const Icon = item.icon;
           return (
           <div
             key={item.title}
-            className={`group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 text-left sm:p-6 lg:p-8 ${cardAnimation}`}
+            className={`group rounded-2xl border-b-[4px] border-[#014421] bg-white p-5 text-center shadow-md md:border-b-[6px] lg:p-6 ${cardAnimation}`}
           >
-            <div className="absolute left-0 top-0 h-1 w-full bg-[#c89d32]" />
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white sm:h-14 sm:w-14 lg:mb-7 lg:h-16 lg:w-16">
-              <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8" strokeWidth={2.2} />
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-16 sm:w-16">
+              <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.2} />
             </div>
-            <h3 className="text-xl font-bold leading-snug text-[#014421]">
+            <h3 className="text-lg font-bold leading-snug text-gray-800 sm:text-xl">
               {item.title}
             </h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-3 text-sm leading-6 text-gray-500">
               {item.desc}
             </p>
           </div>
@@ -231,35 +230,31 @@ function FeatureGrid() {
 function MarketOfferingsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
-      <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
-        <div className="border-b border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
-            Forex Products
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
-            Forex Market Offerings
-          </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-            Access a broad range of currency markets and trading conditions
-            designed for active forex strategies.
-          </p>
-        </div>
-        <div className="divide-y divide-slate-200">
-          {marketOfferings.map(([title, desc], index) => (
-            <div
-              key={title}
-              className="group grid gap-4 px-5 py-5 transition-colors duration-300 hover:bg-[#014421] sm:px-8 sm:py-6 md:grid-cols-[72px_1fr] lg:grid-cols-[84px_1fr] lg:px-10"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#c89d32]/40 bg-white text-sm font-bold text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{title}</h3>
-                <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
-              </div>
+      <div className="mb-8 text-center sm:mb-12">
+        <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
+          Forex Products
+        </p>
+        <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
+          Forex Market Offerings
+        </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-500 sm:text-base">
+          Access a broad range of currency markets and trading conditions
+          designed for active forex strategies.
+        </p>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+        {marketOfferings.map(([title, desc], index) => (
+          <div
+            key={title}
+            className={`rounded-2xl border-b-[4px] border-[#014421] bg-white p-5 text-center shadow-md md:border-b-[6px] lg:p-5 ${cardAnimation}`}
+          >
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#014421]">
+              {String(index + 1).padStart(2, "0")}
             </div>
-          ))}
-        </div>
+            <h3 className="text-base font-bold leading-snug text-gray-800 sm:text-lg">{title}</h3>
+            <p className="mt-3 text-sm leading-6 text-gray-500">{desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -268,35 +263,31 @@ function MarketOfferingsSection() {
 function FundingSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
-      <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
-        <div className="border-b border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
-            Account Funding
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
-            Funding & Withdrawal Methods
-          </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-            Choose secure payment options designed for fast deposits,
-            controlled withdrawals and transparent processing.
-          </p>
-        </div>
-        <div className="grid gap-0 md:grid-cols-2">
-          {fundingMethods.map(([name, desc, Icon]) => (
-            <div
-              key={name}
-              className="group flex gap-4 border-b border-slate-200 px-5 py-5 transition-colors duration-300 hover:bg-[#014421] sm:px-8 sm:py-6 md:border-r md:last:border-r-0 md:[&:nth-last-child(-n+2)]:border-b-0 lg:px-10"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#014421] sm:h-14 sm:w-14">
-                <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.2} />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{name}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
-              </div>
+      <div className="mb-8 text-center sm:mb-12">
+        <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
+          Account Funding
+        </p>
+        <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
+          Funding & Withdrawal Methods
+        </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-500 sm:text-base">
+          Choose secure payment options designed for fast deposits,
+          controlled withdrawals and transparent processing.
+        </p>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        {fundingMethods.map(([name, desc, Icon]) => (
+          <div
+            key={name}
+            className={`rounded-2xl border-b-[4px] border-[#014421] bg-white p-5 text-center shadow-md md:border-b-[6px] lg:p-6 ${cardAnimation}`}
+          >
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-16 sm:w-16">
+              <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.2} />
             </div>
-          ))}
-        </div>
+            <h3 className="text-lg font-bold leading-snug text-gray-800 sm:text-xl">{name}</h3>
+            <p className="mt-3 text-sm leading-6 text-gray-500">{desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -306,12 +297,11 @@ function ToolsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
       <SectionTitle accent>Forex Trading Tools & Market Insights</SectionTitle>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {tools.map((tool) => (
-          <div key={tool.title} className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 text-center sm:p-8 lg:p-10 ${cardAnimation}`}>
-            <div className="absolute bottom-0 left-0 h-2 w-full bg-[#c89d32] transition-all duration-300 group-hover:h-3" />
-            <h3 className="text-xl font-bold leading-snug text-[#014421] sm:text-2xl">{tool.title}</h3>
-            <p className="mt-6 text-base leading-7 text-gray-600">{tool.desc}</p>
+          <div key={tool.title} className={`rounded-2xl bg-white p-5 text-center shadow-md lg:p-6 ${cardAnimation}`}>
+            <h3 className="text-lg font-bold leading-snug text-gray-800 sm:text-xl">{tool.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-gray-500">{tool.desc}</p>
           </div>
         ))}
       </div>
@@ -322,10 +312,10 @@ function ToolsSection() {
 function SecuritySection() {
   return (
     <section className="bg-[#f1f1f1] px-4 py-10 sm:px-6">
-      <div className={`mx-auto max-w-7xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
+      <div className={`mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-md ${cardAnimation}`}>
         <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
               Client Protection
             </p>
             <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl">
