@@ -41,7 +41,7 @@ const TradingViewChart = () => {
   }, []);
 
   return (
-    <div className="w-full h-[360px] sm:h-[420px] lg:h-[500px]">
+    <div className="h-[280px] w-full sm:h-[420px] lg:h-[500px]">
       <div ref={containerRef} className="tradingview-widget-container w-full h-full" />
     </div>
   );
@@ -164,8 +164,8 @@ const LiveStockChart = () => {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center gap-3">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#11161c] text-xl font-bold text-white">
+      <div className="mt-5 flex items-start gap-3 sm:items-center">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#11161c] text-lg font-bold text-white sm:h-12 sm:w-12 sm:text-xl">
           {activeCompany.label.charAt(0)}
         </div>
         <div>
@@ -176,7 +176,7 @@ const LiveStockChart = () => {
             </span>
           </div>
           <div className="flex flex-wrap items-end gap-2">
-            <span className="text-3xl font-bold tracking-normal text-black">{activeCompany.price}</span>
+            <span className="text-2xl font-bold tracking-normal text-black sm:text-3xl">{activeCompany.price}</span>
             <span className="mb-1 text-[9px] font-semibold uppercase leading-none text-orange-500">D<br />USD</span>
             <span className="mb-1 text-sm font-bold text-[#008b78]">
               {activeCompany.change} {activeCompany.percent}
@@ -205,7 +205,7 @@ const LiveStockChart = () => {
         ))}
       </div>
 
-      <div className="h-[280px] sm:h-[320px] lg:h-[360px]">
+      <div className="h-[230px] sm:h-[320px] lg:h-[360px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 8, right: 8, bottom: 0, left: 4 }}>
             <defs>
@@ -283,7 +283,7 @@ const Stock = () => {
     <div className="bg-[#f5f5f5] font-sans">
 
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative flex min-h-[calc(100vh-72px)] w-full items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
+      <section className="relative flex min-h-[70svh] w-full items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src="/Stock1.png"
@@ -296,10 +296,10 @@ const Stock = () => {
         {/* Content */}
         <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
 
-          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
             Stocks
           </h1>
-          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm font-medium leading-7 text-white drop-shadow-sm sm:mt-6 md:text-lg md:leading-8">
+          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm font-medium leading-7 text-white drop-shadow-sm sm:mt-6 md:text-base md:leading-8">
             Start Stock Trading Today with NOVAFXM
           </p>
         </div>
@@ -322,7 +322,7 @@ const Stock = () => {
         <img
           src="/Stock2.jpeg"
           alt="chart"
-          className="h-auto max-h-[420px] w-full rounded-2xl object-cover shadow-lg md:justify-self-end lg:max-h-[480px]"
+          className="h-[240px] w-full rounded-2xl object-cover shadow-lg sm:h-[340px] md:h-auto md:max-h-[420px] md:justify-self-end lg:max-h-[480px]"
         />
       </section>
 
@@ -369,7 +369,7 @@ const Stock = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="relative min-h-[165px] overflow-hidden rounded-2xl border-b-4 border-green-700 bg-white px-5 py-7 shadow-sm sm:px-8 sm:py-8"
+              className="relative min-h-[150px] overflow-hidden rounded-2xl border-b-4 border-green-700 bg-white px-5 py-6 shadow-sm sm:min-h-[165px] sm:px-8 sm:py-8"
             >
               <div className="flex gap-4 sm:gap-6">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700 sm:h-16 sm:w-16">
@@ -388,7 +388,7 @@ const Stock = () => {
                   </p>
                 </div>
               </div>
-              <div className="absolute bottom-7 left-8 grid grid-cols-3 gap-2">
+              <div className="absolute bottom-5 left-5 grid grid-cols-3 gap-2 sm:bottom-7 sm:left-8">
                 {Array.from({ length: 9 }).map((_, dotIndex) => (
                   <span key={dotIndex} className="h-2 w-2 rounded-full bg-green-100" />
                 ))}

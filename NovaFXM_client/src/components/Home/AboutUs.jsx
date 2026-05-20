@@ -28,7 +28,7 @@ export default function AboutUs() {
           </p>
           <p className="mt-5 text-base leading-relaxed text-justify text-gray-600 sm:text-lg">
             Built by traders for traders, our mission is to empower your financial decisions with
-            cutting-edge tools, transparent pricing, and robust security.
+            cutting-edge tools, transparent pricing and robust security.
           </p>
 
           <div className="mt-8 flex justify-center md:justify-start">

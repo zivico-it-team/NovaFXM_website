@@ -11,7 +11,7 @@ const faqData = [
     id: 2,
     question: "How Does Forex Trading Work?",
     answer:
-      "Forex trading works by exchanging one currency for another in the global Forex Market, where currencies are always traded in pairs like EUR/USD or GBP/USD. When a trader believes that one currency will increase in value compared to another, they place a buy (long) trade, and if they expect it to decrease, they place a sell (short) trade.",
+      "Forex trading works by exchanging one currency for another in the global Forex Market, where currencies are always traded in pairs like EUR/USD or GBP/USD. When a trader believes that one currency will increase in value compared to another, they place a buy (long) trade and if they expect it to decrease, they place a sell (short) trade.",
   },
   {
     id: 3,

@@ -89,8 +89,8 @@ const compliancePoints = [
 // Shared section heading component with optional green accent styling.
 function SectionTitle({ children, accent = false }) {
   return (
-    <div className="mb-14 text-center">
-          <h2 className={`text-5xl font-bold ${accent ? "text-[#014421]" : "text-[#1f1f1f]"}`}>
+    <div className="mb-8 text-center sm:mb-12 lg:mb-14">
+          <h2 className={`text-2xl font-bold sm:text-3xl lg:text-4xl ${accent ? "text-[#014421]" : "text-[#1f1f1f]"}`}>
         {children}
       </h2>
       {!accent && <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-[#c89d32]" />}
@@ -131,13 +131,13 @@ function ForexRatesWidget() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-[1500px] px-4 pb-20 sm:px-6 lg:px-8">
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <section className="mx-auto max-w-[1500px] px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+      <div className="mb-5 flex flex-col items-start justify-between gap-3 sm:mb-6 sm:flex-row sm:items-end">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
             Live Forex Rates
           </p>
-          <h2 className="mt-1 text-3xl font-bold text-[#014421] sm:text-4xl">
+          <h2 className="mt-1 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
             TradingView Cross Rates
           </h2>
         </div>
@@ -149,7 +149,7 @@ function ForexRatesWidget() {
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_22px_60px_rgba(15,23,42,0.12)] sm:p-3">
         <div
           ref={containerRef}
-          className="tradingview-widget-container h-[620px] overflow-hidden rounded-xl bg-white sm:h-[700px] lg:h-[780px]"
+          className="tradingview-widget-container h-[430px] overflow-hidden rounded-xl bg-white sm:h-[580px] lg:h-[780px]"
         />
       </div>
     </section>
@@ -159,15 +159,15 @@ function ForexRatesWidget() {
 // Main hero banner for the Forex page.
 function HeroSection() {
   return (
-    <section className="relative h-[calc(100vh-72px)] overflow-hidden sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
+    <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
       <img
         src="/Forex 1.jpeg"
         alt="Forex Hero"
         className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/70" />
-      <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">Forex</h1>
+      <div className="market-hero-content relative z-10 flex min-h-[70svh] flex-col items-center justify-center px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
+        <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl">Forex</h1>
         <p className="market-hero-copy mt-4 text-sm text-gray-200 md:text-base">
           Trade the world's most liquid market with NOVAFXM.
         </p>
@@ -179,20 +179,20 @@ function HeroSection() {
 // Introductory brand and forex overview section.
 function AboutSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className={`grid items-center gap-14 rounded-[30px] border border-transparent bg-white p-8 shadow-sm lg:grid-cols-2 ${cardAnimation}`}>
+    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <div className={`grid items-center gap-8 rounded-2xl border border-transparent bg-white p-5 shadow-sm sm:p-8 lg:grid-cols-2 lg:gap-14 lg:rounded-[30px] ${cardAnimation}`}>
         <img
           src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
           alt="forex"
-          className="h-[350px] w-full rounded-[30px] object-cover"
+          className="h-[240px] w-full rounded-2xl object-cover sm:h-[320px] lg:h-[350px] lg:rounded-[30px]"
         />
         <div>
           <p className="mb-4 text-sm font-semibold text-[#c89d32]">Forex Trading</p>
-          <h2 className="text-5xl font-bold leading-tight text-[#1f1f1f]">
+          <h2 className="text-3xl font-bold leading-tight text-[#1f1f1f] sm:text-4xl">
             Your Trusted Forex Trading Partner
           </h2>
-          <h3 className="mt-3 text-4xl font-bold text-[#014421]">NOVAFXM</h3>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <h3 className="mt-3 text-3xl font-bold text-[#014421] sm:text-4xl">NOVAFXM</h3>
+          <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
             At NOVAFXM, we specialize in providing an exceptional Forex trading
             experience. Our platform offers access to major, minor and exotic
             currency pairs with deep liquidity, competitive spreads and
@@ -207,27 +207,27 @@ function AboutSection() {
 // Grid of reasons to trade forex with NOVAFXM.
 function FeatureGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20">
+    <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
       <SectionTitle>
         Why Trade Forex with <span className="text-[#014421]">NOVAFXM</span>
       </SectionTitle>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {features.map((item) => {
           const Icon = item.icon;
 
           return (
           <div
             key={item.title}
-            className={`group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-8 text-left ${cardAnimation}`}
+            className={`group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 text-left sm:p-6 lg:p-8 ${cardAnimation}`}
           >
             <div className="absolute left-0 top-0 h-1 w-full bg-[#c89d32]" />
-            <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white">
-              <Icon className="h-8 w-8" strokeWidth={2.2} />
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white sm:h-14 sm:w-14 lg:mb-7 lg:h-16 lg:w-16">
+              <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8" strokeWidth={2.2} />
             </div>
             <h3 className="text-xl font-bold leading-snug text-[#014421]">
               {item.title}
             </h3>
-            <p className="mt-4 text-base leading-7 text-slate-600">
+            <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
               {item.desc}
             </p>
           </div>
@@ -241,16 +241,16 @@ function FeatureGrid() {
 // List of available forex market products.
 function MarketOfferingsSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20">
+    <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
       <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
-        <div className="border-b border-slate-200 bg-[#f8faf9] px-8 py-8 sm:px-10">
+        <div className="border-b border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
             Forex Products
           </p>
-          <h2 className="mt-2 text-4xl font-bold text-[#014421]">
+          <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
             Forex Market Offerings
           </h2>
-          <p className="mt-4 max-w-3xl leading-7 text-slate-600">
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
             Access a broad range of currency markets and trading conditions
             designed for active forex strategies.
           </p>
@@ -260,15 +260,15 @@ function MarketOfferingsSection() {
           {marketOfferings.map(([title, desc], index) => (
             <div
               key={title}
-              className="group grid gap-5 px-8 py-6 transition-colors duration-300 hover:bg-[#014421] sm:px-10 md:grid-cols-[84px_1fr]"
+              className="group grid gap-4 px-5 py-5 transition-colors duration-300 hover:bg-[#014421] sm:px-8 sm:py-6 md:grid-cols-[72px_1fr] lg:grid-cols-[84px_1fr] lg:px-10"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#c89d32]/40 bg-white text-sm font-bold text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white">
                 {String(index + 1).padStart(2, "0")}
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#014421] transition-colors duration-300 group-hover:text-white">{title}</h3>
-                <p className="mt-2 max-w-3xl leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white">{desc}</p>
+                <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{title}</h3>
+                <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
               </div>
             </div>
           ))}
@@ -281,16 +281,16 @@ function MarketOfferingsSection() {
 // Account deposit and withdrawal options.
 function FundingSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20">
+    <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
       <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
-        <div className="border-b border-slate-200 bg-[#f8faf9] px-8 py-8 sm:px-10">
+        <div className="border-b border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
             Account Funding
           </p>
-          <h2 className="mt-2 text-4xl font-bold text-[#014421]">
+          <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
             Funding & Withdrawal Methods
           </h2>
-          <p className="mt-4 max-w-3xl leading-7 text-slate-600">
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
             Choose secure payment options designed for fast deposits,
             controlled withdrawals and transparent processing.
           </p>
@@ -300,15 +300,15 @@ function FundingSection() {
           {fundingMethods.map(([name, desc, Icon]) => (
             <div
               key={name}
-              className="group flex gap-5 border-b border-slate-200 px-8 py-7 transition-colors duration-300 hover:bg-[#014421] md:border-r md:last:border-r-0 md:[&:nth-last-child(-n+2)]:border-b-0 sm:px-10"
+              className="group flex gap-4 border-b border-slate-200 px-5 py-5 transition-colors duration-300 hover:bg-[#014421] sm:px-8 sm:py-6 md:border-r md:last:border-r-0 md:[&:nth-last-child(-n+2)]:border-b-0 lg:px-10"
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#014421]">
-                <Icon className="h-7 w-7" strokeWidth={2.2} />
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#014421] sm:h-14 sm:w-14">
+                <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.2} />
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#014421] transition-colors duration-300 group-hover:text-white">{name}</h3>
-                <p className="mt-2 leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white">{desc}</p>
+                <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{name}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
               </div>
             </div>
           ))}
@@ -321,14 +321,14 @@ function FundingSection() {
 // Trading tools and market insight cards.
 function ToolsSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-24">
+    <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
       <SectionTitle accent>Forex Trading Tools & Market Insights</SectionTitle>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {tools.map((tool) => (
-          <div key={tool.title} className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-10 text-center ${cardAnimation}`}>
+          <div key={tool.title} className={`group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 text-center sm:p-8 lg:p-10 ${cardAnimation}`}>
             <div className="absolute bottom-0 left-0 h-2 w-full bg-[#c89d32] transition-all duration-300 group-hover:h-3" />
-            <h3 className="text-2xl font-bold leading-snug text-[#014421]">{tool.title}</h3>
-            <p className="mt-6 text-lg leading-7 text-gray-600">{tool.desc}</p>
+            <h3 className="text-xl font-bold leading-snug text-[#014421] sm:text-2xl">{tool.title}</h3>
+            <p className="mt-6 text-base leading-7 text-gray-600">{tool.desc}</p>
           </div>
         ))}
       </div>
@@ -339,17 +339,17 @@ function ToolsSection() {
 // Security and compliance information block.
 function SecuritySection() {
   return (
-    <section className="bg-[#f1f1f1] px-6 py-10">
+    <section className="bg-[#f1f1f1] px-4 py-10 sm:px-6">
       <div className={`mx-auto max-w-7xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${cardAnimation}`}>
         <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="px-8 py-8 sm:px-10">
+          <div className="px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
             <p className="text-sm font-semibold uppercase tracking-wide text-[#c89d32]">
               Client Protection
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-[#014421]">
+            <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl">
               Security & Compliance
             </h2>
-            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-600">
+            <p className="mt-5 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
             NOVAFXM is committed to the highest standards of financial security
             and regulatory compliance. We follow strict anti-money laundering
             (AML) policies and implement robust Know Your Customer (KYC)
@@ -357,7 +357,7 @@ function SecuritySection() {
             </p>
           </div>
 
-          <div className="border-t border-slate-200 bg-[#f8faf9] px-8 py-8 lg:border-l lg:border-t-0 sm:px-10">
+          <div className="border-t border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
             <div className="space-y-4">
               {compliancePoints.map((point) => (
                 <div key={point} className="flex items-center gap-3">

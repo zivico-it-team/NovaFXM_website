@@ -110,7 +110,7 @@ const CryptocurrencyPage = () => {
   return (
     <div className="bg-[#f5f5f5] min-h-screen font-sans">
       {/* Hero Section */}
-      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
+      <div className="relative flex min-h-[70svh] items-center justify-center overflow-hidden px-4 py-16 sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <img
           src={heroBg}
           alt="Cryptocurrency Hero"
@@ -118,8 +118,8 @@ const CryptocurrencyPage = () => {
         />
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center text-white">
-          <h1 className="market-hero-title mb-4 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">Cryptocurrency</h1>
-          <p className="market-hero-copy mb-2 text-base md:text-lg">
+          <h1 className="market-hero-title mb-4 text-4xl font-bold sm:text-5xl md:text-6xl">Cryptocurrency</h1>
+          <p className="market-hero-copy mb-2 text-sm md:text-base">
             Step into Crypto CFD Trading with Zivico Solutions
           </p>
           <p className="market-hero-copy text-xs text-gray-300 md:text-sm">
@@ -136,7 +136,7 @@ const CryptocurrencyPage = () => {
             <img
               src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1470&auto=format&fit=crop"
               alt="crypto"
-              className="rounded-2xl md:rounded-3xl shadow-lg w-full h-auto"
+              className="h-[240px] w-full rounded-2xl object-cover shadow-lg sm:h-[320px] md:h-auto md:rounded-3xl"
             />
           </div>
           <div className="order-1 md:order-2">
@@ -171,9 +171,9 @@ const CryptocurrencyPage = () => {
         </div>
 
         {/* Crypto Table */}
-        <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg overflow-hidden mb-12 md:mb-16">
+        <div className="mb-12 overflow-hidden rounded-2xl bg-white shadow-lg md:mb-16 md:rounded-3xl">
           <div className="overflow-x-auto">
-            <table className="w-full text-left min-w-[600px]">
+            <table className="w-full min-w-[560px] text-left">
               <thead className="bg-gray-100 text-gray-700">
                 <tr>
                   <th className="p-3 md:p-4 text-sm md:text-base">Name</th>
@@ -211,16 +211,16 @@ const CryptocurrencyPage = () => {
       {/* What are Crypto CFDs Section */}
       <div className="bg-[#014421] text-white px-4 md:px-6 py-8 md:py-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#D4AF37] mb-4 md:mb-6 px-4 md:px-12">
+          <h2 className="mb-4 px-0 text-2xl font-bold text-[#D4AF37] md:mb-6 md:px-12 md:text-3xl lg:text-4xl">
             What are Crypto CFDs?
           </h2>
-          <p className="text-gray-200 leading-7 md:leading-8 mb-3 md:mb-4 px-4 md:px-12 text-sm md:text-base">
+          <p className="mb-3 px-0 text-sm leading-7 text-gray-200 md:mb-4 md:px-12 md:text-base md:leading-8">
             Cryptocurrencies, since Bitcoin's introduction in 2009, have
             redefined the financial landscape. These digital assets function on
             a decentralized online ledger secured by cryptography, making them
             one of the safest online payment methods.
           </p>
-          <p className="text-gray-200 leading-7 md:leading-8 px-4 md:px-12 text-sm md:text-base">
+          <p className="px-0 text-sm leading-7 text-gray-200 md:px-12 md:text-base md:leading-8">
             While cryptocurrencies like Bitcoin have gained significant
             recognition globally, they operate outside the traditional banking
             system and remain unaffected by conventional economic factors.
@@ -231,11 +231,11 @@ const CryptocurrencyPage = () => {
       {/* What Affects the Price Section */}
       <div className="max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-2xl md:text-5xl font-bold text-black mb-4 md:mb-5">
+          <h1 className="text-2xl md:text-4xl font-bold text-black mb-4 md:mb-5">
             What Affects the Price of{" "}
             <span className="text-[#014421]">Crypto CFDs?</span>
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-7 md:leading-8 text-sm md:text-base px-4">
+          <p className="mx-auto max-w-3xl px-0 text-sm leading-7 text-gray-600 md:px-4 md:text-base md:leading-8">
             Several key factors influence the price movements of Crypto CFDs.
             Understanding these elements helps traders make informed and
             strategic decisions in fast-moving markets.
@@ -246,12 +246,12 @@ const CryptocurrencyPage = () => {
           {factors.slice(0, 3).map((factor, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl md:rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 p-6 md:p-10 text-center border-b-[4px] md:border-b-[6px] border-[#D4AF37] w-full max-w-sm"
+              className="w-full max-w-sm rounded-2xl border-b-[4px] border-[#D4AF37] bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] lg:p-10"
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 md:mb-8 rounded-full bg-yellow-100 flex items-center justify-center">
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-100 md:mb-8 md:h-24 md:w-24">
                 {factor.icon}
               </div>
-              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-5">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-5">
                 {factor.title}
               </h3>
               <p className="text-gray-600 leading-6 md:leading-7 text-sm md:text-base">
@@ -265,12 +265,12 @@ const CryptocurrencyPage = () => {
           {factors.slice(3, 5).map((factor, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl md:rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 p-6 md:p-10 text-center border-b-[4px] md:border-b-[6px] border-[#D4AF37] w-full max-w-sm mx-auto md:mx-0"
+              className="mx-auto w-full max-w-sm rounded-2xl border-b-[4px] border-[#D4AF37] bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:mx-0 md:rounded-3xl md:border-b-[6px] lg:p-10"
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 md:mb-8 rounded-full bg-yellow-100 flex items-center justify-center">
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-100 md:mb-8 md:h-24 md:w-24">
                 {factor.icon}
               </div>
-              <h3 className="text-xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-5">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-5">
                 {factor.title}
               </h3>
               <p className="text-gray-600 leading-6 md:leading-7 text-sm md:text-base">
@@ -286,7 +286,7 @@ const CryptocurrencyPage = () => {
         <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Why is Crypto CFD Trading So Popular?
         </h1>
-        <p className="leading-7 md:leading-8 px-4 md:px-12 pb-4 text-sm md:text-base max-w-6xl mx-auto">
+        <p className="mx-auto max-w-6xl px-0 pb-4 text-sm leading-7 md:px-12 md:text-base md:leading-8">
           The media frenzy surrounding Bitcoin and Ethereum has driven the rise
           in Crypto CFD trading. Cryptocurrencies do not rely on central banks
           or interest rates and their value is not subject to traditional
