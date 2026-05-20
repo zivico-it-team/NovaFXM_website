@@ -65,12 +65,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="reveal-section bg-[#f5f5f5] px-3 py-10 text-sm text-black sm:px-5 sm:text-base lg:px-6">
+    <footer className="reveal-section bg-[#f5f5f5] px-3 pb-10 pt-5 text-sm text-black sm:px-5 sm:py-10 sm:text-base lg:px-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-left md:grid-cols-4 md:items-start">
 
         {/* ── Brand ─────────────────────────────────────────────────────────── */}
         <div className="flex flex-col items-start">
-          <button onClick={() => handleNav("/")} className="mt-10">
+          <button onClick={() => handleNav("/")} className="mt-3 sm:mt-10">
             <img
               src={logo}
               alt="Logo"
@@ -80,7 +80,7 @@ const Footer = () => {
 
           <p className="mt-3 max-w-sm leading-6 text-gray-700">
             Empowering traders globally with next-generation tools, tight
-            spreads and uncompromising security.
+            spreads, and uncompromising security.
           </p>
 
           <img
@@ -201,19 +201,19 @@ const Footer = () => {
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
             NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
-            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.   <br />  (Since 2024)
+            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.
           </p>
           <p>
-            Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience and risk appetite. It is strongly recommended to seek independent financial, legal and tax advice before making any investment decisions.
+            Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks, and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital, and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience, and risk appetite. It is strongly recommended to seek independent financial, legal, and tax advice before making any investment decisions.
           </p>
           <p>
             Trading in financial markets offers potential rewards but also involves significant risk. Do not trade with funds you cannot afford to lose. Certain financial products or services may not be permitted in some jurisdictions. It is the responsibility of each client to ensure that trading activities comply with their local laws and regulations.
           </p>
           <p>
-            Nothing contained on this website should be considered as financial advice, investment advice or a recommendation by NOVAFXM, Nova Finance Tech Ltd or any of its affiliates, directors, officers, employees or representatives.
+            Nothing contained on this website should be considered as financial advice, investment advice, or a recommendation by NOVAFXM, Nova Finance Tech Ltd, or any of its affiliates, directors, officers, employees, or representatives.
           </p>
           <p>
-            Restricted Regions: NOVAFXM does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea and Sudan.
+            Restricted Regions: NOVAFXM does not provide services to citizens or residents of jurisdictions where such services would violate local laws or regulations, including but not limited to the United States, Cuba, Iraq, Myanmar, North Korea, and Sudan.
           </p>
         </div>
 
@@ -221,7 +221,8 @@ const Footer = () => {
         <div className="flex flex-col gap-3 md:flex-row md:justify-between border-t border-gray-300 pt-5 mt-4 text-base">
           <p>© 2026 NOVAFXM. All rights reserved.</p>
           <p className="max-w-xl md:text-right">
-            
+            Risk Warning: Trading foreign exchange and CFDs on margin carries a
+            high level of risk and may not be suitable for all investors.
           </p>
         </div>
       </div>

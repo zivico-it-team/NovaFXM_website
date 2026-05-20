@@ -35,10 +35,10 @@ const reviews = [
 
 // ✅ REUSABLE REVIEW CARD
 const ReviewCard = ({ name, role, image, text }) => (
-  <div className="w-[260px] sm:w-[300px] md:w-[350px] flex-shrink-0 bg-gray-100 p-5 md:p-6 rounded-2xl">
-    <div className="text-yellow-400 mb-3 text-sm">★★★★★</div>
+  <div className="w-[calc(100vw-2rem)] max-w-[300px] flex-shrink-0 rounded-xl bg-gray-100 p-4 sm:w-[300px] md:w-[350px] md:rounded-2xl md:p-6">
+    <div className="mb-2 text-sm text-yellow-400 sm:mb-3">★★★★★</div>
 
-    <p className="text-gray-700 text-xs sm:text-sm leading-6 mb-4 text-justify">
+    <p className="mb-4 text-left text-xs leading-6 text-gray-700 sm:text-sm md:text-justify">
       {text}
     </p>
 
@@ -94,15 +94,15 @@ const StatBox = ({ icon: Icon, value, title, desc }) => (
 
 export default function Review() {
   return (
-    <section className="reveal-section bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+    <section className="reveal-section bg-white px-4 py-6 sm:px-6 sm:py-8 md:py-12 lg:px-8">
       {/* TITLE */}
-      <h2 className="mb-10 text-center text-xl font-bold sm:text-2xl md:mb-14 md:text-3xl">
+      <h2 className="mb-5 text-center text-xl font-bold sm:mb-7 sm:text-2xl md:mb-9 md:text-3xl">
         Traders Experience With Us
       </h2>
 
       {/* CAROUSEL */}
       <div className="mx-auto max-w-7xl overflow-hidden">
-        <div className="flex gap-5 md:gap-8 w-max animate-scroll">
+        <div className="flex w-max gap-4 animate-scroll sm:gap-5 md:gap-8">
           {[...reviews, ...reviews].map((r, i) => (
             <ReviewCard key={i} {...r} />
           ))}
@@ -110,12 +110,12 @@ export default function Review() {
       </div>
 
       {/* STATS */}
-      <div className="mt-16 text-center md:mt-24">
-        <h2 className="text-xl md:text-2xl font-bold mb-10 md:mb-14">
+      <div className="mt-6 text-center sm:mt-10 md:mt-14">
+        <h2 className="mb-5 text-xl font-bold sm:mb-7 md:mb-9 md:text-2xl">
           Built on Trust & Performance
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 max-w-4xl mx-auto">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3 md:gap-10">
           {stats.map((s, i) => (
             <StatBox key={i} {...s} />
           ))}

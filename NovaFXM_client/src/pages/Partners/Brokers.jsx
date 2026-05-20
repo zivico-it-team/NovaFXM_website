@@ -120,7 +120,7 @@ export default function IntroducingBrokers() {
 
               <p className="text-gray-600 text-lg leading-relaxed">
                 Our IB program is designed to help partners grow with
-                reliable payouts, advanced tools, professional support
+                reliable payouts, advanced tools, professional support,
                 and global market access.
               </p>
 

@@ -13,11 +13,14 @@ import {
   WalletCards,
 } from "lucide-react";
 
+// Currency codes displayed by the TradingView cross-rates widget.
 const tradingViewCurrencies = ["EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD"];
 
+// Shared hover animation classes for card-style sections.
 const cardAnimation =
   "transition duration-300 hover:-translate-y-2 hover:shadow-xl";
 
+// Feature cards shown in the "Why Trade Forex" section.
 const features = [
   {
     title: "Low Spreads & Competitive Pricing",
@@ -36,7 +39,7 @@ const features = [
   },
   {
     title: "Multiple Trading Platforms",
-    desc: "Trade via desktop, mobile and web-based applications.",
+    desc: "Trade via desktop, mobile, and web-based applications.",
     icon: MonitorSmartphone,
   },
   {
@@ -51,6 +54,7 @@ const features = [
   },
 ];
 
+// Deposit and withdrawal methods shown in the funding section.
 const fundingMethods = [
   ["Credit/Debit Cards", "Instant deposits with zero fees.", CreditCard],
   ["Bank Transfers", "Secure transactions with 1-3 day processing.", Building2],
@@ -58,14 +62,16 @@ const fundingMethods = [
   ["E-wallets", "Quick deposits and withdrawals.", WalletCards],
 ];
 
+// Forex products listed in the market offerings section.
 const marketOfferings = [
-  ["Major Currency Pairs", "Trade EUR/USD, GBP/USD, USD/JPY  and more with tight spreads."],
-  ["Minor Currency Pairs", "Access pairs like EUR/AUD, GBP/NZD  and CAD/CHF."],
-  ["Exotic Currency Pairs", "Explore high-volatility pairs such as USD/ZAR, EUR/TRY and more."],
+  ["Major Currency Pairs", "Trade EUR/USD, GBP/USD, USD/JPY, and more with tight spreads."],
+  ["Minor Currency Pairs", "Access pairs like EUR/AUD, GBP/NZD, and CAD/CHF."],
+  ["Exotic Currency Pairs", "Explore high-volatility pairs such as USD/ZAR, EUR/TRY, and more."],
   ["Forex CFDs", "Trade Forex without owning the underlying asset."],
   ["Scalping & Hedging Allowed", "Use advanced strategies with no restrictions."],
 ];
 
+// Trading tools shown in the insights section.
 const tools = [
   ["Economic Calendar", "Stay updated on key financial events affecting currency markets."],
   ["Live Forex Market News", "Real-time updates to help you make informed trading decisions."],
@@ -73,16 +79,18 @@ const tools = [
   ["Forex Signals", "Receive expert trading signals to enhance your strategies."],
 ].map(([title, desc]) => ({ title, desc }));
 
+// Security bullets displayed in the compliance section.
 const compliancePoints = [
   "Strict AML monitoring",
   "Robust KYC verification",
   "Secure trading environment",
 ];
 
+// Shared section heading component with optional green accent styling.
 function SectionTitle({ children, accent = false }) {
   return (
-    <div className="mb-8 text-center sm:mb-12 lg:mb-14">
-          <h2 className={`text-2xl font-bold sm:text-3xl lg:text-4xl ${accent ? "text-[#014421]" : "text-[#1f1f1f]"}`}>
+    <div className="mb-14 text-center">
+          <h2 className={`text-5xl font-bold ${accent ? "text-[#014421]" : "text-[#1f1f1f]"}`}>
         {children}
       </h2>
       {!accent && <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-[#014421]" />}
@@ -90,7 +98,7 @@ function SectionTitle({ children, accent = false }) {
   );
 }
 
-// ── TradingView Forex Cross Rates Widget — height increased ──────────────────
+// TradingView real-time forex cross-rates widget.
 function ForexRatesWidget() {
   const containerRef = useRef(null);
   const hasLoadedWidget = useRef(false);
@@ -129,17 +137,16 @@ function ForexRatesWidget() {
           <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
             Live Forex Rates
           </p>
-          <h2 className="mt-1 text-2xl font-bold text-[#014421] sm:text-3xl lg:text-4xl">
+          <h2 className="mt-1 text-3xl font-bold text-[#014421] sm:text-4xl">
             TradingView Cross Rates
           </h2>
         </div>
-        <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700">
-          <span className="w-2 h-2 rounded-full animate-pulse bg-emerald-500" />
+        <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
           Real-time
         </span>
       </div>
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_22px_60px_rgba(15,23,42,0.12)] sm:p-3">
-        {/* Height increased: mobile 900px → tablet 1050px → desktop 1200px */}
         <div
           ref={containerRef}
           className="tradingview-widget-container h-[430px] overflow-hidden rounded-xl bg-white sm:h-[520px] lg:h-[600px]"
@@ -148,27 +155,28 @@ function ForexRatesWidget() {
     </section>
   );
 }
-// ────────────────────────────────────────────────────────────────────────────
 
+// Main hero banner for the Forex page.
 function HeroSection() {
   return (
-    <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
+    <section className="relative h-[calc(100vh-72px)] overflow-hidden sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
       <img
         src="/Forex 1.jpeg"
         alt="Forex Hero"
-        className="absolute inset-0 object-cover object-center w-full h-full market-hero-image"
+        className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/70" />
-      <div className="market-hero-content relative z-10 flex min-h-[70svh] flex-col items-center justify-center px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
-        <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl">Forex</h1>
+      <div className="market-hero-content relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+        <h1 className="market-hero-title text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">Forex</h1>
         <p className="market-hero-copy mt-4 text-sm text-gray-200 md:text-base">
-          Trade the world's most liquid market with NOVAFXM.
+          Trade the world's most liquid market with A5 Markets.
         </p>
       </div>
     </section>
   );
 }
 
+// Introductory brand and forex overview section.
 function AboutSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
@@ -176,18 +184,18 @@ function AboutSection() {
         <img
           src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
           alt="forex"
-          className="h-[240px] w-full rounded-2xl object-cover sm:h-[320px] lg:h-[350px] lg:rounded-[30px]"
+          className="h-[350px] w-full rounded-[30px] object-cover"
         />
         <div>
           <p className="mb-4 text-sm font-semibold text-[#014421]">Forex Trading</p>
           <h2 className="text-3xl font-bold leading-tight text-[#1f1f1f] sm:text-4xl">
             Your Trusted Forex Trading Partner
           </h2>
-          <h3 className="mt-3 text-3xl font-bold text-[#014421] sm:text-4xl">NOVAFXM</h3>
-          <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
+          <h3 className="mt-3 text-4xl font-bold text-[#014421]">NOVAFXM</h3>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             At NOVAFXM, we specialize in providing an exceptional Forex trading
-            experience. Our platform offers access to major, minor and exotic
-            currency pairs with deep liquidity, competitive spreads and
+            experience. Our platform offers access to major, minor, and exotic
+            currency pairs with deep liquidity, competitive spreads, and
             cutting-edge trading tools.
           </p>
         </div>
@@ -196,15 +204,17 @@ function AboutSection() {
   );
 }
 
+// Grid of reasons to trade forex with NOVAFXM.
 function FeatureGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
+    <section className="mx-auto max-w-7xl px-6 pb-20">
       <SectionTitle>
         Why Trade Forex with <span className="text-[#014421]">NOVAFXM</span>
       </SectionTitle>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {features.map((item) => {
           const Icon = item.icon;
+
           return (
           <div
             key={item.title}
@@ -227,6 +237,7 @@ function FeatureGrid() {
   );
 }
 
+// List of available forex market products.
 function MarketOfferingsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
@@ -260,6 +271,7 @@ function MarketOfferingsSection() {
   );
 }
 
+// Account deposit and withdrawal options.
 function FundingSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
@@ -293,9 +305,10 @@ function FundingSection() {
   );
 }
 
+// Trading tools and market insight cards.
 function ToolsSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
+    <section className="mx-auto max-w-7xl px-6 pb-24">
       <SectionTitle accent>Forex Trading Tools & Market Insights</SectionTitle>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {tools.map((tool) => (
@@ -309,6 +322,7 @@ function ToolsSection() {
   );
 }
 
+// Security and compliance information block.
 function SecuritySection() {
   return (
     <section className="bg-[#f1f1f1] px-4 py-10 sm:px-6">
@@ -318,10 +332,10 @@ function SecuritySection() {
             <p className="text-sm font-semibold uppercase tracking-wide text-[#014421]">
               Client Protection
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-[#014421] sm:text-3xl">
+            <h2 className="mt-2 text-3xl font-bold text-[#014421]">
               Security & Compliance
             </h2>
-            <p className="mt-5 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-600">
             NOVAFXM is committed to the highest standards of financial security
             and regulatory compliance. We follow strict anti-money laundering
             (AML) policies and implement robust Know Your Customer (KYC)
@@ -329,11 +343,11 @@ function SecuritySection() {
             </p>
           </div>
 
-          <div className="border-t border-slate-200 bg-[#f8faf9] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
+          <div className="border-t border-slate-200 bg-[#f8faf9] px-8 py-8 lg:border-l lg:border-t-0 sm:px-10">
             <div className="space-y-4">
               {compliancePoints.map((point) => (
                 <div key={point} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={2.4} />
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={2.4} />
                   <span className="font-semibold text-slate-700">{point}</span>
                 </div>
               ))}
@@ -345,6 +359,7 @@ function SecuritySection() {
   );
 }
 
+// Page composition for the full Forex market route.
 export default function ForexPage() {
   return (
     <div className="w-full overflow-hidden bg-[#f7f7f7] font-sans">

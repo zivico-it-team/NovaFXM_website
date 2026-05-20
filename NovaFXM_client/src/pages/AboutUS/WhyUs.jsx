@@ -52,7 +52,7 @@ const features = [
     iconColor: "text-yellow-500",
     border: "bg-yellow-500",
     description:
-      "Access global markets including forex, commodities, indices and more with flexible trading solutions.",
+      "Access global markets including forex, commodities, indices, and more with flexible trading solutions.",
   },
   {
     icon: Headphones,
@@ -208,7 +208,7 @@ const WhyUs = () => {
 
       
 
-      
+      {/* ================= HERO ================= */}
 
 {/* ================= HERO ================= */}
 
@@ -327,7 +327,7 @@ const WhyUs = () => {
               <p>
                 We are dedicated to delivering an exceptional trading experience
                 by continuously innovating our platform, expanding our range of
-                products and providing world-class customer service.
+                products, and providing world-class customer service.
               </p>
 
               <p>
