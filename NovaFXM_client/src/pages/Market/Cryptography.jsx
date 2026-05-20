@@ -66,6 +66,50 @@ const CryptoLiveTable = () => {
 // ────────────────────────────────────────────────────────────────────────────
 
 const CryptocurrencyPage = () => {
+
+   const cryptos = [
+    {
+      name: "Bitcoin",
+      marketCap: "1.32 T",
+      fdCap: "1.40 T",
+      price: "$66,812",
+      volume: "$24.23 B",
+      change: "+1.62%",
+    },
+    {
+      name: "Ethereum",
+      marketCap: "394.71 B",
+      fdCap: "394.71 B",
+      price: "$3,278",
+      volume: "$15.42 B",
+      change: "+2.18%",
+    },
+    {
+      name: "Tether USDT",
+      marketCap: "112.35 B",
+      fdCap: "114.59 B",
+      price: "$1.00",
+      volume: "$39.18 B",
+      change: "+0.02%",
+    },
+    {
+      name: "Binance Coin",
+      marketCap: "85.69 B",
+      fdCap: "85.69 B",
+      price: "$566",
+      volume: "$2.11 B",
+      change: "+0.75%",
+    },
+    {
+      name: "XRP",
+      marketCap: "72.64 B",
+      fdCap: "121.36 B",
+      price: "$0.60",
+      volume: "$2.76 B",
+      change: "+0.95%",
+    },
+  ];
+
   const factors = [
     {
       title: "Supply",
