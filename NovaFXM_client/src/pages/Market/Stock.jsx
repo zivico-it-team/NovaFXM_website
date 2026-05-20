@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
-import { ChartNoAxesCombined, Clock3, Landmark, Torus } from "lucide-react";
-import TradingViewWidget from "./TradingViewWidget";
 
-const exchangeIcons = [Landmark, ChartNoAxesCombined, Clock3, Torus];
-
-=======
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { ChartNoAxesCombined, Clock3, Landmark, SunMedium, Torus } from "lucide-react";
 import {
@@ -286,7 +279,7 @@ const LiveStockChart = () => {
   );
 };
 
->>>>>>> ffb63dd62947689f34edaadaf3d5cdda63f28ffe
+
 const Stock = () => {
   return (
     <div className="bg-[#f5f5f5] font-sans">
