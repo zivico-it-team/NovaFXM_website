@@ -147,7 +147,7 @@ const CryptocurrencyPage = () => {
               Trade Crypto CFDs with
             </h2>
             <p className="text-[#D4AF37] font-semibold mb-4">
-              Zivico Solutions
+              NOVAFXM
             </p>
             <p className="text-gray-600 leading-7 mb-6 text-sm md:text-base">
               Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum,

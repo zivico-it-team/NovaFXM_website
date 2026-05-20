@@ -65,12 +65,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="reveal-section bg-[#f5f5f5] px-3 py-10 text-sm text-black sm:px-5 sm:text-base lg:px-6">
+    <footer className="reveal-section bg-[#f5f5f5] px-3 pb-10 pt-5 text-sm text-black sm:px-5 sm:py-10 sm:text-base lg:px-6">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 text-left md:grid-cols-4 md:items-start">
 
         {/* ── Brand ─────────────────────────────────────────────────────────── */}
         <div className="flex flex-col items-start">
-          <button onClick={() => handleNav("/")} className="mt-10">
+          <button onClick={() => handleNav("/")} className="mt-3 sm:mt-10">
             <img
               src={logo}
               alt="Logo"
