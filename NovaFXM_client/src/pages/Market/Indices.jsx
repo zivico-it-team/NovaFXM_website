@@ -108,7 +108,7 @@ const factors = [
 
 const IndicesPage = () => {
   return (
-    <div className="w-full bg-white overflow-hidden">
+    <div className="w-full overflow-hidden bg-white">
 
       {/* =========================================
           HERO SECTION
@@ -118,7 +118,7 @@ const IndicesPage = () => {
         <img
           src={heroBg}
           alt="Indices Hero"
-          className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 object-cover object-center w-full h-full market-hero-image"
         />
         <div className="absolute inset-0 bg-black/70"></div>
 
@@ -138,7 +138,7 @@ const IndicesPage = () => {
           ABOUT SECTION
       ========================================= */}
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16">
+      <section className="px-4 py-10 mx-auto max-w-7xl sm:px-6 sm:py-12 lg:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 
           {/* IMAGE */}
@@ -158,7 +158,7 @@ const IndicesPage = () => {
               </span>
 
               <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
-                Key Global Indices at Zivico Solutions
+                Key Global Indices at NOVAFXM
               </span>
             </h2>
 
@@ -208,7 +208,7 @@ const IndicesPage = () => {
 
         {/* TITLE */}
         <div className="mt-12 text-center sm:mt-16">
-          <button className="px-5 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 text-sm font-medium">
+          <button className="px-5 py-2 text-sm font-medium text-green-700 border border-green-200 rounded-full bg-green-50">
             📈 Market Overview
           </button>
 
@@ -216,14 +216,14 @@ const IndicesPage = () => {
             Popular <span className="text-[#014421]">Indices</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
+          <p className="max-w-2xl mx-auto mt-4 text-sm leading-7 text-gray-500 sm:text-base">
             Track major market benchmarks and stay updated with key index
             performance.
           </p>
         </div>
 
         {/* INDEX CARDS */}
-        <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-5 mx-auto mt-10 max-w-7xl sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
           {indices.map((item, index) => (
             <div
               key={index}
@@ -237,7 +237,7 @@ const IndicesPage = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mt-5 leading-7">
+              <p className="mt-5 text-sm leading-7 text-gray-500">
                 {item.desc}
               </p>
 
@@ -251,7 +251,7 @@ const IndicesPage = () => {
           HOW INDICES ARE CALCULATED
       ========================================= */}
 
-      <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <section className="px-4 py-12 bg-white sm:px-6 sm:py-16 lg:py-20">
 
         {/* HEADER */}
         <div className="text-center">
@@ -266,7 +266,7 @@ const IndicesPage = () => {
         </div>
 
         {/* TOP CARDS */}
-        <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:mt-12 lg:grid-cols-2">
+        <div className="grid max-w-6xl gap-6 mx-auto mt-10 lg:mt-12 lg:grid-cols-2">
           {topCards.map((card, index) => (
             <div
               key={index}
@@ -286,7 +286,7 @@ const IndicesPage = () => {
 
                   <div className="w-14 h-1 bg-[#014421] rounded-full mt-4 mb-5"></div>
 
-                  <p className="text-gray-600 leading-7 text-sm">
+                  <p className="text-sm leading-7 text-gray-600">
                     {card.desc}
                   </p>
                 </div>
@@ -296,7 +296,7 @@ const IndicesPage = () => {
         </div>
 
         {/* MIDDLE SECTION */}
-        <div className="mx-auto mt-12 grid max-w-7xl items-center gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-8">
+        <div className="grid items-center gap-6 mx-auto mt-12 max-w-7xl sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-8">
 
           {/* LEFT TEXT */}
           <div className="lg:col-span-1">
@@ -346,7 +346,7 @@ const IndicesPage = () => {
                 }`}
               ></div>
 
-              <p className="text-gray-600 text-sm leading-7">
+              <p className="text-sm leading-7 text-gray-600">
                 {card.desc}
               </p>
 
@@ -367,7 +367,7 @@ const IndicesPage = () => {
       ========================================= */}
 
       <section className="bg-[#f6f7f6] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-3 lg:gap-12">
+        <div className="grid items-center gap-10 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-12">
 
           {/* LEFT CARDS */}
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:gap-6">
@@ -386,7 +386,7 @@ const IndicesPage = () => {
 
                 <div className="w-14 h-1 bg-[#014421] rounded-full mx-auto mt-4 mb-5"></div>
 
-                <p className="text-gray-600 text-sm leading-7">
+                <p className="text-sm leading-7 text-gray-600">
                   {item.desc}
                 </p>
               </div>
@@ -402,7 +402,7 @@ const IndicesPage = () => {
 
             <div className="mb-5 mt-6 h-1 w-20 rounded-full bg-[#014421]"></div>
 
-            <p className="text-gray-500 text-sm leading-7">
+            <p className="text-sm leading-7 text-gray-500">
               Several factors influence index prices including economic data,
               political events, corporate announcements and industry trends.
             </p>

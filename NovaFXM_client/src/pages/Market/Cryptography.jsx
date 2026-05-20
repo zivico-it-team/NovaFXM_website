@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import heroBg from "../../assets/images/image 90.jpeg";
 import {
   Coins,
@@ -9,50 +9,63 @@ import {
 } from "lucide-react";
 import { FaBitcoin, FaChartLine, FaLock } from "react-icons/fa";
 
-const CryptocurrencyPage = () => {
-  const cryptos = [
-    {
-      name: "Bitcoin",
-      marketCap: "1.32 T",
-      fdCap: "1.40 T",
-      price: "$66,812",
-      volume: "$24.23 B",
-      change: "+1.62%",
-    },
-    {
-      name: "Ethereum",
-      marketCap: "394.71 B",
-      fdCap: "394.71 B",
-      price: "$3,278",
-      volume: "$15.42 B",
-      change: "+2.18%",
-    },
-    {
-      name: "Tether USDT",
-      marketCap: "112.35 B",
-      fdCap: "114.59 B",
-      price: "$1.00",
-      volume: "$39.18 B",
-      change: "+0.02%",
-    },
-    {
-      name: "Binance Coin",
-      marketCap: "85.69 B",
-      fdCap: "85.69 B",
-      price: "$566",
-      volume: "$2.11 B",
-      change: "+0.75%",
-    },
-    {
-      name: "XRP",
-      marketCap: "72.64 B",
-      fdCap: "121.36 B",
-      price: "$0.60",
-      volume: "$2.76 B",
-      change: "+0.95%",
-    },
-  ];
+// ── Live TradingView Crypto Screener Widget ──────────────────────────────────
+const CryptoLiveTable = () => {
+  const containerRef = useRef(null);
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.innerHTML = "";
+
+    const widgetDiv = document.createElement("div");
+    widgetDiv.className = "tradingview-widget-container__widget";
+    containerRef.current.appendChild(widgetDiv);
+
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-screener.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      width: "100%",
+      height: 550,
+      defaultColumn: "overview",
+      screener_type: "crypto_mkt",
+      displayCurrency: "USD",
+      colorTheme: "light",
+      locale: "en",
+    });
+
+    containerRef.current.appendChild(script);
+
+    return () => {
+      if (containerRef.current) containerRef.current.innerHTML = "";
+    };
+  }, []);
+
+  return (
+    <div className="mb-12 overflow-hidden bg-white shadow-lg rounded-2xl md:rounded-3xl md:mb-16">
+      <div
+        className="tradingview-widget-container"
+        ref={containerRef}
+        style={{ width: "100%", minHeight: 550 }}
+      />
+      <div className="px-4 py-2 text-xs text-right text-gray-400">
+        <a
+          href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="text-blue-400 hover:underline"
+        >
+          Cryptocurrency Prices
+        </a>{" "}
+        by TradingView
+      </div>
+    </div>
+  );
+};
+// ────────────────────────────────────────────────────────────────────────────
+
+const CryptocurrencyPage = () => {
   const factors = [
     {
       title: "Supply",
@@ -91,19 +104,19 @@ const CryptocurrencyPage = () => {
       title: "No Asset Ownership",
       description:
         "Trade cryptocurrencies without owning them, requiring minimal capital to get started.",
-      icon: <FaLock className="text-blue-600 text-4xl" />,
+      icon: <FaLock className="text-4xl text-blue-600" />,
     },
     {
       title: "High Volatility",
       description:
         "Leverage the volatility of the crypto market to potentially achieve significant gains, but be mindful of amplified risks.",
-      icon: <FaChartLine className="text-green-600 text-4xl" />,
+      icon: <FaChartLine className="text-4xl text-green-600" />,
     },
     {
       title: "Simple & Accessible",
       description:
         "Unlike stocks and commodities, Crypto CFDs are easier to trade, providing straightforward opportunities for both beginners and experienced traders.",
-      icon: <FaBitcoin className="text-yellow-500 text-4xl" />,
+      icon: <FaBitcoin className="text-4xl text-yellow-500" />,
     },
   ];
 
@@ -114,7 +127,7 @@ const CryptocurrencyPage = () => {
         <img
           src={heroBg}
           alt="Cryptocurrency Hero"
-          className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 object-cover object-center w-full h-full market-hero-image"
         />
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="market-hero-content relative z-10 mx-auto max-w-5xl text-center text-white">
@@ -122,16 +135,16 @@ const CryptocurrencyPage = () => {
           <p className="market-hero-copy mb-2 text-sm md:text-base">
             Step into Crypto CFD Trading with Zivico Solutions
           </p>
-          <p className="market-hero-copy text-xs text-gray-300 md:text-sm">
+          <p className="text-xs text-gray-300 market-hero-copy md:text-sm">
             Access the digital asset market with flexibility and confidence.
           </p>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-14">
+      <div className="max-w-6xl px-4 py-8 mx-auto md:px-6 md:py-14">
         {/* About Crypto Section */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center mb-12 md:mb-16">
+        <div className="grid items-center gap-8 mb-12 md:grid-cols-2 md:gap-10 md:mb-16">
           <div className="order-2 md:order-1">
             <img
               src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1470&auto=format&fit=crop"
@@ -140,20 +153,18 @@ const CryptocurrencyPage = () => {
             />
           </div>
           <div className="order-1 md:order-2">
-            <h3 className="text-gray-700 text-base md:text-lg mb-2">
+            <h3 className="mb-2 text-base text-gray-700 md:text-lg">
               Maximize Opportunities, Manage Risk
             </h3>
             <h2 className="text-2xl md:text-3xl font-bold text-[#014421] mb-4">
               Trade Crypto CFDs with
             </h2>
-            <p className="text-[#D4AF37] font-semibold mb-4">
-              Zivico Solutions
-            </p>
-            <p className="text-gray-600 leading-7 mb-6 text-sm md:text-base">
+            <p className="text-[#D4AF37] font-semibold mb-4">NOVAFXM</p>
+            <p className="mb-6 text-sm leading-7 text-gray-600 md:text-base">
               Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum,
               Ripple and more through Contract for Difference (CFD) trading.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-[#014421]">✔</span>
                 <p className="text-sm md:text-base">Potential Returns</p>
@@ -242,7 +253,7 @@ const CryptocurrencyPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 justify-items-center pb-7">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-10 justify-items-center pb-7">
           {factors.slice(0, 3).map((factor, index) => (
             <div
               key={index}
@@ -254,14 +265,14 @@ const CryptocurrencyPage = () => {
               <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-5">
                 {factor.title}
               </h3>
-              <p className="text-gray-600 leading-6 md:leading-7 text-sm md:text-base">
+              <p className="text-sm leading-6 text-gray-600 md:leading-7 md:text-base">
                 {factor.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 mt-6 md:mt-0">
+        <div className="flex flex-col justify-center gap-6 mt-6 md:flex-row md:gap-10 md:mt-0">
           {factors.slice(3, 5).map((factor, index) => (
             <div
               key={index}
@@ -273,7 +284,7 @@ const CryptocurrencyPage = () => {
               <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-5">
                 {factor.title}
               </h3>
-              <p className="text-gray-600 leading-6 md:leading-7 text-sm md:text-base">
+              <p className="text-sm leading-6 text-gray-600 md:leading-7 md:text-base">
                 {factor.description}
               </p>
             </div>
@@ -282,8 +293,8 @@ const CryptocurrencyPage = () => {
       </div>
 
       {/* Why is Crypto CFD Trading So Popular Section */}
-      <div className="bg-gradient-to-r from-white to-white text-gray-800 py-8 md:py-12 px-4 md:px-6 text-center">
-        <h1 className="text-2xl md:text-4xl font-bold mb-4">
+      <div className="px-4 py-8 text-center text-gray-800 bg-gradient-to-r from-white to-white md:py-12 md:px-6">
+        <h1 className="mb-4 text-2xl font-bold md:text-4xl">
           Why is Crypto CFD Trading So Popular?
         </h1>
         <p className="mx-auto max-w-6xl px-0 pb-4 text-sm leading-7 md:px-12 md:text-base md:leading-8">
@@ -297,39 +308,44 @@ const CryptocurrencyPage = () => {
       </div>
 
       {/* Why Trade Crypto CFDs Section with Background Image */}
-      <div className="flex flex-col lg:flex-row justify-between">
-        <div className="p-6 md:p-10 text-center bg-gray-50 flex-1">
-          <h2 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">Why Trade Crypto CFDs?</h2>
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-xl mx-auto">
+      <div className="flex flex-col justify-between lg:flex-row">
+        <div className="flex-1 p-6 text-center md:p-10 bg-gray-50">
+          <h2 className="mb-6 text-xl font-semibold md:text-2xl md:mb-8">
+            Why Trade Crypto CFDs?
+          </h2>
+          <div className="grid max-w-xl gap-6 mx-auto md:grid-cols-2 md:gap-8">
             {promoFeatures.map((feature, index) => (
               <div
                 key={index}
                 className={`bg-white shadow-md rounded-lg p-4 md:p-6 hover:shadow-xl transition duration-300 ${
-                  index === 2 ? 'md:col-span-2' : ''
+                  index === 2 ? "md:col-span-2" : ""
                 }`}
               >
-                <div className="flex justify-center mb-3 md:mb-4">{feature.icon}</div>
-                <h3 className="font-bold text-base md:text-lg mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+                <div className="flex justify-center mb-3 md:mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="mb-2 text-base font-bold md:text-lg">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600 md:text-base">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div 
+        <div
           className="p-6 md:p-10 text-center bg-gray-50 flex-1 min-h-[300px] md:min-h-[400px]"
-          style={{ 
-            backgroundImage: `url(${heroBg})`, 
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            borderRadius: '0px'
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "0px",
           }}
-        >
-        </div>
+        />
       </div>
-
-      
     </div>
   );
 };

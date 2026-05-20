@@ -13,14 +13,11 @@ import {
   WalletCards,
 } from "lucide-react";
 
-// Currency codes displayed by the TradingView cross-rates widget.
 const tradingViewCurrencies = ["EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD"];
 
-// Shared hover animation classes for card-style sections.
 const cardAnimation =
   "transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#c89d32]/70 hover:shadow-xl hover:shadow-slate-900/10";
 
-// Feature cards shown in the "Why Trade Forex" section.
 const features = [
   {
     title: "Low Spreads & Competitive Pricing",
@@ -54,7 +51,6 @@ const features = [
   },
 ];
 
-// Deposit and withdrawal methods shown in the funding section.
 const fundingMethods = [
   ["Credit/Debit Cards", "Instant deposits with zero fees.", CreditCard],
   ["Bank Transfers", "Secure transactions with 1-3 day processing.", Building2],
@@ -62,7 +58,6 @@ const fundingMethods = [
   ["E-wallets", "Quick deposits and withdrawals.", WalletCards],
 ];
 
-// Forex products listed in the market offerings section.
 const marketOfferings = [
   ["Major Currency Pairs", "Trade EUR/USD, GBP/USD, USD/JPY  and more with tight spreads."],
   ["Minor Currency Pairs", "Access pairs like EUR/AUD, GBP/NZD  and CAD/CHF."],
@@ -71,7 +66,6 @@ const marketOfferings = [
   ["Scalping & Hedging Allowed", "Use advanced strategies with no restrictions."],
 ];
 
-// Trading tools shown in the insights section.
 const tools = [
   ["Economic Calendar", "Stay updated on key financial events affecting currency markets."],
   ["Live Forex Market News", "Real-time updates to help you make informed trading decisions."],
@@ -79,14 +73,12 @@ const tools = [
   ["Forex Signals", "Receive expert trading signals to enhance your strategies."],
 ].map(([title, desc]) => ({ title, desc }));
 
-// Security bullets displayed in the compliance section.
 const compliancePoints = [
   "Strict AML monitoring",
   "Robust KYC verification",
   "Secure trading environment",
 ];
 
-// Shared section heading component with optional green accent styling.
 function SectionTitle({ children, accent = false }) {
   return (
     <div className="mb-8 text-center sm:mb-12 lg:mb-14">
@@ -98,7 +90,7 @@ function SectionTitle({ children, accent = false }) {
   );
 }
 
-// TradingView real-time forex cross-rates widget.
+// ── TradingView Forex Cross Rates Widget — height increased ──────────────────
 function ForexRatesWidget() {
   const containerRef = useRef(null);
   const hasLoadedWidget = useRef(false);
@@ -141,12 +133,13 @@ function ForexRatesWidget() {
             TradingView Cross Rates
           </h2>
         </div>
-        <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+        <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700">
+          <span className="w-2 h-2 rounded-full animate-pulse bg-emerald-500" />
           Real-time
         </span>
       </div>
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_22px_60px_rgba(15,23,42,0.12)] sm:p-3">
+        {/* Height increased: mobile 900px → tablet 1050px → desktop 1200px */}
         <div
           ref={containerRef}
           className="tradingview-widget-container h-[430px] overflow-hidden rounded-xl bg-white sm:h-[580px] lg:h-[780px]"
@@ -155,15 +148,15 @@ function ForexRatesWidget() {
     </section>
   );
 }
+// ────────────────────────────────────────────────────────────────────────────
 
-// Main hero banner for the Forex page.
 function HeroSection() {
   return (
     <section className="relative min-h-[70svh] overflow-hidden sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
       <img
         src="/Forex 1.jpeg"
         alt="Forex Hero"
-        className="market-hero-image absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 object-cover object-center w-full h-full market-hero-image"
       />
       <div className="absolute inset-0 bg-black/70" />
       <div className="market-hero-content relative z-10 flex min-h-[70svh] flex-col items-center justify-center px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
@@ -176,7 +169,6 @@ function HeroSection() {
   );
 }
 
-// Introductory brand and forex overview section.
 function AboutSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
@@ -204,7 +196,6 @@ function AboutSection() {
   );
 }
 
-// Grid of reasons to trade forex with NOVAFXM.
 function FeatureGrid() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
@@ -214,7 +205,6 @@ function FeatureGrid() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {features.map((item) => {
           const Icon = item.icon;
-
           return (
           <div
             key={item.title}
@@ -238,7 +228,6 @@ function FeatureGrid() {
   );
 }
 
-// List of available forex market products.
 function MarketOfferingsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
@@ -255,7 +244,6 @@ function MarketOfferingsSection() {
             designed for active forex strategies.
           </p>
         </div>
-
         <div className="divide-y divide-slate-200">
           {marketOfferings.map(([title, desc], index) => (
             <div
@@ -265,7 +253,6 @@ function MarketOfferingsSection() {
               <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#c89d32]/40 bg-white text-sm font-bold text-[#014421] transition-all duration-300 group-hover:border-[#014421] group-hover:bg-[#014421] group-hover:text-white">
                 {String(index + 1).padStart(2, "0")}
               </div>
-
               <div>
                 <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{title}</h3>
                 <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
@@ -278,7 +265,6 @@ function MarketOfferingsSection() {
   );
 }
 
-// Account deposit and withdrawal options.
 function FundingSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:pb-20">
@@ -295,7 +281,6 @@ function FundingSection() {
             controlled withdrawals and transparent processing.
           </p>
         </div>
-
         <div className="grid gap-0 md:grid-cols-2">
           {fundingMethods.map(([name, desc, Icon]) => (
             <div
@@ -305,7 +290,6 @@ function FundingSection() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#014421] bg-white text-[#014421] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#014421] sm:h-14 sm:w-14">
                 <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.2} />
               </div>
-
               <div>
                 <h3 className="text-lg font-bold text-[#014421] transition-colors duration-300 group-hover:text-white sm:text-xl">{name}</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white sm:text-base">{desc}</p>
@@ -318,7 +302,6 @@ function FundingSection() {
   );
 }
 
-// Trading tools and market insight cards.
 function ToolsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:pb-24">
@@ -336,7 +319,6 @@ function ToolsSection() {
   );
 }
 
-// Security and compliance information block.
 function SecuritySection() {
   return (
     <section className="bg-[#f1f1f1] px-4 py-10 sm:px-6">
@@ -361,7 +343,7 @@ function SecuritySection() {
             <div className="space-y-4">
               {compliancePoints.map((point) => (
                 <div key={point} className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={2.4} />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={2.4} />
                   <span className="font-semibold text-slate-700">{point}</span>
                 </div>
               ))}
@@ -373,7 +355,6 @@ function SecuritySection() {
   );
 }
 
-// Page composition for the full Forex market route.
 export default function ForexPage() {
   return (
     <div className="w-full overflow-hidden bg-[#f7f7f7] font-sans">
