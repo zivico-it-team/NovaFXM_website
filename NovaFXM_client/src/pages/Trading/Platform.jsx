@@ -54,7 +54,7 @@ export default function TradingPage() {
     <div className="w-full bg-white overflow-hidden">
       {/* ================= HERO SECTION ================= */}
 
-      <section className="relative flex min-h-[95svh] items-center justify-center overflow-hidden bg-black px-4 py-6 text-center sm:min-h-[500px] sm:px-6 sm:py-16 md:min-h-[500px] lg:min-h-[600px]">
+      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <div className="absolute inset-0">
           <img
             src={heroBg5}

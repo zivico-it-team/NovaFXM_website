@@ -212,7 +212,7 @@ const WhyUs = () => {
 {/* ================= HERO ================= */}
 
 <section
-  className="relative flex min-h-[calc(100svh-56px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-10 sm:min-h-[560px] md:px-20 lg:min-h-[600px]"
+  className="relative flex min-h-[calc(100svh-72px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-16 sm:min-h-[calc(100svh-80px)] md:px-20 lg:min-h-[calc(100svh-84px)]"
   style={{
     backgroundImage:
       "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop')",
