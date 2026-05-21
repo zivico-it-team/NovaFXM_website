@@ -156,6 +156,7 @@ const IndicesPage = () => {
 
               <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
                 Key Global Indices at NOVAFXM
+                
               </span>
             </h2>
 
