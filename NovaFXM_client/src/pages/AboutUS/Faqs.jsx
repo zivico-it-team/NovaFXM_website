@@ -109,6 +109,7 @@ export default function FaqPage() {
     >
       {/* ── HERO BANNER ── */}
 <div
+  className="faq-hero px-3 sm:px-5 lg:px-6"
   style={{
     position: "relative",
     width: "100%",
@@ -121,7 +122,8 @@ export default function FaqPage() {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "60px 60px",
+    paddingTop: 60,
+    paddingBottom: 60,
   }}
 >
 
@@ -146,9 +148,9 @@ export default function FaqPage() {
   />
 
   {/* content */}
-  <div className="faq-content">
+  <div className="faq-content mx-auto w-full max-w-7xl">
 
-    <h1 className="faq-title text-6xl">
+    <h1 className="text-6xl faq-title">
   FAQ'S
 </h1>
 
@@ -220,6 +222,87 @@ export default function FaqPage() {
         transform:translateY(-2px);
       }
 
+      @media (max-width: 640px) {
+        .faq-hero{
+          min-height: 520px !important;
+          padding-top: 48px !important;
+          padding-bottom: 48px !important;
+          background-position: center top !important;
+        }
+
+        .faq-content{
+          text-align: center;
+        }
+
+        .faq-title{
+          font-size: 42px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .faq-subtitle{
+          max-width: 320px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 24px !important;
+          font-size: 14px !important;
+        }
+
+        .faq-btn{
+          padding: 12px 26px !important;
+          font-size: 14px !important;
+        }
+
+        .faq-section-title{
+          font-size: 24px !important;
+          line-height: 1.25 !important;
+        }
+
+        .faq-section-title br{
+          display: none;
+        }
+
+        .faq-list{
+          gap: 10px !important;
+        }
+
+        .faq-item{
+          padding: 16px 14px !important;
+          border-radius: 10px !important;
+        }
+
+        .faq-item-row{
+          gap: 10px !important;
+        }
+
+        .faq-number{
+          min-width: 30px !important;
+          width: 30px !important;
+          height: 30px !important;
+          font-size: 11px !important;
+        }
+
+        .faq-question-row{
+          gap: 8px !important;
+          align-items: flex-start !important;
+        }
+
+        .faq-question{
+          font-size: 14px !important;
+          line-height: 1.35 !important;
+          padding-top: 3px;
+        }
+
+        .faq-chevron{
+          width: 24px !important;
+          height: 24px !important;
+        }
+
+        .faq-answer{
+          font-size: 13px !important;
+          line-height: 1.65 !important;
+        }
+      }
+
       @keyframes faqFade {
         to {
           opacity:1;
@@ -231,7 +314,8 @@ export default function FaqPage() {
 
 </div>
       {/* ── FAQ SECTION ── */}
-      <div id="faq-questions" style={{ maxWidth: 1000, margin: "0 auto", padding: "30px 24px" }}>
+      <div id="faq-questions" className="px-3 py-[30px] sm:px-5 lg:px-6">
+        <div className="mx-auto max-w-7xl">
         {/* Section label */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <span
@@ -248,6 +332,7 @@ export default function FaqPage() {
             FAQ's
           </span>
           <h2
+            className="faq-section-title"
             style={{
               fontSize: 30,
               fontWeight: 700,
@@ -263,11 +348,12 @@ export default function FaqPage() {
         </div>
 
         {/* Accordion */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div className="faq-list" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
+                className="faq-item"
                 key={i}
                 onClick={() => toggle(i)}
                 style={{
@@ -284,6 +370,7 @@ export default function FaqPage() {
                 }}
               >
                 <div
+                  className="faq-item-row"
                   style={{
                     display: "flex",
                     alignItems: "flex-start",
@@ -292,6 +379,7 @@ export default function FaqPage() {
                 >
                   {/* Number badge */}
                   <div
+                    className="faq-number"
                     style={{
                       minWidth: 34,
                       height: 34,
@@ -314,6 +402,7 @@ export default function FaqPage() {
 
                   <div style={{ flex: 1 }}>
                     <div
+                      className="faq-question-row"
                       style={{
                         display: "flex",
                         alignItems: "center",
@@ -322,6 +411,7 @@ export default function FaqPage() {
                       }}
                     >
                       <h3
+                        className="faq-question"
                         style={{
                           fontSize: 16,
                           fontWeight: 600,
@@ -335,6 +425,7 @@ export default function FaqPage() {
 
                       {/* Chevron */}
                       <div
+                        className="faq-chevron"
                         style={{
                           width: 28,
                           height: 28,
@@ -373,6 +464,7 @@ export default function FaqPage() {
                     {/* Answer */}
                     {isOpen && (
                       <p
+                        className="faq-answer"
                         style={{
                           marginTop: 12,
                           fontSize: 14,
@@ -389,6 +481,7 @@ export default function FaqPage() {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </div>
