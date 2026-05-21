@@ -109,7 +109,7 @@ export default function FaqPage() {
     >
       {/* ── HERO BANNER ── */}
 <div
-  className="faq-hero px-3 sm:px-5 lg:px-6"
+  className="faq-hero px-5 sm:px-8 lg:px-10 xl:px-12"
   style={{
     position: "relative",
     width: "100%",
@@ -148,7 +148,7 @@ export default function FaqPage() {
   />
 
   {/* content */}
-  <div className="faq-content mx-auto w-full max-w-7xl">
+  <div className="faq-content mx-auto w-full max-w-5xl">
 
     <h1 className="text-6xl faq-title">
   FAQ'S
@@ -251,56 +251,6 @@ export default function FaqPage() {
           padding: 12px 26px !important;
           font-size: 14px !important;
         }
-
-        .faq-section-title{
-          font-size: 24px !important;
-          line-height: 1.25 !important;
-        }
-
-        .faq-section-title br{
-          display: none;
-        }
-
-        .faq-list{
-          gap: 10px !important;
-        }
-
-        .faq-item{
-          padding: 16px 14px !important;
-          border-radius: 10px !important;
-        }
-
-        .faq-item-row{
-          gap: 10px !important;
-        }
-
-        .faq-number{
-          min-width: 30px !important;
-          width: 30px !important;
-          height: 30px !important;
-          font-size: 11px !important;
-        }
-
-        .faq-question-row{
-          gap: 8px !important;
-          align-items: flex-start !important;
-        }
-
-        .faq-question{
-          font-size: 14px !important;
-          line-height: 1.35 !important;
-          padding-top: 3px;
-        }
-
-        .faq-chevron{
-          width: 24px !important;
-          height: 24px !important;
-        }
-
-        .faq-answer{
-          font-size: 13px !important;
-          line-height: 1.65 !important;
-        }
       }
 
       @keyframes faqFade {
@@ -314,8 +264,8 @@ export default function FaqPage() {
 
 </div>
       {/* ── FAQ SECTION ── */}
-      <div id="faq-questions" className="px-3 py-[30px] sm:px-5 lg:px-6">
-        <div className="mx-auto max-w-7xl">
+      <div id="faq-questions" className="px-5 py-[30px] sm:px-8 lg:px-10 xl:px-12">
+        <div className="mx-auto max-w-5xl">
         {/* Section label */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <span
