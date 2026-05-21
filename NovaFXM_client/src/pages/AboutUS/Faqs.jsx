@@ -101,22 +101,31 @@ export default function FaqPage() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       <section
-        className="relative flex min-h-[480px] items-center overflow-hidden bg-cover bg-center px-5 py-14 sm:min-h-[560px] sm:px-8 md:min-h-[calc(100vh-72px)] lg:px-12"
+        className="relative flex min-h-[calc(100vh-72px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-16 sm:min-h-[calc(100vh-80px)] md:px-20 lg:min-h-[calc(100vh-84px)]"
         style={{ backgroundImage: "url('/Faq.png')" }}
       >
-        <div className="absolute inset-0 bg-[#021b14]/80" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_28px,rgba(20,120,60,0.18)_28px,rgba(20,120,60,0.18)_29px)]" />
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 mx-auto w-full max-w-5xl text-center sm:text-left">
-          <h1 className="text-[42px] font-semibold leading-none text-white drop-shadow-md sm:text-6xl md:text-7xl">
-            FAQ'S
-          </h1>
-          <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-white/85 sm:mx-0 sm:max-w-xl sm:text-base md:text-lg">
-            Reaching of the great explorer of the truth the builder
-          </p>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
+          <div className="max-w-2xl text-left text-white">
+            <p className="hero-fade mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
+              Welcome To NOVAFXM
+            </p>
+
+            <h1 className="hero-fade delay-150 text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
+              Frequently Asked <br />
+              <span className="text-[#014421] text-2xl md:text-4xl">
+                Questions
+              </span>
+            </h1>
+
+            <p className="hero-fade delay-300 mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
+              Find clear answers about trading, accounts, platforms, and support at NOVAFXM.
+            </p>
+
           <button
             type="button"
-            className="mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+            className="button-shine hero-fade delay-300 mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
             onClick={() => {
               document.getElementById("faq-questions")?.scrollIntoView({
                 behavior: "smooth",
@@ -125,7 +134,33 @@ export default function FaqPage() {
           >
             Explore More
           </button>
+          </div>
         </div>
+
+        <style>
+          {`
+            .hero-fade {
+              opacity: 0;
+              transform: translateY(25px);
+              animation: heroFade 1.6s ease forwards;
+            }
+
+            .delay-150 {
+              animation-delay: 0.15s;
+            }
+
+            .delay-300 {
+              animation-delay: 0.3s;
+            }
+
+            @keyframes heroFade {
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          `}
+        </style>
       </section>
 
       <section id="faq-questions" className="px-4 py-10 sm:px-8 sm:py-12 lg:px-12">
