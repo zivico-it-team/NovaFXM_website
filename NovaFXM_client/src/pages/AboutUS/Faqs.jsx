@@ -108,7 +108,7 @@ export default function FaqPage() {
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_28px,rgba(20,120,60,0.18)_28px,rgba(20,120,60,0.18)_29px)]" />
 
         <div className="relative z-10 mx-auto w-full max-w-5xl text-center sm:text-left">
-          <h1 className="text-[42px] font-extrabold leading-none text-white drop-shadow-md sm:text-6xl md:text-7xl">
+          <h1 className="text-[42px] font-semibold leading-none text-white drop-shadow-md sm:text-6xl md:text-7xl">
             FAQ'S
           </h1>
           <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-white/85 sm:mx-0 sm:max-w-xl sm:text-base md:text-lg">
