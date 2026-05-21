@@ -126,7 +126,7 @@ const IndicesPage = () => {
 
           <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 sm:mt-6 md:text-base md:leading-8">
             Unlock a Wide Range of Indices from the World's Leading
-            Economies with AS Markets
+            Economies with NOVAFXM
           </p>
         </div>
       </section>
