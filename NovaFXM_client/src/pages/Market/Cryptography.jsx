@@ -222,7 +222,7 @@ const CryptocurrencyPage = () => {
             What Affects the Price of{" "}
             <span className="text-[#014421]">Crypto CFDs?</span>
           </h1>
-          <p className="mx-auto text-sm leading-relaxed text-gray-600 max-w-8xl md:text-base">
+          <p className="max-w-6xl mx-auto text-sm leading-relaxed text-gray-600 md:text-base">
             Several key factors influence the price movements of Crypto CFDs.
             Understanding these elements helps traders make informed and
             strategic decisions in fast-moving markets.
@@ -259,7 +259,7 @@ const CryptocurrencyPage = () => {
           <h1 className="mb-4 text-2xl font-bold md:text-4xl">
             Why is Crypto CFD Trading So Popular?
           </h1>
-          <p className="mx-auto text-sm leading-7 max-w-8xl md:text-base md:leading-8">
+          <p className="max-w-6xl mx-auto text-sm leading-7 md:text-base md:leading-8">
             The media frenzy surrounding Bitcoin and Ethereum has driven the rise
             in Crypto CFD trading. Cryptocurrencies do not rely on central banks
             or interest rates and their value is not subject to traditional

@@ -95,12 +95,12 @@ export default function AccountTypesPage() {
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16]">
       {/* Hero */}
-      <section className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
+      <section className="relative flex min-h-[calc(100vh-72px)] items-start justify-center overflow-hidden bg-black px-4 pb-16 pt-24 text-center sm:min-h-[calc(100vh-80px)] sm:items-center sm:px-6 sm:py-16 lg:min-h-[calc(100vh-84px)]">
         <div className="absolute inset-0">
           <img
             src="/accounttype.png"
             alt=""
-            className="account-hero-image h-full w-full object-cover object-center brightness-110"
+            className="account-hero-image h-full w-full object-cover object-top brightness-110 sm:object-center"
           />
         </div>
         <div className="absolute inset-0 bg-black/50" />
@@ -155,7 +155,7 @@ export default function AccountTypesPage() {
                 <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
                   <Icon />
                 </div>
-                <h3 className="text-sm font-bold leading-snug">{account.title}</h3>
+                <h2 className="text-lg font-bold leading-snug text-gray-900 sm:text-xl">{account.title}</h2>
               </div>
 
               <h2 className="account-plan-price mb-5 text-2xl font-extrabold text-[#014421]">{account.price}</h2>
@@ -189,7 +189,7 @@ export default function AccountTypesPage() {
       </section>
 
       {/* How it works */}
-<section className="mx-auto max-w-6xl bg-white px-4 py-14 text-center sm:px-5 sm:py-20">
+<section className="mx-auto max-w-6xl px-4 py-8 text-center sm:px-5 sm:py-12">
   
   {/* Top Small Heading */}
   <div className="mb-4 flex items-center justify-center gap-3">
@@ -201,9 +201,9 @@ export default function AccountTypesPage() {
   </div>
 
   {/* Main Heading */}
-  <h2 className="mb-12 text-2xl font-extrabold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
+  <h2 className="mb-12 text-2xl font-bold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
     Trading Made Simple with{" "}
-    <span className="text-[#014421]">Novafxm</span>
+    <span className="text-[#014421]">NOVAFXM</span>
   </h2>
 
   {/* Cards */}
@@ -239,7 +239,7 @@ export default function AccountTypesPage() {
         )}
 
         {/* Card */}
-        <div className="process-card relative w-full max-w-[320px] rounded-[24px] border border-[#014421]/30 bg-white px-5 pb-8 pt-14 shadow-sm transition duration-300 sm:rounded-[28px] sm:px-6">
+        <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
           
           {/* Top Circle Icon */}
           <div className="absolute -top-7 left-1/2 -translate-x-1/2">
@@ -262,8 +262,6 @@ export default function AccountTypesPage() {
             {step.desc}
           </p>
 
-          {/* Bottom Gold Line */}
-          <div className="absolute bottom-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-t-full bg-[#D4AF37]"></div>
         </div>
       </div>
     ))}
