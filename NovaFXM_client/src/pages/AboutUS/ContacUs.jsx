@@ -32,12 +32,17 @@ export default function ContactPage() {
   <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-500/10 blur-3xl rounded-full animate-pulse"></div>
   <div className="absolute bottom-0 right-0 w-72 h-72 bg-yellow-400/10 blur-3xl rounded-full animate-pulse"></div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-12 py-20 lg:py-28 w-full">
+  <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start px-6 py-20 md:px-20 lg:py-28">
     <div className="animate-[heroFade_1.4s_ease]">
-      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white">
+      <p className="mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
+        We're Here To Help
+      </p>
+
+      <h1 className="text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl">
         Contact <span className="text-[#1fa15a]">Us</span>
       </h1>
-      <p className="mt-5 lg:mt-7 text-gray-300 max-w-xl lg:max-w-2xl text-sm sm:text-base md:text-xl lg:text-2xl leading-7 lg:leading-9 animate-[heroFade_1.8s_ease]">
+
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg animate-[heroFade_1.8s_ease]">
         Our dedicated support team is here to assist you through various
         channels.
       </p>
@@ -68,13 +73,13 @@ export default function ContactPage() {
                 <span className="text-sm font-semibold text-[#0d6b36]">Need help?</span>
               </div>
 
-              <h2 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight text-[#171717]">
-                Contact <span className="text-[#0d6b36]">Novafxm</span>
+              <h2 className="mt-6 text-4xl font-bold leading-tight text-[#171717] md:text-5xl">
+                Contact <span className="text-[#0d6b36] ">Novafxm</span>
               </h2>
 
               <div className="mt-5 h-[3px] w-14 rounded-full bg-[#0d6b36]"></div>
 
-              <p className="mt-5 max-w-2xl text-[15px] leading-7 text-gray-600">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-600">
                 Our dedicated support team is here to assist you through various channels.
                 <span className="font-semibold text-[#0d6b36]"> Reach out to us</span>{" "}
                 through any of the options below.
@@ -84,7 +89,7 @@ export default function ContactPage() {
               <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* CALL CARD */}
-                <div className="group rounded-[26px] border border-[#edf0ed] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_60px_rgba(1,68,33,0.14)]">
+                <div className="group flex h-full flex-col rounded-[26px] border border-[#edf0ed] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_60px_rgba(1,68,33,0.14)]">
                   <div className="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-[#d5e4d8] bg-[#f8fbf8]">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-300 group-hover:bg-[#0d6b36]">
                       <Phone className="text-[#0d6b36] group-hover:text-white" size={30} />
@@ -94,12 +99,12 @@ export default function ContactPage() {
 
                   <div className="mt-6 text-center">
                     <span className="text-sm font-semibold text-[#0d6b36]">Contact Us</span>
-                    <h3 className="mt-3 text-[30px] font-extrabold text-[#161616]">Call us on</h3>
-                    <p className="mt-2 text-[15px] text-gray-500">Our Phone Number</p>
+                    <h3 className="mt-3 text-2xl font-bold text-[#161616] md:text-3xl">Call us on</h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-500">Our Phone Number</p>
                     <div className="mx-auto mt-4 h-[3px] w-12 rounded-full bg-[#0d6b36]"></div>
                   </div>
 
-                  <ul className="mt-7 space-y-3 text-sm text-gray-600">
+                  <ul className="mb-8 mt-7 space-y-3 text-sm text-gray-600">
                     <li className="flex items-center gap-3">
                       <CheckCircle size={16} className="text-[#0d6b36]" />
                       Speak directly with our team
@@ -116,7 +121,7 @@ export default function ContactPage() {
 
                   <a
                     href="tel:+4412345678"
-                    className="mt-8 flex h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]"
+                    className="mt-auto flex h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]"
                   >
                     <Phone size={18} />
                     Click to call
@@ -125,7 +130,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* EMAIL CARD */}
-                <div className="group rounded-[26px] border border-[#edf0ed] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_60px_rgba(1,68,33,0.14)]">
+                <div className="group flex h-full flex-col rounded-[26px] border border-[#edf0ed] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_60px_rgba(1,68,33,0.14)]">
                   <div className="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-[#d5e4d8] bg-[#f8fbf8]">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-300 group-hover:bg-[#0d6b36]">
                       <Mail className="text-[#0d6b36] group-hover:text-white" size={30} />
@@ -135,12 +140,12 @@ export default function ContactPage() {
 
                   <div className="mt-6 text-center">
                     <span className="text-sm font-semibold text-[#0d6b36]">Support</span>
-                    <h3 className="mt-3 text-[30px] font-extrabold text-[#161616]">Email Support</h3>
-                    <p className="mt-2 text-[15px] text-gray-500">Chat live with our forex specialist.</p>
+                    <h3 className="mt-3 text-2xl font-bold text-[#161616] md:text-3xl">Email Support</h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-500">Chat live with our forex specialist.</p>
                     <div className="mx-auto mt-4 h-[3px] w-12 rounded-full bg-[#0d6b36]"></div>
                   </div>
 
-                  <ul className="mt-7 space-y-3 text-sm text-gray-600">
+                  <ul className="mb-8 mt-7 space-y-3 text-sm text-gray-600">
                     <li className="flex items-center gap-3">
                       <CheckCircle size={16} className="text-[#0d6b36]" />
                       We aim to respond quickly
@@ -157,7 +162,7 @@ export default function ContactPage() {
 
                   <a
                     href="mailto:support@novafxm.com"
-                    className="mt-8 flex h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]"
+                    className="mt-auto flex h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]"
                   >
                     <Mail size={18} />
                     Email to us
@@ -173,7 +178,7 @@ export default function ContactPage() {
             <div className="absolute right-5 top-5 h-28 w-28 bg-[radial-gradient(rgba(185,255,120,0.4)_1px,transparent_1.5px)] [background-size:10px_10px] opacity-70"></div>
 
             <div className="relative z-10">
-              <h3 className="text-[34px] font-bold mt-10 mb-2">Contact Info</h3>
+              <h3 className="mt-10 mb-2 text-3xl font-bold md:text-4xl">Contact Info</h3>
               <div className="mt-4 h-[3px] w-12 rounded-full bg-lime-400"></div>
 
               <div className="mt-7 space-y-6">
@@ -261,7 +266,7 @@ export default function ContactPage() {
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-gray-950">
+              <h2 className="text-3xl font-bold leading-tight text-gray-950 md:text-5xl">
                 Send Your <span className="text-[#014421]">Message</span> to Us
               </h2>
 
@@ -368,7 +373,7 @@ export default function ContactPage() {
                 <span className="rounded-full bg-green-100 px-4 py-1.5 text-[11px] font-bold uppercase text-[#014421]">
                   We're here to help
                 </span>
-                <h3 className="mt-4 text-2xl font-extrabold leading-snug text-gray-950 md:text-3xl">
+                <h3 className="mt-4 text-2xl font-bold leading-snug text-gray-950 md:text-3xl">
                   We're here to <span className="text-[#014421]">help</span>{" "}you succeed
                 </h3>
                 <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">
