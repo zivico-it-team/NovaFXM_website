@@ -111,7 +111,7 @@ const IndicesPage = () => {
           HERO SECTION
       ========================================= */}
 
-      <section className="relative flex min-h-[70svh] w-full items-center justify-center overflow-hidden px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
+      <section className="relative flex min-h-[calc(100svh-72px)] w-full items-center justify-center overflow-hidden px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <img
           src={heroBg}
           alt="Indices Hero"

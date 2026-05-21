@@ -11,10 +11,10 @@ const exchangeIcons = [Landmark, ChartNoAxesCombined, Clock3, Torus];
 
 const Stock = () => {
   return (
-    <div className="bg-[#f5f5f5] font-sans">
+    <div className="overflow-x-hidden bg-[#f5f5f5] font-sans">
       
       {/* ================= FULL SCREEN HERO ================= */}
-      <section className="relative flex min-h-[70svh] w-full items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
+      <section className="relative flex min-h-[calc(100svh-72px)] w-full items-center justify-center overflow-hidden bg-black px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         
         <div className="absolute inset-0 hero-parallax">
           <img
@@ -29,31 +29,31 @@ const Stock = () => {
         {/* Content */}
         <div className="market-hero-content relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
           
-          <h1 className="market-hero-title text-4xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
+          <h1 className="market-hero-title text-3xl font-bold text-white drop-shadow-sm sm:text-5xl md:text-6xl">
             Stocks
           </h1>
 
-          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm font-medium leading-7 text-white drop-shadow-sm sm:mt-6 md:text-base md:leading-8">
+          <p className="market-hero-copy mx-auto mt-3 max-w-[18rem] text-sm font-medium leading-6 text-white drop-shadow-sm sm:mt-6 sm:max-w-3xl md:text-base md:leading-8">
             Start Stock Trading Today with NOVAFXM
           </p>
         </div>
       </section>
 
       {/* ================= INTRO ================= */}
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-2 md:items-start md:gap-10 lg:py-16">
+      <section className="mx-auto grid max-w-7xl gap-7 px-4 py-9 sm:px-6 sm:py-12 md:grid-cols-2 md:items-start md:gap-10 lg:py-16">
         
         <div className="pt-2 md:pt-0">
           
-          <p className="text-sm font-medium text-[#D4AF37]">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#D4AF37] sm:text-sm sm:normal-case sm:tracking-normal">
             Ever Dreamed Of Investing In Your Favourite Companies?
           </p>
 
           <h2 className="mt-2 text-2xl font-bold leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
-            Start Stock Trading Today <br />
+            Start Stock Trading Today <br className="hidden sm:block" />
             <span className="text-[#014421]">with Markets</span>
           </h2>
 
-          <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:leading-8 text-justify">
+          <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-justify sm:text-base lg:leading-8">
             Unlock the potential of stock trading by investing in some of the world’s
             leading companies and growing your portfolio with confidence. Stock markets
             provide opportunities for both long-term investment and short-term trading,
@@ -67,14 +67,14 @@ const Stock = () => {
         <img
           src="/Stock2.jpeg"
           alt="chart"
-          className="h-[240px] w-full rounded-2xl object-cover shadow-lg sm:h-[340px] md:h-auto md:max-h-[420px] md:justify-self-end lg:max-h-[480px]"
+          className="h-[220px] w-full rounded-xl object-cover shadow-lg sm:h-[340px] sm:rounded-2xl md:h-auto md:max-h-[420px] md:justify-self-end lg:max-h-[480px]"
         />
       </section>
 
       {/* ================= TRADINGVIEW MARKET OVERVIEW ================= */}
-      <section className="bg-[#f8faf9] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <section className="bg-[#f8faf9] px-3 py-10 sm:px-6 sm:py-16 lg:py-20">
         
-        <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-xl border border-gray-100 bg-white p-2 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
           
           <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
             <TradingViewWidget />
@@ -85,7 +85,7 @@ const Stock = () => {
       {/* ================= WHAT ARE STOCKS ================= */}
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:py-8">
         
-        <div className="rounded-3xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-6 shadow-md transition-all duration-300 hover:shadow-xl sm:p-8 lg:p-10">
+        <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-8 lg:p-10">
           
           <h3 className="text-xl font-bold text-[#014421] sm:text-2xl">
             What are Stocks?
@@ -93,7 +93,7 @@ const Stock = () => {
 
           <div className="mt-4 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-          <p className="mt-5 text-sm leading-8 text-gray-700 sm:text-base lg:text-lg">
+          <p className="mt-5 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
             A stock represents a unit of ownership in a company. By purchasing
             shares, you become a part-owner. If the company thrives, its stock
             price rises, offering you potential gains. If the company
@@ -103,9 +103,9 @@ const Stock = () => {
       </section>
 
       {/* ================= EXCHANGES ================= */}
-      <section className="mx-auto max-w-7xl px-2 py-10 sm:px-6 lg:py-12">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-12">
         
-        <h3 className="mb-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        <h3 className="mb-6 text-2xl font-bold tracking-tight text-slate-900 sm:mb-8 sm:text-3xl">
           Where Are{" "}
           <span className="text-[#014421]">
             Stocks Traded?
@@ -135,21 +135,21 @@ const Stock = () => {
             
             <div
               key={i}
-              className="relative min-h-[220px] overflow-hidden rounded-3xl border-b-4 border-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6 sm:py-8"
+              className="relative min-h-[205px] overflow-hidden rounded-2xl border-b-4 border-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[220px] sm:rounded-3xl sm:px-6 sm:py-8"
             >
               
               <div className="flex flex-col items-center text-center">
                 
                 {/* Icon */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-[#014421]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] sm:h-16 sm:w-16">
                   {React.createElement(exchangeIcons[i], {
-                    className: "h-7 w-7",
+                    className: "h-6 w-6 sm:h-7 sm:w-7",
                     strokeWidth: 2.4,
                   })}
                 </div>
 
                 {/* Title */}
-                <h4 className="mt-5 text-lg font-bold leading-snug text-slate-900">
+                <h4 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:mt-5 sm:text-lg">
                   {item.name}
                 </h4>
 
@@ -157,7 +157,7 @@ const Stock = () => {
                 <div className="mt-4 h-[3px] w-10 rounded-full bg-[#014421]"></div>
 
                 {/* Description */}
-                <p className="mt-4 text-sm leading-7 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:mt-4 sm:leading-7">
                   {item.desc}
                 </p>
               </div>
@@ -179,7 +179,7 @@ const Stock = () => {
       {/* ================= WHY TRADE ================= */}
       <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-0">
         
-        <div className="rounded-3xl bg-[#014421] p-6 text-white shadow-lg sm:p-8 lg:p-10">
+        <div className="rounded-2xl bg-[#014421] p-5 text-white shadow-lg sm:rounded-3xl sm:p-8 lg:p-10">
           
           <h3 className="text-xl font-bold text-[#D4AF37] sm:text-2xl">
             Why Trade Stocks?
@@ -187,7 +187,7 @@ const Stock = () => {
 
           <div className="mt-4 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-          <p className="mt-5 text-sm leading-8 sm:text-base lg:text-lg">
+          <p className="mt-5 text-sm leading-7 sm:text-base sm:leading-8 lg:text-lg">
             Stock trading offers access to a broad range of companies across
             various sectors, allowing you to diversify your investment strategy
             and manage risk. With the right stock trading approach, you can
@@ -199,7 +199,7 @@ const Stock = () => {
       {/* ================= HOW IT WORKS ================= */}
       <section className="mx-auto max-w-7xl px-4 py-6 pb-16 sm:px-6 lg:px-0">
         
-        <div className="rounded-3xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-6 shadow-md transition-all duration-300 hover:shadow-xl sm:p-8 lg:p-10">
+        <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-8 lg:p-10">
           
           <h3 className="text-xl font-bold text-[#014421] sm:text-2xl">
             How Does Stock Trading Work?
@@ -207,7 +207,7 @@ const Stock = () => {
 
           <div className="mt-4 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-          <p className="mt-5 text-sm leading-8 text-gray-700 sm:text-base lg:text-lg">
+          <p className="mt-5 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
             Stock trading involves buying and selling shares of companies on
             exchanges. You can also trade stocks CFDs (Contracts for Difference),
             which allow you to speculate on price movements with leverage. Many

@@ -168,14 +168,14 @@ function ForexRatesWidget() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[58svh] overflow-hidden bg-black sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
+    <section className="relative min-h-[calc(100svh-72px)] overflow-hidden bg-black sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
       <img
         src="/Forex 1.jpeg"
         alt="Forex Hero"
         className="absolute inset-0 h-full w-full object-cover object-center market-hero-image"
       />
       <div className="absolute inset-0 bg-black/65 sm:bg-black/70" />
-      <div className="market-hero-content relative z-10 mx-auto flex min-h-[58svh] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
+      <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">Forex</h1>
         <p className="market-hero-copy mt-4 max-w-2xl text-sm leading-6 text-gray-200 sm:text-base sm:leading-7">
           Trade the world's most liquid market with NOVAFXM.

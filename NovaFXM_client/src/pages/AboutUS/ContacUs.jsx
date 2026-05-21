@@ -20,6 +20,12 @@ import {
 const EMAILJS_SERVICE_ID  = "service_gin16hi";
 const EMAILJS_TEMPLATE_ID = "template_c86hpz9";
 const EMAILJS_PUBLIC_KEY  = "ec69D4BHhqQl_rNAb";
+const contactActionButtonClass =
+  "button-shine group/action mt-auto inline-flex h-12 w-full items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-6 text-sm font-bold text-[#06351e] shadow-md shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c89b1d] hover:shadow-lg";
+const contactMapButtonClass =
+  "button-shine group/action mt-5 inline-flex h-12 w-full items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-6 text-sm font-bold text-[#06351e] shadow-md shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c89b1d] hover:shadow-lg";
+const contactPrimaryButtonClass =
+  "button-shine group/action mt-auto inline-flex h-12 w-full items-center justify-center gap-3 rounded-full bg-[#014421] px-6 text-sm font-bold text-white shadow-md shadow-[#014421]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0b5b2e] hover:shadow-lg";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
@@ -140,10 +146,10 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 items-stretch">
 
           {/* LEFT SIDE */}
-          <div className="relative overflow-hidden rounded-2xl border border-[#edf1ed] bg-white p-5 sm:p-6 md:p-8 shadow-[0_14px_34px_rgba(15,23,42,0.06)]">
+          <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#edf1ed] bg-white p-5 sm:p-6 md:p-8 shadow-[0_14px_34px_rgba(15,23,42,0.06)]">
             
 
-            <div className="relative z-10">
+            <div className="relative z-10 flex h-full flex-col">
               {/* <div className="inline-flex items-center gap-2 rounded-full bg-[#eef8f0] px-4 py-2">
                 <Headphones className="text-[#0d6b36]" size={16} />
                 <span className="text-sm font-semibold text-[#0d6b36]">Need help?</span>
@@ -162,7 +168,7 @@ export default function ContactPage() {
               </p>
 
               {/* CARDS */}
-              <div className="grid grid-cols-1 gap-5 mt-8 md:grid-cols-2">
+              <div className="grid flex-1 grid-cols-1 items-stretch gap-5 mt-8 md:grid-cols-2">
 
                 {/* CALL CARD */}
                 <div className="group flex h-full flex-col rounded-2xl border border-[#edf0ed] bg-white p-5 shadow-[0_12px_28px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(1,68,33,0.12)]">
@@ -170,7 +176,7 @@ export default function ContactPage() {
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-300 group-hover:bg-[#0d6b36]">
                       <Phone className="text-[#0d6b36] group-hover:text-white" size={24} />
                     </div>
-                    <span className="absolute w-3 h-3 rounded-full right-1 top-8 bg-lime-400 ring-4 ring-white"></span>
+                    <span className="absolute w-3 h-3 rounded-full right-1 top-8 bg-[#D4AF37] ring-4 ring-white"></span>
                   </div>
                   <div className="mt-5 text-center">
                     <span className="text-sm font-semibold text-[#0d6b36]">Contact Us</span>
@@ -183,8 +189,8 @@ export default function ContactPage() {
                     <li className="flex items-center gap-3"><CheckCircle size={16} className="text-[#0d6b36]" />Available during business hours</li>
                     <li className="flex items-center gap-3"><CheckCircle size={16} className="text-[#0d6b36]" />Quick and reliable support</li>
                   </ul>
-                  <a href="tel:+4412345678" className="mt-auto flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]">
-                    <Phone size={18} />Click to call<ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  <a href="tel:+4412345678" className={contactPrimaryButtonClass}>
+                    <Phone size={18} />Click to call<ArrowRight size={18} className="transition-transform duration-300 group-hover/action:translate-x-1" />
                   </a>
                 </div>
 
@@ -194,7 +200,7 @@ export default function ContactPage() {
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-300 group-hover:bg-[#0d6b36]">
                       <Mail className="text-[#0d6b36] group-hover:text-white" size={24} />
                     </div>
-                    <span className="absolute w-3 h-3 rounded-full right-1 top-8 bg-lime-400 ring-4 ring-white"></span>
+                    <span className="absolute w-3 h-3 rounded-full right-1 top-8 bg-[#D4AF37] ring-4 ring-white"></span>
                   </div>
                   <div className="mt-5 text-center">
                     <span className="text-sm font-semibold text-[#0d6b36]">Support</span>
@@ -207,8 +213,8 @@ export default function ContactPage() {
                     <li className="flex items-center gap-3"><CheckCircle size={16} className="text-[#0d6b36]" />Detailed and helpful replies</li>
                     <li className="flex items-center gap-3"><CheckCircle size={16} className="text-[#0d6b36]" />Available 24/7</li>
                   </ul>
-                  <a href="mailto:support@novafxm.com" className="mt-auto flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#0b5b2e] text-sm font-bold text-white transition-all duration-300 hover:bg-[#084725]">
-                    <Mail size={18} />Email to us<ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  <a href="mailto:support@novafxm.com" className={contactPrimaryButtonClass}>
+                    <Mail size={18} />Email to us<ArrowRight size={18} className="transition-transform duration-300 group-hover/action:translate-x-1" />
                   </a>
                 </div>
               </div>
@@ -218,29 +224,29 @@ export default function ContactPage() {
           {/* RIGHT SIDE */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00381f] via-[#004b2a] to-[#005f36] p-5 sm:p-6 text-white shadow-[0_14px_34px_rgba(0,40,22,0.22)]">
             <div className="absolute right-5 top-5 h-28 w-28 bg-[radial-gradient(rgba(185,255,120,0.4)_1px,transparent_1.5px)] [background-size:10px_10px] opacity-70"></div>
-            <div className="relative z-10">
+            <div className="relative z-10 flex h-full flex-col">
               <h3 className="mt-6 mb-2 text-2xl font-bold md:text-3xl">Contact Info</h3>
-              <div className="mt-4 h-[3px] w-12 rounded-full bg-lime-400"></div>
+              <div className="mt-4 h-[3px] w-12 rounded-full bg-[#D4AF37]"></div>
               <div className="space-y-5 mt-6">
                 <div className="flex gap-4 pt-6 pb-6 border-b border-white/15">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-green-500 shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><MapPin size={20} /></div>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><MapPin size={20} /></div>
                   <div><h4 className="text-base font-bold">Address</h4><p className="mt-1 text-sm leading-6 text-white/85">82 Buckingham Palace Rd,<br />London SW1W 9TJ, UK</p></div>
                 </div>
                 <div className="flex gap-4 pb-6 border-b border-white/15">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-green-500 shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Phone size={20} /></div>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Phone size={20} /></div>
                   <div><h4 className="text-base font-bold">Phone</h4><p className="mt-1 text-sm text-white/85">+44 12345678</p></div>
                 </div>
                 <div className="flex gap-4 pb-6 border-b border-white/15">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-green-500 shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Mail size={20} /></div>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Mail size={20} /></div>
                   <div><h4 className="text-base font-bold">Email</h4><p className="mt-1 text-sm break-all text-white/85">support@novafxm.com</p></div>
                 </div>
                 <div className="flex gap-4 pb-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-green-500 shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Clock size={20} /></div>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Clock size={20} /></div>
                   <div><h4 className="text-base font-bold">Working Hours</h4><p className="mt-1 text-sm leading-6 text-white/85">Monday - Friday<br />9:00 AM - 6:00 PM (GMT)</p></div>
                 </div>
               </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=82+Buckingham+Palace+Rd+London+SW1W+9TJ+UK" target="_blank" rel="noopener noreferrer" className="mt-5 flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-lime-400 text-sm font-bold text-[#06351e] transition-all duration-300 hover:bg-lime-300">
-                <MapPin size={18} />View On Google Map<ArrowRight size={18} />
+              <a href="https://www.google.com/maps/search/?api=1&query=82+Buckingham+Palace+Rd+London+SW1W+9TJ+UK" target="_blank" rel="noopener noreferrer" className={contactMapButtonClass}>
+                <MapPin size={18} />View on Google Map<ArrowRight size={18} className="transition-transform duration-300 group-hover/action:translate-x-1" />
               </a>
             </div>
           </div>
@@ -399,7 +405,7 @@ export default function ContactPage() {
                 <p className="max-w-md mt-3 text-sm leading-6 text-gray-600">Our team is ready to assist you with any questions or support you need.</p>
               </div>
             </div>
-            <button type="button" onClick={() => navigate("/chatbot")} className="flex h-12 w-full items-center justify-center gap-3 rounded-md bg-yellow-400 px-6 text-sm font-bold text-gray-950 transition hover:bg-yellow-300 sm:w-auto">
+            <button type="button" onClick={() => navigate("/chatbot")} className="flex h-12 w-full items-center justify-center gap-3 rounded-md bg-[#D4AF37] px-6 text-sm font-bold text-gray-950 transition hover:bg-yellow-300 sm:w-auto">
               <Headphones size={18} />Chat with Support<span aria-hidden="true">-&gt;</span>
             </button>
           </div>

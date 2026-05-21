@@ -126,7 +126,7 @@ const CryptocurrencyPage = () => {
   return (
     <div className="bg-[#f5f5f5] min-h-screen font-sans">
       {/* Hero Section */}
-      <div className="relative flex min-h-[70svh] items-center justify-center overflow-hidden px-3 py-16 sm:min-h-[calc(100svh-80px)] sm:px-5 lg:min-h-[calc(100svh-84px)] lg:px-6">
+      <div className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden px-3 py-16 sm:min-h-[calc(100svh-80px)] sm:px-5 lg:min-h-[calc(100svh-84px)] lg:px-6">
         <img
           src={heroBg}
           alt="Cryptocurrency Hero"

@@ -4,7 +4,6 @@ import {
   Scale,
   Users,
   Star,
-  ChevronDown,
   TrendingUp,
   Globe,
   Headphones,
@@ -69,14 +68,14 @@ const features = [
 /* ================= COMPONENTS ================= */
 
 const SectionTitle = ({ top, title }) => (
-  <div className="text-center mb-16">
+  <div className="text-center mb-10">
     <p className="text-yellow-500 uppercase tracking-[3px] text-sm font-semibold">
       {top}
     </p>
 
-    <h2 className="text-3xl md:text-4xl font-bold mt-3">{title}</h2>
+    <h2 className="text-3xl md:text-4xl font-bold mt-2">{title}</h2>
 
-    <div className="w-20 h-1 bg-yellow-500 rounded-full mx-auto mt-5"></div>
+    <div className="w-20 h-1 bg-yellow-500 rounded-full mx-auto mt-3"></div>
   </div>
 );
 
@@ -102,10 +101,10 @@ const FeatureCard = ({
       hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)]
       transition-all duration-300
       overflow-hidden
-      pt-32
-      pb-10
-      px-8
-      min-h-[390px]
+      pt-24
+      pb-7
+      px-7
+      min-h-[330px]
       flex flex-col items-center
       text-center
     "
@@ -114,11 +113,11 @@ const FeatureCard = ({
     <div
       className={`
         absolute
-        top-6
+        top-5
         left-1/2
         -translate-x-1/2
-        w-[78px]
-        h-[78px]
+        w-[70px]
+        h-[70px]
         rounded-full
         ${bg}
         border-[6px]
@@ -138,10 +137,10 @@ const FeatureCard = ({
       className={`
         whitespace-pre-line
         ${color}
-        text-[22px]
-        leading-[40px]
+        text-[21px]
+        leading-[32px]
         font-bold
-        min-h-[130px]
+        min-h-[96px]
         flex items-center justify-center
       `}
     >
@@ -149,14 +148,14 @@ const FeatureCard = ({
     </h3>
 
     {/* LINE */}
-    <div className={`w-14 h-[3px] rounded-full mb-6 ${border}`}></div>
+    <div className={`w-14 h-[3px] rounded-full mb-4 ${border}`}></div>
 
     {/* DESCRIPTION */}
     <p
       className="
         text-gray-500
         text-[15px]
-        leading-[34px]
+        leading-[28px]
         flex-1
         flex items-start justify-center
       "
@@ -181,18 +180,18 @@ const FeatureCard = ({
 /* ================= VALUE CARD ================= */
 
 const ValueCard = ({ title, description, icon: Icon }) => (
-  <div className="bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-6 flex gap-6 items-start border border-gray-100">
+  <div className="bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-5 flex gap-4 items-start border border-gray-100">
 
-    <div className="min-w-[72px] h-[72px] rounded-full bg-[#e4e4e4] flex items-center justify-center">
-      <Icon className="w-8 h-8 text-[#557d34]" />
+    <div className="min-w-[60px] h-[60px] rounded-full bg-[#e4e4e4] flex items-center justify-center">
+      <Icon className="w-7 h-7 text-[#557d34]" />
     </div>
 
     <div>
-      <h3 className="text-2xl font-semibold text-[#3f7d2c]">
+      <h3 className="text-xl font-semibold text-[#3f7d2c]">
         {title}
       </h3>
 
-      <p className="mt-2 text-gray-600 leading-relaxed text-base">
+      <p className="mt-1.5 text-gray-600 leading-relaxed text-base">
         {description}
       </p>
     </div>
@@ -213,7 +212,7 @@ const WhyUs = () => {
 {/* ================= HERO ================= */}
 
 <section
-  className="relative flex min-h-[calc(100vh-72px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-16 sm:min-h-[calc(100vh-80px)] md:px-20 lg:min-h-[calc(100vh-84px)]"
+  className="relative flex min-h-[calc(100svh-56px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-10 sm:min-h-[560px] md:px-20 lg:min-h-[600px]"
   style={{
     backgroundImage:
       "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop')",
@@ -229,7 +228,7 @@ const WhyUs = () => {
     <div className="max-w-2xl text-left text-white">
 
       {/* Small Heading */}
-      <p className="uppercase tracking-[4px] text-yellow-400 text-sm md:text-base font-medium mb-5 hero-fade">
+      <p className="uppercase tracking-[4px] text-yellow-400 text-sm md:text-base font-medium mb-4 hero-fade">
         Welcome To NOVAFXM
       </p>
 
@@ -243,13 +242,13 @@ const WhyUs = () => {
       </h1>
 
       {/* Description */}
-      <p className="mt-6 text-gray-200 text-base md:text-lg leading-relaxed max-w-xl hero-fade delay-300">
+      <p className="mt-5 text-gray-200 text-base md:text-lg leading-relaxed max-w-xl hero-fade delay-300">
         Trusted by traders worldwide, NOVAFXM delivers secure innovative trading solutions designed for confidence and long-term success.
       </p>
 
       <button
         type="button"
-        className="button-shine hero-fade delay-300 mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+        className="button-shine hero-fade delay-300 mt-6 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
         onClick={() => {
           document.getElementById("why-us-about")?.scrollIntoView({
             behavior: "smooth",
@@ -292,9 +291,9 @@ const WhyUs = () => {
 </section>
       {/* ================= ABOUT ================= */}
 
-      <section id="why-us-about" className="scroll-mt-24 px-6 md:px-16 py-20 bg-white">
+      <section id="why-us-about" className="scroll-mt-20 px-6 pt-12 pb-6 md:px-16 md:py-14 bg-white">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
           {/* IMAGE */}
 
@@ -303,12 +302,12 @@ const WhyUs = () => {
             <img
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
               alt="building"
-              className="rounded-[30px] shadow-2xl w-full h-[500px] object-cover"
+              className="rounded-[30px] shadow-2xl w-full h-[380px] md:h-[420px] object-cover"
             />
 
-            <div className="absolute -bottom-6 -left-6 bg-green-700 text-white rounded-2xl px-6 py-5 shadow-xl">
-              <h3 className="text-3xl font-bold">10+</h3>
-              <p className="text-sm mt-1">Years Experience</p>
+            <div className="absolute -bottom-4 -left-4 bg-green-700 text-white rounded-2xl px-5 py-4 shadow-xl">
+              <h3 className="text-2xl font-bold">10+</h3>
+              <p className="text-sm mt-0.5">Years Experience</p>
             </div>
 
           </div>
@@ -321,14 +320,14 @@ const WhyUs = () => {
               ABOUT AS MARKETS
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 leading-tight">
               Why Choose <br />
               <span className="text-[#014421] text-3xl">NOVAFXM</span>
             </h2>
 
-            <div className="w-24 h-[3px] bg-yellow-500 rounded-full mt-5"></div>
+            <div className="w-24 h-[3px] bg-yellow-500 rounded-full mt-4"></div>
 
-            <div className="mt-6 space-y-5 text-gray-600 leading-relaxed">
+            <div className="mt-5 space-y-3 text-gray-600 leading-relaxed">
 
               <p>
                 At NOVAFXM, our mission is to create a trusted and efficient
@@ -355,7 +354,7 @@ const WhyUs = () => {
 
       {/* ================= FEATURES ================= */}
 
-      <section className="px-6 md:px-16 py-24 bg-[#f7f7f7]">
+      <section className="px-6 pt-14 pb-6 md:px-16 md:py-14 bg-[#f7f7f7]">
 
         <div className="max-w-7xl mx-auto">
 
@@ -369,7 +368,7 @@ const WhyUs = () => {
             }
           />
 
-          <div className="grid md:grid-cols-3 gap-10 mt-20">
+          <div className="grid md:grid-cols-3 gap-7 mt-10">
 
             {features.map((item, i) => (
               <FeatureCard key={i} {...item} />
@@ -382,9 +381,9 @@ const WhyUs = () => {
 
       {/* ================= CORE VALUES ================= */}
 
-      <section className="bg-[#f5f5f5] py-24 px-4 md:px-10">
+      <section className="bg-[#f5f5f5] px-4 pt-6 pb-6 md:px-10 md:py-14">
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[320px_1fr] gap-10 items-stretch">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-[300px_1fr] gap-7 items-stretch">
 
           {/* LEFT BOX */}
 
@@ -392,17 +391,17 @@ const WhyUs = () => {
 
             <div className="absolute top-0 left-0 w-full h-[120px] bg-[#0d6b3f] rounded-b-[100%]" />
 
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 py-10">
+            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 py-8">
 
-              <div className="w-20 h-20 rounded-full border border-yellow-400 flex items-center justify-center mb-6">
-                <Star className="w-9 h-9 text-yellow-400" />
+              <div className="w-16 h-16 rounded-full border border-yellow-400 flex items-center justify-center mb-5">
+                <Star className="w-8 h-8 text-yellow-400" />
               </div>
 
-              <h2 className="text-white text-4xl font-bold">
+              <h2 className="text-white text-3xl font-bold">
                 Our <span className="block text-yellow-400">Core Values</span>
               </h2>
 
-              <div className="w-16 h-[3px] bg-yellow-400 rounded-full mt-5"></div>
+              <div className="w-16 h-[3px] bg-yellow-400 rounded-full mt-4"></div>
 
             </div>
 
@@ -410,15 +409,11 @@ const WhyUs = () => {
 
           {/* RIGHT CARDS */}
 
-          <div className="space-y-6 flex flex-col justify-between">
+          <div className="grid grid-rows-3 gap-4">
 
             {values.map((item, i) => (
               <ValueCard key={i} {...item} />
             ))}
-
-            <div className="flex justify-end pt-2">
-              <ChevronDown className="text-gray-400 w-6 h-6" />
-            </div>
 
           </div>
 
