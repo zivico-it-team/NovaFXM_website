@@ -1,5 +1,4 @@
 import { useState } from "react";
-import heroBg4 from "../../assets/images/faq.jpg";
 
 const faqs = [
   {
@@ -90,7 +89,7 @@ const faqs = [
     num: "15",
     question: "How Much Money Do I Need to Start Forex Trading?",
     answer:
-      "Many brokers allow you to start with as little as $200, but a minimum of $500–$1,000 is recommended for better risk management. You can also practice with a demo account first before depositing real funds.",
+      "Many brokers allow you to start with as little as $200, but a minimum of $500-$1,000 is recommended for better risk management. You can also practice with a demo account first before depositing real funds.",
   },
 ];
 
@@ -100,340 +99,122 @@ export default function FaqPage() {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div
-      style={{
-        fontFamily: "'Inter', 'Segoe UI', Arial, sans-serif",
-        background: "#f9fafb",
-        minHeight: "100vh",
-      }}
-    >
-      {/* ── HERO BANNER ── */}
-<div
-  className="faq-hero px-5 sm:px-8 lg:px-10 xl:px-12"
-  style={{
-    position: "relative",
-    width: "100%",
-    minHeight: "calc(100vh - 72px)",
-    backgroundImage: `url('/Faq.png')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    paddingTop: 60,
-    paddingBottom: 60,
-  }}
->
+    <div className="min-h-screen bg-gray-50 font-sans">
+      <section
+        className="relative flex min-h-[480px] items-center overflow-hidden bg-cover bg-center px-5 py-14 sm:min-h-[560px] sm:px-8 md:min-h-[calc(100vh-72px)] lg:px-12"
+        style={{ backgroundImage: "url('/Faq.png')" }}
+      >
+        <div className="absolute inset-0 bg-[#021b14]/80" />
+        <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_28px,rgba(20,120,60,0.18)_28px,rgba(20,120,60,0.18)_29px)]" />
 
-  {/* Overlay */}
-  <div className="faq-overlay"></div>
-
-  {/* texture */}
-  <div
-    style={{
-      position: "absolute",
-      inset: 0,
-      opacity: 0.18,
-      background: `repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 28px,
-        rgba(20,120,60,0.08) 28px,
-        rgba(20,120,60,0.08) 29px
-      )`,
-      pointerEvents: "none",
-    }}
-  />
-
-  {/* content */}
-  <div className="faq-content mx-auto w-full max-w-5xl">
-
-    <h1 className="text-6xl faq-title">
-  FAQ'S
-</h1>
-
-    <p className="faq-subtitle">
-      Reaching of the great explorer of the truth the builder
-    </p>
-
-    <button
-      className="faq-btn"
-      onClick={() => {
-        document.getElementById("faq-questions")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }}
-    >
-      Explore More
-    </button>
-
-  </div>
-
-  {/* ANIMATION STYLE */}
-  <style>
-    {`
-      .faq-overlay{
-        position:absolute;
-        inset:0;
-        background:#021b14cc;
-      }
-
-      .faq-content{
-        position:relative;
-        z-index:2;
-        animation: faqFade 1.6s ease forwards;
-        opacity:0;
-        transform: translateY(35px);
-      }
-
-      .faq-title{
-        font-size:56px;
-        font-weight:750;
-        color:#fff;
-        margin-bottom:16px;
-        line-height:1.1;
-        text-shadow:0 2px 12px rgba(0,0,0,0.3);
-      }
-
-      .faq-subtitle{
-        font-size:16px;
-        color:rgba(255,255,255,0.85);
-        max-width:560px;
-        margin-bottom:30px;
-        line-height:1.5;
-      }
-
-      .faq-btn{
-        background:#D4AF37;
-        color:#000;
-        padding:14px 34px;
-        border:none;
-        border-radius:999px;
-        font-size:16px;
-        font-weight:700;
-        cursor:pointer;
-        transition:0.3s ease;
-      }
-
-      .faq-btn:hover{
-        background:#c89b1d;
-        transform:translateY(-2px);
-      }
-
-      @media (max-width: 640px) {
-        .faq-hero{
-          min-height: 520px !important;
-          padding-top: 48px !important;
-          padding-bottom: 48px !important;
-          background-position: center top !important;
-        }
-
-        .faq-content{
-          text-align: center;
-        }
-
-        .faq-title{
-          font-size: 42px !important;
-          margin-bottom: 12px !important;
-        }
-
-        .faq-subtitle{
-          max-width: 320px;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: 24px !important;
-          font-size: 14px !important;
-        }
-
-        .faq-btn{
-          padding: 12px 26px !important;
-          font-size: 14px !important;
-        }
-      }
-
-      @keyframes faqFade {
-        to {
-          opacity:1;
-          transform:translateY(0);
-        }
-      }
-    `}
-  </style>
-
-</div>
-      {/* ── FAQ SECTION ── */}
-      <div id="faq-questions" className="px-5 py-[30px] sm:px-8 lg:px-10 xl:px-12">
-        <div className="mx-auto max-w-5xl">
-        {/* Section label */}
-        <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: "#014421",
-              textTransform: "uppercase",
-              letterSpacing: 1.5,
-              display: "block",
-              marginBottom: 10,
+        <div className="relative z-10 mx-auto w-full max-w-5xl text-center sm:text-left">
+          <h1 className="text-[42px] font-extrabold leading-none text-white drop-shadow-md sm:text-6xl md:text-7xl">
+            FAQ'S
+          </h1>
+          <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-white/85 sm:mx-0 sm:max-w-xl sm:text-base md:text-lg">
+            Reaching of the great explorer of the truth the builder
+          </p>
+          <button
+            type="button"
+            className="mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+            onClick={() => {
+              document.getElementById("faq-questions")?.scrollIntoView({
+                behavior: "smooth",
+              });
             }}
           >
-            FAQ's
-          </span>
-          <h2
-            className="faq-section-title"
-            style={{
-              fontSize: 30,
-              fontWeight: 700,
-              color: "#014421",
-              lineHeight: 1.3,
-              margin: 0,
-            }}
-          >
-            Find <span style={{ color: "#D4AF37" }}>Answers</span> to Common
-            <br />
-            Questions
-          </h2>
+            Explore More
+          </button>
         </div>
+      </section>
 
-        {/* Accordion */}
-        <div className="faq-list" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {faqs.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <div
-                className="faq-item"
-                key={i}
-                onClick={() => toggle(i)}
-                style={{
-                  background: isOpen ? "#014421" : "#fff",
-                  border: "1px solid",
-                  borderColor: isOpen ? "#014421" : "#e5e7eb",
-                  borderRadius: 12,
-                  padding: "20px 24px",
-                  cursor: "pointer",
-                  transition: "all 0.25s ease",
-                  boxShadow: isOpen
-                    ? "0 4px 20px rgba(21,128,61,0.15)"
-                    : "0 1px 4px rgba(0,0,0,0.04)",
-                }}
-              >
-                <div
-                  className="faq-item-row"
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 16,
-                  }}
+      <section id="faq-questions" className="px-4 py-10 sm:px-8 sm:py-12 lg:px-12">
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="mb-8 text-center sm:mb-10">
+            <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#014421] sm:text-sm">
+              FAQ's
+            </span>
+            <h2 className="mx-auto max-w-2xl text-2xl font-bold leading-tight text-[#014421] sm:text-3xl md:text-4xl">
+              Find <span className="text-[#D4AF37]">Answers</span> to Common
+              Questions
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+
+              return (
+                <button
+                  key={faq.num}
+                  type="button"
+                  onClick={() => toggle(i)}
+                  className={`w-full rounded-xl border p-4 text-left shadow-sm transition sm:p-5 ${
+                    isOpen
+                      ? "border-[#014421] bg-[#014421] shadow-[#014421]/15"
+                      : "border-gray-200 bg-white hover:border-[#014421]/30"
+                  }`}
+                  aria-expanded={isOpen}
                 >
-                  {/* Number badge */}
-                  <div
-                    className="faq-number"
-                    style={{
-                      minWidth: 34,
-                      height: 34,
-                      borderRadius: "50%",
-                      background: isOpen
-                        ? "rgba(255,255,255,0.2)"
-                        : "#dcfce7",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 12,
-                      fontWeight: 700,
-                      color: isOpen ? "#014421" : "#15803d",
-                      flexShrink: 0,
-                      marginTop: 2,
-                    }}
-                  >
-                    {faq.num}
-                  </div>
-
-                  <div style={{ flex: 1 }}>
-                    <div
-                      className="faq-question-row"
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        gap: 12,
-                      }}
+                  <div className="flex min-w-0 items-start gap-3 sm:gap-4">
+                    <span
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold sm:h-9 sm:w-9 sm:text-xs ${
+                        isOpen
+                          ? "bg-white/20 text-white"
+                          : "bg-green-100 text-[#014421]"
+                      }`}
                     >
-                      <h3
-                        className="faq-question"
-                        style={{
-                          fontSize: 16,
-                          fontWeight: 600,
-                          margin: 0,
-                          color: isOpen ? "#fff" : "#111827",
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        {faq.question}
-                      </h3>
+                      {faq.num}
+                    </span>
 
-                      {/* Chevron */}
-                      <div
-                        className="faq-chevron"
-                        style={{
-                          width: 28,
-                          height: 28,
-                          borderRadius: "75%",
-                          border: `1.5px solid ${
-                            isOpen ? "rgba(255,255,255,0.4)" : "#d1d5db"
-                          }`,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          transform: isOpen
-                            ? "rotate(180deg)"
-                            : "rotate(0deg)",
-                          transition: "transform 0.25s ease",
-                        }}
-                      >
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
+                    <span className="min-w-0 flex-1">
+                      <span className="flex min-w-0 items-start justify-between gap-3">
+                        <span
+                          className={`min-w-0 flex-1 break-words pt-1 text-sm font-semibold leading-snug sm:text-base ${
+                            isOpen ? "text-white" : "text-gray-900"
+                          }`}
                         >
-                          <path
-                            d="M2 4L6 8L10 4"
-                            stroke={isOpen ? "#fff" : "#6b7280"}
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    
+                          {faq.question}
+                        </span>
 
-                    {/* Answer */}
-                    {isOpen && (
-                      <p
-                        className="faq-answer"
-                        style={{
-                          marginTop: 12,
-                          fontSize: 14,
-                          lineHeight: 1.7,
-                          color: "rgba(255,255,255,0.88)",
-                          margin: "12px 0 0",
-                        }}
-                      >
-                        {faq.answer}
-                      </p>
-                    )}
+                        <span
+                          className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition sm:h-8 sm:w-8 ${
+                            isOpen
+                              ? "rotate-180 border-white/40"
+                              : "border-gray-300"
+                          }`}
+                        >
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M2 4L6 8L10 4"
+                              stroke={isOpen ? "#fff" : "#6b7280"}
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+
+                      {isOpen && (
+                        <span className="mt-3 block break-words text-sm leading-7 text-white/90 sm:text-[15px]">
+                          {faq.answer}
+                        </span>
+                      )}
+                    </span>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                </button>
+              );
+            })}
+          </div>
         </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
