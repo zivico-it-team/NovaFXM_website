@@ -47,7 +47,7 @@ export default function DepositWithdrawSection() {
     <section className="w-full bg-[#f4f1ea] overflow-hidden">
       
       {/* HERO SECTION */}
-      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
+      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 sm:py-12 lg:min-h-[calc(100vh-84px)]">
         <img
           src="/deposit.png"
           alt=""
@@ -64,25 +64,25 @@ export default function DepositWithdrawSection() {
         {/* Hero Content */}
         <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
           <div>
-            <span className="reveal-up mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
+            <span className="reveal-up mb-4 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-5 sm:px-5">
               <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
               Deposits and Withdrawals
             </span>
 
-            <h1 className="reveal-up reveal-delay-1 text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
+            <h1 className="reveal-up reveal-delay-1 text-3xl font-extrabold leading-[1.12] text-white sm:text-4xl sm:leading-tight md:text-6xl">
               Move Money on
               <br className="hidden sm:block" />
               <span className="text-[#D4AF37]">Your Terms</span>
             </h1>
 
-            <p className="reveal-up reveal-delay-2 mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 sm:text-base">
-              Deposit and withdraw funds quickly and securely with Novafxm.
+            <p className="reveal-up reveal-delay-2 mx-auto mt-3 max-w-xl text-sm leading-6 text-gray-200 sm:mt-4 sm:text-base sm:leading-relaxed">
+              Deposit and withdraw funds quickly and securely with NOVAFXM.
               <br className="hidden sm:block" />
               Enjoy smooth transactions with trusted payment methods.
             </p>
 
             <button
-              className="button-shine mt-8 w-full max-w-[260px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
+              className="button-shine mt-6 w-full max-w-[260px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
               onClick={() => {
                 document.getElementById("payment-methods")?.scrollIntoView({
                   behavior: "smooth",
@@ -97,11 +97,11 @@ export default function DepositWithdrawSection() {
       </div>
 
       {/* SECOND SECTION */}
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
         
         {/* Heading */}
-        <div className="reveal-up mx-auto mb-8 max-w-2xl text-center">
-          <h2 className="text-2xl font-extrabold leading-tight text-[#0b1f16] sm:text-3xl md:text-4xl">
+        <div className="reveal-up mx-auto mb-6 max-w-2xl text-center">
+          <h2 className="text-2xl font-bold leading-tight text-[#0b1f16] sm:text-3xl md:text-4xl">
             Tailor Your
             <br />
             <span className="text-[#014421]">
@@ -109,8 +109,8 @@ export default function DepositWithdrawSection() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gray-700 sm:text-base">
-            With Novafxm, you're in control. Customize your trading strategy
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-700 sm:text-base">
+            With NOVAFXM, you're in control. Customize your trading strategy
             to maximize earnings and manage spending efficiently.
           </p>
 
@@ -120,29 +120,29 @@ export default function DepositWithdrawSection() {
         </div>
 
         {/* FEATURE CARDS */}
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
           
           {/* CARD 1 */}
-          <div className="deposit-feature-card group reveal-up reveal-delay-1 relative overflow-hidden rounded-xl border border-gray-200 bg-white px-5 pb-6 pt-7 text-center shadow-sm sm:px-8 sm:pt-8">
-            <div className="deposit-feature-icon mx-auto mb-5 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
+          <div className="deposit-feature-card group reveal-up reveal-delay-1 relative overflow-hidden rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-5 pt-6 text-center shadow-md sm:px-8 sm:pt-7">
+            <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
               <FaBolt className="text-white" />
             </div>
 
-            <h3 className="text-sm font-bold leading-snug text-[#0b1f16] sm:text-base">
+            <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
               Swift, Seamless, and
               <br />
               <span className="text-[#014421]">
                 Zero-Fee Transactions
               </span>
-            </h3>
+            </h2>
 
-            <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-gray-700">
+            <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
               Experience trading without limits—fast, flexible, and completely
-              fee-free. With Novafxm, your money moves as quickly as your
+              fee-free. With NOVAFXM, your money moves as quickly as your
               ideas.
             </p>
 
-            <div className="mt-7 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-8 sm:h-36">
+            <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
               <img
                 src="/Deposits1.png.PNG"
                 alt="Fast deposits and withdrawals illustration"
@@ -152,26 +152,26 @@ export default function DepositWithdrawSection() {
           </div>
 
           {/* CARD 2 */}
-          <div className="deposit-feature-card group reveal-up reveal-delay-2 relative overflow-hidden rounded-xl border border-gray-200 bg-white px-5 pb-6 pt-7 text-center shadow-sm sm:px-8 sm:pt-8">
-            <div className="deposit-feature-icon mx-auto mb-5 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
+          <div className="deposit-feature-card group reveal-up reveal-delay-2 relative overflow-hidden rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-5 pt-6 text-center shadow-md sm:px-8 sm:pt-7">
+            <div className="deposit-feature-icon mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
               <FaLock className="text-white" />
             </div>
 
-            <h3 className="text-sm font-bold leading-snug text-[#0b1f16] sm:text-base">
+            <h2 className="text-xl font-bold leading-snug text-[#0b1f16] sm:text-2xl">
               Your Security,
               <br />
               <span className="text-[#014421]">
                 Our Commitment
               </span>
-            </h3>
+            </h2>
 
-            <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-gray-700">
-              At Novafxm, safeguarding your funds is our top priority. With
+            <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-gray-700">
+              At NOVAFXM, safeguarding your funds is our top priority. With
               advanced encryption and robust protection technologies, every
               transaction is secure.
             </p>
 
-            <div className="mt-7 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-8 sm:h-36">
+            <div className="mt-5 flex h-32 items-end justify-center overflow-hidden rounded-b-xl sm:mt-6 sm:h-36">
               <img
                 src="/Deposits2.png.PNG"
                 alt="Secure transactions illustration"
@@ -182,7 +182,7 @@ export default function DepositWithdrawSection() {
         </div>
 
         {/* Feature Pills */}
-        <div className="reveal-up reveal-delay-3 mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm sm:rounded-full">
+        <div className="reveal-up reveal-delay-3 mx-auto mt-5 flex max-w-3xl flex-wrap justify-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm sm:rounded-full">
           <div className="flex items-center gap-2 text-[11px] font-medium text-gray-700 sm:text-xs">
             <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#ffcf60]">
               <FaBolt className="text-[#ffb000]" />
@@ -206,16 +206,16 @@ export default function DepositWithdrawSection() {
         </div>
 
         {/* PAYMENT METHODS SECTION */}
-        <div id="payment-methods" className="mt-16 scroll-mt-24 sm:mt-20 lg:mt-24">
+        <div id="payment-methods" className="mt-10 scroll-mt-24 sm:mt-12 lg:mt-14">
           
           {/* Title */}
-          <div className="reveal-up mb-10 text-center sm:mb-14">
-            <h1 className="text-[32px] font-extrabold leading-tight">
+          <div className="reveal-up mb-7 text-center sm:mb-9">
+            <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
               <span className="text-black">Deposits</span>{" "}
               <span className="text-[#014421]">& Withdrawals</span>
-            </h1>
+            </h2>
 
-            <div className="flex items-center justify-center gap-3 mt-3">
+            <div className="mt-2 flex items-center justify-center gap-3">
               <div className="w-14 h-[2px] bg-[#d6c49d]"></div>
 
               <div className="w-3 h-3 rounded-full bg-[#d6a400]"></div>
@@ -225,7 +225,7 @@ export default function DepositWithdrawSection() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
             {paymentMethods.map((item, index) => (
               <div
                 key={index}
@@ -233,18 +233,18 @@ export default function DepositWithdrawSection() {
               >
                 
                 {/* Top */}
-                <div className="mb-5 flex items-center gap-3">
+                <div className="mb-4 flex items-center gap-3">
                   <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
                     {item.icon}
                   </div>
 
-                  <h3 className="text-sm font-bold leading-snug text-[#0b1f16] sm:text-base">
+                  <h2 className="text-lg font-bold leading-snug text-[#0b1f16] sm:text-xl">
                     {item.title}
-                  </h3>
+                  </h2>
                 </div>
 
                 {/* Image */}
-                <div className="mb-6 flex justify-center sm:mb-7">
+                <div className="mb-5 flex justify-center sm:mb-6">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -253,7 +253,7 @@ export default function DepositWithdrawSection() {
                 </div>
 
                 {/* Info */}
-                <div className="space-y-3">
+                <div className="space-y-2.5">
                   
                   <div className="flex items-start justify-between gap-3 border-b border-gray-100 pb-3 text-xs sm:text-sm">
                     <span className="max-w-[52%] text-gray-500">
@@ -296,7 +296,7 @@ export default function DepositWithdrawSection() {
                 <button
                   type="button"
                   onClick={() => navigate("/signup")}
-                  className="button-shine mt-7 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0"
+                  className="button-shine mt-5 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0"
                 >
                   Open Your Account
                 </button>
