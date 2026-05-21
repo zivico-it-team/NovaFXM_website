@@ -1,30 +1,88 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Landmark } from "lucide-react";
 
 const tabs = ["Metals", "Forex", "Crypto", "Indices", "Energies"];
 
 const PAYMENT_METHODS = [
-  { name: "UPI", type: "upi" },
-  { name: "Google Pay", type: "gpay" },
-  { name: "PhonePe", type: "phonepe" },
-  { name: "RuPay", type: "rupay" },
-  { name: "Visa", type: "image", src: "/Visa.png", imageClass: "h-8" },
+  {
+    name: "UPI",
+    src: "https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg",
+    imageClass: "h-5 sm:h-6",
+  },
+  {
+    name: "Google Pay",
+    src: "/GPAY.png",
+    imageClass: "h-12 sm:h-14",
+  },
+  {
+    name: "PhonePe",
+    src: "https://cdn.simpleicons.org/phonepe/5F259F",
+    imageClass: "h-9 sm:h-10",
+  },
+  {
+    name: "RuPay",
+    src: "https://commons.wikimedia.org/wiki/Special:FilePath/RuPay.svg",
+    imageClass: "h-7 sm:h-8",
+  },
+  {
+    name: "Visa",
+    src: "https://static.vecteezy.com/system/resources/previews/020/975/570/large_2x/visa-logo-visa-icon-transparent-free-png.png",
+    imageClass: "h-8 sm:h-9",
+  },
   {
     name: "Mastercard",
-    type: "image",
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
-    imageClass: "h-8",
+    src: "https://www.pngmart.com/files/22/Mastercard-Logo-PNG-HD-Isolated.png",
+    imageClass: "h-9 sm:h-10",
   },
-  { name: "Net Banking", type: "icon", icon: Landmark, color: "text-[#0b2545]" },
-  { name: "IMPS", type: "imps" },
-  { name: "NEFT", type: "neft" },
-  { name: "RTGS", type: "rtgs" },
-  { name: "Bank Transfer", type: "bank-transfer" },
-  { name: "USDT", type: "usdt" },
-  { name: "Bitcoin", type: "bitcoin" },
-  { name: "Ethereum", type: "ethereum" },
-  { name: "TRC20", type: "tron" },
-  { name: "ERC20", type: "erc20" },
+  {
+    name: "Net Banking",
+    src: "/NetBanking.png",
+    imageClass: "h-9 sm:h-10",
+  },
+  {
+    name: "IMPS",
+    src: "IMPS.png",
+    imageClass: "h-8 sm:h-9",
+  },
+  {
+    name: "NEFT",
+    src: "/NEFT.png",
+    imageClass: "h-12 sm:h-14",
+  },
+  {
+    name: "RTGS",
+    src: "/RTGS.png",
+    imageClass: "h-12 sm:h-14",
+  },
+  {
+    name: "Bank Transfer",
+    src: "/Banktransfer.png",
+    imageClass: "h-12 sm:h-14",
+  },
+  {
+    name: "USDT",
+    src: "https://cdn.simpleicons.org/tether/26A17B",
+    imageClass: "h-10 sm:h-11",
+  },
+  {
+    name: "Bitcoin",
+    src: "https://cdn.simpleicons.org/bitcoin/F7931A",
+    imageClass: "h-10 sm:h-11",
+  },
+  {
+    name: "Ethereum",
+    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
+    imageClass: "h-10 sm:h-11",
+  },
+  {
+    name: "TRC20",
+    src: "/TRC20.png",
+    imageClass: "h-10 sm:h-11",
+  },
+  {
+    name: "ERC20",
+    src: "https://cdn.simpleicons.org/ethereum/3C3C3D",
+    imageClass: "h-10 sm:h-11",
+  },
 ];
 
 const MARKET_DATA = {
@@ -91,206 +149,19 @@ const TradingViewQuote = ({ symbol }) => {
   return (
     <div
       ref={containerRef}
-      className="tradingview-widget-container min-h-[74px] w-full overflow-hidden"
+      className="tradingview-widget-container min-h-[66px] w-full overflow-hidden sm:min-h-[74px]"
     />
   );
 };
 
 const PaymentLogo = ({ method }) => {
-  if (method.type === "image") {
-    return (
-      <img
-        src={method.src}
-        alt={method.name}
-        className={`${method.imageClass} max-w-[86px] object-contain`}
-      />
-    );
-  }
-
-  if (method.type === "upi") {
-    return (
-      <div className="relative pr-4 text-2xl font-extrabold italic tracking-tighter text-gray-600">
-        UPI
-        <span className="absolute -right-1 top-1 h-7 w-4 skew-x-[-18deg] bg-orange-500" />
-        <span className="absolute right-1 top-1 h-7 w-4 skew-x-[-18deg] bg-emerald-600" />
-      </div>
-    );
-  }
-
-  if (method.type === "gpay") {
-    return (
-      <div className="flex items-center gap-1 text-xl font-medium text-gray-700">
-        <span className="font-bold text-blue-600">G</span>
-        <span>Pay</span>
-      </div>
-    );
-  }
-
-  if (method.type === "phonepe") {
-    return (
-      <div className="flex flex-col items-center gap-1">
-        <svg className="h-11 w-14" viewBox="0 0 64 54" aria-hidden="true">
-          <circle cx="32" cy="20" r="18" fill="#5f259f" />
-          <path
-            d="M24 12h15M25 19h14M32 12v25M25 19c0 10 5 16 13 16"
-            fill="none"
-            stroke="#fff"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="4.2"
-          />
-          <text
-            x="32"
-            y="51"
-            fill="#5f259f"
-            fontFamily="Arial, Helvetica, sans-serif"
-            fontSize="12"
-            fontWeight="800"
-            textAnchor="middle"
-          >
-            PhonePe
-          </text>
-        </svg>
-      </div>
-    );
-  }
-
-  if (method.type === "rupay") {
-    return (
-      <div className="relative pr-3 text-2xl font-extrabold italic tracking-tighter text-blue-900">
-        RuPay
-        <span className="absolute -right-2 top-1 h-6 w-3 skew-x-[-18deg] bg-orange-500" />
-        <span className="absolute right-0 top-1 h-6 w-3 skew-x-[-18deg] bg-emerald-600" />
-      </div>
-    );
-  }
-
-  if (method.type === "imps") {
-    return (
-      <div className="relative pr-3 text-xl font-extrabold italic tracking-tighter text-gray-600">
-        IMPS
-        <span className="absolute -right-2 top-1 h-5 w-3 skew-x-[-18deg] bg-orange-500" />
-        <span className="absolute right-0 top-1 h-5 w-3 skew-x-[-18deg] bg-emerald-600" />
-      </div>
-    );
-  }
-
-  if (method.type === "neft") {
-    return (
-      <div className="text-center leading-none">
-        <div className="text-2xl font-extrabold italic tracking-tight text-emerald-700">NEFT</div>
-        <div className="mt-1 text-[7px] font-semibold text-gray-800">NATIONAL ELECTRONIC</div>
-        <div className="text-[7px] font-semibold text-gray-800">FUNDS TRANSFER</div>
-      </div>
-    );
-  }
-
-  if (method.type === "rtgs") {
-    return (
-      <div className="text-center leading-none">
-        <div className="text-2xl font-extrabold italic tracking-tight text-blue-800">RTGS</div>
-        <div className="mt-1 text-[7px] font-semibold text-gray-800">REAL TIME GROSS</div>
-        <div className="text-[7px] font-semibold text-gray-800">SETTLEMENT</div>
-      </div>
-    );
-  }
-
-  if (method.type === "bank-transfer") {
-    return (
-      <svg className="h-12 w-16" viewBox="0 0 82 56" aria-hidden="true">
-        <path
-          d="M22 17 35 25H9L22 17ZM12 28h20v3H12v-3ZM14 33h4v9h-4v-9ZM21 33h4v9h-4v-9ZM28 33h4v9h-4v-9ZM10 44h24v4H10v-4Z"
-          fill="#0b2545"
-        />
-        <path
-          d="M58 17 71 25H45L58 17ZM48 28h20v3H48v-3ZM50 33h4v9h-4v-9ZM57 33h4v9h-4v-9ZM64 33h4v9h-4v-9ZM46 44h24v4H46v-4Z"
-          fill="#0b2545"
-        />
-        <path
-          d="M27 13c10-9 29-8 39 2"
-          fill="none"
-          stroke="#0b2545"
-          strokeLinecap="round"
-          strokeWidth="3.5"
-        />
-        <path d="M66 15 63 6l-8 6 11 3Z" fill="#0b2545" />
-        <path
-          d="M55 51c-10 7-28 6-39-3"
-          fill="none"
-          stroke="#0b2545"
-          strokeLinecap="round"
-          strokeWidth="3.5"
-        />
-        <path d="M16 48 19 56l8-6-11-2Z" fill="#0b2545" />
-      </svg>
-    );
-  }
-
-  if (method.type === "usdt") {
-    return (
-      <div className="flex h-10 w-10 items-center justify-center rounded bg-emerald-500 text-2xl font-extrabold text-white [clip-path:polygon(50%_0,100%_24%,84%_100%,16%_100%,0_24%)]">
-        T
-      </div>
-    );
-  }
-
-  if (method.type === "bitcoin") {
-    return (
-      <svg className="h-11 w-11" viewBox="0 0 48 48" aria-hidden="true">
-        <circle cx="24" cy="24" r="21" fill="#f7931a" />
-        <text
-          x="24"
-          y="34"
-          fill="#fff"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fontSize="30"
-          fontWeight="800"
-          textAnchor="middle"
-          transform="rotate(12 24 24)"
-        >
-          &#8383;
-        </text>
-      </svg>
-    );
-  }
-
-  if (method.type === "ethereum") {
-    return (
-      <div className="relative h-11 w-8">
-        <span className="absolute left-0 top-0 h-7 w-8 bg-gradient-to-b from-gray-500 to-black [clip-path:polygon(50%_0,100%_100%,50%_76%,0_100%)]" />
-        <span className="absolute bottom-0 left-0 h-5 w-8 bg-gradient-to-b from-gray-400 to-gray-800 [clip-path:polygon(0_0,50%_26%,100%_0,50%_100%)]" />
-      </div>
-    );
-  }
-
-  if (method.type === "erc20") {
-    return (
-      <div className="relative flex h-11 w-11 items-center justify-center">
-        <span className="absolute h-9 w-7 border-2 border-gray-800 bg-gradient-to-b from-white to-gray-200 [clip-path:polygon(50%_0,100%_58%,50%_100%,0_58%)]" />
-        <span className="relative text-[9px] font-extrabold tracking-tight text-gray-900">
-          ERC
-        </span>
-      </div>
-    );
-  }
-
-  if (method.type === "tron") {
-    return (
-      <svg className="h-11 w-11" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M8 7l33 10-19 25L8 7zm0 0 14 35m19-25-19 25M8 7l14 10 19 0" fill="none" stroke="#e50914" strokeWidth="3.5" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (method.type === "icon") {
-    const Icon = method.icon;
-    return <Icon className={`h-9 w-9 ${method.color}`} strokeWidth={1.8} />;
-  }
-
   return (
-    <span className={`text-2xl font-extrabold italic tracking-tight ${method.color}`}>
-      {method.logo}
-    </span>
+    <img
+      src={method.src}
+      alt={method.name}
+      className={`${method.imageClass} max-w-[76px] object-contain sm:max-w-[92px]`}
+      loading="lazy"
+    />
   );
 };
 
@@ -317,25 +188,25 @@ const Methords = () => {
   const visibleData = MARKET_DATA[activeTab] || [];
 
   return (
-    <section className="w-full bg-[#f5f6f7] px-4 py-10 sm:px-6 md:py-16 lg:px-8">
+    <section className="w-full bg-[#f5f6f7] px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center md:mb-14">
+        <div className="mb-5 text-center sm:mb-7 md:mb-9">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
             Secure <span className="text-yellow-600">Methods</span> for Deposits & Withdrawals
           </h2>
 
-          <div className="mx-auto mt-7 grid max-w-5xl grid-cols-4 gap-x-4 gap-y-5 md:grid-cols-8">
+          <div className="mx-auto mt-3 grid max-w-5xl grid-cols-4 gap-x-2 gap-y-3 sm:mt-4 sm:gap-x-4 sm:gap-y-5 md:grid-cols-8">
             {PAYMENT_METHODS.map((method) => (
               <a
                 key={method.name}
                 href="/deposit"
                 aria-label={`View ${method.name} deposit and withdrawal details`}
-                className="group flex min-h-[74px] flex-col items-center justify-center gap-2 text-center transition-all duration-300 hover:-translate-y-1"
+                className="group flex min-h-[58px] flex-col items-center justify-center gap-1.5 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[74px] sm:gap-2"
               >
-                <div className="flex h-11 items-center justify-center transition duration-300 group-hover:scale-105">
+                <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
                   <PaymentLogo method={method} />
                 </div>
-                <span className="text-[11px] font-medium leading-tight text-gray-900 sm:text-xs">
+                <span className="text-[10px] font-medium leading-tight text-gray-900 sm:text-xs">
                   {method.name}
                 </span>
               </a>
@@ -343,17 +214,17 @@ const Methords = () => {
           </div>
         </div>
 
-        <div className="mb-6 md:mb-8">
-          <h3 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        <div className="mb-4 md:mb-6">
+          <h3 className="text-lg font-bold text-gray-900 sm:text-2xl">
             {activeTab}
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {visibleData.map((item) => (
             <div
               key={item.symbol}
-              className="relative bg-[#f8f9fa] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+              className="relative flex flex-col items-start justify-between gap-3 rounded-xl bg-[#f8f9fa] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg sm:flex-row sm:items-center sm:p-6 md:rounded-2xl"
             >
               <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
 
@@ -378,7 +249,41 @@ const Methords = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center gap-2 sm:gap-3 overflow-x-auto pb-2 md:mt-12">
+        <div className="mt-6 flex flex-col items-center gap-2 pb-2 sm:hidden">
+          <div className="flex justify-center gap-2">
+            {tabs.slice(0, 3).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                  activeTab === tab
+                    ? "bg-green-800 text-white shadow-lg scale-105"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-2">
+            {tabs.slice(3).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                  activeTab === tab
+                    ? "bg-green-800 text-white shadow-lg scale-105"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-7 hidden justify-center gap-3 overflow-x-auto pb-2 sm:flex md:mt-8">
           {tabs.map((tab) => (
             <button
               key={tab}

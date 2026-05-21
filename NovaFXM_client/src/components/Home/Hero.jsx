@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[calc(100svh-96px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-8 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-14 lg:px-8"
+      className="relative flex min-h-[100svh] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-4 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-8 lg:px-8"
     >
 
       {/* Background circles */}
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[22rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
-        <div className="inline-flex items-center max-w-full gap-2 px-3 py-2 mb-4 bg-white border border-gray-200 rounded-full shadow-sm reveal-up sm:mb-8 sm:gap-3 sm:px-6">
+        <div className="inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm reveal-up sm:mb-6 sm:gap-3 sm:px-6 sm:py-2">
           <div className="flex -space-x-2">
             <img
               src="https://i.pravatar.cc/32?img=1"
@@ -47,13 +47,13 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="leading-[1.08] reveal-up reveal-delay-1 sm:leading-tight">
+        <h1 className="leading-[1.34] reveal-up reveal-delay-1 sm:leading-tight">
           <span className="block text-[clamp(2rem,11vw,3.25rem)] font-bold text-[#014421] sm:text-5xl md:text-8xl">
             Your Gateway <span className="font-light text-gray-900">to</span>
           </span>
 
 
-          <span className="mt-2 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-6 sm:text-5xl md:text-7xl">
+          <span className="mt-3 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
 
             Smarter Trading
           </span>
@@ -61,17 +61,21 @@ export default function Hero() {
 
         {/* Description */}
 
-        <p className="mx-auto mt-3 max-w-[19rem] text-sm leading-6 text-gray-500 reveal-up reveal-delay-2 sm:mt-5 sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg">
+        <p className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-gray-500 reveal-up reveal-delay-2 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg">
 
           Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
         </p>
+        <p className="reveal-up reveal-delay-2 mx-auto mt-3 max-w-2xl px-1 text-sm leading-8 text-gray-500 sm:hidden">
+          Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
+        </p>
+        
 
         {/* Button */}
-        <div className="mt-5 sm:mt-8">
+        <div className="mt-6 sm:mt-7">
           <button
             type="button"
             onClick={() => navigate("/login")}
-            className="button-shine w-full max-w-[18rem] cursor-pointer rounded-lg bg-[#014421] px-6 py-3 text-sm text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:text-base"
+            className="button-shine w-auto cursor-pointer rounded-lg bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
           >
             Trade Now
           </button>
