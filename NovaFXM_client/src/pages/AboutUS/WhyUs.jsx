@@ -247,6 +247,18 @@ const WhyUs = () => {
         Trusted by traders worldwide, NOVAFXM delivers secure innovative trading solutions designed for confidence and long-term success.
       </p>
 
+      <button
+        type="button"
+        className="button-shine hero-fade delay-300 mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+        onClick={() => {
+          document.getElementById("why-us-about")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }}
+      >
+        Explore More
+      </button>
+
     </div>
 
   </div>
@@ -280,7 +292,7 @@ const WhyUs = () => {
 </section>
       {/* ================= ABOUT ================= */}
 
-      <section className="px-6 md:px-16 py-20 bg-white">
+      <section id="why-us-about" className="scroll-mt-24 px-6 md:px-16 py-20 bg-white">
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 

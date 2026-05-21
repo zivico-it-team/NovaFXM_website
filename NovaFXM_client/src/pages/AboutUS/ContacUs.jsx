@@ -75,31 +75,62 @@ export default function ContactPage() {
 
       {/* HERO SECTION */}
       <section
-        className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden bg-cover bg-center bg-no-repeat py-16 sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)] lg:bg-[length:100%_100%]"
+        className="relative flex min-h-[calc(100vh-72px)] items-center justify-start overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-16 sm:min-h-[calc(100vh-80px)] md:px-20 lg:min-h-[calc(100vh-84px)] lg:bg-[length:100%_100%]"
         style={{ backgroundImage: "url('/contact Us.jpeg')" }}
       >
-        <div className="absolute inset-0 bg-[#021b14]/75"></div>
-        <div className="absolute rounded-full -top-20 -left-20 w-72 h-72 bg-green-500/10 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 rounded-full w-72 h-72 bg-yellow-400/10 blur-3xl animate-pulse"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10 flex justify-start w-full px-6 py-16 mx-auto max-w-7xl md:px-12 lg:py-20">
-          <div className="animate-[heroFade_1.4s_ease]">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
-              We're Here To Help
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
+          <div className="max-w-2xl text-left text-white">
+            <p className="hero-fade mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
+              Welcome To NOVAFXM
             </p>
-            <h1 className="text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-              Contact <span className="text-[#1fa15a]">Us</span>
+            <h1 className="hero-fade delay-150 text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl">
+              Contact <br />
+              <span className="text-[#014421] text-2xl md:text-4xl">
+                NOVAFXM
+              </span>
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-gray-200 md:text-base animate-[heroFade_1.8s_ease]">
+            <p className="hero-fade delay-300 mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
               Our dedicated support team is here to assist you through various channels.
             </p>
+
+            <button
+              type="button"
+              className="button-shine hero-fade delay-300 mt-7 inline-flex w-full max-w-[220px] items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-white shadow-md shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D4AF37] hover:shadow-lg sm:w-auto"
+              onClick={() => {
+                document.getElementById("contact-form")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+            >
+              Send Message
+              <ArrowRight size={18} />
+            </button>
           </div>
         </div>
 
         <style>{`
+          .hero-fade {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: heroFade 1.6s ease forwards;
+          }
+
+          .delay-150 {
+            animation-delay: 0.15s;
+          }
+
+          .delay-300 {
+            animation-delay: 0.3s;
+          }
+
           @keyframes heroFade {
-            0%   { opacity: 0; transform: translateY(35px); }
-            100% { opacity: 1; transform: translateY(0); }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
         `}</style>
       </section>
@@ -217,7 +248,7 @@ export default function ContactPage() {
       </section>
 
       {/* FORM SECTION */}
-      <section className="px-4 mx-auto pb-14 max-w-7xl sm:px-6 md:px-10 md:pb-16">
+      <section id="contact-form" className="px-4 mx-auto scroll-mt-24 pb-14 max-w-7xl sm:px-6 md:px-10 md:pb-16">
         <div className="relative overflow-hidden bg-white rounded-xl border border-gray-100 p-5 sm:p-6 md:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
           <div className="pointer-events-none absolute right-5 top-5 h-28 w-28 bg-[radial-gradient(#d9eadc_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-80"></div>
 
