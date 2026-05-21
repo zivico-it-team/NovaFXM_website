@@ -6,7 +6,7 @@ import React from "react";
 const sections = [
   {
     title: "1. WHO WE ARE",
-    text: "Suggested text: Our website address is: https://a5markets.com.",
+    text: "Suggested text: Our website address is: https://NOVAFXM.com.",
   },
   {
     title: "2. COMMENTS",

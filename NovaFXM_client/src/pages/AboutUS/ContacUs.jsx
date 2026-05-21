@@ -150,7 +150,7 @@ export default function ContactPage() {
               </div> */}
 
               <h2 className="mt-5 text-2xl font-bold leading-tight text-[#171717] sm:text-3xl md:text-4xl">
-                Contact <span className="text-[#0d6b36]">Novafxm</span>
+                Contact <span className="text-[#0d6b36]">NOVAFXM</span>
               </h2>
 
               <div className="mt-5 h-[3px] w-14 rounded-full bg-[#0d6b36]"></div>
