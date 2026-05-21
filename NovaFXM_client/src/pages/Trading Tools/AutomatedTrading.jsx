@@ -39,7 +39,7 @@ export default function AutomatedTradingPage() {
     <div className="bg-[#f7f7f5] text-gray-800 font-sans overflow-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative h-[calc(100vh-72px)] w-full overflow-hidden bg-black sm:h-[calc(100vh-80px)] lg:h-[calc(100vh-84px)]">
+      <section className="relative min-h-[calc(100svh-72px)] w-full overflow-hidden bg-black sm:min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-84px)]">
         <div className="absolute inset-0 hero-parallax">
           <img
             src={heroBg}
@@ -49,12 +49,12 @@ export default function AutomatedTradingPage() {
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center hero-content md:px-6">
-          <h1 className="animate-fade-down text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <div className="relative z-10 flex min-h-[calc(100svh-72px)] flex-col items-center justify-center px-4 py-14 text-center hero-content sm:min-h-[calc(100vh-80px)] md:px-6 lg:min-h-[calc(100vh-84px)]">
+          <h1 className="animate-fade-down text-3xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
             Automated Trading
           </h1>
 
-          <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-fade-up sm:text-base md:mt-5 md:leading-7">
+          <p className="mt-4 max-w-3xl px-1 text-sm leading-6 text-white animate-fade-up sm:px-2 sm:text-base md:mt-5 md:leading-7">
             Revolutionizing financial markets with precision-driven
             algorithmic strategies, intelligent market analysis, and
             lightning-fast execution designed for modern traders.
@@ -63,117 +63,99 @@ export default function AutomatedTradingPage() {
       </section>
 
       {/* INTRO */}
-      <section className="px-6 py-14 sm:py-16">
-        <div className="section-reveal mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f3f8f4_100%)] px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#014421]/20 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent" />
+        <div className="mx-auto max-w-7xl">
+        <div className="section-reveal mx-auto max-w-5xl text-center">
           
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-[42px]">
+          
+          <h2 className="text-2xl font-bold leading-tight text-gray-950 sm:text-3xl md:text-[34px]">
             Revolutionizing the Way You Trade
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
+          <p className="mx-auto mt-4 max-w-5xl text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base md:text-lg md:leading-8">
             Automated trading, also known as algorithmic trading is transforming the financial markets by leveraging the power of technology to execute trades with precision and speed. This innovative approach eliminates the emotional biases of manual trading and enables traders to capitalize on  opportunities across global markets, even while they sleep.
           </p>
+        </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-white px-6 py-14 sm:py-16">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl">
 
           {/* TITLE */}
           <div className="section-reveal mx-auto max-w-3xl text-center">
-            <p className="text-[#014421] font-semibold uppercase tracking-wide">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#014421] sm:text-sm">
               How Does Automated Trading Work?
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-[42px]">
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl md:text-[34px]">
               Intelligent Trading Process
             </h2>
 
-            <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+            <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base md:text-lg md:leading-relaxed">
               Automated trading relies on technical indicators, statistical models and pre-defined conditions set by the trader.Once the system is activated:
             </p>
           </div>
 
           {/* OFFICIAL CARDS */}
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-4">
             {[
               {
                 icon: <ScanSearch className="w-8 h-8" />,
+                
                 title: "Market Scanning",
                 text: "Continuously monitors global financial markets to identify profitable opportunities in real-time.",
-                bg: "from-[#c8f3dd] to-gray-50",
               },
               {
                 icon: <TrendingUp className="w-8 h-8" />,
+               
                 title: "Trade Execution",
                 text: "Executes trades instantly based on predefined strategies and optimized algorithmic parameters.",
-                bg: "from-[#c8f3dd] to-gray-50",
               },
               {
                 icon: <ShieldCheck className="w-8 h-8" />,
+                
                 title: "Risk Management",
                 text: "Implements stop-loss, take-profit and portfolio protection strategies to reduce exposure.",
-                bg: "from-[#c8f3dd] to-gray-50",
               },
             ].map((card, index) => (
               <div
                 key={index}
-                className={`
-                process-card-reveal process-delay-${index + 1}
-                group
-                relative
-                overflow-hidden
-                rounded-2xl
-                bg-gradient-to-br ${card.bg}
-                p-6
-                border border-white/60
-                shadow-[0_10px_40px_rgba(0,0,0,0.06)]
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                hover:shadow-[0_25px_70px_rgba(16,185,129,0.18)]
-                hover:border-green-200
-                cursor-pointer
-                `}
+                className={`reveal-up reveal-delay-${(index % 3) + 1} relative flex justify-center`}
               >
-                {/* Glow */}
-                <div className="absolute top-0 right-0 h-32 w-32 bg-[#014421]/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-
-                {/* Top Border Animation */}
-                <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-[#014421] to-emerald-600 transition-all duration-700 group-hover:w-full"></div>
-
                 {/* Icon */}
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-[#014421] shadow-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-[#014421] group-hover:text-white">
-                  {card.icon}
-                </div>
+                <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+                    <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-xl text-white shadow-lg shadow-[#014421]/20">
+                      {card.icon}
+                    </div>
+                  </div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="mt-6 text-xl font-bold tracking-tight text-gray-900 transition-all duration-300 group-hover:text-[#014421]">
+                  
+                  <h3 className="mb-3 text-lg font-bold text-[#014421]">
                     {card.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-gray-600 transition-all duration-300 group-hover:text-gray-800">
+                  <p className="text-sm leading-relaxed text-gray-500">
                     {card.text}
                   </p>
-
-                 
-                  
                 </div>
               </div>
             ))}
           </div>
 
           {/* EXTRA BLOCK */}
-          <div className="extra-block-reveal mt-12 overflow-hidden rounded-2xl bg-[#edf3ef] shadow-lg">
-            <div className="grid lg:grid-cols-2 items-center">
+          <div className="extra-block-reveal mt-10 overflow-hidden bg-white sm:mt-12">
+            <div className="grid items-center gap-0 lg:grid-cols-2">
 
               {/* IMAGE */}
               <div className="relative">
                 
  <div
-        className="relative h-[280px] w-full bg-cover bg-center sm:h-[340px]"
+        className="relative h-[220px] w-full bg-cover bg-center sm:h-[340px]"
 style={{
   backgroundImage: `url(${heroBg1})`,
 }}
@@ -183,18 +165,18 @@ style={{
               </div>
 
               {/* CONTENT */}
-              <div className="p-6 sm:p-8 lg:p-10">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-green-700">
+              <div className="bg-white p-5 sm:p-8 lg:p-10">
+                <div className="flex items-start gap-3 sm:items-center sm:gap-4">
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-green-100 text-green-700 sm:h-12 sm:w-12">
                     <Users className="h-6 w-6" />
                   </div>
 
-                  <h3 className="text-2xl font-bold sm:text-3xl">
+                  <h3 className="text-xl font-bold leading-tight sm:text-3xl">
                     Is Automated Trading for Everyone?
                   </h3>
                 </div>
 
-                <p className="mt-4 text-base leading-relaxed text-gray-600">
+                <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base sm:leading-relaxed">
                   Whether you're a professional trader seeking scalable
                   execution or a beginner exploring algorithmic systems,
                   automated trading platforms can be tailored to suit different
@@ -209,20 +191,20 @@ style={{
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-white px-4 py-14 sm:px-6 lg:py-16">
+      <section className="bg-white px-4 pb-8 pt-0 sm:px-6 lg:pb-10 lg:pt-1">
         <div className="mx-auto flex max-w-4xl justify-center">
 
           {/* LEFT */}
-          <div className="why-choose-card w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-black/5 sm:p-8 lg:p-10">
+          <div className="why-choose-card w-full bg-white p-0 sm:p-6 lg:p-7">
             <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#014421]">
               Why Choose Automated Trading?
             </p>
 
-            <h2 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-bold leading-tight text-gray-950 sm:text-4xl">
+            <h2 className="mx-auto mt-3 max-w-2xl text-center text-2xl font-bold leading-tight text-gray-950 sm:text-3xl">
               Built for Speed, Precision & Consistency
             </h2>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
                 {
                   icon: <Clock3 />,
@@ -247,14 +229,14 @@ style={{
               ].map((item, index) => (
                 <div
                   key={index}
-                  className={`why-choose-item why-choose-delay-${index + 1} group flex gap-4 rounded-xl border border-gray-100 bg-[#f7faf7] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#014421]/20 hover:bg-white hover:shadow-md`}
+                  className={`why-choose-item why-choose-delay-${index + 1} group flex gap-3 rounded-xl border border-gray-100 bg-[#f7faf7] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#014421]/20 hover:bg-white hover:shadow-md sm:gap-4 sm:p-5`}
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#014421]/10 text-[#014421] transition-all duration-300 group-hover:bg-[#014421] group-hover:text-white group-hover:scale-110">
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#014421]/10 text-[#014421] transition-all duration-300 group-hover:bg-[#014421] group-hover:text-white group-hover:scale-110 sm:h-12 sm:w-12">
                     {item.icon}
                   </div>
 
                   <div>
-                    <h3 className="text-base font-semibold text-gray-950 transition-all duration-300 group-hover:text-[#e5f8ee]">
+                    <h3 className="text-base font-semibold text-gray-950 transition-all duration-300 group-hover:text-[#014421]">
                       {item.title}
                     </h3>
 
