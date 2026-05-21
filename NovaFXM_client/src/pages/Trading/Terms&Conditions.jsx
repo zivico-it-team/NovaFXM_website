@@ -64,11 +64,11 @@ const additionalTermsContent = `
 17.3. The Client acknowledges the potential for loss of the entire margin deposit in leveraged transactions.
 17.4. The Company does not provide investment advice and the Client is solely responsible for their investment decisions.
 17.5. The Client fully acknowledges and understands that trading in Financial Instruments carries a high risk of incurring substantial losses. By engaging in such activities, the Client accepts and affirms their willingness to assume this risk.
-17.6. The Client acknowledges that Novafxm does not offer investment advice. Novafxm does not act as a fiduciary or advisor, and expressly disclaims any obligations or duties of that nature.
-17.7. Novafxm provides margin-traded products that carry the risk of losing the entire initial deposit. Before trading such products, the Client should carefully consider their investment goals, risk tolerance, and experience level. These products may not be suitable for every investor, and the Client should seek independent financial advice if necessary.
+17.6. The Client acknowledges that NOVAFXM does not offer investment advice. NOVAFXM does not act as a fiduciary or advisor, and expressly disclaims any obligations or duties of that nature.
+17.7. NOVAFXM provides margin-traded products that carry the risk of losing the entire initial deposit. Before trading such products, the Client should carefully consider their investment goals, risk tolerance, and experience level. These products may not be suitable for every investor, and the Client should seek independent financial advice if necessary.
 
 18. ROLLOVER AND SWAPS
-18.1. Positions may be subject to rollover, during which amounts will be debited or credited to your account based on interest rate differentials between currencies and/or swap rates provided by our liquidity providers. Please note that daily swap rates are not fixed and may be adjusted by Novafxm without prior notice, in line with prevailing market conditions. It is your responsibility to monitor the swap rates for the instruments you are trading by checking the contract specifications and details available on Novafxm' website and trading platforms. In the event of any discrepancies, the information displayed within the trading platforms will take precedence.
+18.1. Positions may be subject to rollover, during which amounts will be debited or credited to your account based on interest rate differentials between currencies and/or swap rates provided by our liquidity providers. Please note that daily swap rates are not fixed and may be adjusted by NOVAFXM without prior notice, in line with prevailing market conditions. It is your responsibility to monitor the swap rates for the instruments you are trading by checking the contract specifications and details available on NOVAFXM' website and trading platforms. In the event of any discrepancies, the information displayed within the trading platforms will take precedence.
 
 19. DISCLAIMER OF WARRANTIES / LIMITATION OF LIABILITY
 19.1. If the Client is an individual, they confirm that they are over the age of 18 and possess the full legal capacity to enter into this Agreement.
@@ -77,17 +77,17 @@ const additionalTermsContent = `
 19.4. This Agreement and each Transaction entered into are binding and enforceable against the Client, in accordance with applicable laws, and do not violate any existing obligations, regulations, or agreements to which the Client is bound.
 19.5. No Event of Default or Potential Event of Default has occurred with respect to the Client.
 19.6. The Client is acting on their own behalf (unless otherwise agreed in writing) and not as a trustee in entering into this Agreement and any Transactions.
-19.7. Any information provided by the Client to Novafxm concerning their financial situation or other relevant matters is accurate and not misleading in any material respect.
+19.7. Any information provided by the Client to NOVAFXM concerning their financial situation or other relevant matters is accurate and not misleading in any material respect.
 19.8. The Client acknowledges their financial ability to sustain the total loss of funds as a result of trading.
-19.9. Unless otherwise agreed, the Client is the sole beneficial owner of all Margin transferred to Novafxm, free from any third-party security interests.
+19.9. Unless otherwise agreed, the Client is the sole beneficial owner of all Margin transferred to NOVAFXM, free from any third-party security interests.
 
 20. MARKET RECOMMENDATIONS AND INFORMATION
 20.1. The Client acknowledges that:
-20.1.2. Such recommendations and information are based on sources that Novafxm believes to be reliable; however, these are not guaranteed and may be incomplete or unverified.
-20.1.3. Novafxm makes no guarantees regarding the accuracy or completeness of any market information or recommendations provided and shall not be held responsible for any loss or damage arising from reliance on such information, including the loss of margin or profits.
-20.2. The Client understands that they are solely responsible for assessing the merits and risks of any trade they enter into, regardless of whether the trade is based on information from Novafxm.
-20.3. The Client acknowledges that Novafxm, its officers, directors, affiliates, or representatives may hold positions in or may intend to buy or sell the same financial instruments discussed in recommendations provided to the Client, and that these positions may not align with the recommendations offered.
-20.4. The Client understands that Novafxm does not provide advice on the tax implications of any trading activities.
+20.1.2. Such recommendations and information are based on sources that NOVAFXM believes to be reliable; however, these are not guaranteed and may be incomplete or unverified.
+20.1.3. NOVAFXM makes no guarantees regarding the accuracy or completeness of any market information or recommendations provided and shall not be held responsible for any loss or damage arising from reliance on such information, including the loss of margin or profits.
+20.2. The Client understands that they are solely responsible for assessing the merits and risks of any trade they enter into, regardless of whether the trade is based on information from NOVAFXM.
+20.3. The Client acknowledges that NOVAFXM, its officers, directors, affiliates, or representatives may hold positions in or may intend to buy or sell the same financial instruments discussed in recommendations provided to the Client, and that these positions may not align with the recommendations offered.
+20.4. The Client understands that NOVAFXM does not provide advice on the tax implications of any trading activities.
 
 21. ANTI-MONEY LAUNDERING LEGISLATION
 21.1. The Client acknowledges that the Company may require additional information from time to time to comply with Anti-Money Laundering (AML) Legislation. By opening the Trading Account or engaging in transactions, the Client agrees to provide all required information, documents, and cooperation to help the Company comply with AML/Counter-Terrorism Financing (CTF) Laws.
@@ -179,7 +179,7 @@ const TermsConditions = () => {
   const subHeadingClass =
     "mb-3 text-lg font-semibold leading-snug text-[#014421] sm:mb-4 sm:text-xl";
   const paragraphClass =
-    "break-words text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
+    "break-words text-justify text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans">
@@ -208,7 +208,8 @@ const TermsConditions = () => {
   </div>
 
   {/* Content */}
-  <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-12">
+  <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-8">
+    <div className="mx-auto w-full max-w-7xl">
     
     <div className="max-w-2xl text-white animate-fadeInUp">
       
@@ -238,6 +239,7 @@ const TermsConditions = () => {
         Please read these Terms & Conditions carefully before using our
         platform.
       </p>
+    </div>
     </div>
   </div>
 
@@ -289,7 +291,8 @@ const TermsConditions = () => {
 </section>
 
       {/* Content Section */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20 [&_h2]:text-2xl [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:text-lg [&_h3]:leading-snug sm:[&_h3]:text-xl [&_p]:break-words [&_p]:text-sm [&_p]:leading-7 sm:[&_p]:text-[15px] sm:[&_p]:leading-8">
+      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl [&_h2]:text-2xl [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:text-lg [&_h3]:leading-snug sm:[&_h3]:text-xl [&_p]:break-words [&_p]:text-justify [&_p]:text-sm [&_p]:leading-7 sm:[&_p]:text-[15px] sm:[&_p]:leading-8">
         
         {/* Introduction */}
         <div className="mb-14">
@@ -298,22 +301,22 @@ const TermsConditions = () => {
           </h2>
 
           <p className="text-gray-700 leading-8 text-[15px]">
-            This agreement is a legal contract between Novafxm (referred to as “Novafxm,” “us,” or “we”),
+            This agreement is a legal contract between NOVAFXM (referred to as “NOVAFXM,” “us,” or “we”),
             its successors and assigns, and the party/parties (referred to as the “Customer,” “client,” 
             or “you”) executing this document. Along with our Risk Disclosure Statement and Privacy Policy,
-            this document outlines the terms and conditions under which Novafxm will conduct business with 
+            this document outlines the terms and conditions under which NOVAFXM will conduct business with 
             the Customer. By accepting these terms and completing the application form, both parties agree 
             to be bound by these conditions.
-            By opening an account with Novafxm to trade in Forex, Contracts for Differences (CFDs),
-            and other products or services that Novafxm may offer, the Customer acknowledges that they have been 
+            By opening an account with NOVAFXM to trade in Forex, Contracts for Differences (CFDs),
+            and other products or services that NOVAFXM may offer, the Customer acknowledges that they have been 
             informed of and understand the risks involved in trading in the Over-the-Counter (OTC) and/or Spread Betting markets. This understanding includes the information provided in the Risk Disclosure Statement that the Customer has received.
           </p>
 
           <p className="text-gray-700 leading-8 text-[15px] mt-5">
-            In consideration of Novafxm agreeing to provide services for trading 
+            In consideration of NOVAFXM agreeing to provide services for trading 
             in Forex, CFDs, Options, and Spread Betting in commodities, currencies, 
             metals, indices, and other financial products, the Customer agrees to 
-            the rights and obligations governing the relationship between Novafxm 
+            the rights and obligations governing the relationship between NOVAFXM 
             and the Customer. These terms will apply to all transactions, including 
             purchases or sales made on behalf of the Customer’s account(s).
           </p>
@@ -332,7 +335,7 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              Novafxm offers various types of Trading Accounts, each with distinct 
+              NOVAFXM offers various types of Trading Accounts, each with distinct 
               features and characteristics. The Company reserves the right to modify 
               the features and eligibility criteria of these accounts or make any account 
               type unavailable at any time. Any such changes will be communicated via our 
@@ -348,11 +351,11 @@ const TermsConditions = () => {
 
             <p className="text-gray-700 leading-8 text-[15px]">
               Unless agreed otherwise in writing, the Client will engage with 
-              Novafxm as a principal and not as an agent or representative of 
+              NOVAFXM as a principal and not as an agent or representative of 
               another party. This means that, unless specifically agreed, 
-              Novafxm will consider you, the Client, as the primary party 
+              NOVAFXM will consider you, the Client, as the primary party 
               responsible for fulfilling obligations under any contract entered
-              0into, whether directly with Novafxm or through an agent.
+              0into, whether directly with NOVAFXM or through an agent.
             </p>
           </div>
 
@@ -365,7 +368,7 @@ const TermsConditions = () => {
             <p className="text-gray-700 leading-8 text-[15px]">
               If the Client is acting on behalf of a third party, whether 
               or not the Client discloses this, the third party will not be 
-              considered a Client of Novafxm. Novafxm will only have 
+              considered a Client of NOVAFXM. NOVAFXM will only have 
               a contractual relationship with the Client and will not be 
               obligated to engage with any principal unless otherwise 
               agreed upon to meet specific requirements.
@@ -378,8 +381,8 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              Unless otherwise agreed in writing, Novafxm will interact with 
-              the Client on an execution-only basis. This means that Novafxm 
+              Unless otherwise agreed in writing, NOVAFXM will interact with 
+              the Client on an execution-only basis. This means that NOVAFXM 
               will execute orders as directed by the Client without providing 
               any advisory or decision-making services.
             </p>
@@ -391,8 +394,8 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              Novafxm reserves the right to refuse service to the Client at any 
-              time. The Client acknowledges that Novafxm is under no obligation 
+              NOVAFXM reserves the right to refuse service to the Client at any 
+              time. The Client acknowledges that NOVAFXM is under no obligation 
               to provide any reasons for such a decision.
             </p>
           </div>
@@ -403,7 +406,7 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              Novafxm does not act as a tax agent. The Client is solely responsible 
+              NOVAFXM does not act as a tax agent. The Client is solely responsible 
               for managing their own tax obligations, including submitting all necessary 
               documents, tax returns, and reports to relevant authorities, whether 
               governmental or otherwise. The Client is also responsible for paying 
@@ -461,7 +464,7 @@ const TermsConditions = () => {
 
             <p className="text-gray-700 leading-8 text-[15px]">
               The transmission of an order does not automatically create a binding contract. Orders are 
-              subject to Novafxm accepting the offer, and only when the Company has confirmed and 
+              subject to NOVAFXM accepting the offer, and only when the Company has confirmed and 
               recorded the acceptance of the order will it become binding. If you expect a 
               confirmation for a transaction but do not receive it, you are responsible for contacting us.
             </p>
@@ -505,7 +508,7 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              To begin using Novafxm, the Client must register on the Trader’s Room by providing 
+              To begin using NOVAFXM, the Client must register on the Trader’s Room by providing 
               an email address, which must be confirmed. The Trader’s Room provides all necessary 
               data to manage your Trading Account.
             </p>
@@ -529,7 +532,7 @@ const TermsConditions = () => {
             </h3>
 
             <p className="text-gray-700 leading-8 text-[15px]">
-              The Client warrants that all information provided to Novafxm is correct. The 
+              The Client warrants that all information provided to NOVAFXM is correct. The 
               Client agrees to notify the Company of any significant changes, including 
               changes to contact details or financial status, immediately.
             </p>
@@ -556,7 +559,7 @@ const TermsConditions = () => {
               system. These credentials are personal and confidential. The Client is solely responsible 
               for safeguarding this information and is liable for all actions performed in the Trading 
               Account. If there is unauthorized use of your account or a security breach, you agree to 
-              inform Novafxm immediately.
+              inform NOVAFXM immediately.
             </p>
           </div>
           
@@ -901,6 +904,7 @@ const TermsConditions = () => {
             );
           })}
         </div>
+      </div>
       </section>
     </div>
   );

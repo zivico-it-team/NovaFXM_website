@@ -32,7 +32,7 @@ const faqs = [
       "If the threshold is not met within 90 days, the bonus may expire according to the promotion terms.",
   },
   {
-    question: "How can i withdraw the bonus received from Novafxm?",
+    question: "How can i withdraw the bonus received from NOVAFXM?",
     answer:
       "You can request a bonus withdrawal after meeting the required trading volume and account conditions.",
   },
@@ -97,14 +97,14 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8f7] px-4 py-14 sm:px-6 md:py-20">
+    <section className="relative overflow-hidden bg-[#f7f8f7] px-4 pb-8 pt-14 sm:px-6 md:pb-10 md:pt-20">
       <div className="absolute left-10 top-10 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
       <div className="absolute bottom-8 right-8 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
 
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 text-center">
           <p className="mb-2 text-sm font-semibold text-[#014421]">FAQ's</p>
-          <h2 className="mx-auto max-w-xl text-3xl font-extrabold leading-none text-[#014421] sm:text-4xl">
+          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-none text-[#014421] sm:text-4xl">
             Find Answers to Common
             <span className="block">Questions</span>
           </h2>
@@ -216,7 +216,7 @@ export default function Promotions() {
         </div>
       </section>
 
-      <section id="promotion-cards" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-8 sm:px-6 md:py-9">
+       <section id="promotion-cards" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-8 sm:px-6 md:py-9">
         <div className="grid gap-8">
           {promotions.map((promo) => (
             <PromoCard key={promo.bonus} promo={promo} />
