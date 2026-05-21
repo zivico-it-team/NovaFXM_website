@@ -54,7 +54,7 @@ function TradingViewWidget() {
   return (
     <div
       ref={container}
-      className="tradingview-widget-container h-full min-h-[340px] w-full min-w-0 overflow-hidden"
+      className="tradingview-widget-container h-full min-h-[300px] w-full min-w-0 overflow-hidden sm:min-h-[340px]"
     />
   );
 }

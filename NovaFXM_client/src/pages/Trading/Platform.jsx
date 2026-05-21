@@ -54,7 +54,7 @@ export default function TradingPage() {
     <div className="w-full bg-white overflow-hidden">
       {/* ================= HERO SECTION ================= */}
 
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:px-6 md:min-h-[580px] lg:min-h-[640px]">
+      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <div className="absolute inset-0">
           <img
             src={heroBg5}
@@ -66,8 +66,8 @@ export default function TradingPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)]" />
 
-        <div className="relative z-10 w-full max-w-4xl">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
+        <div className="relative z-10 w-full max-w-4xl -translate-y-4 sm:translate-y-0">
+          <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
             <span className="h-2 w-2 rounded-full bg-[#D4AF37]"></span>
             Platform
           </span>
@@ -84,7 +84,7 @@ export default function TradingPage() {
           </p>
 
           <button
-            className="button-shine mt-8 w-full max-w-[280px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:w-auto sm:max-w-none sm:px-8"
+            className="button-shine mt-4 w-full max-w-[280px] rounded-full bg-[#014421] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-8"
             onClick={() => {
               document.getElementById("platform-overview")?.scrollIntoView({
                 behavior: "smooth",
@@ -101,28 +101,28 @@ export default function TradingPage() {
 
       <section
         id="platform-overview"
-        className="py-20 px-6 md:px-8 bg-[#f8f8f8]"
+        className="px-6 py-12 bg-[#f8f8f8] md:px-8 md:py-20"
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid gap-8 items-center md:grid-cols-2 md:gap-12">
           {/* LEFT CONTENT */}
 
-          <div>
+          <div className="flex flex-col justify-center">
             <p className="text-sm uppercase tracking-widest text-gray-500 mb-2">
               The Perfect Map
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+            <h2 className="text-2xl md:text-4xl font-bold leading-tight text-[#014421]">
               Navigate Your
               <br />
-              <span className="text-[#D4AF37]">
+              <span className="text-[#014421]">
                 Trading Success!
               </span>
             </h2>
 
             <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
 
-            <p className="text-gray-600 leading-relaxed text-lg">
-              <span className="font-bold text-black">Novafxm</span> is your
+            <p className="text-gray-600 leading-relaxed text-sm">
+              <span className="font-bold text-black">NOVAFXM</span> is your
               gateway to mastering the financial markets. Whether you're an
               experienced trader or just starting your journey, our
               cutting-edge platform offers a smooth and intuitive trading
@@ -131,7 +131,7 @@ export default function TradingPage() {
 
             {/* Features */}
 
-            <div className="mt-12 space-y-6">
+            <div className="mt-12 space-y-6 text-sm ">
               {[
                 "Real-Time Market Insights & Analytics",
                 "Seamless and User-Friendly Interface",
@@ -155,11 +155,11 @@ export default function TradingPage() {
 
           {/* RIGHT IMAGE */}
 
-          <div className="relative flex justify-center">
+          <div className="relative flex min-h-[65svh] items-center justify-center md:min-h-0">
             <img
               src={heroBg6}
               alt="Trading"
-              className="relative z-10 w-[600px] md:w-[700px]"
+              className="relative z-10 w-full max-w-[500px] md:w-[500px] md:max-w-none"
             />
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function TradingPage() {
 
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
-              Why Novafxm is Your Perfect Trading Partner?
+              Why NOVAFXM is Your Perfect Trading Partner?
             </h2>
 
             <div className="flex items-center justify-center gap-3 mt-5">
@@ -189,31 +189,31 @@ export default function TradingPage() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300"
+                className="flex h-full flex-col bg-white rounded-2xl border-b-4 border-[#014421] p-8 transition duration-300 hover:-translate-y-1"
               >
                 {/* Header */}
 
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex min-h-[72px] items-center gap-4 mb-4">
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center border ${
                       card.color === "green"
                         ? "border-[#014421] text-[#014421] bg-[#014421]/10"
                         : card.color === "gold"
-                        ? "border-[#D4AF37] text-[#D4AF37] bg-[#D4AF37]/10"
-                        : "border-orange-500 text-orange-500 bg-orange-50"
+                        ? "border-[#014421] border-[#014421] bg-[#D4AF37]/10"
+                        : "border-[#014421] text-[#014421] bg-[#014421]/10"
                     }`}
                   >
                     {card.icon}
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#1f1f1f] leading-snug">
+                  <h3 className="text-sm font-bold text-[#1f1f1f] leading-snug sm:text-base">
                     {card.title}
                   </h3>
                 </div>
 
                 {/* Description */}
 
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="mb-3 min-h-[72px] text-gray-600 leading-relaxed text-sm">
                   {card.description}
                 </p>
 
@@ -231,12 +231,12 @@ export default function TradingPage() {
                           card.color === "green"
                             ? "text-[#014421]"
                             : card.color === "gold"
-                            ? "text-[#D4AF37]"
-                            : "text-orange-500"
+                            ? "border-[#014421]"
+                            : "border-[#014421]"
                         }`}
                       />
 
-                      <p className="text-gray-700">
+                      <p className="text-gray-700   text-sm  ">
                         {point}
                       </p>
                     </div>
@@ -250,7 +250,7 @@ export default function TradingPage() {
 
           <div className="text-center mt-14">
             <p className="text-xl md:text-2xl font-medium text-[#1f1f1f] leading-relaxed">
-              Novafxm is where innovation meets precision helping you thrive in
+              NOVAFXM is where innovation meets precision helping you thrive in
               the{" "}
               <span className="text-[#D4AF37] font-semibold">
                 fast-paced world of trading!

@@ -93,13 +93,13 @@ export default function EconomicCalendar() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center hero-content md:px-6">
-          <h1 className="animate-fade-down text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="animate-fade-down text-4xl font-bold text-white sm:text-5xl md:text-6xl ">
             Economic Calendar
           </h1>
 
           <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-fade-up sm:text-base md:mt-5 md:leading-7">
             Track high-impact market events, economic releases and global
-            announcements with Novafxm.
+            announcements with NOVAFXM.
           </p>
         </div>
       </section>
@@ -110,16 +110,16 @@ export default function EconomicCalendar() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl bg-white px-4 pb-14 pt-6 text-center sm:px-5 sm:pb-20 sm:pt-8">
+      <section className="mx-auto max-w-6xl bg-white px-4 pb-4 pt-6 text-center sm:px-5 sm:pb-6 sm:pt-8">
         <div className="reveal-up mb-4 flex items-center justify-center gap-3">
           <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
           <p className="text-sm font-semibold text-gray-700">How It's Work</p>
           <span className="h-[2px] w-8 bg-[#014421] sm:w-10"></span>
         </div>
 
-        <h2 className="reveal-up reveal-delay-1 mb-12 text-2xl font-extrabold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
+        <h2 className="reveal-up reveal-delay-1 mb-12 text-2xl font-bold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
           Trading Made Simple with{" "}
-          <span className="text-[#014421]">Novafxm</span>
+          <span className="text-[#014421]">NOVAFXM</span>
         </h2>
 
         <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
@@ -135,9 +135,9 @@ export default function EconomicCalendar() {
                 </div>
               )}
 
-              <div className="relative w-full max-w-[320px] rounded-3xl border border-[#014421]/30 bg-white px-5 pb-8 pt-14 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+              <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
                 <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-xl text-white shadow-lg">
+                  <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-xl text-white shadow-lg shadow-[#014421]/20">
                     <Icon />
                   </div>
                 </div>
@@ -152,8 +152,6 @@ export default function EconomicCalendar() {
                 <p className="text-sm leading-relaxed text-gray-500">
                   {step.desc}
                 </p>
-
-                <div className="absolute bottom-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-t-full bg-[#D4AF37]"></div>
               </div>
             </div>
           ))}
@@ -166,7 +164,7 @@ export default function EconomicCalendar() {
         <button
           type="button"
           onClick={() => navigate("/login")}
-          className="reveal-up reveal-delay-3 mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
+          className="button-shine reveal-up reveal-delay-3 mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
         >
           Trade Now
         </button>

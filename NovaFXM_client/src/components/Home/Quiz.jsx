@@ -11,7 +11,7 @@ const faqData = [
     id: 2,
     question: "How Does Forex Trading Work?",
     answer:
-      "Forex trading works by exchanging one currency for another in the global Forex Market, where currencies are always traded in pairs like EUR/USD or GBP/USD. When a trader believes that one currency will increase in value compared to another, they place a buy (long) trade, and if they expect it to decrease, they place a sell (short) trade.",
+      "Forex trading works by exchanging one currency for another in the global Forex Market, where currencies are always traded in pairs like EUR/USD or GBP/USD. When a trader believes that one currency will increase in value compared to another, they place a buy (long) trade and if they expect it to decrease, they place a sell (short) trade.",
   },
   {
     id: 3,
@@ -37,40 +37,40 @@ export default function FAQ() {
   };
 
   return (
-    <section className="reveal-section flex justify-center bg-gray-100 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+    <section className="reveal-section flex justify-center bg-gray-100 px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
       <div className="w-full max-w-4xl">
         
         {/* Heading */}
-        <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold mb-8">
+        <h2 className="mb-5 text-center text-xl font-semibold sm:mb-6 sm:text-2xl md:text-3xl">
           Find <span className="text-[#014421]">Answers</span> to Common Questions
         </h2>
 
         {/* FAQ */}
-        <div className="space-y-5">
+        <div className="space-y-3 sm:space-y-5">
           {faqData.map((item) => (
-            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-4">
+            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-3 sm:p-4">
               
               {/* FIXED ROW */}
               <div
                 onClick={() => toggle(item.id)}
-                className="flex items-center gap-3 sm:gap-4 cursor-pointer"
+                className="flex cursor-pointer items-center gap-3 sm:gap-4"
               >
                 
                 {/* Number */}
-                <div className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center rounded-full bg-[#014421] text-white text-xs sm:text-sm font-medium">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#014421] text-xs font-medium text-white sm:h-7 sm:w-7 sm:text-sm">
                   {item.id}
                 </div>
 
                 {/* Question + Arrow */}
-                <div className="flex-1 flex justify-between items-center">
+                <div className="flex flex-1 items-center justify-between gap-3">
                   
-                  <h3 className="font-semibold text-gray-800 text-sm sm:text-base">
+                  <h3 className="text-left text-sm font-semibold text-gray-800 sm:text-base">
                     {item.question}
                   </h3>
 
                   {/* Arrow */}
                   <svg
-                    className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-500 transform transition-transform duration-300 ${
+                    className={`h-3 w-3 shrink-0 text-gray-500 transition-transform duration-300 sm:h-4 sm:w-4 ${
                       openId === item.id ? "rotate-180" : ""
                     }`}
                     fill="none"
@@ -89,7 +89,7 @@ export default function FAQ() {
 
               {/* Answer */}
               {openId === item.id && (
-                <p className="text-gray-600 text-xs sm:text-sm mt-3 leading-relaxed ml-9 sm:ml-11">
+                <p className="ml-9 mt-3 text-left text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-sm">
                   {item.answer}
                 </p>
               )}

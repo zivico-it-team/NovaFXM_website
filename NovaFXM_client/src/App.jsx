@@ -106,7 +106,7 @@ function App() {
           path="/login"
           element={
             <AuthLayout>
-                   <LoginPage onRegisterClick={() => window.location.href = "/register"} />
+                   <LoginPage onSignUpClick={() => window.location.href = "/signup"} />
 
             </AuthLayout>
           }
