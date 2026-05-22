@@ -131,7 +131,7 @@ export default function Navbar() {
       <div
         className={`mx-auto flex w-full max-w-7xl items-center justify-between transition-all duration-500 ${
           isScrolled
-            ? "nav-float-in rounded-full bg-white/95 px-3 py-2 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl"
+            ? "nav-float-in rounded-full bg-white px-3 py-2 shadow-[0_16px_40px_rgba(1,68,33,0.16)]"
             : ""
         }`}
       >
@@ -170,6 +170,10 @@ export default function Navbar() {
                     : "px-1 hover:bg-white/70 hover:px-4 hover:text-green-700"
                 }`}
                 onClick={() => {
+                  if (item === "Home") {
+                    goHome();
+                    return;
+                  }
                   setHoveredMenu((prev) => (prev === item ? null : item));
                 }}
               >
@@ -185,7 +189,7 @@ export default function Navbar() {
               {/* Desktop Dropdown */}
               {hoveredMenu === item && (
                 <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
-                  <div className="nav-dropdown overflow-hidden rounded-2xl bg-white/98 p-2 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl">
+                  <div className="nav-dropdown overflow-hidden rounded-2xl bg-white/98 p-2 shadow-2xl backdrop-blur-xl">
                     {dropdownContent[item].map((option, index) => (
                       <button
                         type="button"
@@ -271,7 +275,7 @@ export default function Navbar() {
               onClick={closeMobileMenu}
             />
 
-            <div className="absolute left-3 right-3 top-[calc(100%+0.5rem)] z-50 animate-slideDown rounded-3xl bg-white/98 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl lg:hidden">
+            <div className="absolute left-3 right-3 top-[calc(100%+0.5rem)] z-50 animate-slideDown rounded-3xl bg-white/98 shadow-2xl backdrop-blur-xl lg:hidden">
               <div className="flex flex-col py-2 max-h-[80vh] overflow-y-auto">
                 {menuItems.map((item) => (
                   <div key={item} className="border-b border-gray-100">
@@ -279,6 +283,10 @@ export default function Navbar() {
                       type="button"
                       className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
                       onClick={() => {
+                        if (item === "Home") {
+                          goHome();
+                          return;
+                        }
                         toggleMobileDropdown(item);
                       }}
                     >
