@@ -109,7 +109,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => navigate("/login")}
-            className="button-shine w-auto cursor-pointer rounded-lg bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
+            className="button-shine w-auto cursor-pointer rounded-4xl bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
           >
             Trade Now
           </button>
