@@ -5,8 +5,8 @@ export default function AboutUs() {
   return (
     <section className="reveal-section relative bg-[#f5f6f7] px-4 py-6 sm:px-6 sm:py-8 md:py-12 lg:px-8">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-4 md:grid-cols-2 md:gap-6 lg:gap-8">
-        {/* Left side - Image */}
-        <div className="button-shine relative overflow-hidden rounded-xl">
+        {/* Image */}
+        <div className="button-shine relative overflow-hidden rounded-xl md:order-2">
           <img
             src="/image1.png"
             alt="Laptop with code"
@@ -14,8 +14,8 @@ export default function AboutUs() {
           />
         </div>
 
-        {/* Right side - Text */}
-        <div className="mx-auto max-w-xl text-center md:mx-0 md:justify-self-end md:text-left">
+        {/* Text */}
+        <div className="mx-auto max-w-xl text-center md:order-1 md:mx-0 md:justify-self-start md:text-left">
           
           <h2 className="text-2xl font-bold text-gray-900 sm:text-4xl">
             Discover NOVAFXM
