@@ -167,6 +167,7 @@ const PaymentLogo = ({ method }) => {
 
 const Methords = () => {
   const [activeTab, setActiveTab] = useState("Metals");
+  const reversedPaymentMethods = [...PAYMENT_METHODS].reverse();
 
   useEffect(() => {
     const autoPlayInterval = setInterval(() => {
@@ -188,115 +189,143 @@ const Methords = () => {
   const visibleData = MARKET_DATA[activeTab] || [];
 
   return (
-    <section className="w-full bg-[#f5f6f7] px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
+    <section className="w-full bg-white px-4 pb-8 pt-14 sm:px-6 sm:pb-10 sm:pt-16 md:pb-12 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-5 text-center sm:mb-7 md:mb-9">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
-            Secure <span className="text-yellow-600">Methods</span> for Deposits & Withdrawals
+        <div className="mb-8 text-center sm:mb-10 md:mb-12">
+          <h2 className="px-2 pb-2 text-xl font-semibold text-black sm:text-2xl md:text-3xl">
+            Secure <span className="text-[#D4AF37]">Methods</span> for Deposits & Withdrawals
           </h2>
 
-          <div className="mx-auto mt-3 grid max-w-5xl grid-cols-4 gap-x-2 gap-y-3 sm:mt-4 sm:gap-x-4 sm:gap-y-5 md:grid-cols-8">
-            {PAYMENT_METHODS.map((method) => (
-              <a
-                key={method.name}
-                href="/deposit"
-                aria-label={`View ${method.name} deposit and withdrawal details`}
-                className="group flex min-h-[58px] flex-col items-center justify-center gap-1.5 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[74px] sm:gap-2"
-              >
-                <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
-                  <PaymentLogo method={method} />
-                </div>
-                <span className="text-[10px] font-medium leading-tight text-gray-900 sm:text-xs">
-                  {method.name}
-                </span>
-              </a>
-            ))}
+          <div className="methods-slider mx-auto mt-7 max-w-6xl overflow-hidden sm:mt-8 md:mt-10">
+            <div className="methods-slider-track flex w-max items-center gap-3 sm:gap-4">
+              {[...PAYMENT_METHODS, ...PAYMENT_METHODS].map((method, index) => (
+                <a
+                  key={`${method.name}-${index}`}
+                  href="/deposit"
+                  aria-label={`View ${method.name} deposit and withdrawal details`}
+                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-h-[76px] sm:w-[136px] sm:gap-2"
+                >
+                  <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
+                    <PaymentLogo method={method} />
+                  </div>
+                  <span className="text-[10px] font-medium leading-tight text-gray-900 sm:text-xs">
+                    {method.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="methods-slider mx-auto mt-5 max-w-6xl overflow-hidden sm:mt-6">
+            <div className="methods-slider-track methods-slider-track-reverse flex w-max items-center gap-3 sm:gap-4">
+              {[...reversedPaymentMethods, ...reversedPaymentMethods].map((method, index) => (
+                <a
+                  key={`${method.name}-reverse-${index}`}
+                  href="/deposit"
+                  aria-label={`View ${method.name} deposit and withdrawal details`}
+                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-h-[76px] sm:w-[136px] sm:gap-2"
+                >
+                  <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
+                    <PaymentLogo method={method} />
+                  </div>
+                  <span className="text-[10px] font-medium leading-tight text-gray-900 sm:text-xs">
+                    {method.name}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mb-4 md:mb-6">
-          <h3 className="text-lg font-bold text-gray-900 sm:text-2xl">
-            {activeTab}
-          </h3>
-        </div>
+        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-black px-4 py-8 shadow-xl sm:px-6 sm:py-10 lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.18),transparent_68%)]"></div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-          {visibleData.map((item) => (
-            <div
-              key={item.symbol}
-              className="relative flex flex-col items-start justify-between gap-3 rounded-xl bg-[#f8f9fa] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg sm:flex-row sm:items-center sm:p-6 md:rounded-2xl"
-            >
-              <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+          <div className="relative z-10 mx-auto max-w-7xl">
+            <div className="mb-4 md:mb-6">
+              <h3 className="text-lg font-bold text-white sm:text-2xl">
+                {activeTab}
+              </h3>
+            </div>
 
-              <div className="w-full min-w-0">
-                <TradingViewQuote
-                  key={`${activeTab}-${item.tradingViewSymbol}`}
-                  symbol={item.tradingViewSymbol}
-                />
-
-                <a
-                  href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(
-                    item.tradingViewSymbol
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-xs font-semibold text-yellow-700 hover:text-yellow-800"
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              {visibleData.map((item) => (
+                <div
+                  key={item.symbol}
+                  className="relative flex flex-col items-start justify-between gap-3 overflow-hidden rounded-xl bg-white/95 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg sm:flex-row sm:items-center sm:p-6 md:rounded-2xl"
                 >
-                  Open chart
-                </a>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+
+                  <div className="relative z-10 w-full min-w-0">
+                    <TradingViewQuote
+                      key={`${activeTab}-${item.tradingViewSymbol}`}
+                      symbol={item.tradingViewSymbol}
+                    />
+
+                    <a
+                      href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(
+                        item.tradingViewSymbol
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-semibold text-yellow-700 hover:text-yellow-800"
+                    >
+                      Open chart
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-col items-center gap-2 pb-2 sm:hidden">
+              <div className="flex justify-center gap-2">
+                {tabs.slice(0, 3).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                      activeTab === tab
+                        ? "bg-[#014421] text-white shadow-lg scale-105"
+                        : "bg-white/85 text-gray-700 hover:bg-white"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex justify-center gap-2">
+                {tabs.slice(3).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                      activeTab === tab
+                        ? "bg-[#014421] text-white shadow-lg scale-105"
+                        : "bg-white/85 text-gray-700 hover:bg-white"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-6 flex flex-col items-center gap-2 pb-2 sm:hidden">
-          <div className="flex justify-center gap-2">
-            {tabs.slice(0, 3).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
-                  activeTab === tab
-                    ? "bg-green-800 text-white shadow-lg scale-105"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+            <div className="mt-7 hidden justify-center gap-3 overflow-x-auto pb-2 sm:flex md:mt-8">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-all duration-300 transform hover:scale-110 ${
+                    activeTab === tab
+                      ? "bg-[#014421] text-white shadow-lg scale-105"
+                      : "bg-white/85 text-gray-700 hover:bg-white"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
           </div>
-
-          <div className="flex justify-center gap-2">
-            {tabs.slice(3).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
-                  activeTab === tab
-                    ? "bg-green-800 text-white shadow-lg scale-105"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-7 hidden justify-center gap-3 overflow-x-auto pb-2 sm:flex md:mt-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-all duration-300 transform hover:scale-110 ${
-                activeTab === tab
-                  ? "bg-green-800 text-white shadow-lg scale-105"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
         </div>
       </div>
     </section>

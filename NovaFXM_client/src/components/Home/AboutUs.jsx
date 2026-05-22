@@ -17,13 +17,13 @@ export default function AboutUs() {
         {/* Text */}
         <div className="mx-auto max-w-xl text-center md:order-1 md:mx-0 md:justify-self-start md:text-left">
           
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-2xl font-medium text-gray-900 sm:text-4xl">
             Discover NOVAFXM
           </h2>
 
           <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-[#014421] sm:mt-4 sm:w-16 md:mx-0"></div>
 
-          <p className="mt-4 text-left text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-lg md:text-justify">
+          <p className="mt-4 text-left text-2xl leading-relaxed text-gray-600 sm:mt-5 sm:text-lg md:text-justify">
             We are a technology-driven broker committed to providing exceptional trading conditions.
             Our platform bridges the gap between retail and institutional trading, offering unparalleled
             access to global financial markets.

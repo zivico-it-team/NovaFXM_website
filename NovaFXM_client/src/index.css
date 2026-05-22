@@ -74,6 +74,22 @@ button {
   will-change: transform, opacity;
 }
 
+.methods-slider {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.methods-slider-track {
+  animation: methods-slide 80s linear infinite;
+}
+
+.methods-slider-track-reverse {
+  animation-name: methods-slide-reverse;
+}
+
+.methods-slider:hover .methods-slider-track {
+  animation-play-state: paused;
+}
+
 .interactive-card {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -485,6 +501,26 @@ button {
   }
 }
 
+@keyframes methods-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes methods-slide-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -711,6 +747,7 @@ button {
   .hero-trust-badge,
   .hero-trade-cta,
   .letter-reveal-char,
+  .methods-slider-track,
   .account-hero-image,
   .market-hero-image,
   .market-hero-content,
