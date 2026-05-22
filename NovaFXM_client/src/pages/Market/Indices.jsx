@@ -124,7 +124,7 @@ const IndicesPage = () => {
             Indices
           </h1>
 
-          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 sm:mt-6 md:text-base md:leading-8">
+          <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 md:text-base md:leading-8">
             Unlock a Wide Range of Indices from the World's Leading
             Economies with NOVAFXM
           </p>
@@ -135,15 +135,15 @@ const IndicesPage = () => {
           ABOUT SECTION
       ========================================= */}
 
-      <section className="px-4 py-10 mx-auto max-w-7xl sm:px-6 sm:py-12 lg:py-16">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+      <section className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
+        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
 
           {/* IMAGE */}
           <div>
             <img
               src={heroBg2}
               alt="Indices"
-              className="h-[240px] w-full rounded-2xl object-cover shadow-xl sm:h-[340px] lg:h-auto lg:max-h-[480px]"
+              className="h-[220px] w-full rounded-2xl object-cover shadow-xl sm:h-[300px] lg:h-[360px]"
             />
           </div>
 
@@ -160,33 +160,27 @@ const IndicesPage = () => {
               </span>
             </h2>
 
-            <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
-              Stock market indices offer a powerful overview of market
-              performance by tracking the collective value of selected
-              stocks. These benchmarks provide deep insights into market
-              trends, economic conditions and sector growth.
+            <p className="mt-4 text-sm  text-justify leading-7 text-gray-600 sm:text-base lg:leading-8">
+              Stock market indices provide a clear snapshot of a market's performance by calculating the combined value of a selected group of stocks. These indices offer valuable insight into market trends and economic health, representing sectors or entire stock markets. Whether it’s the NASDAQ or a country’s top corporations like the S&P 500, indices help investors gauge the broader market dynamics.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-2 sm:gap-5">
-              <div className="flex items-center gap-3 text-sm font-medium sm:text-base lg:text-lg">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
+              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 Market Exposure
               </div>
 
-              <div className="flex items-center gap-3 text-sm font-medium sm:text-base lg:text-lg">
+              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 Simplicity
               </div>
 
-              <div className="flex items-center gap-3 text-sm font-medium sm:text-base lg:text-lg">
+              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
                 <span className="text-[#014421] text-xl">✔</span>
                 High Liquidity
               </div>
 
-              <div className="flex items-center gap-3 text-sm font-medium sm:text-base lg:text-lg">
-                <span className="text-[#014421] text-xl">✔</span>
-                Portfolio Diversification
-              </div>
+             
             </div>
           </div>
         </div>
@@ -196,7 +190,7 @@ const IndicesPage = () => {
           MARKET OVERVIEW WITH TRADINGVIEW
       ========================================= */}
 
-      <section className="bg-[#f8faf9] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <section className="bg-[#f8faf9] px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-6 lg:pb-12 lg:pt-7">
         {/* TRADINGVIEW WIDGET CARD */}
         <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
           <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
@@ -204,8 +198,30 @@ const IndicesPage = () => {
           </div>
         </div>
 
+        {/* WHAT ARE INDICES */}
+        <div className="mx-auto mt-8 max-w-7xl rounded-2xl border border-gray-100 bg-white px-5 py-6 shadow-sm sm:mt-10 sm:px-8 sm:py-8 lg:px-12">
+          <div className="max-w-5xl border-l-4 border-[#014421] pl-5 sm:pl-7">
+            <h2 className="text-2xl font-bold leading-tight text-[#014421] sm:text-3xl">
+              What Are Indices?
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8">
+              Indices track the performance of a collection of stocks, helping
+              investors assess the strength and overall health of a market
+              segment. Instead of focusing on a single company's performance,
+              indices like the NASDAQ, S&amp;P 500, FTSE 100, and Nikkei 225
+              offer a broader perspective.
+            </p>
+
+            <p className="mt-3 text-sm leading-7 text-gray-500 sm:text-base sm:leading-8">
+              These indices can be country-specific or sector-focused, making
+              it easier for investors to diversify their portfolios.
+            </p>
+          </div>
+        </div>
+
         {/* TITLE */}
-        <div className="mt-12 text-center sm:mt-16">
+        <div className="mt-10 text-center sm:mt-12">
 
           <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
             Popular <span className="text-[#014421]">Indices</span>
@@ -218,7 +234,7 @@ const IndicesPage = () => {
         </div>
 
         {/* INDEX CARDS */}
-        <div className="grid grid-cols-1 gap-4 mx-auto mt-8 max-w-6xl sm:grid-cols-2 lg:mt-10 lg:grid-cols-4 lg:gap-5">
+        <div className="grid grid-cols-1 gap-4 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4 lg:gap-5">
           {indices.map((item, index) => (
             <div
               key={index}
@@ -244,7 +260,7 @@ const IndicesPage = () => {
           HOW INDICES ARE CALCULATED
       ========================================= */}
 
-      <section className="px-4 py-12 bg-white sm:px-6 sm:py-16 lg:py-20">
+      <section className="px-4 py-8 bg-white sm:px-6 sm:py-10 lg:py-12">
 
         {/* HEADER */}
         <div className="text-center">
@@ -259,7 +275,7 @@ const IndicesPage = () => {
         </div>
 
         {/* TOP CARDS */}
-        <div className="grid max-w-6xl gap-6 mx-auto mt-10 lg:mt-12 lg:grid-cols-2">
+        <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
           {topCards.map((card, index) => (
             <div
               key={index}
@@ -285,7 +301,7 @@ const IndicesPage = () => {
         </div>
 
         {/* MIDDLE SECTION */}
-        <div className="grid items-center gap-6 mx-auto mt-12 max-w-7xl sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-8">
+        <div className="grid items-center gap-5 mx-auto mt-10 max-w-7xl sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
 
           {/* LEFT TEXT */}
           <div className="lg:col-span-1">
@@ -294,7 +310,7 @@ const IndicesPage = () => {
               <span className="text-[#014421]">Index Trading</span>
             </h2>
 
-            <div className="mb-5 mt-6 h-1 w-16 rounded-full bg-[#014421]"></div>
+            <div className="mb-4 mt-5 h-1 w-16 rounded-full bg-[#014421]"></div>
 
             <p className="text-sm leading-7 text-gray-500 sm:text-base">
               Index trading offers several advantages for investors.
@@ -327,11 +343,11 @@ const IndicesPage = () => {
           WHAT MOVES INDEX PRICE
       ========================================= */}
 
-      <section className="bg-[#f6f7f6] px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-        <div className="grid items-center gap-10 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-12">
+      <section className="bg-[#f6f7f6] px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
+        <div className="grid items-center gap-8 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-10">
 
           {/* LEFT CARDS */}
-          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:gap-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:gap-5">
             {factors.map((item, index) => (
               <div
                 key={index}
@@ -359,7 +375,7 @@ const IndicesPage = () => {
               <span className="text-[#014421]">Index Price</span>
             </h2>
 
-            <div className="mb-5 mt-6 h-1 w-20 rounded-full bg-[#014421]"></div>
+            <div className="mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421]"></div>
 
             <p className="text-sm leading-7 text-gray-500">
               Several factors influence index prices including economic data,

@@ -87,12 +87,10 @@ export default function AutomatedTradingPage() {
 
           {/* TITLE */}
           <div className="section-reveal mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#014421] sm:text-sm">
-              How Does Automated Trading Work?
-            </p>
+            
 
             <h2 className="mt-3 text-2xl font-bold sm:text-3xl md:text-[34px]">
-              Intelligent Trading Process
+              How Does Automated Trading Work?
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base md:text-lg md:leading-relaxed">

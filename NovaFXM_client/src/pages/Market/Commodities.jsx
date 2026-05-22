@@ -104,34 +104,30 @@ export default function CommoditiesSection() {
       </section>
 
       {/* About Section */}
-      <section className="bg-[#f7f7f7] px-4 sm:px-5 py-8 sm:py-[34px] lg:py-[42px]">
-        <div className="mx-auto max-w-[1160px] px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.03fr_1fr] items-center gap-8 lg:gap-[64px]">
+      <section className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
+        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
             {/* Left Image */}
-            <div className="flex justify-center order-2 lg:justify-start lg:order-1 about-image animate-slide-right">
+            <div className="order-2 lg:order-1 about-image animate-slide-right">
               <img
                 src="/Commodities1.png.jpeg"
                 alt="Commodities Trading"
-                className="h-[240px] w-full max-w-[525px] rounded-[24px] object-cover transition-transform duration-500 hover:scale-105 sm:h-[330px] sm:rounded-[34px] lg:h-[400px]"
+                className="h-[210px] w-full rounded-2xl object-cover shadow-xl transition-transform duration-500 hover:scale-105 sm:h-[280px] lg:h-[330px]"
               />
             </div>
 
             {/* Right Content */}
-            <div className="max-w-[575px] order-1 lg:order-2 animate-slide-left">
-              <p className="text-sm font-medium leading-6 text-gray-600 sm:text-base">
-                Trade the Building Blocks of the Economy
-              </p>
+            <div className="order-1 lg:order-2 animate-slide-left">
+              <h2 className="leading-tight">
+                <span className="block text-base font-bold text-[#111827] sm:text-lg">
+                  Trade the Building Blocks of the Economy
+                </span>
 
-              <h2 className="mt-3 text-2xl font-bold leading-tight text-black md:text-3xl">
-                From Oil to Gold with
-                <br />
-                <span className="text-[#014421] relative inline-block">
-                  NOVAFXM
-                  <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#014421] transition-all duration-700 group-hover:w-full"></span>
+                <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
+                  From Oil to Gold with NOVAFXM
                 </span>
               </h2>
 
-              <p className="mt-4 sm:mt-6 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.72] text-gray-600">
+              <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base lg:leading-8">
                 Step into the dynamic world of commodities and discover lucrative
                 opportunities in Earth's most essential resources. Commodities are
                 the raw materials that fuel the global economy, including oil,
@@ -140,37 +136,19 @@ export default function CommoditiesSection() {
               </p>
 
               {/* Features */}
-              <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-6 sm:gap-x-[58px] gap-y-3 sm:gap-y-4">
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
                 {["Liquidity", "Transparency", "Leverage"].map((item, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-2 feature-item animate-feature"
+                    className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg feature-item animate-feature"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="flex h-[14px] w-[14px] items-center justify-center rounded-full border border-[#014421] transition-all duration-300 hover:scale-125 hover:bg-[#0D7A43]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-[9px] w-[9px] text-[#014421] transition-colors duration-300 group-hover:text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={3}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-xs sm:text-[13px] font-bold text-[#014421]">
-                      {item}
-                    </span>
+                    <span className="text-[#014421] text-xl">✔</span>
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -186,7 +164,7 @@ export default function CommoditiesSection() {
 
             <div className="mt-3 sm:mt-4 h-[2px] w-[75px] sm:w-[95px] bg-[#014421] animate-expand-width"></div>
 
-            <p className="mt-4 text-sm font-medium leading-6 text-gray-600 sm:mt-6 sm:text-base sm:pl-7">
+            <p className="mt-4 text-sm font-regular leading-6 text-gray-600 sm:mt-6 sm:text-base sm:pl-7">
               Commodities are basic goods used in commerce and they can be
               classified into two main categories:
             </p>
@@ -199,7 +177,7 @@ export default function CommoditiesSection() {
                 </div>
                 <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Hard Commodities</span>
                 <span className="font-bold text-black">:</span>
-                <span className="flex-1 text-sm font-medium text-gray-600 sm:text-base">
+                <span className="flex-1 text-sm font-regular text-gray-600 sm:text-base">
                   Natural resources like oil, gold and metals gas, which are extracted from the Earth.
                 </span>
               </div>
@@ -211,7 +189,7 @@ export default function CommoditiesSection() {
                 </div>
                 <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Soft Commodities</span>
                 <span className="font-bold text-black">:</span>
-                <span className="flex-1 text-sm font-medium text-gray-600 sm:text-base">
+                <span className="flex-1 text-sm font-regular text-gray-600 sm:text-base">
                   Agricultural products or livestock, such as wheat, coffee and sugar.
                 </span>
               </div>
@@ -350,7 +328,7 @@ export default function CommoditiesSection() {
                 <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">
                   Supply and Demand
                 </h3>
-                <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
+                <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">
                   The balance between production and consumption heavily
                   influences commodity prices.
                 </p>
@@ -364,7 +342,7 @@ export default function CommoditiesSection() {
                 <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">
                   Economic Indicators
                 </h3>
-                <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
+                <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">
                   Data like GDP growth, inflation and employment rates can
                   indicate market direction and commodity values.
                 </p>
@@ -378,7 +356,7 @@ export default function CommoditiesSection() {
                 <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">
                   Geopolitical Events
                 </h3>
-                <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
+                <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">
                   Political instability, natural disasters and trade policies
                   can cause price volatility in the commodity markets.
                 </p>
@@ -392,7 +370,7 @@ export default function CommoditiesSection() {
                 <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">
                   Market Speculation
                 </h3>
-                <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed sm:leading-[1.75] text-gray-600">
+                <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">
                   Expectations about future price movements often drive the
                   short-term fluctuations of commodities.
                 </p>

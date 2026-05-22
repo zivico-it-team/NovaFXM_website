@@ -7,6 +7,7 @@ import {
   CircleDollarSign,
   CreditCard,
   Gauge,
+  Check,
   Headphones,
   LineChart,
   MonitorSmartphone,
@@ -207,6 +208,22 @@ function AboutSection() {
             currency pairs with deep liquidity, competitive spreads and
             cutting-edge trading tools.
           </p>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
+                      <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                        <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                        Higher Returns
+                      </div>
+          
+                      <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                        <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                        Portfolio Diversification
+                      </div>
+          
+                      <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                        <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                        Tax Benefits
+                      </div>
+                    </div>
         </div>
       </div>
     </section>
