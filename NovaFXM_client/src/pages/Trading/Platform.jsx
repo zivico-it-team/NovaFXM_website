@@ -59,7 +59,7 @@ export default function TradingPage() {
           <img
             src={heroBg5}
             alt="Trading Platform"
-            className="h-full w-full object-cover object-center brightness-110"
+            className="account-hero-image h-full w-full object-cover object-center brightness-110"
           />
         </div>
 

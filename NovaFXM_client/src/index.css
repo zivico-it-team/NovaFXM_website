@@ -65,12 +65,12 @@ button {
 }
 
 .hero-trust-badge {
-  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.65s both;
+  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.85s both;
   will-change: transform, opacity;
 }
 
 .hero-trade-cta {
-  animation: hero-trade-cta-down 0.85s cubic-bezier(0.16, 1, 0.3, 1) 5.05s both;
+  animation: hero-trade-cta-down 0.85s cubic-bezier(0.16, 1, 0.3, 1) 1.85s both;
   will-change: transform, opacity;
 }
 
@@ -581,14 +581,14 @@ button {
 
 .hero-circle-left {
   clip-path: inset(0 50% 0 0);
-  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 6.2s both,
-    hero-circle-breathe-left 8s ease-in-out 12s infinite;
+  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 2.8s both,
+    hero-circle-breathe-left 8s ease-in-out 8.6s infinite;
 }
 
 .hero-circle-right {
   clip-path: inset(0 0 0 50%);
-  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 6.2s both,
-    hero-circle-breathe-right 8s ease-in-out 12s infinite;
+  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 2.8s both,
+    hero-circle-breathe-right 8s ease-in-out 8.6s infinite;
 }
 
 .account-hero-image {

@@ -88,7 +88,7 @@ export default function Hero() {
         >
           <LetterReveal
             text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
-            delay={3}
+            delay={1.85}
             step={0.018}
           />
         </p>
@@ -98,7 +98,7 @@ export default function Hero() {
         >
           <LetterReveal
             text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
-            delay={3}
+            delay={1.85}
             step={0.018}
           />
         </p>
