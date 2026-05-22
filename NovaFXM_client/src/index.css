@@ -388,6 +388,16 @@ button {
   transform: scaleX(1);
 }
 
+.nav-dropdown {
+  animation: nav-dropdown-in 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
+}
+
+.nav-float-in {
+  animation: nav-float-in 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
+}
+
 .animate-slideDown {
   animation: slide-down 0.26s ease both;
 }
@@ -485,6 +495,41 @@ button {
     transform: translateY(0);
   }
 }
+
+@keyframes nav-dropdown-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nav-float-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-18px) scale(0.94);
+  }
+
+  55% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(4px) scale(1.015);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
 
 @keyframes auth-card-in {
   from {
