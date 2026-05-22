@@ -68,15 +68,15 @@ export default function Hero() {
           aria-label="Your Gateway to Smarter Trading"
         >
           <span className="block text-[clamp(2rem,11vw,3.25rem)] font-bold text-[#014421] sm:text-5xl md:text-8xl">
-            <LetterReveal text="Your Gateway " delay={1.1} />
+            <LetterReveal text="Your Gateway " />
             <span className="font-light text-gray-900">
-              <LetterReveal text="to" delay={1.56} />
+              <LetterReveal text="to" delay={0.46} />
             </span>
           </span>
 
 
           <span className="mt-3 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
-            <LetterReveal text="Smarter Trading" delay={1.86} />
+            <LetterReveal text="Smarter Trading" delay={0.76} />
           </span>
         </h1>
 

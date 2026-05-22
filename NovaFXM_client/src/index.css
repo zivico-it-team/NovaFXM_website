@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 
 :root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #0f172a;
@@ -64,7 +65,7 @@ button {
 }
 
 .hero-trust-badge {
-  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.65s both;
   will-change: transform, opacity;
 }
 
