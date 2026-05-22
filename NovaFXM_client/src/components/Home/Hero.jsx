@@ -1,6 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
+  return (
+    <span className={`letter-reveal ${className}`} aria-hidden="true">
+      {Array.from(text).map((character, index) => (
+        <span
+          key={`${character}-${index}`}
+          className="letter-reveal-char"
+          style={{ "--letter-delay": `${delay + index * step}s` }}
+        >
+          {character === " " ? "\u00A0" : character}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export default function Hero() {
   const navigate = useNavigate();
 
@@ -22,7 +38,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-[22rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
-        <div className="inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm reveal-up sm:mb-6 sm:gap-3 sm:px-6 sm:py-2">
+        <div className="hero-trust-badge inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm sm:mb-6 sm:gap-3 sm:px-6 sm:py-2">
           <div className="flex -space-x-2">
             <img
               src="https://i.pravatar.cc/32?img=1"
@@ -47,31 +63,49 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="leading-[1.34] reveal-up reveal-delay-1 sm:leading-tight">
+        <h1
+          className="leading-[1.34] sm:leading-tight"
+          aria-label="Your Gateway to Smarter Trading"
+        >
           <span className="block text-[clamp(2rem,11vw,3.25rem)] font-bold text-[#014421] sm:text-5xl md:text-8xl">
-            Your Gateway <span className="font-light text-gray-900">to</span>
+            <LetterReveal text="Your Gateway " delay={1.1} />
+            <span className="font-light text-gray-900">
+              <LetterReveal text="to" delay={1.56} />
+            </span>
           </span>
 
 
           <span className="mt-3 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
-
-            Smarter Trading
+            <LetterReveal text="Smarter Trading" delay={1.86} />
           </span>
         </h1>
 
         {/* Description */}
 
-        <p className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-gray-500 reveal-up reveal-delay-2 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg">
-
-          Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
+        <p
+          className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg"
+          aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+        >
+          <LetterReveal
+            text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+            delay={3}
+            step={0.018}
+          />
         </p>
-        <p className="reveal-up reveal-delay-2 mx-auto mt-3 max-w-2xl px-1 text-sm leading-8 text-gray-500 sm:hidden">
-          Explore global markets with expert guidance and cutting-edge tools at NOVAFXM.
+        <p
+          className="mx-auto mt-3 max-w-2xl px-1 text-sm leading-8 text-gray-500 sm:hidden"
+          aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+        >
+          <LetterReveal
+            text="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
+            delay={3}
+            step={0.018}
+          />
         </p>
         
 
         {/* Button */}
-        <div className="mt-6 sm:mt-7">
+        <div className="hero-trade-cta mt-6 sm:mt-7">
           <button
             type="button"
             onClick={() => navigate("/login")}
