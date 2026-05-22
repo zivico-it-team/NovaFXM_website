@@ -1,15 +1,29 @@
 // src/components/layout/Navbar.jsx
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // ─── Route map: dropdown option → path ──────────────────────────────────────
   // Add new pages here. Options not listed here do nothing when clicked.
@@ -48,8 +62,7 @@ export default function Navbar() {
       "Platform",
       "Account Type",
       "Deposits & Withdrawals",
-      "Promotions",
-      
+      "Promotions"
     ],
     Market: ["Indices", "Crypto", "Stocks", "Forex", "Commodities"],
     "Trading Tool": ["Economic Calender", "Automated Trading"],
@@ -59,6 +72,16 @@ export default function Navbar() {
   };
 
   const menuItems = Object.keys(dropdownContent);
+
+  const isMenuActive = (item) => {
+    if (item === "Home") {
+      return location.pathname === "/";
+    }
+
+    return dropdownContent[item].some(
+      (option) => optionRoutes[option] === location.pathname
+    );
+  };
 
   // ─── Helpers ─────────────────────────────────────────────────────────────────
   const goHome = () => {
@@ -98,15 +121,35 @@ export default function Navbar() {
 
   // ─── Render ──────────────────────────────────────────────────────────────────
   return (
-    <header className="sticky top-0 z-50 bg-white px-4 py-4 shadow-sm sm:px-6 lg:px-8 relative">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+    <header
+      className={`sticky top-0 z-50 px-4 sm:px-6 lg:px-8 relative transition-all duration-500 ${
+        isScrolled
+          ? "bg-transparent py-2"
+          : "bg-gray-100/95 py-4 shadow-sm backdrop-blur-md"
+      }`}
+    >
+      <div
+        className={`mx-auto flex w-full max-w-7xl items-center justify-between transition-all duration-500 ${
+          isScrolled
+            ? "nav-float-in rounded-full bg-white/95 px-3 py-2 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl"
+            : ""
+        }`}
+      >
 
         {/* ── Logo ──────────────────────────────────────────────────────────── */}
-        <button type="button" className="flex items-center" onClick={goHome}>
+        <button
+          type="button"
+          className={`flex items-center transition-all duration-500 ${
+            isScrolled ? "rounded-full bg-gray-100 px-3 py-2 shadow-sm" : ""
+          }`}
+          onClick={goHome}
+        >
           <img
             src={logo}
             alt="NOVAFX Logo"
-            className="h-6 md:h-9 object-contain"
+            className={`object-contain transition-all duration-500 ${
+              isScrolled ? "h-6 md:h-7" : "h-6 md:h-9"
+            }`}
           />
         </button>
 
@@ -121,27 +164,33 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="nav-link cursor-pointer transition-colors hover:text-green-600"
+                className={`nav-link flex cursor-pointer items-center gap-1.5 rounded-full py-2 transition-all duration-300 ${
+                  isMenuActive(item)
+                    ? "bg-[#014421]/10 px-4 font-bold text-[#014421]"
+                    : "px-1 hover:bg-white/70 hover:px-4 hover:text-green-700"
+                }`}
                 onClick={() => {
-                  if (item === "Home") {
-                    goHome();
-                    return;
-                  }
                   setHoveredMenu((prev) => (prev === item ? null : item));
                 }}
               >
                 {item}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-300 ${
+                    hoveredMenu === item ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {/* Desktop Dropdown */}
               {hoveredMenu === item && (
-                <div className="absolute left-0 top-full z-50 w-52 pt-2">
-                  <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg">
+                <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
+                  <div className="nav-dropdown overflow-hidden rounded-2xl bg-white/98 p-2 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl">
                     {dropdownContent[item].map((option, index) => (
                       <button
                         type="button"
                         key={index}
-                        className="block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-green-50 hover:text-green-600"
+                        className="block w-full rounded-xl px-4 py-2.5 text-left text-sm text-gray-700 transition-all duration-300 hover:translate-x-1 hover:bg-green-50 hover:text-green-700"
                         onClick={() => handleDropdownOptionClick(option)}
                       >
                         {option}
@@ -190,7 +239,9 @@ export default function Navbar() {
         {/* ── Mobile: User Icon + Hamburger ─────────────────────────────────── */}
         <div className="flex items-center gap-3 lg:hidden">
           <button
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className={`p-2 rounded-full transition-colors ${
+              isScrolled ? "bg-gray-100 hover:bg-gray-200" : "hover:bg-white"
+            }`}
             onClick={() => {
               navigate("/login");
               scrollPageTop();
@@ -200,28 +251,14 @@ export default function Navbar() {
           </button>
 
           <button
-            className="flex flex-col space-y-1.5 p-2"
+            className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${
+              isScrolled
+                ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                : "text-gray-700 hover:bg-white"
+            }`}
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            <span
-              className={`w-6 h-0.5 transition-all duration-300 ${
-                mobileMenuOpen
-                  ? "rotate-45 translate-y-2 bg-green-600"
-                  : "bg-gray-700"
-              }`}
-            />
-            <span
-              className={`w-6 h-0.5 transition-all duration-300 ${
-                mobileMenuOpen ? "opacity-0" : "bg-gray-700"
-              }`}
-            />
-            <span
-              className={`w-6 h-0.5 transition-all duration-300 ${
-                mobileMenuOpen
-                  ? "-rotate-45 -translate-y-2 bg-green-600"
-                  : "bg-gray-700"
-              }`}
-            />
+            {mobileMenuOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
         </div>
 
@@ -230,37 +267,30 @@ export default function Navbar() {
           <>
             {/* Overlay */}
             <div
-              className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+              className="fixed inset-0 bg-black/45 z-40 lg:hidden"
               onClick={closeMobileMenu}
             />
 
-            <div className="absolute left-0 right-0 top-full z-50 animate-slideDown bg-white shadow-2xl lg:hidden">
+            <div className="absolute left-3 right-3 top-[calc(100%+0.5rem)] z-50 animate-slideDown rounded-3xl bg-white/98 shadow-[0_18px_45px_rgba(1,68,33,0.14)] backdrop-blur-xl lg:hidden">
               <div className="flex flex-col py-2 max-h-[80vh] overflow-y-auto">
                 {menuItems.map((item) => (
                   <div key={item} className="border-b border-gray-100">
                     <button
                       type="button"
                       className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
-                      onClick={() => toggleMobileDropdown(item)}
+                      onClick={() => {
+                        toggleMobileDropdown(item);
+                      }}
                     >
                       <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
                         {item}
                       </span>
-                      <svg
-                        className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
+                      <ChevronDown
+                        size={16}
+                        className={`text-gray-500 transition-transform duration-300 ${
                           openMobileDropdown === item ? "rotate-180" : ""
                         }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
+                      />
                     </button>
 
                     {/* Mobile Dropdown Items */}
@@ -270,7 +300,7 @@ export default function Navbar() {
                           <button
                             type="button"
                             key={index}
-                            className="block w-full border-l-2 border-transparent px-4 py-3 text-left text-sm text-gray-600 transition-colors hover:border-green-600 hover:bg-green-100 hover:text-green-700 active:border-green-700 active:bg-green-200"
+                            className="block w-full border-l-2 border-transparent px-4 py-3 text-left text-sm text-gray-600 transition-all duration-300 hover:translate-x-1 hover:border-green-700 hover:bg-green-100 hover:text-green-700"
                             onClick={() => handleDropdownOptionClick(option)}
                           >
                             {option}
