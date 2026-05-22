@@ -51,6 +51,28 @@ button {
   animation-delay: 0.36s;
 }
 
+.letter-reveal {
+  display: inline;
+}
+
+.letter-reveal-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.22em);
+  animation: letter-reveal 0.42s cubic-bezier(0.16, 1, 0.3, 1) var(--letter-delay) both;
+  will-change: transform, opacity;
+}
+
+.hero-trust-badge {
+  animation: hero-trust-badge-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+  will-change: transform, opacity;
+}
+
+.hero-trade-cta {
+  animation: hero-trade-cta-down 0.85s cubic-bezier(0.16, 1, 0.3, 1) 5.05s both;
+  will-change: transform, opacity;
+}
+
 .interactive-card {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -406,6 +428,52 @@ button {
   }
 }
 
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.22em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-trust-badge-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-64px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-trade-cta-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-36px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(4px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -467,14 +535,14 @@ button {
 
 .hero-circle-left {
   clip-path: inset(0 50% 0 0);
-  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
-    hero-circle-breathe-left 27s ease-in-out 22s infinite;
+  animation: hero-circle-left 5.8s cubic-bezier(0.16, 1, 0.3, 1) 6.2s both,
+    hero-circle-breathe-left 8s ease-in-out 12s infinite;
 }
 
 .hero-circle-right {
   clip-path: inset(0 0 0 50%);
-  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
-    hero-circle-breathe-right 27s ease-in-out 22s infinite;
+  animation: hero-circle-right 5.8s cubic-bezier(0.16, 1, 0.3, 1) 6.2s both,
+    hero-circle-breathe-right 8s ease-in-out 12s infinite;
 }
 
 .account-hero-image {
@@ -594,6 +662,9 @@ button {
 
   .hero-circle-left,
   .hero-circle-right,
+  .hero-trust-badge,
+  .hero-trade-cta,
+  .letter-reveal-char,
   .account-hero-image,
   .market-hero-image,
   .market-hero-content,
@@ -601,6 +672,10 @@ button {
   .market-hero-copy {
     animation: none;
     opacity: 1;
+  }
+
+  .letter-reveal-char {
+    transform: none;
   }
 
   .hero-circle-left {
