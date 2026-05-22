@@ -136,7 +136,7 @@ const CryptocurrencyPage = () => {
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white market-hero-content">
           <h1 className="mb-4 text-4xl font-bold market-hero-title sm:text-5xl md:text-6xl">Cryptocurrency</h1>
           <p className="mb-2 text-sm market-hero-copy md:text-base">
-            Step into Crypto CFD Trading with Zivico Solutions
+            Step into Crypto CFD Trading with NOVAFXM
           </p>
           <p className="text-xs text-gray-300 market-hero-copy md:text-sm">
             Access the digital asset market with flexibility and confidence.
@@ -172,18 +172,21 @@ const CryptocurrencyPage = () => {
                new investment opportunities with flexible leverage options and seamless
                portfolio management features.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={3} />
-                <p className="text-sm md:text-base">Potential Returns</p>
+            
+            <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4">
+              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                Potential Returns
               </div>
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={3} />
-                <p className="text-sm md:text-base">Simplified Trading</p>
+
+              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                Simplified Trading
               </div>
-              <div className="flex items-center gap-3">
-                <Check className="h-5 w-5 shrink-0 text-[#014421]" strokeWidth={3} />
-                <p className="text-sm md:text-base">Portfolio Diversification</p>
+             
+              <div className="flex basis-full items-center gap-3 whitespace-nowrap text-sm font-medium sm:text-base lg:text-lg">
+                <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
+                Portfolio Diversification
               </div>
             </div>
           </div>

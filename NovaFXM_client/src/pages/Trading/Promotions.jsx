@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaGift } from "react-icons/fa";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const promotions = [
   {
@@ -151,8 +152,12 @@ function FAQSection() {
                     <span className="text-sm font-extrabold text-[#014421] sm:text-base">
                       {faq.question}
                     </span>
-                    <span className="shrink-0 text-lg font-semibold text-[#014421]">
-                      {isOpen ? "-" : "+"}
+                    <span className="shrink-0 text-[#014421]">
+                      {isOpen ? (
+                        <ChevronUp size={20} strokeWidth={2.5} />
+                      ) : (
+                        <ChevronDown size={20} strokeWidth={2.5} />
+                      )}
                     </span>
                   </span>
                 </button>
