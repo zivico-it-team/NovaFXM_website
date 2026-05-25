@@ -48,8 +48,8 @@ const Footer = () => {
     { label: "Home", path: "/" },
     { label: "Market", path: "/crypto" },
     { label: "Trading Tools", path: "/economic-calendar" },
+    { label: "Partners", path: "/partners" },
     { label: "About Us", path: "/why-us" },
-    { label: "Account Type", path: "/account-type" },
   ];
 
   const supportLinks = [

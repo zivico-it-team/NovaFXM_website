@@ -6,7 +6,7 @@ export default function Account() {
   const navigate = useNavigate();
 
   return (
-  <section className="w-full bg-white px-4 py-8 text-center sm:px-5 sm:py-12">
+  <section className="w-full bg-white px-4 py-10 text-center sm:px-5 sm:py-12">
   <div className="mx-auto max-w-6xl">
   
   {/* Top Small Heading */}
@@ -19,13 +19,13 @@ export default function Account() {
   </div>
 
   {/* Main Heading */}
-  <h2 className="mb-12 text-2xl font-bold text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
+  <h2 className="mb-10 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl md:mb-14 md:text-4xl">
     Trading Made Simple with{" "}
     <span className="text-[#014421]">NOVAFXM</span>
   </h2>
 
   {/* Cards */}
-  <div className="relative grid grid-cols-1 gap-12 sm:gap-14 md:grid-cols-3 md:gap-10">
+  <div className="relative grid grid-cols-1 gap-10 sm:gap-14 md:grid-cols-3 md:gap-10">
     {[
       {
         number: "01",
@@ -57,7 +57,7 @@ export default function Account() {
         )}
 
         {/* Card */}
-        <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-6">
+        <div className="process-card relative w-full max-w-[300px] rounded-2xl border border-[#014421]/20 border-b-[4px] border-b-[#014421] bg-white px-5 pb-7 pt-12 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:max-w-[320px] sm:px-6 sm:pb-8 sm:pt-14">
           
           {/* Top Circle Icon */}
           <div className="absolute -top-7 left-1/2 -translate-x-1/2">
@@ -76,7 +76,7 @@ export default function Account() {
             {step.title}
           </h3>
 
-          <p className="text-sm text-gray-500 leading-relaxed">
+          <p className="text-justify text-sm leading-relaxed text-gray-500 sm:text-center">
             {step.desc}
           </p>
 
@@ -86,7 +86,7 @@ export default function Account() {
   </div>
 
   {/* Bottom Text */}
-  <p className="mx-auto mt-12 max-w-md text-sm leading-relaxed text-gray-700 sm:mt-14 sm:text-base">
+  <p className="mx-auto mt-12 max-w-md text-justify text-sm leading-relaxed text-gray-700 sm:mt-14 sm:text-center sm:text-base">
     Everything you need to trade Forex in one place.
   </p>
 

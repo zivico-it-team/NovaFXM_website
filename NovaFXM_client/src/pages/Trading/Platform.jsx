@@ -121,8 +121,8 @@ export default function TradingPage() {
 
             <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
 
-            <p className="text-gray-600 leading-relaxed text-sm">
-              <span className="font-bold text-black">NOVAFXM</span> is your
+            <p className="mt-4 text-left text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-lg md:text-justify">
+              <span className="font-bold  text-black">NOVAFXM</span> is your
               gateway to mastering the financial markets. Whether you're an
               experienced trader or just starting your journey, our
               cutting-edge platform offers a smooth and intuitive trading

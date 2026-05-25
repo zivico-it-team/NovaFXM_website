@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import heroBg from "../../assets/images/bro.png";
 import {
   ChevronLeft,
   ChevronRight,
   ArrowUp,
-  CheckCircle2,
 } from "lucide-react";
 
 export default function IntroducingBrokers() {
@@ -90,11 +90,11 @@ export default function IntroducingBrokers() {
             NOVAFXM Partnership Program
           </p>
 
-          <h1 className="market-hero-title text-4xl font-bold leading-tight text-white md:text-7xl">
+          <h1 className="market-hero-title text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
             Introducing Brokers
           </h1>
 
-          <p className="market-hero-copy mt-6 text-lg font-light leading-relaxed text-white/90 md:text-2xl">
+          <p className="market-hero-copy mt-6 text-base font-regular font-light leading-relaxed text-white/90">
             Build a powerful passive income stream by referring traders
             to NOVAFXM and earning commissions from every successful trade.
           </p>
@@ -121,19 +121,19 @@ export default function IntroducingBrokers() {
                 Partnership Benefits
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-[#014421] leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#014421] leading-tight">
                 Refer Traders & Build Passive Income
               </h2>
 
               <div className="w-24 h-1 bg-[#D4AF37] rounded-full mt-6 mb-8"></div>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-gray-600 text-justify font-regular text-base leading-relaxed mb-6">
                 Join the NOVAFXM Introducing Broker program and unlock
                 unlimited earning opportunities by referring traders
                 to our trusted platform.
               </p>
 
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-justify font-regular text-base leading-relaxed">
                 Our IB program is designed to help partners grow with
                 reliable payouts, advanced tools, professional support
                 and global market access.
@@ -170,7 +170,7 @@ export default function IntroducingBrokers() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 font-regular leading-relaxed text-lg">
+                  <p className="text-gray-600 font-regular leading-relaxed text-base">
                     {feature.description}
                   </p>
 
@@ -196,7 +196,7 @@ export default function IntroducingBrokers() {
         Partnership Process
       </p>
 
-      <h2 className="text-4xl md:text-5xl font-bold text-[#014421]">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#014421]">
         Start Earning in 3 Steps
       </h2>
 
@@ -228,23 +228,24 @@ export default function IntroducingBrokers() {
                 <span className="flex h-14 min-w-20 items-center justify-center rounded-l-[18px] rounded-r-sm bg-[#D4AF37] px-5 text-3xl font-black text-black">
                   {step.number}
                 </span>
-                <h3 className="text-3xl font-bold leading-tight text-[#f8d27a] md:text-4xl">
+                <h3 className="text-2xl font-bold leading-tight text-[#f8d27a] md:text-3xl">
                   {step.title}
                 </h3>
               </div>
 
-              <p className="max-w-lg text-lg font-regular leading-8 text-white md:text-xl">
+              <p className="max-w-lg text-16px font-regular leading-7 text-white">
                 {step.description}
               </p>
-            <a href="/signup">
-              <button
-                type="button"
-                // className="w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-lg font-bold text-black transition hover:bg-[#c9a432]"
-                className="button-shine w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-lg font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37]/80 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 "
+            <Link
+              to="/signup"
+              className="button-shine group/action w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-16px font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37]/80 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0"
+            >
+              <span
+                className="inline-block transition-transform duration-300 ease-out group-hover/action:translate-x-0.5"
               >
                 {step.action}
-              </button>
-            </a>
+              </span>
+            </Link>
             </div>
           </div>
         </article>

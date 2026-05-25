@@ -35,14 +35,14 @@ const reviews = [
 
 const ReviewCard = ({ name, role, image, text, index }) => (
   <div
-    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[300px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl sm:w-[300px] md:w-[350px] md:rounded-2xl md:p-6"
+    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px] md:rounded-2xl md:p-6"
     style={{ animationDelay: `${(index % reviews.length) * 0.18}s` }}
   >
     <span className="review-gold-border pointer-events-none absolute inset-0 rounded-xl md:rounded-2xl"></span>
 
     <div className="mb-3 text-sm text-[#D4AF37]">★★★★★</div>
 
-    <p className="mb-4 text-left text-xs leading-6 text-gray-700 sm:text-sm md:text-justify">
+    <p className="mb-4 text-justify text-xs leading-6 text-gray-700 sm:text-sm">
       {text}
     </p>
 
@@ -83,21 +83,21 @@ const stats = [
 ];
 
 const StatBox = ({ icon: Icon, value, title, desc }) => (
-  <div className="interactive-card flex flex-col items-center rounded-2xl p-4 text-center">
+  <div className="interactive-card flex flex-col items-center rounded-2xl p-4 text-center sm:p-5">
     <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#D4AF37] md:h-12 md:w-12">
       <Icon size={20} color="black" />
     </div>
 
     <h3 className="text-xl font-bold md:text-2xl">{value}</h3>
     <p className="text-sm font-bold text-gray-600">{title}</p>
-    <p className="mt-2 text-xs text-gray-500">{desc}</p>
+    <p className="mt-2 text-justify text-xs text-gray-500 sm:text-center">{desc}</p>
   </div>
 );
 
 export default function Review() {
   return (
-    <section className="reveal-section bg-white px-4 py-6 sm:px-6 sm:py-8 md:py-12 lg:px-8">
-      <h2 className="mb-5 text-center text-xl font-bold sm:mb-7 sm:text-2xl md:mb-9 md:text-3xl">
+    <section className="reveal-section bg-white px-4 py-10 sm:px-6 sm:py-8 md:py-12 lg:px-8">
+      <h2 className="mb-6 text-center text-xl font-bold leading-tight sm:mb-7 sm:text-2xl md:mb-9 md:text-3xl">
         Traders Experience With Us
       </h2>
 
@@ -110,11 +110,11 @@ export default function Review() {
       </div>
 
       <div className="mt-6 text-center sm:mt-10 md:mt-14">
-        <h2 className="mb-5 text-xl font-bold sm:mb-7 md:mb-9 md:text-2xl">
+        <h2 className="mb-5 text-xl font-bold leading-tight sm:mb-7 md:mb-9 md:text-2xl">
           Built on Trust & Performance
         </h2>
 
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3 md:gap-10">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 md:gap-10">
           {stats.map((stat, index) => (
             <StatBox key={index} {...stat} />
           ))}

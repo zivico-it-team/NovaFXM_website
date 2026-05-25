@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-4 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-8 lg:px-8"
+      className="relative flex min-h-[calc(100svh-64px)] scroll-mt-20 items-center justify-center overflow-hidden bg-gray-100 px-4 py-10 sm:min-h-[calc(100vh-72px)] sm:px-6 sm:py-8 lg:px-8"
     >
 
       {/* Background circles */}
@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="absolute inset-[24%] rounded-full bg-gray-100"></div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[22rem] text-center sm:max-w-3xl md:max-w-5xl">
+      <div className="relative z-10 mx-auto w-full max-w-[21rem] text-center sm:max-w-3xl md:max-w-5xl">
 
         {/* Badge */}
         <div className="hero-trust-badge inline-flex items-center max-w-full gap-2 px-3 py-1.5 mb-5 bg-white border border-gray-200 rounded-full shadow-sm sm:mb-6 sm:gap-3 sm:px-6 sm:py-2">
@@ -67,15 +67,30 @@ export default function Hero() {
           className="leading-[1.34] sm:leading-tight"
           aria-label="Your Gateway to Smarter Trading"
         >
-          <span className="block text-[clamp(2rem,11vw,3.25rem)] font-bold text-[#014421] sm:text-5xl md:text-8xl">
-            <LetterReveal text="Your Gateway " />
-            <span className="font-light text-gray-900">
-              <LetterReveal text="to" delay={0.46} />
-            </span>
-          </span>
+         <span
+  className="
+    block
+    text-[2.05rem]
+    leading-tight
+    font-bold
+    text-[#014421]
+
+    xs:text-[2.5rem]
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    xl:text-8xl
+  "
+>
+  <LetterReveal text="Your Gateway " />
+
+  <span className="font-light text-gray-900">
+    <LetterReveal text="to" delay={0.46} />
+  </span>
+</span>
 
 
-          <span className="mt-3 block text-[clamp(2rem,10vw,3.1rem)] font-light text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
+          <span className="mt-2 block text-[2rem] font-light leading-tight text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
             <LetterReveal text="Smarter Trading" delay={0.76} />
           </span>
         </h1>
@@ -83,7 +98,7 @@ export default function Hero() {
         {/* Description */}
 
         <p
-          className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-base sm:leading-relaxed md:text-lg"
+          className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-justify text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-center sm:text-base sm:leading-relaxed md:text-lg"
           aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
         >
           <LetterReveal
@@ -93,7 +108,7 @@ export default function Hero() {
           />
         </p>
         <p
-          className="mx-auto mt-3 max-w-2xl px-1 text-sm leading-8 text-gray-500 sm:hidden"
+          className="mx-auto mt-3 max-w-[19rem] px-1 text-sm leading-6 text-justify text-gray-500 sm:hidden"
           aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
         >
           <LetterReveal
@@ -105,7 +120,7 @@ export default function Hero() {
         
 
         {/* Button */}
-        <div className="hero-trade-cta mt-6 sm:mt-7">
+        <div className="hero-trade-cta mt-5 sm:mt-7">
           <button
             type="button"
             onClick={() => navigate("/login")}

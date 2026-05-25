@@ -223,10 +223,10 @@ const Methords = () => {
   const ActiveIcon = activeDetails.icon;
 
   return (
-    <section className="w-full bg-white px-4 pb-8 pt-14 sm:px-6 sm:pb-10 sm:pt-16 md:pb-12 md:pt-20 lg:px-8">
+    <section className="w-full bg-white px-4 pb-10 pt-10 sm:px-6 sm:pb-10 sm:pt-16 md:pb-12 md:pt-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center sm:mb-10 md:mb-12">
-          <h2 className="px-2 pb-2 text-xl font-semibold text-black sm:text-2xl md:text-3xl">
+          <h2 className="px-1 pb-2 text-xl font-semibold leading-snug text-black sm:text-2xl md:text-3xl">
             Secure <span className="text-[#D4AF37]">Methods</span> for Deposits & Withdrawals
           </h2>
 
@@ -271,21 +271,21 @@ const Methords = () => {
           </div>
         </div>
 
-        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden rounded-[42px] border border-[#D4AF37]/25 bg-black px-4 py-10 shadow-xl sm:px-6 sm:py-12 md:rounded-[56px] lg:px-8">
+        <div className="relative w-full overflow-hidden rounded-3xl border border-[#D4AF37]/25 bg-black px-3 py-8 shadow-xl sm:left-1/2 sm:w-screen sm:-translate-x-1/2 sm:px-6 sm:py-12 md:rounded-[56px] lg:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.16),transparent_32%),radial-gradient(circle_at_bottom,rgba(1,68,33,0.26),transparent_38%)]"></div>
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent"></div>
 
           <div className="relative z-10 mx-auto max-w-7xl">
-            <div className="mb-7 flex items-center gap-4 md:mb-9">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black/80 text-[#D4AF37] shadow-[0_0_28px_rgba(212,175,55,0.16)] sm:h-16 sm:w-16">
-                <ActiveIcon size={30} strokeWidth={1.9} />
+            <div className="mb-6 flex items-center gap-3 md:mb-9 md:gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black/80 text-[#D4AF37] shadow-[0_0_28px_rgba(212,175,55,0.16)] sm:h-16 sm:w-16">
+                <ActiveIcon size={26} strokeWidth={1.9} />
               </div>
 
               <div>
-                <h3 className="text-3xl font-bold text-white sm:text-4xl">
+                <h3 className="text-2xl font-bold text-white sm:text-4xl">
                   {activeTab}
                 </h3>
-                <p className="mt-2 text-sm text-white/70 sm:text-base">
+                <p className="mt-2 text-justify text-sm text-white/70 sm:text-left sm:text-base">
                   {activeDetails.description}
                 </p>
               </div>
@@ -295,23 +295,23 @@ const Methords = () => {
               {visibleData.map((item) => (
                 <div
                   key={item.symbol}
-                  className="group relative min-h-[300px] overflow-hidden rounded-2xl border border-[#D4AF37]/80 bg-[#060606] p-6 shadow-[0_18px_46px_rgba(0,0,0,0.34)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_24px_60px_rgba(212,175,55,0.14)] sm:min-h-[330px] sm:p-7"
+                  className="group relative min-h-[270px] overflow-hidden rounded-2xl border border-[#D4AF37]/80 bg-[#060606] p-4 shadow-[0_18px_46px_rgba(0,0,0,0.34)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_24px_60px_rgba(212,175,55,0.14)] sm:min-h-[330px] sm:p-7"
                 >
                   <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-35"></div>
                   <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_78%_48%,rgba(212,175,55,0.11),transparent_34%)]"></div>
                   <div className="absolute inset-0 bg-black/45"></div>
 
                   <div className="relative z-10 flex h-full flex-col">
-                    <div className="mb-8 flex items-start justify-between gap-4">
-                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37] bg-black/70 text-[#F4D35E] shadow-[inset_0_0_24px_rgba(212,175,55,0.1),0_0_24px_rgba(212,175,55,0.12)]">
-                        <ActiveIcon size={30} strokeWidth={1.9} />
+                    <div className="mb-6 flex items-start justify-between gap-3 sm:mb-8 sm:gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37] bg-black/70 text-[#F4D35E] shadow-[inset_0_0_24px_rgba(212,175,55,0.1),0_0_24px_rgba(212,175,55,0.12)] sm:h-16 sm:w-16">
+                        <ActiveIcon size={28} strokeWidth={1.9} />
                       </div>
 
                       <div className="min-w-0 pt-1 text-right">
-                        <h4 className="text-xl font-black tracking-tight text-white sm:text-2xl">
+                        <h4 className="text-lg font-black tracking-tight text-white sm:text-2xl">
                           {item.symbol}
                         </h4>
-                        <p className="mt-2 text-xs leading-snug text-white/70 sm:text-sm">
+                        <p className="mt-2 text-justify text-xs leading-snug text-white/70 sm:text-right sm:text-sm">
                           CFDs on {item.name}
                         </p>
                       </div>
@@ -330,7 +330,7 @@ const Methords = () => {
                       )}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-auto flex min-h-[54px] items-center justify-between rounded-xl border border-[#D4AF37]/25 bg-black/35 px-4 text-[#F4D35E] transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10"
+                      className="mt-auto flex min-h-[50px] items-center justify-between rounded-xl border border-[#D4AF37]/25 bg-black/35 px-3 text-[#F4D35E] transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 sm:min-h-[54px] sm:px-4"
                     >
                       <span className="flex items-center gap-3 text-sm font-semibold sm:text-base">
                         <LineChart size={22} strokeWidth={1.8} />

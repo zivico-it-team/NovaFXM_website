@@ -46,20 +46,20 @@ export default function PricingSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="overflow-hidden bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+    <section className="overflow-hidden bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-10 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
       <div className="mx-auto text-center max-w-7xl">
 
         {/* Heading */}
-        <h2 className="reveal-up mb-3 text-2xl font-bold text-[#014421] sm:mb-4 sm:text-4xl md:text-5xl">
+        <h2 className="reveal-up mb-3 text-2xl font-bold leading-tight text-[#014421] sm:mb-4 sm:text-4xl md:text-5xl">
           Choose Your Account
         </h2>
 
-        <p className="reveal-up reveal-delay-1 mx-auto mb-6 max-w-2xl text-sm text-gray-600 sm:mb-8 sm:text-base">
+        <p className="reveal-up reveal-delay-1 mx-auto mb-7 max-w-2xl text-justify text-sm leading-6 text-gray-600 sm:mb-8 sm:text-center sm:text-base">
           Tailored trading conditions to suit every trader's style and experience level.
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
 
           {plans.map((plan, index) => (
             <div
@@ -67,7 +67,7 @@ export default function PricingSection() {
               className={`
                 account-plan-card reveal-up reveal-delay-${(index % 3) + 1}
                 group relative flex flex-col justify-between
-                rounded-2xl p-4 sm:p-7 md:rounded-3xl md:p-8
+                rounded-2xl p-5 sm:p-7 md:rounded-3xl md:p-8
                 bg-[#fcfdfc] border border-[#dce9e1]
                 shadow-md
                 transition-all duration-500 ease-out
@@ -90,13 +90,13 @@ export default function PricingSection() {
               <div className="relative z-10">
 
                 {/* Title */}
-                <h3 className="mb-4 text-xl font-bold text-[#014421] sm:mb-5 sm:text-2xl">
+                <h3 className="mb-4 text-xl font-bold leading-tight text-[#014421] sm:mb-5 sm:text-2xl">
                   {plan.name}
                 </h3>
 
                 {/* Price */}
                 <div className="mb-4 sm:mb-7">
-                  <span className="account-plan-price inline-block text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                  <span className="account-plan-price inline-block text-3xl font-extrabold leading-none text-gray-900 sm:text-4xl">
                     {plan.price}
                   </span>
                   <div className="mt-1 text-sm text-gray-500">

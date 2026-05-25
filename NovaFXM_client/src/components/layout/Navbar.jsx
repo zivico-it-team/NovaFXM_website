@@ -168,10 +168,10 @@ export default function Navbar() {
                     : "px-1 hover:bg-white/70 hover:px-4 hover:text-green-700"
                 }`}
                 onClick={() => {
-                  if (item === "Home") {
-                    goHome();
-                    return;
-                  }
+                  // if (item === "Home") {
+                  //   goHome();
+                  //   return;
+                  // }
                   setHoveredMenu((prev) => (prev === item ? null : item));
                 }}
               >
@@ -280,13 +280,7 @@ export default function Navbar() {
                     <button
                       type="button"
                       className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-green-50 active:bg-green-100"
-                      onClick={() => {
-                        if (item === "Home") {
-                          goHome();
-                          return;
-                        }
-                        toggleMobileDropdown(item);
-                      }}
+                      onClick={() => toggleMobileDropdown(item)}
                     >
                       <span className="font-medium text-gray-700 hover:text-green-600 active:text-green-700 transition-colors">
                         {item}

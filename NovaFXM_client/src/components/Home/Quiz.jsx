@@ -39,18 +39,18 @@ export default function FAQ() {
   };
 
   return (
-    <section className="reveal-section flex justify-center bg-white px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
+    <section className="reveal-section flex justify-center bg-white px-4 py-10 sm:px-6 sm:py-8 md:py-10 lg:px-8">
       <div className="w-full max-w-4xl">
         
         {/* Heading */}
-        <h2 className="mb-5 text-center text-xl font-semibold sm:mb-6 sm:text-2xl md:text-3xl">
+        <h2 className="mb-6 text-center text-xl font-semibold leading-tight sm:mb-6 sm:text-2xl md:text-3xl">
           Find <span className="text-[#014421]">Answers</span> to Common Questions
         </h2>
 
         {/* FAQ */}
         <div className="space-y-3 sm:space-y-5">
           {faqData.map((item) => (
-            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-3 sm:p-4">
+            <div key={item.id} className="interactive-card rounded-xl border-b border-gray-300 bg-white/40 p-4 sm:p-4">
               
               {/* FIXED ROW */}
               <div
@@ -66,7 +66,7 @@ export default function FAQ() {
                 {/* Question + Arrow */}
                 <div className="flex flex-1 items-center justify-between gap-3">
                   
-                  <h3 className="text-left text-sm font-semibold text-gray-800 sm:text-base">
+                  <h3 className="text-left text-sm font-semibold leading-snug text-gray-800 sm:text-base">
                     {item.question}
                   </h3>
 
@@ -91,7 +91,7 @@ export default function FAQ() {
 
               {/* Answer */}
               {openId === item.id && (
-                <p className="ml-9 mt-3 text-left text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-sm">
+                <p className="ml-0 mt-3 text-justify text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-left sm:text-sm">
                   {item.answer}
                 </p>
               )}
