@@ -35,27 +35,27 @@ const reviews = [
 
 const ReviewCard = ({ name, role, image, text, index }) => (
   <div
-    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px] md:rounded-2xl md:p-6"
+    className="review-card-animate relative flex min-h-[360px] w-[calc(100vw-2rem)] max-w-[300px] flex-shrink-0 flex-col justify-between overflow-hidden rounded-[22px] border-2 border-[#D4AF37] bg-[#111312] px-8 py-9 shadow-[0_24px_60px_rgba(0,0,0,0.42)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(212,175,55,0.18)] sm:w-[320px] sm:max-w-[320px] md:min-h-[410px] md:w-[340px] md:max-w-[340px] md:px-9 md:py-10"
     style={{ animationDelay: `${(index % reviews.length) * 0.18}s` }}
   >
-    <span className="review-gold-border pointer-events-none absolute inset-0 rounded-xl md:rounded-2xl"></span>
+    <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(255,255,255,0.045),transparent_48%)]"></span>
 
-    <div className="mb-3 text-sm text-[#D4AF37]">★★★★★</div>
+    <div className="relative mb-8 text-2xl leading-none text-[#f3cf64]">★★★★★</div>
 
-    <p className="mb-4 text-justify text-xs leading-6 text-gray-700 sm:text-sm">
+    <p className="relative mb-4 text-left text-base leading-8 text-white sm:text-lg sm:leading-9">
       {text}
     </p>
 
-    <div className="flex items-center gap-2 sm:gap-3">
+    <div className="relative mt-10 flex items-center gap-4">
       <img
         src={image}
         alt={name}
-        className="h-8 w-8 rounded-full object-cover sm:h-9 sm:w-9"
+        className="h-16 w-16 rounded-full border-2 border-[#D4AF37] object-cover p-1"
       />
 
       <div>
-        <h4 className="text-sm font-semibold text-green-700">{name}</h4>
-        <p className="text-xs text-gray-500">{role}</p>
+        <h4 className="text-xl font-semibold leading-tight text-[#6fba63]">{name}</h4>
+        <p className="text-base leading-tight text-white/60">{role}</p>
       </div>
     </div>
   </div>
@@ -89,27 +89,29 @@ const StatBox = ({ icon: Icon, value, title, desc }) => (
     </div>
 
     <h3 className="text-xl font-bold md:text-2xl">{value}</h3>
-    <p className="text-sm font-bold text-gray-600">{title}</p>
-    <p className="mt-2 text-justify text-xs text-gray-500 sm:text-center">{desc}</p>
+    <p className="text-base font-bold text-gray-600">{title}</p>
+    <p className="mt-2 text-center text-base text-gray-500 sm:text-center">{desc}</p>
   </div>
 );
 
 export default function Review() {
   return (
-    <section className="reveal-section bg-white px-4 py-10 sm:px-6 sm:py-8 md:py-12 lg:px-8">
-      <h2 className="mb-6 text-center text-xl font-bold leading-tight sm:mb-7 sm:text-2xl md:mb-9 md:text-3xl">
-        Traders Experience With Us
-      </h2>
+    <section className="reveal-section bg-white">
+      <div className="bg-[#111312] px-4 py-10  rounded-3xl sm:px-6 sm:py-12 md:py-16 lg:px-8">
+        <h2 className="mb-8 text-center text-xl font-bold leading-tight text-white sm:text-2xl md:mb-10 md:text-3xl">
+          Traders Experience With Us
+        </h2>
 
-      <div className="mx-auto max-w-7xl overflow-hidden">
-        <div className="flex w-max animate-scroll gap-4 sm:gap-5 md:gap-8">
-          {[...reviews, ...reviews].map((review, index) => (
-            <ReviewCard key={index} index={index} {...review} />
-          ))}
+        <div className="mx-auto max-w-7xl overflow-hidden py-3">
+          <div className="flex w-max animate-scroll gap-6 sm:gap-8 md:gap-10">
+            {[...reviews, ...reviews].map((review, index) => (
+              <ReviewCard key={index} index={index} {...review} />
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="mt-6 text-center sm:mt-10 md:mt-14">
+      <div className="px-4 py-8 text-center sm:px-6 sm:py-10 md:py-14 lg:px-8">
         <h2 className="mb-5 text-xl font-bold leading-tight sm:mb-7 md:mb-9 md:text-2xl">
           Built on Trust & Performance
         </h2>
@@ -153,22 +155,6 @@ export default function Review() {
             animation-play-state: paused;
           }
 
-          @keyframes goldBorderGlow {
-            0%, 100% {
-              opacity: 0.55;
-              box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
-            }
-            50% {
-              opacity: 1;
-              box-shadow:
-                inset 0 0 0 2px rgba(212, 175, 55, 0.95),
-                0 0 22px rgba(212, 175, 55, 0.24);
-            }
-          }
-
-          .review-gold-border {
-            animation: goldBorderGlow 2.8s ease-in-out infinite;
-          }
         `}
       </style>
     </section>

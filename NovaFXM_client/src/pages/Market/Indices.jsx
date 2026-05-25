@@ -375,9 +375,9 @@ const IndicesPage = () => {
               <span className="text-[#014421]">Index Price</span>
             </h2>
 
-            <div className="mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421]"></div>
+            <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421] sm:mx-0"></div>
 
-            <p className="text-sm leading-7 text-gray-500">
+            <p className="text-center text-sm leading-7 text-gray-500 sm:text-left">
               Several factors influence index prices including economic data,
               political events, corporate announcements and industry trends.
             </p>

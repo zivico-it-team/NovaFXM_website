@@ -202,7 +202,7 @@ function AboutSection() {
             Your Trusted Forex Trading Partner
           </h2>
           <h3 className="mt-2 text-2xl font-bold text-[#014421] sm:mt-3 sm:text-3xl">NOVAFXM</h3>
-          <p className="mt-4 text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base lg:leading-8">
+          <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-left sm:text-base lg:leading-8">
             At NOVAFXM, we specialize in providing an exceptional Forex trading
             experience. Our platform offers access to major, minor and exotic
             currency pairs with deep liquidity, competitive spreads and
@@ -398,7 +398,7 @@ function SecuritySection() {
             <h2 className="mt-2 text-2xl font-bold leading-tight text-[#D4AF37] sm:text-3xl">
               Security & Compliance
             </h2>
-            <p className="mt-5 max-w-4xl text-sm leading-7 text-white sm:text-base">
+            <p className="mt-5 max-w-4xl text-justify text-sm leading-7 text-white sm:text-left sm:text-base">
             NOVAFXM is committed to the highest standards of financial security
             and regulatory compliance. We follow strict anti-money laundering
             (AML) policies and implement robust Know Your Customer (KYC)

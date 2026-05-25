@@ -2,16 +2,30 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
+  let letterIndex = 0;
+
   return (
     <span className={`letter-reveal ${className}`} aria-hidden="true">
-      {Array.from(text).map((character, index) => (
-        <span
-          key={`${character}-${index}`}
-          className="letter-reveal-char"
-          style={{ "--letter-delay": `${delay + index * step}s` }}
-        >
-          {character === " " ? "\u00A0" : character}
-        </span>
+      {text.split(" ").map((word, wordIndex, words) => (
+        <React.Fragment key={`${word}-${wordIndex}`}>
+          <span className="inline-block whitespace-nowrap">
+            {Array.from(word).map((character) => {
+              const currentIndex = letterIndex;
+              letterIndex += 1;
+
+              return (
+                <span
+                  key={`${character}-${currentIndex}`}
+                  className="letter-reveal-char"
+                  style={{ "--letter-delay": `${delay + currentIndex * step}s` }}
+                >
+                  {character}
+                </span>
+              );
+            })}
+          </span>
+          {wordIndex < words.length - 1 ? " " : null}
+        </React.Fragment>
       ))}
     </span>
   );
@@ -108,7 +122,7 @@ export default function Hero() {
           />
         </p>
         <p
-          className="mx-auto mt-3 max-w-[19rem] px-1 text-sm leading-6 text-justify text-gray-500 sm:hidden"
+          className="mx-auto mt-3 w-full max-w-sm px-3 text-center text-[0.95rem] leading-7 text-gray-500 sm:hidden"
           aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
         >
           <LetterReveal

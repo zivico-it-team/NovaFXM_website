@@ -75,7 +75,7 @@ export default function IntroducingBrokers() {
     <div className="w-full bg-[#f7f8fc] overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]">
+      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden bg-black px-4 py-10 sm:min-h-[560px] sm:px-6 lg:min-h-[600px]">
         <img
           src={heroBg}
           alt="Introducing Brokers Hero"
@@ -108,11 +108,11 @@ export default function IntroducingBrokers() {
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
-      <section className="py-24 px-6 md:px-16">
+      <section className="px-6 py-10 sm:py-12 md:px-16">
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
 
             {/* Left Side */}
             <div>
@@ -125,9 +125,9 @@ export default function IntroducingBrokers() {
                 Refer Traders & Build Passive Income
               </h2>
 
-              <div className="w-24 h-1 bg-[#D4AF37] rounded-full mt-6 mb-8"></div>
+              <div className="mt-4 mb-5 h-1 w-24 rounded-full bg-[#D4AF37]"></div>
 
-              <p className="text-gray-600 text-justify font-regular text-base leading-relaxed mb-6">
+              <p className="mb-4 text-justify font-regular text-base leading-relaxed text-gray-600">
                 Join the NOVAFXM Introducing Broker program and unlock
                 unlimited earning opportunities by referring traders
                 to our trusted platform.
@@ -144,12 +144,12 @@ export default function IntroducingBrokers() {
             </div>
 
             {/* ================= CREATIVE FEATURES SECTION ================= */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
 
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-[32px] bg-white border border-[#014421]/10 p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                  className="group relative overflow-hidden rounded-[32px] border border-[#014421]/10 bg-white p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
                 >
 
                   {/* Background Glow */}
@@ -158,12 +158,12 @@ export default function IntroducingBrokers() {
                   
 
                   {/* Title */}
-                  <h3 className="text-2xl font-semibold text-[#014421] mb-4 group-hover:text-[#012a15] transition duration-300">
+                  <h3 className="mb-3 text-2xl font-semibold text-[#014421] transition duration-300 group-hover:text-[#012a15]">
                     {feature.title}
                   </h3>
 
                   {/* Divider */}
-                  <div className="relative w-full h-[2px] bg-gray-100 mb-6 overflow-hidden">
+                  <div className="relative mb-4 h-[2px] w-full overflow-hidden bg-gray-100">
 
                     <div className="absolute left-0 top-0 h-full w-20 bg-[#D4AF37] group-hover:w-full transition-all duration-500"></div>
 
@@ -187,12 +187,12 @@ export default function IntroducingBrokers() {
       </section>
 
    {/* ================= PROCESS SECTION ================= */}
-<section className="py-10 px-4 bg-white">
+<section className="bg-white px-4 py-8 sm:py-10">
   <div className="mx-auto max-w-7xl">
 
     {/* Heading */}
-    <div className="text-center mb-16">
-      <p className="uppercase tracking-[4px] text-[#D4AF37] font-semibold mb-4">
+    <div className="mb-8 text-center sm:mb-10">
+      <p className="mb-3 font-semibold uppercase tracking-[4px] text-[#D4AF37]">
         Partnership Process
       </p>
 
@@ -200,7 +200,7 @@ export default function IntroducingBrokers() {
         Start Earning in 3 Steps
       </h2>
 
-      <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full mt-6"></div>
+      <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-[#D4AF37]"></div>
     </div>
 
     {/* HORIZONTAL SLIDES */}
@@ -212,7 +212,7 @@ export default function IntroducingBrokers() {
       {steps.map((step, index) => (
         <article
           key={step.number}
-          className={`group relative min-h-[290px] min-w-full overflow-hidden bg-[#04100b] transition-all duration-500 ${
+          className={`group relative min-h-[250px] min-w-full overflow-hidden bg-[#04100b] transition-all duration-500 ${
             activeStep === index ? "shadow-[#014421]/25" : "opacity-95"
           }`}
         >
@@ -222,8 +222,8 @@ export default function IntroducingBrokers() {
             className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 md:w-[58%]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#012414] via-[#014421]/95 to-[#014421]/20"></div>
-          <div className="relative z-10 flex min-h-[260px] flex-col justify-center px-6 py-8 text-white sm:px-10 lg:px-14">
-            <div className="flex max-w-3xl flex-col gap-5 md:max-w-xl">
+          <div className="relative z-10 flex min-h-[230px] flex-col justify-center px-6 py-6 text-white sm:px-10 lg:px-14">
+            <div className="flex max-w-3xl flex-col gap-4 md:max-w-xl">
               <div className="flex items-center gap-5">
                 <span className="flex h-14 min-w-20 items-center justify-center rounded-l-[18px] rounded-r-sm bg-[#D4AF37] px-5 text-3xl font-black text-black">
                   {step.number}
@@ -254,7 +254,7 @@ export default function IntroducingBrokers() {
       </div>
     </div>
 
-    <div className="mx-auto mt-6 flex w-fit items-center gap-8 rounded-full bg-[#f7f8fc] px-6 py-3 shadow-sm">
+    <div className="mx-auto mt-4 flex w-fit items-center gap-8 rounded-full bg-[#f7f8fc] px-6 py-3 shadow-sm">
       <button
         type="button"
         onClick={goToPreviousStep}

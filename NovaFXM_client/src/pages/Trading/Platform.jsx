@@ -54,7 +54,7 @@ export default function TradingPage() {
     <div className="w-full bg-white overflow-hidden">
       {/* ================= HERO SECTION ================= */}
 
-      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
+      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
         <div className="absolute inset-0">
           <img
             src={heroBg5}
@@ -101,7 +101,7 @@ export default function TradingPage() {
 
       <section
         id="platform-overview"
-        className="px-6 py-12 bg-[#f8f8f8] md:px-8 md:py-20"
+        className="bg-[#f8f8f8] px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 items-center md:grid-cols-2 md:gap-12">
           {/* LEFT CONTENT */}
@@ -121,7 +121,7 @@ export default function TradingPage() {
 
             <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
 
-            <p className="mt-4 text-left text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-lg md:text-justify">
+            <p className="mt-4 text-justify text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-left sm:text-lg md:text-justify">
               <span className="font-bold  text-black">NOVAFXM</span> is your
               gateway to mastering the financial markets. Whether you're an
               experienced trader or just starting your journey, our
@@ -145,7 +145,7 @@ export default function TradingPage() {
                     <span className="text-[#014421] text-lg">✓</span>
                   </div>
 
-                  <p className="text-gray-700 font-medium">
+                  <p className="text-left font-medium text-gray-700">
                     {item}
                   </p>
                 </div>
@@ -155,11 +155,11 @@ export default function TradingPage() {
 
           {/* RIGHT IMAGE */}
 
-          <div className="relative flex min-h-[65svh] items-center justify-center md:min-h-0">
+          <div className="relative flex min-h-[32svh] items-center justify-center sm:min-h-[46svh] md:min-h-0">
             <img
               src={heroBg6}
               alt="Trading"
-              className="relative z-10 w-full max-w-[500px] md:w-[500px] md:max-w-none"
+              className="relative z-10 w-full max-w-[360px] sm:max-w-[500px] md:w-[500px] md:max-w-none"
             />
           </div>
         </div>
@@ -167,11 +167,11 @@ export default function TradingPage() {
 
       {/* ================= THIRD SECTION ================= */}
 
-      <section className="w-full bg-[#efefe7] py-20 px-6">
+      <section className="w-full bg-[#efefe7] px-4 py-10 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
 
-          <div className="text-center mb-14">
+          <div className="mb-9 text-center sm:mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
               Why NOVAFXM is Your Perfect Trading Partner?
             </h2>
@@ -189,7 +189,7 @@ export default function TradingPage() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex h-full flex-col bg-white rounded-2xl border-b-4 border-[#014421] p-8 transition duration-300 hover:-translate-y-1"
+                className="flex h-full flex-col rounded-2xl border-b-4 border-[#014421] bg-white p-5 transition duration-300 hover:-translate-y-1 sm:p-8"
               >
                 {/* Header */}
 
@@ -213,7 +213,7 @@ export default function TradingPage() {
 
                 {/* Description */}
 
-                <p className="mb-3 min-h-[72px] text-gray-600 leading-relaxed text-sm">
+                <p className="mb-3 min-h-[72px] text-justify text-sm leading-relaxed text-gray-600 sm:text-left">
                   {card.description}
                 </p>
 
@@ -236,7 +236,7 @@ export default function TradingPage() {
                         }`}
                       />
 
-                      <p className="text-gray-700   text-sm  ">
+                      <p className="text-justify text-sm text-gray-700 sm:text-left">
                         {point}
                       </p>
                     </div>
@@ -249,7 +249,7 @@ export default function TradingPage() {
           {/* Bottom Text */}
 
           <div className="text-center mt-14">
-            <p className="text-xl md:text-2xl font-medium text-[#1f1f1f] leading-relaxed">
+            <p className="text-base md:text-xl font-medium text-[#1f1f1f] leading-relaxed">
               NOVAFXM is where innovation meets precision helping you thrive in
               the{" "}
               <span className="text-[#D4AF37] font-semibold">

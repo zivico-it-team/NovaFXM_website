@@ -74,7 +74,7 @@ export default function AutomatedTradingPage() {
             Revolutionizing the Way You Trade
           </h2>
 
-          <p className="mx-auto mt-4 max-w-5xl text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base md:text-lg md:leading-8">
+          <p className="mx-auto mt-4 max-w-5xl text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-center sm:text-base md:text-lg md:leading-8">
             Automated trading, also known as algorithmic trading is transforming the financial markets by leveraging the power of technology to execute trades with precision and speed. This innovative approach eliminates the emotional biases of manual trading and enables traders to capitalize on  opportunities across global markets, even while they sleep.
           </p>
         </div>
