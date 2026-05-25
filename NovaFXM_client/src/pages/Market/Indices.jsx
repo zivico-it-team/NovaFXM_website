@@ -377,7 +377,7 @@ const IndicesPage = () => {
 
             <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421] sm:mx-0"></div>
 
-            <p className="text-center text-sm leading-7 text-gray-500 sm:text-left">
+            <p className="text-center text-sm leading-7 text-gray-500 sm:text-justify">
               Several factors influence index prices including economic data,
               political events, corporate announcements and industry trends.
             </p>
