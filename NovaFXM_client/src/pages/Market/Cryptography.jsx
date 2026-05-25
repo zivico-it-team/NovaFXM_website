@@ -237,18 +237,18 @@ const CryptocurrencyPage = () => {
           {factors.map((factor, index) => (
             <div
               key={index}
-              className="flex min-h-[300px] flex-col rounded-3xl border-b-4 border-[#D4AF37] bg-white px-6 py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(index % 3) + 1} relative flex min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-6 py-7 shadow-lg transition-all duration-300 md:border-b-[5px]`}
             >
               {/* Icon */}
-              <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-yellow-100 rounded-full shrink-0">
+              <div className="account-plan-icon relative z-10 mx-auto mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white">
                 {factor.icon}
               </div>
               {/* Title */}
-              <h3 className="mb-5 flex min-h-[52px] items-center justify-center px-2 text-center text-xl font-bold leading-tight text-gray-800">
+              <h3 className="relative z-10 mb-5 flex min-h-[52px] items-center justify-center px-2 text-center text-xl font-bold leading-tight text-[#014421]">
                 {factor.title}
               </h3>
               {/* Description */}
-              <p className="px-2 text-sm leading-7 text-center text-gray-600">
+              <p className="relative z-10 px-2 text-sm leading-7 text-center text-gray-600">
                 {factor.description}
               </p>
             </div>

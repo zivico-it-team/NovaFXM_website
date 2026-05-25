@@ -237,20 +237,20 @@ function FeatureGrid() {
         Why Trade Forex with <span className="text-[#014421]">NOVAFXM</span>
       </SectionTitle>
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-        {features.map((item) => {
+        {features.map((item, index) => {
           const Icon = item.icon;
           return (
           <div
             key={item.title}
-            className={`group flex h-full min-h-[170px] flex-col items-center rounded-xl border-b-[4px] border-[#014421] bg-white px-4 py-5 text-center shadow-md sm:min-h-[185px] md:border-b-[5px] lg:min-h-[195px] lg:px-5 ${cardAnimation}`}
+            className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(index % 3) + 1} relative flex h-full min-h-[170px] flex-col items-center overflow-hidden rounded-xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-4 py-5 text-center shadow-md sm:min-h-[185px] md:border-b-[5px] lg:min-h-[195px] lg:px-5`}
           >
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-13 sm:w-13">
+            <div className="account-plan-icon relative z-10 mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-13 sm:w-13">
               <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.2} />
             </div>
-            <h3 className="text-sm font-bold leading-snug text-gray-800 sm:text-base lg:text-lg">
+            <h3 className="relative z-10 text-sm font-bold leading-snug text-gray-800 sm:text-base lg:text-lg">
               {item.title}
             </h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500">
+            <p className="relative z-10 mt-2 text-sm leading-6 text-gray-500">
               {item.desc}
             </p>
           </div>
@@ -333,25 +333,25 @@ function FundingSection() {
       </div>
 
       <div className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-        {fundingMethods.map((method) => {
+        {fundingMethods.map((method, index) => {
           const Icon = method.icon;
 
           return (
           <div
             key={method.name}
-            className={`flex min-h-[170px] flex-col items-center justify-start rounded-2xl border border-gray-100 border-b-4 border-b-[#014421] bg-white px-4 py-5 text-center shadow-md sm:min-h-[195px] sm:px-5 lg:min-h-[205px] ${cardAnimation}`}
+            className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(index % 3) + 1} relative flex min-h-[170px] flex-col items-center justify-start overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-white px-4 py-5 text-center shadow-md sm:min-h-[195px] sm:px-5 lg:min-h-[205px]`}
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-14 sm:w-14">
+            <div className="account-plan-icon relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-14 sm:w-14">
               <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.3} />
             </div>
 
-            <h3 className="mt-3 flex min-h-[42px] items-center justify-center text-sm font-bold leading-snug text-slate-900 sm:min-h-[48px] sm:text-base lg:text-lg">
+            <h3 className="relative z-10 mt-3 flex min-h-[42px] items-center justify-center text-sm font-bold leading-snug text-slate-900 sm:min-h-[48px] sm:text-base lg:text-lg">
               {method.name}
             </h3>
 
-            <div className="mt-2 h-[3px] w-9 rounded-full bg-[#D4AF37]" />
+            <div className="relative z-10 mt-2 h-[3px] w-9 rounded-full bg-[#D4AF37]" />
 
-            <p className="mt-3 text-sm leading-6 text-slate-600">
+            <p className="relative z-10 mt-3 text-sm leading-6 text-slate-600">
               {method.desc}
             </p>
           </div>

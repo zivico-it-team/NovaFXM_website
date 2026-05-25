@@ -238,17 +238,17 @@ const IndicesPage = () => {
           {indices.map((item, index) => (
             <div
               key={index}
-              className="w-full rounded-2xl border-b-[4px] border-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5"
+              className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(index % 3) + 1} relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition duration-300 md:border-b-[5px] lg:p-5`}
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] sm:h-16 sm:w-16">
+              <div className="account-plan-icon relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] sm:h-16 sm:w-16">
                 <Star className="fill-[#014421] text-[#014421]" size={28} />
               </div>
 
-              <h3 className="text-lg font-bold leading-snug text-gray-800">
+              <h3 className="relative z-10 text-lg font-bold leading-snug text-gray-800">
                 {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-gray-500">
+              <p className="relative z-10 mt-3 text-sm leading-6 text-gray-500">
                 {item.desc}
               </p>
             </div>
@@ -321,17 +321,17 @@ const IndicesPage = () => {
           {middleCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-2xl border-b-[4px] border-[#014421] bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] lg:p-8"
+              className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(index % 3) + 1} relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-6 text-center shadow-md transition duration-300 md:rounded-3xl md:border-b-[6px] lg:p-8`}
             >
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
+              <div className="account-plan-icon relative z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
                 {card.icon}
               </div>
 
-              <h3 className="mt-6 text-xl font-bold text-gray-800">
+              <h3 className="relative z-10 mt-6 text-xl font-bold text-gray-800">
                 {card.title}
               </h3>
 
-              <p className="text-sm leading-7 text-gray-600">
+              <p className="relative z-10 text-sm leading-7 text-gray-600">
                 {card.desc}
               </p>
             </div>

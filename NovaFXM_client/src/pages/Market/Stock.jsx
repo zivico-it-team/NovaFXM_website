@@ -154,13 +154,13 @@ const Stock = () => {
             
             <div
               key={i}
-              className="relative min-h-[195px] overflow-hidden rounded-2xl border-b-4 border-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[210px] sm:rounded-3xl sm:px-6 sm:py-6"
+              className={`account-plan-card crypto-green-border reveal-up reveal-delay-${(i % 3) + 1} relative min-h-[195px] overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 sm:min-h-[210px] sm:rounded-3xl sm:px-6 sm:py-6`}
             >
               
-              <div className="flex flex-col items-center text-center">
+              <div className="relative z-10 flex flex-col items-center text-center">
                 
                 {/* Icon */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] sm:h-16 sm:w-16">
+                <div className="account-plan-icon flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] sm:h-16 sm:w-16">
                   {React.createElement(exchangeIcons[i], {
                     className: "h-6 w-6 sm:h-7 sm:w-7",
                     strokeWidth: 2.4,
@@ -182,7 +182,7 @@ const Stock = () => {
               </div>
 
               {/* Dots */}
-              <div className="absolute bottom-5 left-5 grid grid-cols-3 gap-2">
+              <div className="absolute bottom-5 left-5 z-10 grid grid-cols-3 gap-2">
                 {Array.from({ length: 9 }).map((_, dotIndex) => (
                   <span
                     key={dotIndex}

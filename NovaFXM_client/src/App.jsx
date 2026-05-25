@@ -13,6 +13,7 @@ import Hero from "./components/Home/Hero";
 import AboutUs from "./components/Home/AboutUs";
 import Methords from "./components/Home/Methords";
 import Packeges from "./components/Home/Packeges";
+import Account from "./components/Home/Accoun";
 import Review from "./components/Home/Review";
 import Quiz from "./components/Home/Quiz";
 
@@ -83,6 +84,7 @@ function HomePage() {
       <Hero />
       <AboutUs />
       <Methords />
+      <Account />
       <Packeges />
       <Review />
       <Quiz />

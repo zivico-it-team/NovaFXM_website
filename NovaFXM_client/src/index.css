@@ -175,9 +175,16 @@ button {
 }
 
 .account-plan-card {
+  --account-border-color: #d4af37;
+  --account-border-rgb: 212 175 55;
   isolation: isolate;
   transform-origin: center;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.account-plan-card.crypto-green-border {
+  --account-border-color: #014421;
+  --account-border-rgb: 1 68 33;
 }
 
 .account-plan-card::before {
@@ -186,7 +193,7 @@ button {
   inset: 0;
   z-index: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, transparent 20%, #d4af37, transparent 80%);
+  background: linear-gradient(120deg, transparent 20%, var(--account-border-color), transparent 80%);
   background-size: 220% 220%;
   opacity: 0;
   padding: 1px;
@@ -204,7 +211,7 @@ button {
   inset: 0;
   z-index: 0;
   border-radius: inherit;
-  background: linear-gradient(115deg, transparent 0%, rgb(212 175 55 / 0.08) 42%, rgb(255 255 255 / 0.5) 50%, transparent 62%);
+  background: linear-gradient(115deg, transparent 0%, rgb(var(--account-border-rgb) / 0.08) 42%, rgb(255 255 255 / 0.5) 50%, transparent 62%);
   opacity: 0;
   pointer-events: none;
   transform: translateX(-80%);
@@ -224,6 +231,10 @@ button {
   transform: translateY(-10px) scale(1.015);
   border-color: transparent;
   box-shadow: 0 24px 45px rgb(1 68 33 / 0.12);
+}
+
+.account-plan-card.crypto-green-border:hover {
+  border-bottom-color: #014421;
 }
 
 .account-plan-icon {

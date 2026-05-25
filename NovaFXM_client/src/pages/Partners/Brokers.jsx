@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import heroBg from "../../assets/images/bro.png";
 import {
+  ChevronLeft,
   ChevronRight,
   ArrowUp,
   CheckCircle2,
@@ -41,20 +42,34 @@ export default function IntroducingBrokers() {
       title: "Register Your Account",
       description:
         "Create your Introducing Broker account and receive your personal referral link instantly.",
+      action: "Get Started",
+      image: heroBg,
     },
     {
       number: "02",
       title: "Invite New Traders",
       description:
         "Share your referral link with traders and grow your client network worldwide.",
+      action: "Verify Now",
+      image: "/Stock2.jpeg",
     },
     {
       number: "03",
       title: "Earn Commissions",
       description:
         "Receive commissions automatically whenever your referred clients trade.",
+      action: "Start Now",
+      image: "/Deposits5.png",
     },
   ];
+
+  const goToPreviousStep = () => {
+    setActiveStep((current) => (current === 0 ? steps.length - 1 : current - 1));
+  };
+
+  const goToNextStep = () => {
+    setActiveStep((current) => (current + 1) % steps.length);
+  };
 
   return (
     <div className="w-full bg-[#f7f8fc] overflow-hidden">
@@ -143,7 +158,7 @@ export default function IntroducingBrokers() {
                   
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-[#014421] mb-4 group-hover:text-[#012a15] transition duration-300">
+                  <h3 className="text-2xl font-semibold text-[#014421] mb-4 group-hover:text-[#012a15] transition duration-300">
                     {feature.title}
                   </h3>
 
@@ -155,7 +170,7 @@ export default function IntroducingBrokers() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 font-regular leading-relaxed text-lg">
                     {feature.description}
                   </p>
 
@@ -173,7 +188,7 @@ export default function IntroducingBrokers() {
 
    {/* ================= PROCESS SECTION ================= */}
 <section className="py-10 px-4 bg-white">
-  <div className="max-w-4xl mx-auto">
+  <div className="mx-auto max-w-7xl">
 
     {/* Heading */}
     <div className="text-center mb-16">
@@ -188,24 +203,91 @@ export default function IntroducingBrokers() {
       <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full mt-6"></div>
     </div>
 
-    {/* CARD */}
-    <div className="relative bg-gradient-to-r from-[#014421] to-[#022d16] text-white rounded-[40px] p-8 md:p-10 shadow-2xl overflow-hidden">
+    {/* HORIZONTAL SLIDES */}
+    <div className="overflow-hidden border-y-2 border-[#D4AF37] bg-[#04100b] shadow-2xl">
+      <div
+        className="flex transition-transform duration-700 ease-out"
+        style={{ transform: `translateX(-${activeStep * 100}%)` }}
+      >
+      {steps.map((step, index) => (
+        <article
+          key={step.number}
+          className={`group relative min-h-[290px] min-w-full overflow-hidden bg-[#04100b] transition-all duration-500 ${
+            activeStep === index ? "shadow-[#014421]/25" : "opacity-95"
+          }`}
+        >
+          <img
+            src={step.image}
+            alt={step.title}
+            className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 md:w-[58%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#012414] via-[#014421]/95 to-[#014421]/20"></div>
+          <div className="relative z-10 flex min-h-[260px] flex-col justify-center px-6 py-8 text-white sm:px-10 lg:px-14">
+            <div className="flex max-w-3xl flex-col gap-5 md:max-w-xl">
+              <div className="flex items-center gap-5">
+                <span className="flex h-14 min-w-20 items-center justify-center rounded-l-[18px] rounded-r-sm bg-[#D4AF37] px-5 text-3xl font-black text-black">
+                  {step.number}
+                </span>
+                <h3 className="text-3xl font-bold leading-tight text-[#f8d27a] md:text-4xl">
+                  {step.title}
+                </h3>
+              </div>
 
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+              <p className="max-w-lg text-lg font-regular leading-8 text-white md:text-xl">
+                {step.description}
+              </p>
+            <a href="/signup">
+              <button
+                type="button"
+                // className="w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-lg font-bold text-black transition hover:bg-[#c9a432]"
+                className="button-shine w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-lg font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37]/80 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 "
+              >
+                {step.action}
+              </button>
+            </a>
+            </div>
+          </div>
+        </article>
+      ))}
 
-      <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-black flex items-center justify-center text-sm font-bold mb-6">
-        {steps[activeStep].number}
+      </div>
+    </div>
+
+    <div className="mx-auto mt-6 flex w-fit items-center gap-8 rounded-full bg-[#f7f8fc] px-6 py-3 shadow-sm">
+      <button
+        type="button"
+        onClick={goToPreviousStep}
+        aria-label="Previous step"
+        className="text-[#014421] transition hover:text-[#D4AF37]"
+      >
+        <ChevronLeft size={28} strokeWidth={3} />
+      </button>
+
+      <div className="flex gap-3">
+        {steps.map((step, index) => (
+          <button
+            key={step.number}
+            type="button"
+            aria-label={`Show step ${index + 1}`}
+            onClick={() => setActiveStep(index)}
+            className={`h-4 w-4 rounded-full transition ${
+              activeStep === index ? "bg-[#014421]" : "bg-[#014421]/25"
+            }`}
+          />
+        ))}
       </div>
 
-      <h2 className="text-xl md:text-3xl font-bold mb-2">
-        {steps[activeStep].title}
-      </h2>
+      <button
+        type="button"
+        onClick={goToNextStep}
+        aria-label="Next step"
+        className="text-[#014421] transition hover:text-[#D4AF37]"
+      >
+        <ChevronRight size={28} strokeWidth={3} />
+      </button>
+    </div>
 
-      <p className="text-white/85 text-sm md:text-base leading-relaxed max-w-2xl">
-        {steps[activeStep].description}
-      </p>
-
-      <div className="mt-10 flex justify-between items-center">
+    {false && (<>
 
         <span className="text-[#D4AF37] text-sm md:text-base font-semibold">
           Step {activeStep + 1} of {steps.length}
@@ -236,9 +318,8 @@ export default function IntroducingBrokers() {
           )}
 
         </div>
-      </div>
+    </>)}
 
-    </div>
   </div>
 </section>
 

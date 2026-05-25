@@ -139,9 +139,7 @@ export default function Navbar() {
         {/* ── Logo ──────────────────────────────────────────────────────────── */}
         <button
           type="button"
-          className={`flex items-center transition-all duration-500 ${
-            isScrolled ? "rounded-full bg-gray-100 px-3 py-2 shadow-sm" : ""
-          }`}
+          className="flex items-center transition-all duration-500"
           onClick={goHome}
         >
           <img

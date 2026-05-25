@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const faqData = [
   {
@@ -31,13 +32,14 @@ const faqData = [
 
 export default function FAQ() {
   const [openId, setOpenId] = useState(1);
+  const navigate = useNavigate();
 
   const toggle = (id) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <section className="reveal-section flex justify-center bg-gray-100 px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
+    <section className="reveal-section flex justify-center bg-white px-4 py-6 sm:px-6 sm:py-8 md:py-10 lg:px-8">
       <div className="w-full max-w-4xl">
         
         {/* Heading */}
@@ -95,6 +97,16 @@ export default function FAQ() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <button
+            type="button"
+            onClick={() => navigate("/faq")}
+            className="button-shine w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
+          >
+            Read More
+          </button>
         </div>
 
       </div>

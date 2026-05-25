@@ -204,11 +204,11 @@ export default function CommoditiesSection() {
 
             <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:gap-6 md:grid-cols-3">
               {/* Card 1 - Diversification */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
-                <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
+                <div className="account-plan-icon commodity-icon-animate relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                   <FaChartPie className="text-2xl md:text-3xl" />
                 </div>
-                <div>
+                <div className="relative z-10">
                   <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">
                     Diversification
                   </h3>
@@ -219,11 +219,11 @@ export default function CommoditiesSection() {
               </div>
 
               {/* Card 2 - Hedging */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '150ms' }}>
-                <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '150ms' }}>
+                <div className="account-plan-icon commodity-icon-animate relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                   <FaShieldAlt className="text-2xl md:text-3xl" />
                 </div>
-                <div>
+                <div className="relative z-10">
                   <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">
                     Hedging
                   </h3>
@@ -234,11 +234,11 @@ export default function CommoditiesSection() {
               </div>
 
               {/* Card 3 - Market Dynamics */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-                <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.whyTrade ? 'animate-slide-up' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+                <div className="account-plan-icon commodity-icon-animate relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                   <BiTrendingUp className="text-2xl md:text-3xl" />
                 </div>
-                <div>
+                <div className="relative z-10">
                   <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">
                     Market Dynamics
                   </h3>
@@ -258,9 +258,9 @@ export default function CommoditiesSection() {
 
             <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:gap-6 md:grid-cols-3">
               {/* Card 1 - Spot Market */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
-                <div className="flex h-full flex-col items-center">
-                  <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '0ms' }}>
+                <div className="relative z-10 flex h-full flex-col items-center">
+                  <div className="account-plan-icon commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <FaStore className="text-2xl md:text-3xl animate-bounce-slow" />
                   </div>
                   <div className="flex flex-1 flex-col justify-start">
@@ -275,9 +275,9 @@ export default function CommoditiesSection() {
               </div>
 
               {/* Card 2 - Futures Market */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '150ms' }}>
-                <div className="flex h-full flex-col items-center">
-                  <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '150ms' }}>
+                <div className="relative z-10 flex h-full flex-col items-center">
+                  <div className="account-plan-icon commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <RiExchangeFundsLine className="text-2xl md:text-3xl animate-pulse-slow" />
                   </div>
                   <div className="flex flex-1 flex-col justify-start">
@@ -293,9 +293,9 @@ export default function CommoditiesSection() {
               </div>
 
               {/* Card 3 - ETFs */}
-              <div className={`commodity-card-animate group rounded-2xl bg-white p-5 md:p-6 text-center shadow-md border-b-[4px] border-[#014421] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-                <div className="flex h-full flex-col items-center">
-                  <div className="commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+              <div className={`account-plan-card crypto-green-border commodity-card-animate group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 md:p-6 ${isVisible.howTraded ? 'animate-scale-in' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+                <div className="relative z-10 flex h-full flex-col items-center">
+                  <div className="account-plan-icon commodity-icon-animate mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <RiStockLine className="text-2xl md:text-3xl animate-float" />
                   </div>
                   <div className="flex flex-1 flex-col justify-start">

@@ -1,6 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
+import {
+  BarChart3,
+  Bitcoin,
+  ChevronRight,
+  CircleDollarSign,
+  Gem,
+  LineChart,
+  Zap,
+} from "lucide-react";
 
 const tabs = ["Metals", "Forex", "Crypto", "Indices", "Energies"];
+
+const CATEGORY_DETAILS = {
+  Metals: {
+    description: "Live precious metals market data",
+    icon: Gem,
+  },
+  Forex: {
+    description: "Live currency pair market data",
+    icon: CircleDollarSign,
+  },
+  Crypto: {
+    description: "Live digital asset market data",
+    icon: Bitcoin,
+  },
+  Indices: {
+    description: "Live global index market data",
+    icon: BarChart3,
+  },
+  Energies: {
+    description: "Live energy market data and futures",
+    icon: Zap,
+  },
+};
 
 const PAYMENT_METHODS = [
   {
@@ -132,7 +164,7 @@ const TradingViewQuote = ({ symbol }) => {
       symbol,
       width: "100%",
       isTransparent: true,
-      colorTheme: "light",
+      colorTheme: "dark",
       locale: "en",
     });
 
@@ -149,7 +181,7 @@ const TradingViewQuote = ({ symbol }) => {
   return (
     <div
       ref={containerRef}
-      className="tradingview-widget-container min-h-[66px] w-full overflow-hidden sm:min-h-[74px]"
+      className="tradingview-widget-container min-h-[74px] w-full overflow-hidden sm:min-h-[84px]"
     />
   );
 };
@@ -187,6 +219,8 @@ const Methords = () => {
   }, []);
 
   const visibleData = MARKET_DATA[activeTab] || [];
+  const activeDetails = CATEGORY_DETAILS[activeTab] || CATEGORY_DETAILS.Metals;
+  const ActiveIcon = activeDetails.icon;
 
   return (
     <section className="w-full bg-white px-4 pb-8 pt-14 sm:px-6 sm:pb-10 sm:pt-16 md:pb-12 md:pt-20 lg:px-8">
@@ -203,7 +237,7 @@ const Methords = () => {
                   key={`${method.name}-${index}`}
                   href="/deposit"
                   aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-h-[76px] sm:w-[136px] sm:gap-2"
+                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[76px] sm:w-[136px] sm:gap-2"
                 >
                   <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
                     <PaymentLogo method={method} />
@@ -223,7 +257,7 @@ const Methords = () => {
                   key={`${method.name}-reverse-${index}`}
                   href="/deposit"
                   aria-label={`View ${method.name} deposit and withdrawal details`}
-                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:min-h-[76px] sm:w-[136px] sm:gap-2"
+                  className="group flex min-h-[64px] w-[112px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-center transition-all duration-300 hover:-translate-y-1 sm:min-h-[76px] sm:w-[136px] sm:gap-2"
                 >
                   <div className="flex h-10 items-center justify-center transition duration-300 group-hover:scale-105 sm:h-11">
                     <PaymentLogo method={method} />
@@ -237,29 +271,58 @@ const Methords = () => {
           </div>
         </div>
 
-        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-black px-4 py-8 shadow-xl sm:px-6 sm:py-10 lg:px-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.18),transparent_68%)]"></div>
+        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden rounded-[42px] border border-[#D4AF37]/25 bg-black px-4 py-10 shadow-xl sm:px-6 sm:py-12 md:rounded-[56px] lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.16),transparent_32%),radial-gradient(circle_at_bottom,rgba(1,68,33,0.26),transparent_38%)]"></div>
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent"></div>
 
           <div className="relative z-10 mx-auto max-w-7xl">
-            <div className="mb-4 md:mb-6">
-              <h3 className="text-lg font-bold text-white sm:text-2xl">
-                {activeTab}
-              </h3>
+            <div className="mb-7 flex items-center gap-4 md:mb-9">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black/80 text-[#D4AF37] shadow-[0_0_28px_rgba(212,175,55,0.16)] sm:h-16 sm:w-16">
+                <ActiveIcon size={30} strokeWidth={1.9} />
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white sm:text-4xl">
+                  {activeTab}
+                </h3>
+                <p className="mt-2 text-sm text-white/70 sm:text-base">
+                  {activeDetails.description}
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
               {visibleData.map((item) => (
                 <div
                   key={item.symbol}
-                  className="relative flex flex-col items-start justify-between gap-3 overflow-hidden rounded-xl bg-white/95 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg sm:flex-row sm:items-center sm:p-6 md:rounded-2xl"
+                  className="group relative min-h-[300px] overflow-hidden rounded-2xl border border-[#D4AF37]/80 bg-[#060606] p-6 shadow-[0_18px_46px_rgba(0,0,0,0.34)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_24px_60px_rgba(212,175,55,0.14)] sm:min-h-[330px] sm:p-7"
                 >
-                  <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+                  <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-35"></div>
+                  <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_78%_48%,rgba(212,175,55,0.11),transparent_34%)]"></div>
+                  <div className="absolute inset-0 bg-black/45"></div>
 
-                  <div className="relative z-10 w-full min-w-0">
-                    <TradingViewQuote
-                      key={`${activeTab}-${item.tradingViewSymbol}`}
-                      symbol={item.tradingViewSymbol}
-                    />
+                  <div className="relative z-10 flex h-full flex-col">
+                    <div className="mb-8 flex items-start justify-between gap-4">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37] bg-black/70 text-[#F4D35E] shadow-[inset_0_0_24px_rgba(212,175,55,0.1),0_0_24px_rgba(212,175,55,0.12)]">
+                        <ActiveIcon size={30} strokeWidth={1.9} />
+                      </div>
+
+                      <div className="min-w-0 pt-1 text-right">
+                        <h4 className="text-xl font-black tracking-tight text-white sm:text-2xl">
+                          {item.symbol}
+                        </h4>
+                        <p className="mt-2 text-xs leading-snug text-white/70 sm:text-sm">
+                          CFDs on {item.name}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="min-h-[88px]">
+                      <TradingViewQuote
+                        key={`${activeTab}-${item.tradingViewSymbol}`}
+                        symbol={item.tradingViewSymbol}
+                      />
+                    </div>
 
                     <a
                       href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(
@@ -267,60 +330,76 @@ const Methords = () => {
                       )}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xs font-semibold text-yellow-700 hover:text-yellow-800"
+                      className="mt-auto flex min-h-[54px] items-center justify-between rounded-xl border border-[#D4AF37]/25 bg-black/35 px-4 text-[#F4D35E] transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10"
                     >
-                      Open chart
+                      <span className="flex items-center gap-3 text-sm font-semibold sm:text-base">
+                        <LineChart size={22} strokeWidth={1.8} />
+                        Open chart
+                      </span>
+                      <ChevronRight size={25} strokeWidth={2.1} />
                     </a>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 flex flex-col items-center gap-2 pb-2 sm:hidden">
-              <div className="flex justify-center gap-2">
+            <div className="mt-8 flex flex-col items-center gap-3 py-2 sm:hidden">
+              <div className="flex justify-center gap-3">
                 {tabs.slice(0, 3).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                    className={`flex min-h-[36px] items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs transition-all duration-300 hover:scale-105 ${
                       activeTab === tab
-                        ? "bg-[#014421] text-white shadow-lg scale-105"
-                        : "bg-white/85 text-gray-700 hover:bg-white"
+                        ? "scale-105 border-[#D4AF37] bg-[#014421] text-white shadow-[0_12px_30px_rgba(212,175,55,0.24)]"
+                        : "border-white/20 bg-black/55 text-white/85 hover:border-[#D4AF37]/70 hover:text-white"
                     }`}
                   >
+                    {React.createElement(CATEGORY_DETAILS[tab].icon, {
+                      size: 15,
+                      strokeWidth: 1.9,
+                    })}
                     {tab}
                   </button>
                 ))}
               </div>
 
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center gap-3">
                 {tabs.slice(3).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`whitespace-nowrap rounded-full px-4 py-2 text-xs transition-all duration-300 hover:scale-105 ${
+                    className={`flex min-h-[36px] items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs transition-all duration-300 hover:scale-105 ${
                       activeTab === tab
-                        ? "bg-[#014421] text-white shadow-lg scale-105"
-                        : "bg-white/85 text-gray-700 hover:bg-white"
+                        ? "scale-105 border-[#D4AF37] bg-[#014421] text-white shadow-[0_12px_30px_rgba(212,175,55,0.24)]"
+                        : "border-white/20 bg-black/55 text-white/85 hover:border-[#D4AF37]/70 hover:text-white"
                     }`}
                   >
+                    {React.createElement(CATEGORY_DETAILS[tab].icon, {
+                      size: 15,
+                      strokeWidth: 1.9,
+                    })}
                     {tab}
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="mt-7 hidden justify-center gap-3 overflow-x-auto pb-2 sm:flex md:mt-8">
+            <div className="mt-9 hidden justify-center gap-4 overflow-x-auto py-2 sm:flex md:mt-10">
               {tabs.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-all duration-300 transform hover:scale-110 ${
+                  className={`flex min-h-[42px] items-center gap-2.5 whitespace-nowrap rounded-full border px-5 py-2 text-sm transition-all duration-300 hover:scale-105 md:text-base ${
                     activeTab === tab
-                      ? "bg-[#014421] text-white shadow-lg scale-105"
-                      : "bg-white/85 text-gray-700 hover:bg-white"
+                      ? "scale-105 border-[#D4AF37] bg-[#014421] text-white shadow-[0_14px_34px_rgba(212,175,55,0.28)]"
+                      : "border-white/20 bg-black/55 text-white/85 hover:border-[#D4AF37]/70 hover:text-white"
                   }`}
                 >
+                  {React.createElement(CATEGORY_DETAILS[tab].icon, {
+                    size: 20,
+                    strokeWidth: 1.8,
+                  })}
                   {tab}
                 </button>
               ))}
