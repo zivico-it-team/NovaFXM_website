@@ -1,21 +1,56 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function AboutUs() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
+  };
+
+  const imageReveal = {
+    hidden: { opacity: 0, y: 90, scale: 0.92, rotate: -2 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotate: 0,
+      transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section className="reveal-section relative bg-[#f5f6f7] px-4 py-10 sm:px-6 sm:py-12 md:py-12 lg:px-8">
+    <motion.section
+      className="reveal-section relative bg-[#f5f6f7] px-4 py-10 sm:px-6 sm:py-12 md:py-12 lg:px-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ staggerChildren: 0.28 }}
+    >
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-6 lg:gap-8">
         {/* Image */}
-        <div className="button-shine relative overflow-hidden rounded-xl md:order-2">
+        <motion.div
+          variants={imageReveal}
+          whileHover={{ y: -8, scale: 1.02 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="button-shine relative overflow-hidden rounded-xl shadow-lg shadow-black/10 md:order-2"
+        >
           <img
             src="/image1.png"
             alt="Laptop with code"
-            className="h-48 w-full rounded-lg object-cover sm:h-72 md:h-[420px]"
+            className="h-48 w-full rounded-lg object-cover transition-transform duration-700 hover:scale-105 sm:h-72 md:h-[420px]"
           />
-        </div>
+        </motion.div>
 
         {/* Text */}
-        <div className="mx-auto max-w-xl text-center md:order-1 md:mx-0 md:justify-self-start md:text-left">
+        <motion.div
+          variants={fadeUp}
+          className="mx-auto max-w-xl text-center md:order-1 md:mx-0 md:justify-self-start md:text-left"
+        >
           
           <h2 className="text-2xl font-medium leading-tight text-gray-900 sm:text-4xl">
             Discover NOVAFXM
@@ -59,8 +94,8 @@ export default function AboutUs() {
               More About Us 
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

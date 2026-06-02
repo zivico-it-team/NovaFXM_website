@@ -1,4 +1,5 @@
 import { Users, Globe, Headset } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const reviews = [
   {
@@ -61,36 +62,104 @@ const ReviewCard = ({ name, role, image, text, index }) => (
   </div>
 );
 
+const CountUpNumber = ({ end, suffix, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime = null;
+    let animationFrame;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const currentCount = Math.floor(progress * end);
+      setCount(currentCount);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [isVisible, end, duration]);
+
+  return (
+    <span ref={elementRef}>
+      {count}
+      {suffix}
+    </span>
+  );
+};
+
 const stats = [
   {
     icon: Users,
-    value: "20M+",
+    value: 20,
+    suffix: "M+",
     title: "Traders",
     desc: "Active users executing trades daily across our global network.",
   },
   {
     icon: Globe,
-    value: "150+",
+    value: 150,
+    suffix: "+",
     title: "Trusted Globally",
     desc: "Regulated and compliant in multiple jurisdictions worldwide.",
   },
   {
     icon: Headset,
-    value: "24/7",
+    value: 24,
+    suffix: "/7",
     title: "Expert Support",
     desc: "Multilingual support team ready to assist you at any time.",
   },
 ];
 
-const StatBox = ({ icon: Icon, value, title, desc }) => (
+const StatBox = ({ icon: Icon, value, suffix, title, desc }) => (
   <div className="flex flex-col items-center p-4 text-center interactive-card rounded-2xl sm:p-5">
     <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#D4AF37] md:h-12 md:w-12">
       <Icon size={20} color="black" />
     </div>
 
-    <h3 className="text-xl font-bold md:text-2xl">{value}</h3>
+    <h3 className="text-xl font-bold md:text-2xl">
+      <CountUpNumber end={value} suffix={suffix} duration={2000} />
+    </h3>
+
     <p className="text-sm font-bold text-gray-600">{title}</p>
-    <p className="mt-2 text-xs text-justify text-gray-500 sm:text-center">{desc}</p>
+
+    <p className="mt-2 text-xs text-justify text-gray-500 sm:text-center">
+      {desc}
+    </p>
   </div>
 );
 

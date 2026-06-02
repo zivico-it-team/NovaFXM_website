@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -44,6 +45,18 @@ const plans = [
 
 export default function PricingSection() {
   const navigate = useNavigate();
+  const cardReveal = {
+    hidden: { opacity: 0, y: 110 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.18,
+        duration: 1.05,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    }),
+  };
 
   return (
     <section className="overflow-hidden bg-gradient-to-b from-[#f5f9f6] to-white px-4 py-10 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
@@ -62,10 +75,15 @@ export default function PricingSection() {
         <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
 
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
+              custom={index}
+              variants={cardReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.18 }}
               className={`
-                account-plan-card reveal-up reveal-delay-${(index % 3) + 1}
+                account-plan-card
                 group relative flex flex-col justify-between
                 rounded-2xl p-5 sm:p-7 md:rounded-3xl md:p-8
                 bg-[#fcfdfc] border border-[#dce9e1]
@@ -147,8 +165,9 @@ export default function PricingSection() {
               >
                 Get Started
               </button>
-            </div>
+            </motion.div>
           ))}
+          
         </div>
 
 
