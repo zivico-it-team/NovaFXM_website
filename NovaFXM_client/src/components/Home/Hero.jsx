@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
@@ -33,6 +33,33 @@ function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
 
 export default function Hero() {
   const navigate = useNavigate();
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    // Add touch feedback for mobile
+    const button = buttonRef.current;
+    if (button) {
+      const handleTouchStart = () => {
+        button.style.transform = 'scale(0.97)';
+        // Add shine class on touch start
+        button.classList.add('mobile-shine-active');
+        setTimeout(() => {
+          button.classList.remove('mobile-shine-active');
+        }, 300);
+      };
+      const handleTouchEnd = () => {
+        button.style.transform = '';
+      };
+      
+      button.addEventListener('touchstart', handleTouchStart);
+      button.addEventListener('touchend', handleTouchEnd);
+      
+      return () => {
+        button.removeEventListener('touchstart', handleTouchStart);
+        button.removeEventListener('touchend', handleTouchEnd);
+      };
+    }
+  }, []);
 
   return (
     <section
@@ -82,27 +109,25 @@ export default function Hero() {
           aria-label="Your Gateway to Smarter Trading"
         >
          <span
-  className="
-    block
-    text-[2.05rem]
-    leading-tight
-    font-bold
-    text-[#014421]
+          className="
+            block
+            text-[2.05rem]
+            leading-tight
+            font-bold
+            text-[#014421]
+            xs:text-[2.5rem]
+            sm:text-5xl
+            md:text-6xl
+            lg:text-7xl
+            xl:text-8xl
+          "
+        >
+          <LetterReveal text="Your Gateway " />
 
-    xs:text-[2.5rem]
-    sm:text-5xl
-    md:text-6xl
-    lg:text-7xl
-    xl:text-8xl
-  "
->
-  <LetterReveal text="Your Gateway " />
-
-  <span className="font-light text-gray-900">
-    <LetterReveal text="to" delay={0.46} />
-  </span>
-</span>
-
+          <span className="font-light text-gray-900">
+            <LetterReveal text="to" delay={0.46} />
+          </span>
+        </span>
 
           <span className="mt-2 block text-[2rem] font-light leading-tight text-gray-900 sm:mt-4 sm:text-5xl md:text-7xl">
             <LetterReveal text="Smarter Trading" delay={0.76} />
@@ -110,7 +135,6 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-
         <p
           className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-justify text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-center sm:text-base sm:leading-relaxed md:text-lg"
           aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
@@ -133,17 +157,25 @@ export default function Hero() {
         </p>
         
 
-        {/* Button */}
-        <div className="hero-trade-cta mt-5 sm:mt-7">
-          <button
-            type="button"
-            onClick={() => navigate("/login")}
-            className="button-shine w-auto cursor-pointer rounded-4xl bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
-          >
-            Trade Now
-          </button>
-        </div>
-
+        {/* Button with shine animation - Fully Mobile Responsive */}
+       <div className="hero-trade-cta mt-5 sm:mt-7">
+  <button
+    ref={buttonRef}
+    type="button"
+    onClick={() => navigate("/login")}
+    className="mobile-shine-button relative w-auto cursor-pointer overflow-hidden rounded-4xl bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl active:scale-95 active:shadow-lg sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
+    style={{
+      WebkitTapHighlightColor: 'transparent',
+      touchAction: 'manipulation',
+      userSelect: 'none',
+      WebkitUserSelect: 'none',
+    }}
+  >
+    <span className="relative z-20 block text-center text-white font-semibold tracking-wide sm:tracking-normal">
+      Trade Now
+    </span>
+  </button>
+</div>
       </div>
     </section>
   );
