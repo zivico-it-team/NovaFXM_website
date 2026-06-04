@@ -1,4 +1,103 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+// Scroll Animation Component
+const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: threshold,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [threshold]);
+
+  const getDirectionClass = () => {
+    switch (direction) {
+      case "up":
+        return isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12';
+      case "left":
+        return isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12';
+      case "right":
+        return isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12';
+      default:
+        return isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12';
+    }
+  };
+
+  return (
+    <div
+      ref={elementRef}
+      className={`transition-all duration-700 ease-out ${getDirectionClass()}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
+
+// Staggered FAQ Component
+const StaggeredFaq = ({ children, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={elementRef}
+      className={`transition-all duration-700 ease-out ${
+        isVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-12'
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const faqs = [
   {
@@ -96,83 +195,79 @@ const faqs = [
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-gray-50 font-sans overflow-x-hidden">
+      {/* Hero Section */}
       <section
         className="relative flex min-h-[calc(100vh-72px)] items-center justify-start overflow-hidden bg-cover bg-center px-6 py-16 sm:min-h-[calc(100vh-80px)] md:px-20 lg:min-h-[calc(100vh-84px)]"
         style={{ backgroundImage: "url('/Faq.png')" }}
       >
-        <div className="absolute inset-0 bg-black/60" />
+        {/* Animated Background with Zoom */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]"
+            style={{ transformOrigin: 'center' }}
+          >
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/Faq.png')" }}
+            />
+          </div>
+        </div>
+        
+        <div className="absolute inset-0 bg-black/60 animate-[fadeIn_1.5s_ease-out]" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl justify-start">
           <div className="max-w-2xl text-left text-white">
-            <p className="hero-fade mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
+            <p className="animate-[fadeInUp_0.6s_ease-out] mb-5 text-sm font-medium uppercase tracking-[4px] text-yellow-400 md:text-base">
               Welcome To NOVAFXM
             </p>
 
-            <h1 className="hero-fade delay-150 text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
+            <h1 className="animate-[fadeInUp_0.8s_ease-out] text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
               Frequently Asked <br />
               <span className="text-[#014421] text-2xl md:text-4xl">
                 Questions
               </span>
             </h1>
 
-            <p className="hero-fade delay-300 mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
+            <p className="animate-[fadeInUp_1s_ease-out] mt-6 max-w-xl text-base leading-relaxed text-gray-200 md:text-lg">
               Find clear answers about trading, accounts, platforms, and support at NOVAFXM.
             </p>
 
-          <button
-            type="button"
-            className="button-shine hero-fade delay-300 mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
-            onClick={() => {
-              document.getElementById("faq-questions")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-          >
-            Explore More
-          </button>
+            <button
+              type="button"
+              className="button-shine animate-[fadeInUp_1.2s_ease-out] mt-7 rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#c89b1d] sm:px-9 sm:text-base"
+              onClick={() => {
+                document.getElementById("faq-questions")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
+              Explore More
+            </button>
           </div>
         </div>
-
-        <style>
-          {`
-            .hero-fade {
-              opacity: 0;
-              transform: translateY(25px);
-              animation: heroFade 1.6s ease forwards;
-            }
-
-            .delay-150 {
-              animation-delay: 0.15s;
-            }
-
-            .delay-300 {
-              animation-delay: 0.3s;
-            }
-
-            @keyframes heroFade {
-              to {
-                opacity: 1;
-                transform: translateY(0);
-              }
-            }
-          `}
-        </style>
       </section>
 
+      {/* FAQ Section */}
       <section id="faq-questions" className="px-4 py-10 sm:px-8 sm:py-12 lg:px-12">
         <div className="mx-auto w-full max-w-5xl">
           <div className="mb-8 text-center sm:mb-10">
-            <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#014421] sm:text-sm">
-              FAQ's
-            </span>
-            <h2 className="mx-auto max-w-2xl text-2xl font-bold leading-tight text-[#014421] sm:text-3xl md:text-4xl">
-              Find <span className="text-[#D4AF37]">Answers</span> to Common
-              Questions
-            </h2>
+            <ScrollReveal delay={0} threshold={0.2} direction="up">
+              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#014421] sm:text-sm">
+                FAQ's
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={100} threshold={0.2} direction="up">
+              <h2 className="mx-auto max-w-2xl text-2xl font-bold leading-tight text-[#014421] sm:text-3xl md:text-4xl">
+                Find <span className="text-[#D4AF37]">Answers</span> to Common
+                Questions
+              </h2>
+            </ScrollReveal>
           </div>
 
           <div className="flex flex-col gap-3">
@@ -180,76 +275,148 @@ export default function FaqPage() {
               const isOpen = openIndex === i;
 
               return (
-                <button
-                  key={faq.num}
-                  type="button"
-                  onClick={() => toggle(i)}
-                  className={`w-full rounded-xl border p-4 text-left shadow-sm transition sm:p-5 ${
-                    isOpen
-                      ? "border-[#014421] bg-[#014421] shadow-[#014421]/15"
-                      : "border-gray-200 bg-white hover:border-[#014421]/30"
-                  }`}
-                  aria-expanded={isOpen}
-                >
-                  <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-                    <span
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold sm:h-9 sm:w-9 sm:text-xs ${
-                        isOpen
-                          ? "bg-white/20 text-white"
-                          : "bg-green-100 text-[#014421]"
-                      }`}
-                    >
-                      {faq.num}
-                    </span>
-
-                    <span className="min-w-0 flex-1">
-                      <span className="flex min-w-0 items-start justify-between gap-3">
-                        <span
-                          className={`min-w-0 flex-1 break-words pt-1 text-sm font-semibold leading-snug sm:text-base ${
-                            isOpen ? "text-white" : "text-gray-900"
-                          }`}
-                        >
-                          {faq.question}
-                        </span>
-
-                        <span
-                          className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition sm:h-8 sm:w-8 ${
-                            isOpen
-                              ? "rotate-180 border-white/40"
-                              : "border-gray-300"
-                          }`}
-                        >
-                          <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M2 4L6 8L10 4"
-                              stroke={isOpen ? "#fff" : "#6b7280"}
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
+                <StaggeredFaq key={faq.num} index={i}>
+                  <button
+                    type="button"
+                    onClick={() => toggle(i)}
+                    className={`w-full rounded-xl border p-4 text-left shadow-sm transition-all duration-300 sm:p-5 ${
+                      isOpen
+                        ? "border-[#014421] bg-[#014421] shadow-[#014421]/15"
+                        : "border-gray-200 bg-white hover:border-[#014421]/30"
+                    }`}
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex min-w-0 items-start gap-3 sm:gap-4">
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300 sm:h-9 sm:w-9 sm:text-xs ${
+                          isOpen
+                            ? "bg-white/20 text-white"
+                            : "bg-green-100 text-[#014421]"
+                        }`}
+                      >
+                        {faq.num}
                       </span>
 
-                      {isOpen && (
-                        <span className="mt-3 block break-words text-sm leading-7 text-white/90 sm:text-[15px]">
-                          {faq.answer}
+                      <span className="min-w-0 flex-1">
+                        <span className="flex min-w-0 items-start justify-between gap-3">
+                          <span
+                            className={`min-w-0 flex-1 break-words pt-1 text-sm font-semibold leading-snug transition-all duration-300 sm:text-base ${
+                              isOpen ? "text-white" : "text-gray-900"
+                            }`}
+                          >
+                            {faq.question}
+                          </span>
+
+                          <span
+                            className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 sm:h-8 sm:w-8 ${
+                              isOpen
+                                ? "rotate-180 border-white/40 bg-white/10"
+                                : "border-gray-300"
+                            }`}
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              aria-hidden="true"
+                              className="transition-transform duration-300"
+                            >
+                              <path
+                                d="M2 4L6 8L10 4"
+                                stroke={isOpen ? "#fff" : "#6b7280"}
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </span>
                         </span>
-                      )}
-                    </span>
-                  </div>
-                </button>
+
+                        {isOpen && (
+                          <span className="mt-3 block break-words text-sm leading-7 text-white/90 sm:text-[15px]">
+                            {faq.answer}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  </button>
+                </StaggeredFaq>
               );
             })}
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        /* Keyframe Animations */
+        @keyframes slowZoom {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        /* Button Shine Effect */
+        .button-shine {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .button-shine::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+
+        .button-shine:hover::before {
+          left: 100%;
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+          .transition-all,
+          [class*="animate-"] {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

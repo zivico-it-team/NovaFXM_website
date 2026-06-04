@@ -91,20 +91,6 @@ const StepCard = ({ step, index, isActive, onActivate }) => {
           }`}
         ></span>
 
-        {/* Click Ring Animation */}
-        <span
-          className={`step-click-ring absolute inset-0 rounded-2xl border-2 border-[#D4AF37] transition-all duration-300 ${
-            isActive ? "animate-ring-pulse opacity-100" : "opacity-0"
-          }`}
-        ></span>
-
-        {/* Corner Accent */}
-        <span
-          className={`step-corner absolute -right-16 -top-16 h-32 w-32 rounded-full bg-[#014421]/8 transition-all duration-500 ${
-            isActive ? "scale-150 opacity-100" : "scale-100 opacity-50"
-          }`}
-        ></span>
-
         {/* Step Number Badge */}
         <div className="absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-md border border-[#014421]/15 bg-[#f5f7f2] text-xs font-bold text-[#014421] transition-all duration-300">
           {number}
@@ -112,7 +98,7 @@ const StepCard = ({ step, index, isActive, onActivate }) => {
 
         {/* Selected Badge */}
         {isActive && (
-          <div className="absolute right-5 top-5 rounded-full bg-[#D4AF37] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md animate-fade-in">
+          <div className="absolute right-5 top-5 rounded-full bg-[#D4AF37] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
             Selected
           </div>
         )}
@@ -250,44 +236,6 @@ export default function Account() {
       </div>
 
       <style jsx>{`
-        /* Ring Pulse Animation for Selected Card */
-        @keyframes ringPulse {
-          0% {
-            opacity: 0.6;
-            transform: scale(0.98);
-            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-          }
-          70% {
-            opacity: 0;
-            transform: scale(1.04);
-            box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(1);
-          }
-        }
-
-        .animate-ring-pulse {
-          animation: ringPulse 1.8s ease-out infinite;
-        }
-
-        /* Fade In Animation for Selected Badge */
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out;
-        }
-
         /* Button Shine Effect */
         .button-shine::before {
           content: "";
@@ -314,22 +262,8 @@ export default function Account() {
           transform: scale(1.05);
         }
 
-        /* Card Entry Animation */
-        @keyframes cardEntry {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         /* Reduced Motion Support */
         @media (prefers-reduced-motion: reduce) {
-          .animate-ring-pulse,
-          .animate-fade-in,
           .button-shine::before {
             animation: none;
             transition: none;
