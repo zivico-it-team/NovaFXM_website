@@ -261,17 +261,16 @@ const CryptocurrencyPage = () => {
         {/* About Crypto Section */}
         <div className="grid items-start gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
   
-          {/* IMAGE - Slide from Left */}
-          <ScrollReveal delay={0} threshold={0.3} direction="left">
-            <div className="order-2 md:order-1 group overflow-hidden rounded-2xl md:rounded-3xl">
-              <img
-                src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1470&auto=format&fit=crop"
-                alt="crypto"
-                className="h-[240px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[320px] md:h-[420px] md:rounded-3xl lg:h-[450px]"
-              />
-            </div>
-          </ScrollReveal>
-
+        {/* IMAGE - Slide from Left */}
+<ScrollReveal delay={0} threshold={0.3} direction="left">
+  <div className="order-2 md:order-1 flex items-center justify-center group overflow-hidden rounded-2xl md:rounded-3xl">
+    <img
+      src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1470&auto=format&fit=crop"
+      alt="crypto"
+      className="h-[240px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[320px] md:h-[420px] md:rounded-3xl lg:h-[450px]"
+    />
+  </div>
+</ScrollReveal>
           {/* TEXT CONTENT */}
           <div className="order-1 md:order-2 md:pl-2 lg:pl-4">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
@@ -333,27 +332,27 @@ const CryptocurrencyPage = () => {
         <CryptoLiveTable />
       </div>
 
-      {/* What are Crypto CFDs Section */}
-      <ScrollReveal delay={0} threshold={0.2} direction="up">
-        <div className="bg-[#014421] px-3 py-8 text-white sm:px-5 md:py-10 lg:px-6">
-          <div className="mx-auto max-w-7xl">
-            <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-6 md:text-3xl lg:text-4xl">
-              What are Crypto CFDs?
-            </h2>
-            <p className="mb-3 text-sm leading-7 text-gray-200 md:mb-4 md:text-base md:leading-8">
-              Cryptocurrencies, since Bitcoin's introduction in 2009, have
-              redefined the financial landscape. These digital assets function on
-              a decentralized online ledger secured by cryptography, making them
-              one of the safest online payment methods.
-            </p>
-            <p className="text-sm leading-7 text-gray-200 md:text-base md:leading-8">
-              While cryptocurrencies like Bitcoin have gained significant
-              recognition globally, they operate outside the traditional banking
-              system and remain unaffected by conventional economic factors.
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
+     {/* What are Crypto CFDs Section */}
+<ScrollReveal delay={0} threshold={0.2} direction="up">
+  <div className="rounded-2xl bg-[#014421] p-2 text-white shadow-lg transition-all duration-200 hover:shadow-xl sm:rounded-3xl sm:p-2 lg:p-6">
+  <div className="mx-auto max-w-7xl">
+    <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-6 md:text-3xl lg:text-4xl">
+      What are Crypto CFDs?
+    </h2>
+    <p className="mb-3 text-sm leading-7 text-gray-200 md:mb-4 md:text-base md:leading-8">
+      Cryptocurrencies, since Bitcoin's introduction in 2009, have
+      redefined the financial landscape. These digital assets function on
+      a decentralized online ledger secured by cryptography, making them
+      one of the safest online payment methods.
+    </p>
+    <p className="text-sm leading-7 text-gray-200 md:text-base md:leading-8">
+      While cryptocurrencies like Bitcoin have gained significant
+      recognition globally, they operate outside the traditional banking
+      system and remain unaffected by conventional economic factors.
+    </p>
+  </div>
+</div>
+</ScrollReveal>
 
       {/* What Affects the Price Section */}
 <div className="px-3 py-12 mx-auto max-w-7xl sm:px-5 md:py-20 lg:px-6">

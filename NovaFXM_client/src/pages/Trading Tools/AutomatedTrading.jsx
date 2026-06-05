@@ -252,16 +252,16 @@ export default function AutomatedTradingPage() {
             <div className="grid items-center gap-0 lg:grid-cols-2">
 
               {/* IMAGE */}
-              <ScrollReveal delay={0} threshold={0.2} direction="left">
-                <div className="relative">
-                  <div
-                    className="relative h-[220px] w-full bg-cover bg-center transition-all duration-500 hover:scale-105 sm:h-[340px]"
-                    style={{
-                      backgroundImage: `url(${heroBg1})`,
-                    }}
-                  />
-                </div>
-              </ScrollReveal>
+<ScrollReveal delay={0} threshold={0.2} direction="left">
+  <div className="relative">
+    <div
+      className="relative h-[300px] w-full bg-cover bg-center transition-all duration-500 hover:scale-105 sm:h-[200px]"
+      style={{
+        backgroundImage: `url(${heroBg1})`,
+      }}
+    />
+  </div>
+</ScrollReveal>
 
               {/* CONTENT */}
               <ScrollReveal delay={100} threshold={0.2} direction="right">

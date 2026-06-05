@@ -308,19 +308,20 @@ export default function IntroducingBrokers() {
           </div>
 
           {/* HORIZONTAL SLIDES */}
-          <ScrollReveal delay={200} threshold={0.2} direction="up">
-            <div className="overflow-hidden border-y-2 border-[#D4AF37] bg-[#04100b] shadow-2xl">
-              <div
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${activeStep * 100}%)` }}
-              >
-                {steps.map((step, index) => (
-                  <article
-                    key={step.number}
-                    className={`group relative min-h-[250px] min-w-full overflow-hidden bg-[#04100b] transition-all duration-500 ${
-                      activeStep === index ? "shadow-[#014421]/25" : "opacity-95"
-                    }`}
-                  >
+<ScrollReveal delay={200} threshold={0.2} direction="up">
+  <div className="overflow-hidden rounded-2xl border-y-2 border-[#D4AF37] bg-[#04100b] shadow-2xl">
+    <div
+      className="flex transition-transform duration-700 ease-out"
+      style={{ transform: `translateX(-${activeStep * 100}%)` }}
+    >
+      {steps.map((step, index) => (
+        <article
+          key={step.number}
+          className={`group relative min-h-[250px] min-w-full overflow-hidden rounded-2xl bg-[#04100b] transition-all duration-500 ${
+            activeStep === index ? "shadow-[#014421]/25" : "opacity-95"
+          }`}
+        >
+
                     <img
                       src={step.image}
                       alt={step.title}

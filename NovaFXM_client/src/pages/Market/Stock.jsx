@@ -224,13 +224,13 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-xl font-bold text-[#014421] sm:text-2xl">
+            <h3 className="text-2xl font-bold text-[#014421] sm:text-3xl">
               What are Stocks?
             </h3>
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
               A stock represents a unit of ownership in a company. By purchasing
               shares, you become a part-owner. If the company thrives, its stock
               price rises, offering you potential gains. If the company
@@ -241,77 +241,98 @@ const Stock = () => {
         </ScrollReveal>
       </section>
 
-      {/* ================= EXCHANGES ================= */}
-<section className="mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:py-8">
+    {/* ================= EXCHANGES ================= */}
+<section className="mx-auto max-w-7xl px-4 py-7 sm:px-4 lg:py-8">
   
-  <ScrollReveal delay={0} threshold={0.2} direction="up">
-    <h3 className="mb-5 text-2xl font-bold tracking-tight text-slate-900 sm:mb-6 sm:text-3xl">
-      Where Are{" "}
-      <span className="text-[#014421]">
-        Stocks Traded?
-      </span>
-    </h3>
+ <div className="flex justify-start">
+  <ScrollReveal delay={0} threshold={0.2} direction="center">
+    <div className="text-left">
+      <h3 className="mb-20 text-2xl font-bold tracking-tight text-slate-950 sm:mb-10 sm:text-4xl">
+        Where Are{" "}
+        <span className="text-[#014421]">
+          Stocks Traded?
+        </span>
+      </h3>
+      <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
+    </div>
   </ScrollReveal>
+</div>
+  <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+    {/* LEFT SIDE - IMAGE */}
+    <ScrollReveal delay={100} threshold={0.2} direction="left">
+      <div className="relative flex justify-center overflow-hidden rounded-2xl">
+        <div className="relative group">
+          <img
+            src="/src/assets/images/OIP.webp"
+            alt="Stock Exchange Trading Floor"
+            className="w-full max-w-[600px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
+          />
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+        </div>
+      </div>
+    </ScrollReveal>
 
-  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    
-    {[
-      {
-        name: "New York Stock Exchange",
-        desc: "The largest exchange globally featuring leading companies.",
-      },
-      {
-        name: "NASDAQ",
-        desc: "Known for technology-focused companies such as Apple and Microsoft.",
-      },
-      {
-        name: "London Stock Exchange",
-        desc: "A major European exchange with global financial companies.",
-      },
-      {
-        name: "Tokyo Stock Exchange",
-        desc: "Asia's largest exchange, home to companies like Toyota and Sony.",
-      },
-    ].map((item, i) => (
-      <StaggeredCard key={i} index={i}>
-        <div className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6">
-          
-          <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+    {/* RIGHT SIDE - CARDS (2 rows x 2 columns) */}
+    <div className="grid gap-4 sm:grid-cols-2">
+      {[
+        {
+          name: "New York Stock Exchange",
+          desc: "The largest exchange globally featuring leading companies.",
+        },
+        {
+          name: "NASDAQ",
+          desc: "Known for technology-focused companies such as Apple and Microsoft.",
+        },
+        {
+          name: "London Stock Exchange",
+          desc: "A major European exchange with global financial companies.",
+        },
+        {
+          name: "Tokyo Stock Exchange",
+          desc: "Asia's largest exchange, home to companies like Toyota and Sony.",
+        },
+      ].map((item, i) => (
+        <StaggeredCard key={i} index={i}>
+          <div className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6">
             
-            {/* Icon */}
-            <div className="account-plan-icon flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
-              {React.createElement(exchangeIcons[i], {
-                className: "h-6 w-6 sm:h-7 sm:w-7",
-                strokeWidth: 2.4,
-              })}
+            <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+              
+              {/* Icon */}
+              <div className="account-plan-icon flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                {React.createElement(exchangeIcons[i], {
+                  className: "h-6 w-6 sm:h-7 sm:w-7",
+                  strokeWidth: 2.4,
+                })}
+              </div>
+
+              {/* Title */}
+              <h4 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                {item.name}
+              </h4>
+
+              {/* Line */}
+              <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
+
+              {/* Description */}
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:leading-7">
+                {item.desc}
+              </p>
             </div>
 
-            {/* Title */}
-            <h4 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
-              {item.name}
-            </h4>
-
-            {/* Line */}
-            <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
-
-            {/* Description */}
-            <p className="mt-3 text-sm leading-6 text-slate-600 sm:leading-7">
-              {item.desc}
-            </p>
+            {/* Dots */}
+            <div className="absolute bottom-5 left-5 z-10 grid grid-cols-3 gap-2">
+              {Array.from({ length: 9 }).map((_, dotIndex) => (
+                <span
+                  key={dotIndex}
+                  className="h-2 w-2 rounded-full bg-green-100"
+                />
+              ))}
+            </div>
           </div>
-
-          {/* Dots */}
-          <div className="absolute bottom-5 left-5 z-10 grid grid-cols-3 gap-2">
-            {Array.from({ length: 9 }).map((_, dotIndex) => (
-              <span
-                key={dotIndex}
-                className="h-2 w-2 rounded-full bg-green-100"
-              />
-            ))}
-          </div>
-        </div>
-      </StaggeredCard>
-    ))}
+        </StaggeredCard>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -321,13 +342,13 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl bg-[#014421] p-5 text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-xl font-bold text-[#D4AF37] sm:text-2xl">
+            <h3 className="text-2xl font-bold text-[#D4AF37] sm:text-3xl">
               Why Trade Stocks?
             </h3>
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-justify text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
               Stock trading offers access to a broad range of companies across
               various sectors, allowing you to diversify your investment strategy
               and manage risk. With the right stock trading approach, you can
@@ -343,7 +364,7 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-xl font-bold text-[#014421] sm:text-2xl">
+            <h3 className="text-2xl font-bold text-[#014421] sm:text-3xl">
               How Does Stock Trading Work?
             </h3>
 

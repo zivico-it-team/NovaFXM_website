@@ -478,13 +478,13 @@ export default function ContactPage() {
             )}
 
             <button
-              type="submit"
-              disabled={status === "sending"}
-              className="flex items-center justify-center w-full max-w-md gap-3 px-8 mt-5 text-sm font-bold text-white transition bg-green-700 rounded-md shadow-lg h-12 shadow-green-900/15 hover:bg-green-800 disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              <Send size={18} />
-              {status === "sending" ? "Sending…" : "Send Now"}
-            </button>
+  type="submit"
+  disabled={status === "sending"}
+  className="button-shine flex items-center justify-center w-full max-w-md gap-3 px-8 mt-5 text-sm font-bold text-white transition bg-[#014421] rounded-md shadow-lg h-12 shadow-green-900/15 hover:bg-green-800 disabled:opacity-60 disabled:cursor-not-allowed"
+>
+  <Send size={18} />
+  {status === "sending" ? "Sending…" : "Send Now"}
+</button>
 
             <p className="flex items-center gap-2 mt-4 text-xs text-gray-500">
               <span className="text-[#014421]">Safe</span>

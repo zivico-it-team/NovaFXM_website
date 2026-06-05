@@ -434,9 +434,8 @@ const IndicesPage = () => {
 </section>
 
       {/* =========================================
-          WHAT MOVES INDEX PRICE
-      ========================================= */}
-
+  WHAT MOVES INDEX PRICE
+========================================= */}
 
 <section className="bg-[#f6f7f6] px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
   <div className="grid items-center gap-8 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-10">
@@ -460,7 +459,7 @@ const IndicesPage = () => {
       ))}
     </div>
 
-    {/* RIGHT TEXT */}
+    {/* RIGHT TEXT AND IMAGE */}
     <ScrollReveal delay={0} threshold={0.2} direction="right">
       <div className="lg:pl-10">
         <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
@@ -472,6 +471,15 @@ const IndicesPage = () => {
           Several factors influence index prices including economic data,
           political events, corporate announcements and industry trends.
         </p>
+        
+        {/* ADDED IMAGE HERE */}
+        <div className="mt-8 flex justify-center lg:mt-10">
+          <img
+            src="src/assets/images/image.png"
+            alt="Index Price Movement Chart"
+            className="w-full max-w-[300px] rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl sm:max-w-[350px] lg:max-w-full"
+          />
+        </div>
       </div>
     </ScrollReveal>
   </div>

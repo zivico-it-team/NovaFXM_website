@@ -502,7 +502,6 @@ function ToolsSection() {
     </section>
   );
 }
-
 function SecuritySection() {
   return (
     <section className="bg-[#f1f1f1] px-4 py-10 sm:px-6 sm:py-12">
@@ -524,8 +523,9 @@ function SecuritySection() {
               </p>
             </div>
 
-            <div className="border-t border-white/30 bg-[#014421] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
-              <div className="space-y-4">
+            {/* Centered compliance points */}
+            <div className="flex items-center justify-center border-t border-white/30 bg-[#014421] px-5 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10">
+              <div className="w-full max-w-md space-y-4">
                 {compliancePoints.map((point) => (
                   <div key={point} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-white" strokeWidth={2.4} />
@@ -540,7 +540,6 @@ function SecuritySection() {
     </section>
   );
 }
-
 export default function ForexPage() {
   return (
     <div className="w-full overflow-hidden bg-[#f7f7f7] font-sans">
