@@ -169,7 +169,7 @@ const LoginPage = ({ onSignUpClick }) => {
               rel="noopener noreferrer"
               className="transition-transform hover:-translate-y-1"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:shadow-lg">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f7f8f8] shadow-md hover:shadow-lg">
                 <FcGoogle size={22} />
               </div>
             </a>

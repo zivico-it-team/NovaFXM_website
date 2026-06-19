@@ -67,6 +67,9 @@ const StaggeredCard = ({ children, index }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const current = elementRef.current;
+    if (!current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -80,14 +83,16 @@ const StaggeredCard = ({ children, index }) => {
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    observer.observe(current);
+
+    const rect = current.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true);
+      observer.unobserve(current);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
@@ -395,18 +400,6 @@ export default function IntroducingBrokers() {
       </section>
 
       {/* ================= SCROLL BUTTON ================= */}
-      <button
-        onClick={() =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#014421] hover:bg-[#012a15] text-white flex items-center justify-center shadow-2xl transition duration-300 hover:scale-110"
-      >
-        <ArrowUp size={24} />
-      </button>
-
       <style jsx>{`
         /* Keyframe Animations */
         @keyframes slowZoom {

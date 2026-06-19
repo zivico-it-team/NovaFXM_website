@@ -242,36 +242,34 @@ const Stock = () => {
       </section>
 
     {/* ================= EXCHANGES ================= */}
-<section className="mx-auto max-w-7xl px-4 py-7 sm:px-4 lg:py-8">
-  
- <div className="flex justify-start">
-  <ScrollReveal delay={0} threshold={0.2} direction="center">
-    <div className="text-left">
-      <h3 className="mb-20 text-2xl font-bold tracking-tight text-slate-950 sm:mb-10 sm:text-4xl">
-        Where Are{" "}
-        <span className="text-[#014421]">
-          Stocks Traded?
-        </span>
-      </h3>
-      <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
-    </div>
-  </ScrollReveal>
-</div>
+<section className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
   <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
-    {/* LEFT SIDE - IMAGE */}
-    <ScrollReveal delay={100} threshold={0.2} direction="left">
-      <div className="relative flex justify-center overflow-hidden rounded-2xl">
-        <div className="relative group">
-          <img
-            src="/src/assets/images/OIP.webp"
-            alt="Stock Exchange Trading Floor"
-            className="w-full max-w-[600px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
-          />
-          {/* Overlay Gradient */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
-        </div>
+    {/* LEFT SIDE - HEADING + IMAGE */}
+    <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
+      <div className="text-left">
+        <h3 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
+          Where Are{" "}
+          <span className="text-[#014421]">
+            Stocks Traded?
+          </span>
+        </h3>
+        <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
       </div>
-    </ScrollReveal>
+
+      <ScrollReveal delay={100} threshold={0.2} direction="left">
+        <div className="relative flex justify-center overflow-hidden rounded-2xl">
+          <div className="relative group">
+            <img
+              src="/src/assets/images/OIP.webp"
+              alt="Stock Exchange Trading Floor"
+              className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
+            />
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
 
     {/* RIGHT SIDE - CARDS (2 rows x 2 columns) */}
     <div className="grid gap-4 sm:grid-cols-2">

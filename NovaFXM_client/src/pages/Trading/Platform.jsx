@@ -108,6 +108,21 @@ const AnimatedCard = ({ card, index }) => {
 };
 
 export default function TradingPage() {
+  const [shineActive, setShineActive] = useState(false);
+  const buttonRef = useRef(null);
+
+  const triggerShine = (e) => {
+    // Prevent multiple rapid triggers
+    if (shineActive) return;
+    
+    setShineActive(true);
+    
+    // Remove the class after animation completes
+    setTimeout(() => {
+      setShineActive(false);
+    }, 800);
+  };
+
   const cards = [
     {
       title: "Real-Time Market Insights & Analytics",
@@ -151,179 +166,237 @@ export default function TradingPage() {
 
   return (
     <div className="w-full bg-white overflow-hidden">
-      {/* ================= HERO SECTION ================= */}
-
       {/* ================= HERO SECTION WITH ANIMATIONS ================= */}
+      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
+        
+        {/* Animated Background Image with Zoom Effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]"
+            style={{
+              transformOrigin: 'center',
+            }}
+          >
+            <img
+              src={heroBg5}
+              alt="Trading Platform"
+              className="account-hero-image h-full w-full object-cover object-center brightness-110"
+            />
+          </div>
+        </div>
 
-<section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
-  
-  {/* Animated Background Image with Zoom Effect */}
-  <div className="absolute inset-0 overflow-hidden">
-    <div 
-      className="absolute inset-0 animate-[slowZoom_20s_ease-in-out_infinite]"
-      style={{
-        transformOrigin: 'center',
-      }}
-    >
-      <img
-        src={heroBg5}
-        alt="Trading Platform"
-        className="account-hero-image h-full w-full object-cover object-center brightness-110"
-      />
-    </div>
-  </div>
+        {/* Fade-in Overlays */}
+        <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
 
-  {/* Fade-in Overlays */}
-  <div className="absolute inset-0 bg-black/50 animate-[fadeIn_1.5s_ease-out]" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,120,60,0.35),transparent_65%)] animate-[fadeIn_1.8s_ease-out]" />
+        <div className="relative z-10 w-full max-w-4xl -translate-y-4 sm:translate-y-0">
+          
+          {/* Platform Badge - Slide In From Top */}
+          <div className="animate-[slideInDown_0.6s_ease-out]">
+            <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
+              <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+              Platform
+            </span>
+          </div>
 
-  <div className="relative z-10 w-full max-w-4xl -translate-y-4 sm:translate-y-0">
-    
-    {/* Platform Badge - Slide In From Top */}
-    <div className="animate-[slideInDown_0.6s_ease-out]">
-      <span className="mb-2 inline-flex items-center gap-2 rounded-md border border-[#D4AF37]/40 px-4 py-2 text-xs text-[#D4AF37] sm:mb-6 sm:px-5">
-        <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
-        Platform
-      </span>
-    </div>
+          {/* Main Heading - Staggered Fade In Up */}
+          <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
+            <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
+              Navigate Your
+            </span>
+            <br className="hidden sm:block" />
+            <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
+              Trading Success!
+            </span>
+          </h1>
 
-    {/* Main Heading - Staggered Fade In Up */}
-    <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-6xl">
-      <span className="inline-block animate-[fadeInUp_0.8s_ease-out]">
-        Navigate Your
-      </span>
-      <br className="hidden sm:block" />
-      <span className="inline-block animate-[fadeInUp_1s_ease-out] text-[#D4AF37]">
-        Trading Success!
-      </span>
-    </h1>
+          {/* Description - Fade In Up */}
+          <div className="animate-[fadeInUp_1.2s_ease-out]">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
+              Trade smarter with a fast, secure, and user-friendly platform.
+              <br className="hidden sm:block" />
+              Everything you need to navigate the markets with confidence.
+            </p>
+          </div>
 
-    {/* Description - Fade In Up */}
-    <div className="animate-[fadeInUp_1.2s_ease-out]">
-      <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
-        Trade smarter with a fast, secure, and user-friendly platform.
-        <br className="hidden sm:block" />
-        Everything you need to navigate the markets with confidence.
-      </p>
-    </div>
+          {/* Button - Fade In Up with Pulse & Shine Effect - MOBILE RESPONSIVE */}
+          <div className="animate-[fadeInUp_1.4s_ease-out]">
+            <button
+              ref={buttonRef}
+              className={`explore-button ${shineActive ? 'shine-active' : ''} mt-4 w-full max-w-[200px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm`}
+              onClick={() => {
+                document.getElementById("platform-overview")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+              onTouchStart={triggerShine}
+              onTouchEnd={() => {
+                // Optional: handle touch end
+              }}
+              onMouseDown={triggerShine}
+            >
+              Explore Platform
+            </button>
+          </div>
+        </div>
 
-    {/* Button - Fade In Up with Pulse */}
-    <div className="animate-[fadeInUp_1.4s_ease-out]">
-      <button
-        className="button-shine mt-4 w-full max-w-[200px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm animate-[gentlePulse_3s_ease-in-out_infinite] hover:animate-none"
-        onClick={() => {
-          document.getElementById("platform-overview")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }}
-      >
-        Explore Platform
-      </button>
-    </div>
-  </div>
-
-  <style jsx>{`
-    /* Keyframe Animations */
-    @keyframes slowZoom {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes slideInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes gentlePulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.03);
-      }
-    }
-    
-    /* Button Shine Effect */
-    .button-shine {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .button-shine::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
-      transition: left 0.5s ease;
-    }
-
-    .button-shine:hover::before {
-      left: 100%;
-    }
-
-    /* Pulse Animation for Badge Dot */
-    .animate-pulse {
-      animation: gentlePulse 2s ease-in-out infinite;
-    }
-
-    /* Reduced Motion Support */
-    @media (prefers-reduced-motion: reduce) {
-      .transition-all,
-      [class*="animate-"] {
-        animation: none !important;
-        transition: none !important;
-      }
-      .button-shine::before {
-        transition: none;
-      }
-    }
-  `}</style>
-</section>
+        <style jsx>{`
+          /* Keyframe Animations */
+          @keyframes slowZoom {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.1);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @keyframes slideInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @keyframes gentlePulse {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.03);
+            }
+          }
+          
+          /* Button Shine Effect - Enhanced for Mobile */
+          .explore-button {
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            cursor: pointer;
+            z-index: 1;
+          }
+          
+          .explore-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 60%;
+            height: 200%;
+            background: linear-gradient(
+              115deg,
+              transparent,
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.3),
+              transparent
+            );
+            transform: skewX(-25deg);
+            transition: all 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+          }
+          
+          /* Hover effect for desktop */
+          .explore-button:hover::before {
+            animation: shine 0.8s ease-in-out 1;
+            opacity: 1;
+          }
+          
+          /* Touch/Click effect for mobile - ensures shine works on all devices */
+          .explore-button:active::before,
+          .explore-button.shine-active::before {
+            animation: shine 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1;
+            opacity: 1;
+          }
+          
+          /* Additional touch feedback for mobile */
+          .explore-button:active {
+            transform: scale(0.97);
+            transition: transform 0.1s ease;
+          }
+          
+          @keyframes shine {
+            0% {
+              left: -100%;
+              opacity: 0;
+            }
+            10% {
+              opacity: 0.8;
+            }
+            100% {
+              left: 150%;
+              opacity: 0;
+            }
+          }
+          
+          /* Gentle Pulse Animation */
+          .explore-button {
+            animation: gentlePulse 3s ease-in-out infinite;
+          }
+          
+          .explore-button:hover {
+            animation: none;
+          }
+          
+          /* Reduced Motion Support */
+          @media (prefers-reduced-motion: reduce) {
+            .transition-all,
+            [class*="animate-"],
+            .explore-button {
+              animation: none !important;
+              transition: none !important;
+            }
+            .explore-button::before {
+              display: none;
+            }
+          }
+          
+          /* Mobile-specific enhancements */
+          @media (max-width: 640px) {
+            .explore-button {
+              -webkit-tap-highlight-color: transparent;
+              touch-action: manipulation;
+            }
+            
+            /* Ensure shine works on mobile touch */
+            .explore-button.shine-active::before {
+              animation: shine 0.6s ease-in-out 1;
+            }
+          }
+        `}</style>
+      </section>
 
       {/* ================= SECOND SECTION - NAVIGATE YOUR SUCCESS (WITH SCROLL ANIMATION) ================= */}
-
       <section
         id="platform-overview"
         className="bg-[#f8f8f8] px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-20"
@@ -390,7 +463,6 @@ export default function TradingPage() {
       </section>
 
       {/* ================= THIRD SECTION - WHY NOVAFXM (WITH SCROLL ANIMATION) ================= */}
-
       <section className="w-full bg-[#efefe7] px-4 py-10 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Heading - Animated */}
@@ -429,41 +501,6 @@ export default function TradingPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      <style jsx>{`
-        /* Button Shine Effect */
-        .button-shine {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .button-shine::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-
-        .button-shine:hover::before {
-          left: 100%;
-        }
-
-        /* Reduced Motion Support */
-        @media (prefers-reduced-motion: reduce) {
-          .transition-all {
-            transition: none;
-          }
-        }
-      `}</style>
     </div>
   );
 }

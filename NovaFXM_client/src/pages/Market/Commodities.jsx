@@ -325,11 +325,11 @@ export default function CommoditiesSection() {
     { icon: RiStockLine, title: "Exchange-Traded Funds (ETFs)", desc: "Invest in a variety of commodities without purchasing physical assets, offering broad exposure to commodity markets." }
   ].map((item, index) => (
     <StaggeredCard key={index} index={index}>
-      <div className="group relative flex h-full min-h-[280px] flex-col items-center overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
-        <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
-          <item.icon className="text-2xl md:text-3xl" />
+      <div className="group relative flex h-full min-h-[220px] sm:min-h-[260px] md:min-h-[280px] flex-col items-center overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-4 sm:p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
+        <div className="relative z-10 mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 sm:mb-4 sm:h-14 sm:w-14 md:h-16 md:w-16">
+          <item.icon className="text-xl sm:text-2xl md:text-3xl" />
         </div>
-        <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">{item.title}</h3>
+        <h3 className="mb-2 text-base sm:text-lg font-bold leading-tight text-gray-800 md:text-xl">{item.title}</h3>
         <p className="flex-1 text-sm leading-6 text-gray-600">{item.desc}</p>
       </div>
     </StaggeredCard>

@@ -257,7 +257,7 @@ const CryptocurrencyPage = () => {
       </div>
 
       {/* Content Section */}
-      <div className="px-3 py-8 mx-auto max-w-7xl sm:px-5 md:py-14 lg:px-6">
+      <div className="px-3 py-4 mx-auto max-w-7xl sm:py-6 md:py-8 sm:px-5 md:py-14 lg:px-6">
         {/* About Crypto Section */}
         <div className="grid items-start gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
   
@@ -334,9 +334,9 @@ const CryptocurrencyPage = () => {
 
      {/* What are Crypto CFDs Section */}
 <ScrollReveal delay={0} threshold={0.2} direction="up">
-  <div className="rounded-2xl bg-[#014421] p-2 text-white shadow-lg transition-all duration-200 hover:shadow-xl sm:rounded-3xl sm:p-2 lg:p-6">
-  <div className="mx-auto max-w-7xl">
-    <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-6 md:text-3xl lg:text-4xl">
+ <div className="mx-auto w-full -mt-2 sm:mt-0 max-w-7xl rounded-2xl bg-[#014421] px-6 py-8 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+  <div className="mx-auto max-w-3xl px-4">
+    <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-4 md:text-3xl lg:text-4xl">
       What are Crypto CFDs?
     </h2>
     <p className="mb-3 text-sm leading-7 text-gray-200 md:mb-4 md:text-base md:leading-8">
@@ -373,23 +373,23 @@ const CryptocurrencyPage = () => {
   </ScrollReveal>
 
   {/* Cards Layout - All cards slide from LEFT */}
-  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+  <div className="grid gap-4 sm:gap-5 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
     {factors.map((factor, index) => (
       <div
         key={index}
-        className={`relative flex min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-6 py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards] opacity-0`}
+        className={`relative flex min-h-[220px] sm:min-h-[260px] md:min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-4 py-5 sm:px-5 sm:py-6 md:px-6 md:py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards] opacity-0`}
         style={{ animationDelay: `${index * 0.1}s` }}
       >
         {/* Icon */}
-        <div className="relative z-10 mx-auto mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white transition-all duration-300 group-hover:scale-110">
+        <div className="relative z-10 mx-auto mb-4 sm:mb-5 md:mb-6 flex h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white transition-all duration-300 group-hover:scale-110">
           {factor.icon}
         </div>
         {/* Title */}
-        <h3 className="relative z-10 mb-5 flex min-h-[52px] items-center justify-center px-2 text-center text-xl font-bold leading-tight text-[#014421]">
+        <h3 className="relative z-10 mb-3 sm:mb-4 md:mb-5 flex min-h-[44px] sm:min-h-[48px] md:min-h-[52px] items-center justify-center px-2 text-center text-base sm:text-lg md:text-xl font-bold leading-tight text-[#014421]">
           {factor.title}
         </h3>
         {/* Description */}
-        <p className="relative z-10 px-2 text-sm leading-7 text-center text-gray-600">
+        <p className="relative z-10 px-2 text-xs sm:text-sm md:text-sm leading-6 sm:leading-7 text-center text-gray-600">
           {factor.description}
         </p>
       </div>
@@ -471,7 +471,7 @@ const CryptocurrencyPage = () => {
         </div>
       </ScrollReveal>
 
-      {/* Why Trade Crypto CFDs Section with Background Image */}
+      {/* Why Trade Crypto CFDs Section with Background Image - FIXED VERSION */}
       <div className="px-3 py-10 bg-gray-50 sm:px-5 md:py-14 lg:px-6">
         <div className="grid mx-auto overflow-hidden max-w-7xl rounded-2xl bg-gray-50 lg:grid-cols-2">
           <ScrollReveal delay={0} threshold={0.2} direction="left">
@@ -502,18 +502,21 @@ const CryptocurrencyPage = () => {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0} threshold={0.2} direction="right">
-            <div
-              className="min-h-[300px] bg-gray-50 md:min-h-[400px]"
-              style={{
-                backgroundImage: `url(${cryptoBottom})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                borderRadius: "0px",
-              }}
-            />
-          </ScrollReveal>
+          {/* FIXED: Image with curved border and spacing below */}
+       <ScrollReveal delay={0} threshold={0.6} direction="right">
+  <div className="mt-16 mb-12 mr-4 lg:mt-20 lg:mr-10">
+    <div
+      className="min-h-[300px] bg-gray-50 md:min-h-[400px]"
+      style={{
+        backgroundImage: `url(${cryptoBottom})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        borderRadius: "24px",
+      }}
+    />
+  </div>
+</ScrollReveal>
         </div>
       </div>
 

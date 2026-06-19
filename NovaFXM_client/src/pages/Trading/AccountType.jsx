@@ -134,7 +134,7 @@ const ScrollReveal = ({ children, delay = 0, threshold = 0.2 }) => {
   );
 };
 
-// Animated Account Card Component - NO SHINING, SLOWER HOVER
+// Animated Account Card Component - WITH SHINE EFFECT ON BUTTONS
 const AnimatedAccountCard = ({ account, index }) => {
   const { Icon, ...accountData } = account;
   const navigate = useNavigate();
@@ -154,7 +154,7 @@ const AnimatedAccountCard = ({ account, index }) => {
         )}
 
         <div className="flex items-center gap-3 mb-5 mt-2">
-          <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white">
+          <div className="account-plan-icon flex h-9 w-9 items-center justify-center rounded-md bg-[#014421] text-sm text-white transition duration-300">
             <Icon />
           </div>
           <h2 className="text-lg font-bold leading-snug text-gray-900 sm:text-xl">{accountData.title}</h2>
@@ -171,22 +171,21 @@ const AnimatedAccountCard = ({ account, index }) => {
           ))}
         </ul>
 
-        <button
-          type="button"
-          onClick={() => navigate("/signup")}
-          className={`w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ${
-            accountData.popular
-              ? "border-[#014421] bg-[#014421] text-white"
-              : "border-[#014421] bg-white text-[#014421] hover:bg-[#014421] hover:text-white"
-          }`}
-        >
-          Open Account
-        </button>
+      <button
+  type="button"
+  onClick={() => navigate("/signup")}
+  className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
+    accountData.popular
+      ? "border-[#014421] bg-[#014421] text-white hover:shadow-[#014421]/20"
+      : "border-[#014421] bg-white text-[#014421] hover:bg-[#014421] hover:text-white hover:shadow-[#014421]/20"
+  }`}
+>
+  Open Account
+</button>
       </div>
     </ScrollReveal>
   );
 };
-
 // Animated Step Card Component
 const AnimatedStepCard = ({ step, index, Icon }) => {
   return (
@@ -253,6 +252,17 @@ export default function AccountTypesPage() {
     },
   ];
 
+  useEffect(() => {
+    // On touch devices, trigger a one-time shine animation for buttons so mobile users see the effect
+    if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+      const els = document.querySelectorAll('.button-shine');
+      els.forEach((el, i) => {
+        setTimeout(() => el.classList.add('shine-animate'), i * 250);
+        setTimeout(() => el.classList.remove('shine-animate'), i * 250 + 1200);
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16] overflow-hidden">
       {/* Hero Section */}
@@ -307,20 +317,20 @@ export default function AccountTypesPage() {
             </p>
           </div>
 
-          {/* Button - Fade In Up */}
-          <div className="animate-[fadeInUp_1.4s_ease-out]">
-            <button
-              className="mt-8 w-full max-w-[260px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-green-800 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
-              onClick={() => {
-                document.getElementById("account-cards")?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-              }}
-            >
-              Choose Your Account Plan
-            </button>
-          </div>
+         {/* Button - Fade In Up with Shine Effect */}
+<div className="animate-[fadeInUp_1.4s_ease-out]">
+  <button
+    className="button-shine mt-8 w-full max-w-[260px] rounded-full bg-[#014421] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0 sm:mt-8 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-sm"
+    onClick={() => {
+      document.getElementById("account-cards")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }}
+  >
+    Choose Your Account Plan
+  </button>
+</div>
         </div>
 
         <style jsx>{`
@@ -368,15 +378,69 @@ export default function AccountTypesPage() {
             }
           }
           
-          /* Reduced Motion Support */
-          @media (prefers-reduced-motion: reduce) {
-            .transition-all,
-            [class*="animate-"] {
-              animation: none !important;
-              transition: none !important;
-            }
-          }
-        `}</style>
+          @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Button Shine Effect */
+  .button-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  .button-shine:hover::before {
+    left: 100%;
+  }
+
+  /* Pulse Animation for Badge Dot */
+  .animate-pulse {
+    animation: gentlePulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes gentlePulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .transition-all,
+    [class*="animate-"] {
+      animation: none !important;
+      transition: none !important;
+    }
+    .button-shine::before {
+      transition: none;
+    }
+  }
+`}</style>
       </section>
 
       {/* Accounts Section - 6 Cards Fading In Up */}
@@ -426,13 +490,13 @@ export default function AccountTypesPage() {
 
         {/* Button - Fade In Up */}
         <ScrollReveal delay={600}>
-          <button
-            type="button"
-            onClick={() => navigate("/login")}
-            className="mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-[#014421] active:translate-y-0 sm:w-auto"
-          >
-            Trade Now
-          </button>
+        <button
+  type="button"
+  onClick={() => navigate("/login")}
+  className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
+>
+  Trade Now
+</button>
         </ScrollReveal>
       </section>
 
@@ -483,6 +547,43 @@ export default function AccountTypesPage() {
           box-shadow: none;
           text-shadow: none;
           filter: none;
+        }
+
+        /* Re-enable shine for buttons with explicit class (override resets) */
+        .button-shine,
+        .button-shine * {
+          box-shadow: unset !important;
+          text-shadow: unset !important;
+          filter: unset !important;
+        }
+
+        /* Mobile-friendly shine: animate on focus/active and when JS adds .shine-animate */
+        .button-shine::before {
+          content: "";
+          position: absolute;
+          top: -10%;
+          left: -150%;
+          width: 40%;
+          height: 120%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+          transform: skewX(-20deg);
+          transition: opacity 0.25s ease;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .button-shine:hover::before,
+        .button-shine:active::before,
+        .button-shine:focus::before,
+        .button-shine.shine-animate::before {
+          animation: shine 1s ease-in-out 1;
+          opacity: 1;
+        }
+
+        @keyframes shine {
+          0% { left: -150%; opacity: 0; }
+          10% { opacity: 0.6; }
+          100% { left: 150%; opacity: 0; }
         }
         
         /* Keep only necessary shadows */
