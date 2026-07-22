@@ -91,7 +91,7 @@ export default function FAQ() {
 
               {/* Answer */}
               {openId === item.id && (
-                <p className="ml-0 mt-3 text-justify text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-left sm:text-sm">
+                <p className="ml-0 mt-3 text-center text-xs leading-relaxed text-gray-600 sm:ml-11 sm:text-left sm:text-sm">
                   {item.answer}
                 </p>
               )}

@@ -140,7 +140,7 @@ const Stock = () => {
             Stocks
           </h1>
 
-          <p className="market-hero-copy mx-auto mt-3 max-w-[18rem] text-sm font-medium leading-6 text-white drop-shadow-sm sm:mt-6 sm:max-w-3xl md:text-base md:leading-8 animate-[fadeInUp_1s_ease-out]">
+          <p className="market-hero-copy mx-auto mt-3 max-w-[18rem] text-base font-medium leading-6 text-white drop-shadow-sm sm:mt-6 sm:max-w-3xl md:text-base md:leading-8 animate-[fadeInUp_1s_ease-out]">
             Start Stock Trading Today with NOVAFXM
           </p>
 
@@ -166,7 +166,7 @@ const Stock = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={300} threshold={0.3} direction="up">
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
+            <p className="mt-4 text-center sm:text-left text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
               Unlock the potential of stock trading by investing in some of the world’s
               leading companies and growing your portfolio with confidence. Stock markets
               provide opportunities for both long-term investment and short-term trading,
@@ -346,7 +346,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
+            <p className="mt-4 text-center text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
               Stock trading offers access to a broad range of companies across
               various sectors, allowing you to diversify your investment strategy
               and manage risk. With the right stock trading approach, you can
@@ -368,7 +368,7 @@ const Stock = () => {
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-center text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
               Stock trading involves buying and selling shares of companies on
               exchanges. You can also trade stocks CFDs (Contracts for Difference),
               which allow you to speculate on price movements with leverage. Many

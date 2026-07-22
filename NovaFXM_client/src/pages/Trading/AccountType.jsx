@@ -310,7 +310,7 @@ export default function AccountTypesPage() {
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-200 md:text-base">
               Choose an account that fits your trading style and goals.
               <br className="hidden sm:block" />
               Flexible options for every level of trader.

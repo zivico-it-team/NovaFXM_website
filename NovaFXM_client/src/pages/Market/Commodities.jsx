@@ -161,7 +161,7 @@ export default function CommoditiesSection() {
             Commodities
           </h1>
 
-          <p className="max-w-3xl px-2 mt-4 text-sm leading-6 text-white market-hero-copy animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
+          <p className="max-w-3xl px-2 mt-4 text-base leading-6 text-white market-hero-copy animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
             Trade global commodities like gold, oil and silver with Novafxm.
             Diversify your portfolio and capture opportunities in fast-moving
             markets.
@@ -197,7 +197,7 @@ export default function CommoditiesSection() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} threshold={0.3} direction="up">
-                <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base lg:leading-8">
+                <p className="mt-4 text-center sm:text-left text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
                   Step into the dynamic world of commodities and discover lucrative
                   opportunities in Earth's most essential resources. Commodities are
                   the raw materials that fuel the global economy, including oil,
@@ -234,7 +234,7 @@ export default function CommoditiesSection() {
                 <span className="text-[#014421]">Commodities?</span>
               </h2>
               <div className="mt-3 sm:mt-4 h-[2px] w-[75px] sm:w-[95px] bg-[#014421]"></div>
-              <p className="mt-4 text-justify text-sm font-regular leading-6 text-gray-600 sm:mt-6 sm:pl-7 sm:text-left sm:text-base">
+              <p className="mt-4 text-center text-sm font-regular leading-6 text-gray-600 sm:mt-6 sm:pl-7 sm:text-left sm:text-base">
                 Commodities are basic goods used in commerce and they can be
                 classified into two main categories:
               </p>
@@ -245,7 +245,7 @@ export default function CommoditiesSection() {
                   </div>
                   <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Hard Commodities</span>
                   <span className="font-bold text-black">:</span>
-                  <span className="flex-1 text-justify text-sm font-regular text-gray-600 sm:text-left sm:text-base">
+                  <span className="flex-1 text-center text-sm font-regular text-gray-600 sm:text-left sm:text-base">
                     Natural resources like oil, gold and metals gas, which are extracted from the Earth.
                   </span>
                 </div>
@@ -255,7 +255,7 @@ export default function CommoditiesSection() {
                   </div>
                   <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Soft Commodities</span>
                   <span className="font-bold text-black">:</span>
-                  <span className="flex-1 text-justify text-sm font-regular text-gray-600 sm:text-left sm:text-base">
+                  <span className="flex-1 text-center text-sm font-regular text-gray-600 sm:text-left sm:text-base">
                     Agricultural products or livestock, such as wheat, coffee and sugar.
                   </span>
                 </div>

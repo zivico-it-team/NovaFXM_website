@@ -203,7 +203,7 @@ export default function EconomicCalendar() {
             Economic Calendar
           </h1>
 
-          <p className="mt-4 max-w-3xl px-2 text-sm leading-6 text-white animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
+          <p className="mt-4 max-w-3xl px-2 text-base leading-6 text-white animate-[fadeInUp_1s_ease-out] sm:text-base md:mt-5 md:leading-7">
             Track high-impact market events, economic releases and global
             announcements with NOVAFXM.
           </p>

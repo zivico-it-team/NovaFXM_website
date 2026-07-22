@@ -78,7 +78,7 @@ const AnimatedCard = ({ card, index }) => {
         </div>
 
         {/* Description */}
-        <p className="mb-3 min-h-[72px] text-justify text-sm leading-relaxed text-gray-600 sm:text-left">
+        <p className="mb-3 min-h-[72px] text-center text-sm leading-relaxed text-gray-600 sm:text-left">
           {card.description}
         </p>
 
@@ -96,7 +96,7 @@ const AnimatedCard = ({ card, index }) => {
                     : "text-[#014421]"
                 }`}
               />
-              <p className="text-justify text-sm text-gray-700 sm:text-left">
+              <p className="text-center text-sm text-gray-700 sm:text-left">
                 {point}
               </p>
             </div>
@@ -212,7 +212,7 @@ export default function TradingPage() {
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-200 md:text-base">
               Trade smarter with a fast, secure, and user-friendly platform.
               <br className="hidden sm:block" />
               Everything you need to navigate the markets with confidence.
@@ -419,7 +419,7 @@ export default function TradingPage() {
 
               <div className="w-24 h-1 bg-[#014421] rounded-full mt-6 mb-8"></div>
 
-              <p className="mt-4 text-justify text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-left sm:text-lg md:text-justify">
+              <p className="mt-4 text-center text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-left sm:text-lg md:text-left">
                 <span className="font-bold text-black">NOVAFXM</span> is your
                 gateway to mastering the financial markets. Whether you're an
                 experienced trader or just starting your journey, our

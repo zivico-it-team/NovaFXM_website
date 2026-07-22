@@ -136,7 +136,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-justify text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-center sm:text-base sm:leading-relaxed md:text-lg"
+          className="mx-auto mt-3 hidden max-w-[19rem] text-sm leading-9 text-center text-gray-500 sm:mt-4 sm:block sm:max-w-2xl sm:px-2 sm:text-center sm:text-base sm:leading-relaxed md:text-lg"
           aria-label="Explore global markets with expert guidance and cutting-edge tools at NOVAFXM."
         >
           <LetterReveal

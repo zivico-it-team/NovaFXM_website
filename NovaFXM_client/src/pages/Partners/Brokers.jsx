@@ -243,7 +243,7 @@ export default function IntroducingBrokers() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} threshold={0.3} direction="left">
-                <p className="mb-4 text-justify font-regular text-base leading-relaxed text-gray-600">
+                <p className="mb-4 text-center sm:text-left font-regular text-base leading-relaxed text-gray-600">
                   Join the NOVAFXM Introducing Broker program and unlock
                   unlimited earning opportunities by referring traders
                   to our trusted platform.
@@ -251,7 +251,7 @@ export default function IntroducingBrokers() {
               </ScrollReveal>
 
               <ScrollReveal delay={250} threshold={0.3} direction="left">
-                <p className="text-gray-600 text-justify font-regular text-base leading-relaxed">
+                <p className="text-gray-600 text-center sm:text-left font-regular text-base leading-relaxed">
                   Our IB program is designed to help partners grow with
                   reliable payouts, advanced tools, professional support
                   and global market access.

@@ -228,7 +228,7 @@ export default function DepositWithdrawSection() {
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-gray-200 sm:mt-4 sm:text-base sm:leading-relaxed">
+            <p className="mx-auto mt-3 max-w-xl text-base leading-6 text-gray-200 sm:mt-4 sm:text-base sm:leading-relaxed">
               Deposit and withdraw funds quickly and securely with NOVAFXM.
               <br className="hidden sm:block" />
               Enjoy smooth transactions with trusted payment methods.

@@ -215,7 +215,7 @@ export default function Account() {
 
         {/* Bottom Text */}
         <p
-          className={`mx-auto mt-12 max-w-md text-justify text-sm leading-relaxed text-gray-700 transition-all duration-700 delay-500 sm:mt-14 sm:text-center sm:text-base ${
+          className={`mx-auto mt-12 max-w-md text-center text-sm leading-relaxed text-gray-700 transition-all duration-700 delay-500 sm:mt-14 sm:text-center sm:text-base ${
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >

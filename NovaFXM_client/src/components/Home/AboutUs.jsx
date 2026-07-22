@@ -59,29 +59,14 @@ export default function AboutUs() {
           <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-[#014421] sm:mt-4 sm:w-16 md:mx-0"></div>
 
           <p
-  className="
-    mt-4
-    max-w-3xl
-    text-justify
-    text-sm
-    leading-7
-    text-gray-600
-
-    sm:mt-5
-    sm:text-base
-    sm:leading-relaxed
-
-    md:text-lg
-    md:leading-loose
-    md:text-justify
-  "
->
-  We are a technology-driven broker committed to providing exceptional
-  trading conditions. Our platform bridges the gap between retail and
-  institutional trading, offering unparalleled access to global financial
-  markets.
-</p>
-          <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base md:text-lg">
+            className="mt-4 max-w-3xl text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base sm:leading-relaxed md:text-lg md:leading-loose md:text-left"
+          >
+            We are a technology-driven broker committed to providing exceptional
+            trading conditions. Our platform bridges the gap between retail and
+            institutional trading, offering unparalleled access to global financial
+            markets.
+          </p>
+          <p className="mt-4 text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-base md:text-lg md:text-left">
             Built by traders for traders, our mission is to empower your financial decisions with
             cutting-edge tools, transparent pricing and robust security.
           </p>

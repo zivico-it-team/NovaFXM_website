@@ -349,7 +349,7 @@ export default function Promotions() {
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-200 md:text-base">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-200 md:text-base">
               Unlock more opportunities with year-round trading bonuses designed to boost your trading potential.
             </p>
           </div>

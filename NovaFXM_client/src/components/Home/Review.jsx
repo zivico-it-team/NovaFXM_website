@@ -43,7 +43,7 @@ const ReviewCard = ({ name, role, image, text, index }) => (
 
     <div className="mb-3 text-sm text-[#D4AF37]">★★★★★</div>
 
-    <p className="mb-4 text-xs leading-6 text-justify text-gray-700 sm:text-sm">
+    <p className="mb-4 text-xs leading-6 text-center sm:text-left text-gray-700 sm:text-sm">
       {text}
     </p>
 
@@ -146,7 +146,7 @@ const stats = [
 ];
 
 const StatBox = ({ icon: Icon, value, suffix, title, desc }) => (
-  <div className="flex flex-col items-center p-4 text-center interactive-card rounded-2xl sm:p-5">
+  <div className="flex flex-col items-center justify-center p-6 text-center transition bg-white border shadow-sm rounded-xl hover:border-yellow-400 sm:p-6">
     <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#D4AF37] md:h-12 md:w-12">
       <Icon size={20} color="black" />
     </div>
@@ -157,7 +157,7 @@ const StatBox = ({ icon: Icon, value, suffix, title, desc }) => (
 
     <p className="text-sm font-bold text-gray-600">{title}</p>
 
-    <p className="mt-2 text-xs text-justify text-gray-500 sm:text-center">
+    <p className="mt-2 text-xs text-center text-gray-500 sm:text-center">
       {desc}
     </p>
   </div>

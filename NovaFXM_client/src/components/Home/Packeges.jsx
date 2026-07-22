@@ -67,7 +67,7 @@ export default function PricingSection() {
           Choose Your Account
         </h2>
 
-        <p className="reveal-up reveal-delay-1 mx-auto mb-7 max-w-2xl text-justify text-sm leading-6 text-gray-600 sm:mb-8 sm:text-center sm:text-base">
+        <p className="reveal-up reveal-delay-1 mx-auto mb-7 max-w-2xl text-center text-sm leading-6 text-gray-600 sm:mb-8 sm:text-center sm:text-base">
           Tailored trading conditions to suit every trader's style and experience level.
         </p>
 

@@ -332,7 +332,7 @@ const Methords = () => {
                 <h3 className="text-lg font-bold text-white sm:text-4xl">
                   {activeTab}
                 </h3>
-                <p className="mt-0.5 text-justify text-[10px] text-white/70 sm:text-left sm:text-base">
+                <p className="mt-0.5 text-center text-[10px] text-white/70 sm:text-left sm:text-base">
                   {activeDetails.description}
                 </p>
               </div>
@@ -360,7 +360,7 @@ const Methords = () => {
                         <h4 className="text-xs font-black tracking-tight text-white sm:text-2xl">
                           {item.symbol}
                         </h4>
-                        <p className="mt-0.5 text-justify text-[8px] leading-tight text-white/70 sm:text-right sm:text-sm">
+                        <p className="mt-0.5 text-right text-[8px] leading-tight text-white/70 sm:text-right sm:text-sm">
                           {item.name}
                         </p>
                       </div>

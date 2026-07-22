@@ -251,7 +251,7 @@ const IndicesPage = () => {
 
           {/* Description - Fade In Up */}
           <div className="animate-[fadeInUp_1.2s_ease-out]">
-            <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-200 md:text-base md:leading-8">
+            <p className="market-hero-copy mx-auto mt-4 max-w-3xl text-base leading-7 text-gray-200 md:text-base md:leading-8">
               Unlock a Wide Range of Indices from the World's Leading
               Economies with NOVAFXM
             </p>
@@ -291,7 +291,7 @@ const IndicesPage = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={200} threshold={0.3} direction="up">
-              <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base lg:leading-8">
+              <p className="mt-4 text-sm text-center sm:text-left leading-7 text-gray-600 sm:text-base lg:leading-8">
                 Stock market indices provide a clear snapshot of a market's performance by calculating the combined value of a selected group of stocks. These indices offer valuable insight into market trends and economic health, representing sectors or entire stock markets. Whether it's the NASDAQ or a country's top corporations like the S&P 500, indices help investors gauge the broader market dynamics.
               </p>
             </ScrollReveal>
@@ -467,7 +467,7 @@ const IndicesPage = () => {
           <span className="text-[#014421]">Index Price</span>
         </h2>
         <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421] sm:mx-0"></div>
-        <p className="text-center text-sm leading-7 text-gray-500 sm:text-justify">
+        <p className="text-center text-sm leading-7 text-gray-500 sm:text-left">
           Several factors influence index prices including economic data,
           political events, corporate announcements and industry trends.
         </p>

@@ -780,3 +780,12 @@ button {
     transform: translate(calc(-50vw - 50%), -50%);
   }
 }
+
+/* Mobile view paragraph centering across all pages */
+@media (max-width: 639px) {
+  p,
+  .text-justify {
+    text-align: center;
+  }
+}
+

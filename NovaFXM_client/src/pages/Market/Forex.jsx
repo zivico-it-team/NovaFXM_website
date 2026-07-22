@@ -290,7 +290,7 @@ function HeroSection() {
       
       <div className="market-hero-content relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-4xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
         <h1 className="market-hero-title text-4xl font-bold leading-tight text-white animate-[fadeInUp_0.8s_ease-out] sm:text-5xl md:text-6xl">Forex</h1>
-        <p className="market-hero-copy mt-4 max-w-2xl text-sm leading-6 text-gray-200 animate-[fadeInUp_1s_ease-out] sm:text-base sm:leading-7">
+        <p className="market-hero-copy mt-4 max-w-2xl text-base leading-6 text-gray-200 animate-[fadeInUp_1s_ease-out] sm:text-base sm:leading-7">
           Trade the world's most liquid market with NOVAFXM.
         </p>
       </div>
@@ -323,7 +323,7 @@ function AboutSection() {
             <h3 className="mt-2 text-2xl font-bold text-[#014421] sm:mt-3 sm:text-3xl">NOVAFXM</h3>
           </ScrollReveal>
           <ScrollReveal delay={400} threshold={0.3} direction="up">
-            <p className="mt-4 text-justify text-sm leading-7 text-gray-600 sm:mt-5 sm:text-left sm:text-base lg:leading-8">
+            <p className="mt-4 text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-left sm:text-base lg:leading-8">
               At NOVAFXM, we specialize in providing an exceptional Forex trading
               experience. Our platform offers access to major, minor and exotic
               currency pairs with deep liquidity, competitive spreads and
@@ -515,7 +515,7 @@ function SecuritySection() {
               <h2 className="mt-2 text-2xl font-bold leading-tight text-[#D4AF37] sm:text-3xl">
                 Security & Compliance
               </h2>
-              <p className="mt-5 max-w-4xl text-justify text-sm leading-7 text-white sm:text-left sm:text-base">
+              <p className="mt-5 max-w-4xl text-center text-sm leading-7 text-white sm:text-left sm:text-base">
                 NOVAFXM is committed to the highest standards of financial security
                 and regulatory compliance. We follow strict anti-money laundering
                 (AML) policies and implement robust Know Your Customer (KYC)

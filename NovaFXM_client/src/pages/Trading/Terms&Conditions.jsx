@@ -185,114 +185,62 @@ const TermsConditions = () => {
     <div className="min-h-screen overflow-x-hidden bg-white font-sans">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black">
-  
-  {/* Animated Background Image */}
-  <img
-    src="/terms condition.png"
-    alt="Terms Background"
-    className="absolute inset-0 w-full h-full object-cover scale-105 animate-[slowZoom_15s_ease-in-out_infinite]"
-  />
+        {/* Animated Background Image */}
+        <img
+          src="/terms condition.png"
+          alt="Terms Background"
+          className="absolute inset-0 w-full h-full object-cover scale-105 animate-[slowZoom_15s_ease-in-out_infinite]"
+        />
 
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/60"></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-  {/* Green Glow Animation */}
-  <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-green-500/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
+        {/* Green Glow Animation */}
+        <div className="absolute top-10 right-0 h-64 w-64 rounded-full bg-green-500/20 blur-3xl animate-pulse sm:right-10 sm:h-[500px] sm:w-[500px]"></div>
 
-  {/* Floating Particles */}
-  <div className="absolute inset-0 overflow-hidden">
-    <span className="absolute top-[15%] right-[15%] w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-    <span className="absolute top-[20%] right-[25%] w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
-    {/* <span className="absolute bottom-[20%] left-[25%] w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span> */}
-    {/* <span className="absolute bottom-[35%] right-[15%] w-2 h-2 bg-green-400 rounded-full animate-bounce"></span> */}
-  </div>
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          <span className="absolute top-[15%] right-[15%] w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+          <span className="absolute top-[20%] right-[25%] w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+        </div>
 
-  {/* Content */}
-  <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-8">
-    <div className="mx-auto w-full max-w-7xl">
-    
-    <div className="max-w-2xl text-white animate-fadeInUp">
-      
-      {/* Badge */}
-      <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D4AF37] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
-        <svg
-          className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2 5 5v6c0 5 3.4 9.7 7 11 3.6-1.3 7-6 7-11V5l-7-3Zm3.7 8.3-4.2 4.2a1 1 0 0 1-1.4 0l-1.8-1.8a1 1 0 1 1 1.4-1.4l1.1 1.1 3.5-3.5a1 1 0 0 1 1.4 1.4Z" />
-        </svg>
+        {/* Content */}
+        <div className="relative z-10 flex min-h-[calc(100vh-72px)] items-center px-4 py-16 sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)] lg:px-8">
+          <div className="mx-auto w-full max-w-7xl">
+            <div className="max-w-2xl text-white animate-fadeInUp">
+              {/* Badge */}
+              <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-[#D4AF37] px-4 py-2.5 text-xs font-semibold text-black shadow-lg animate-float sm:mb-8 sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
+                <svg
+                  className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2 5 5v6c0 5 3.4 9.7 7 11 3.6-1.3 7-6 7-11V5l-7-3Zm3.7 8.3-4.2 4.2a1 1 0 0 1-1.4 0l-1.8-1.8a1 1 0 1 1 1.4-1.4l1.1 1.1 3.5-3.5a1 1 0 0 1 1.4 1.4Z" />
+                </svg>
+                <span>Your Trust, Our Commitment</span>
+              </div>
 
-        <span>Your Trust, Our Commitment</span>
-      </div>
+              {/* Title */}
+              <h1 className="max-w-[12ch] text-4xl font-bold leading-tight sm:max-w-none sm:text-5xl md:text-6xl lg:text-7xl">
+                <span className="text-green-500">Terms</span> & Conditions
+              </h1>
 
-      {/* Title */}
-      <h1 className="max-w-[12ch] text-4xl font-bold leading-tight sm:max-w-none sm:text-5xl md:text-6xl lg:text-7xl">
-        <span className="text-green-500">Terms</span> & Conditions
-      </h1>
+              {/* Line */}
+              <div className="my-6 h-1 w-20 rounded-full bg-[#D4AF37] animate-pulse sm:my-8 sm:w-28"></div>
 
-      {/* Line */}
-      <div className="my-6 h-1 w-20 rounded-full bg-[#D4AF37] animate-pulse sm:my-8 sm:w-28"></div>
-
-      {/* Description */}
-      <p className="max-w-xl text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
-        Please read these Terms & Conditions carefully before using our
-        platform.
-      </p>
-    </div>
-    </div>
-  </div>
-
-  {/* Custom Animations */}
-  <style jsx>{`
-    @keyframes slowZoom {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-
-    .animate-fadeInUp {
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-  `}</style>
-</section>
+              {/* Description */}
+              <p className="max-w-xl text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
+                Please read these Terms & Conditions carefully before using our
+                platform.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Content Section */}
       <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-7xl [&_h2]:text-2xl [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:text-lg [&_h3]:leading-snug sm:[&_h3]:text-xl [&_p]:break-words [&_p]:text-justify [&_p]:text-sm [&_p]:leading-7 sm:[&_p]:text-[15px] sm:[&_p]:leading-8">
+      <div className="mx-auto max-w-7xl [&_h2]:text-2xl [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:text-lg [&_h3]:leading-snug sm:[&_h3]:text-xl [&_p]:break-words [&_p]:text-center sm:[&_p]:text-justify [&_p]:text-sm [&_p]:leading-7 sm:[&_p]:text-[15px] sm:[&_p]:leading-8">
         
         {/* Introduction */}
         <div className="mb-14">

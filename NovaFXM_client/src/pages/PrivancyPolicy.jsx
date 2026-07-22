@@ -56,7 +56,7 @@ const PrivacyPolicy = () => {
   const sectionHeadingClass =
     "mb-5 text-2xl font-bold leading-tight text-[#014421] sm:mb-8 sm:text-3xl";
   const paragraphClass =
-    "break-words whitespace-pre-line text-justify text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
+    "break-words whitespace-pre-line text-center sm:text-justify text-sm leading-7 text-gray-700 sm:text-[15px] sm:leading-8";
 
   return (
     <div className="w-full bg-[#f5f5f5] overflow-hidden font-sans">

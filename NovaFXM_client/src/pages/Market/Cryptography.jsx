@@ -247,12 +247,12 @@ const CryptocurrencyPage = () => {
           <h1 className="mb-4 text-4xl font-bold market-hero-title sm:text-5xl md:text-6xl animate-[fadeInUp_0.8s_ease-out]">
             Cryptocurrency
           </h1>
-          <p className="mb-2 text-sm market-hero-copy md:text-base animate-[fadeInUp_1s_ease-out]">
+          <p className="mb-2 text-base market-hero-copy md:text-base animate-[fadeInUp_1s_ease-out]">
             Step into Crypto CFD Trading with NOVAFXM
           </p>
-          <p className="text-xs text-gray-300 market-hero-copy md:text-sm animate-[fadeInUp_1.2s_ease-out]">
+          {/* <p className="text-base text-gray-300 market-hero-copy md:text-sm animate-[fadeInUp_1.2s_ease-out]">
             Access the digital asset market with flexibility and confidence.
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -292,7 +292,7 @@ const CryptocurrencyPage = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={400} threshold={0.3} direction="up">
-              <p className="mb-6 text-sm leading-7 text-justify text-gray-600 md:text-base">
+              <p className="mb-6 text-sm leading-7 text-center sm:text-left text-gray-600 md:text-base">
                 Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum, Ripple and
                 more through Contract for Difference (CFD) trading. 
                 Trade with advanced market analysis tools, real-time price tracking and

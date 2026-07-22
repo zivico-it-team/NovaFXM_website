@@ -97,7 +97,7 @@ export default function AutomatedTradingPage() {
             Automated Trading
           </h1>
 
-          <p className="mt-4 max-w-3xl px-1 text-sm leading-6 text-white animate-fade-up sm:px-2 sm:text-base md:mt-5 md:leading-7">
+          <p className="mt-4 max-w-3xl px-1 text-base leading-6 text-white animate-fade-up sm:px-2 sm:text-base md:mt-5 md:leading-7">
             Revolutionizing financial markets with precision-driven
             algorithmic strategies, intelligent market analysis, and
             lightning-fast execution designed for modern traders.
@@ -207,7 +207,7 @@ export default function AutomatedTradingPage() {
                       Is Automated Trading for Everyone?
                     </h3>
                   </div>
-                  <p className="mt-4 text-sm text-justify leading-7 text-gray-600 sm:text-base sm:leading-relaxed">
+                  <p className="mt-4 text-sm text-center sm:text-left leading-7 text-gray-600 sm:text-base sm:leading-relaxed">
                     Whether you're a professional trader seeking scalable
                     execution or a beginner exploring algorithmic systems,
                     automated trading platforms can be tailored to suit different
