@@ -781,11 +781,5 @@ button {
   }
 }
 
-/* Mobile view paragraph centering across all pages */
-@media (max-width: 639px) {
-  p,
-  .text-justify {
-    text-align: center;
-  }
-}
+
 

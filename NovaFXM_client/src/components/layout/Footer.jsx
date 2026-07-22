@@ -158,7 +158,7 @@ const Footer = () => {
                 rel="noreferrer"
                 className="hover:text-green-700"
               >
-                Global Tech Hub, London
+                Global Tech Hub, London, United Kingdom
               </a>
             </p>
 
@@ -198,7 +198,7 @@ const Footer = () => {
 
       {/* ── Legal Block ─────────────────────────────────────────────────────── */}
       <div className="mx-auto mt-10 max-w-7xl border-t border-gray-400 pt-5 text-left text-xs leading-relaxed text-gray-700">
-        <div className="mt-5 space-y-4 text-base text-center sm:text-left">
+        <div className="mt-5 space-y-4 text-base text-justify">
           <p>
             NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
             EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.   <br />  (Since 2024)
