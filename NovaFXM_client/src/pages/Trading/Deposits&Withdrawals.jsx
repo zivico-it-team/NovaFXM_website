@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageHero from "../../components/layout/PageHero";
+import PageIntroduction from "../../components/layout/PageIntroduction";
 import {
   FaBolt,
   FaLock,
@@ -180,9 +182,27 @@ export default function DepositWithdrawSection() {
 
   return (
     <section className="w-full bg-[#f4f1ea] overflow-hidden">
+      <PageHero
+        eyebrow="Deposits & Withdrawals"
+        title="Move Money on"
+        accent="Your Terms"
+        description="Deposit and withdraw funds quickly and securely with NOVAFXM. Enjoy smooth transactions with trusted payment methods."
+        image="/deposit.png"
+        imageAlt="Secure deposits and withdrawals"
+        actionLabel="View Payment Methods"
+        onAction={() => document.getElementById("payment-methods")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      />
+      <PageIntroduction
+        eyebrow="Simple and secure payments"
+        title="Fund and Access Your Trading Account"
+        description="Manage your money with confidence. NOVAFXM offers convenient, secure methods for deposits and withdrawals, so you can focus on your trading plan."
+        points={["Fast and secure transactions", "Multiple trusted payment methods", "Clear processing information"]}
+        image="/Deposits1.png.PNG"
+        imageAlt="NOVAFXM deposits and withdrawals"
+      />
       
       {/* HERO SECTION WITH FADE IN UP ANIMATIONS */}
-      <div className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100vh-80px)] sm:px-6 sm:py-12 lg:min-h-[calc(100vh-84px)]">
+      <div className="hidden">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">

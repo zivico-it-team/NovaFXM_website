@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import heroBg5 from "/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
+import PageHero from "../../components/layout/PageHero";
 import {
   BarChart3,
   UserRound,
@@ -166,8 +167,18 @@ export default function TradingPage() {
 
   return (
     <div className="w-full bg-white overflow-hidden">
+      <PageHero
+        eyebrow="Platform"
+        title="Navigate Your"
+        accent="Trading Success!"
+        description="Trade smarter with a fast, secure and user-friendly platform. Everything you need to navigate the markets with confidence."
+        image={heroBg5}
+        imageAlt="NOVAFXM trading platform"
+        actionLabel="Explore Platform"
+        onAction={() => document.getElementById("platform-overview")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      />
       {/* ================= HERO SECTION WITH ANIMATIONS ================= */}
-      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
+      <section className="hidden">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
