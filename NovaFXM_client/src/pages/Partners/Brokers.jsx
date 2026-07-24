@@ -263,22 +263,24 @@ export default function IntroducingBrokers() {
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
               {features.map((feature, index) => (
                 <StaggeredCard key={index} index={index}>
-                  <div className="group relative overflow-hidden rounded-[32px] border border-[#014421]/10 bg-white p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                  <div
+                    className="group relative overflow-hidden rounded-[24px] bg-white border border-[#014421]/10 p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col justify-center"
+                  >
                     {/* Background Glow */}
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
                     
                     {/* Title */}
-                    <h3 className="mb-3 text-2xl font-semibold text-[#014421] transition duration-300 group-hover:text-[#012a15]">
+                    <h3 className="text-xl font-bold text-[#014421] mb-3 group-hover:text-[#012a15] transition duration-300">
                       {feature.title}
                     </h3>
 
                     {/* Divider */}
-                    <div className="relative mb-4 h-[2px] w-full overflow-hidden bg-gray-100">
-                      <div className="absolute left-0 top-0 h-full w-20 bg-[#D4AF37] group-hover:w-full transition-all duration-500"></div>
+                    <div className="relative w-full h-[2px] bg-gray-100 mb-4 overflow-hidden">
+                      <div className="absolute left-0 top-0 h-full w-16 bg-[#D4AF37] group-hover:w-full transition-all duration-500"></div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 font-regular leading-relaxed text-base">
+                    <p className="text-gray-600 leading-relaxed text-base">
                       {feature.description}
                     </p>
                   </div>

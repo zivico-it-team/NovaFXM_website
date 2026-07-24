@@ -135,14 +135,14 @@ const MARKET_DATA = {
     { symbol: "XRPUSD", name: "Ripple", tag: "XRP", tradingViewSymbol: "BINANCE:XRPUSDT" },
   ],
   Indices: [
-    { symbol: "US100", name: "Nasdaq", tag: "IDX", tradingViewSymbol: "NASDAQ:NDX" },
-    { symbol: "US500", name: "S&P 500", tag: "IDX", tradingViewSymbol: "SP:SPX" },
-    { symbol: "US30", name: "Dow Jones", tag: "IDX", tradingViewSymbol: "DJ:DJI" },
+    { symbol: "US100", name: "Nasdaq", tag: "IDX", tradingViewSymbol: "OANDA:NAS100USD" },
+    { symbol: "US500", name: "S&P 500", tag: "IDX", tradingViewSymbol: "OANDA:SPX500USD" },
+    { symbol: "US30", name: "Dow Jones", tag: "IDX", tradingViewSymbol: "OANDA:US30USD" },
   ],
   Energies: [
     { symbol: "USOIL", name: "Crude Oil", tag: "EN", tradingViewSymbol: "TVC:USOIL" },
     { symbol: "UKOIL", name: "Brent Oil", tag: "EN", tradingViewSymbol: "TVC:UKOIL" },
-    { symbol: "NGAS", name: "Natural Gas", tag: "EN", tradingViewSymbol: "NYMEX:NG1!" },
+    { symbol: "NGAS", name: "Natural Gas", tag: "EN", tradingViewSymbol: "OANDA:NATGASUSD" },
   ],
 };
 
@@ -180,10 +180,15 @@ const TradingViewQuote = ({ symbol }) => {
   }, [symbol]);
 
   return (
-    <div
-      ref={containerRef}
-      className="tradingview-widget-container min-h-[50px] w-full overflow-hidden sm:min-h-[84px]"
-    />
+    <div 
+      className="relative w-full"
+      style={{ clipPath: 'polygon(0 0, calc(100% - 60px) 0, calc(100% - 60px) 40px, 100% 40px, 100% 100%, 0 100%)' }}
+    >
+      <div
+        ref={containerRef}
+        className="tradingview-widget-container min-h-[50px] w-full overflow-hidden sm:min-h-[84px]"
+      />
+    </div>
   );
 };
 
