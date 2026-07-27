@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import heroBg5 from "/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
+import PageHero from "../../components/layout/PageHero";
 import {
   BarChart3,
+  CandlestickChart,
+  Download,
+  SlidersHorizontal,
   UserRound,
   Zap,
   CheckCircle,
@@ -107,7 +112,43 @@ const AnimatedCard = ({ card, index }) => {
   );
 };
 
+const PlatformStepCard = ({ step, index }) => {
+  const Icon = step.icon;
+
+  return (
+    <ScrollReveal delay={index * 150} threshold={0.1}>
+      <div className="relative flex justify-center">
+        {index !== 2 && (
+          <div
+            aria-hidden="true"
+            className="absolute -right-8 top-16 z-10 hidden items-center gap-2 md:flex"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#014421]" />
+            <span className="h-2 w-2 rounded-full bg-[#014421]" />
+          </div>
+        )}
+
+        <div className="process-card relative w-full max-w-[320px] rounded-2xl border border-[#014421]/20 border-b-4 border-b-[#014421] bg-white px-5 pb-8 pt-14 text-center shadow-sm sm:px-6">
+          <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+            <div className="process-icon flex h-14 w-14 items-center justify-center rounded-full bg-[#014421] text-white shadow-lg shadow-[#014421]/20">
+              <Icon size={21} strokeWidth={2.2} />
+            </div>
+          </div>
+
+          <div className="absolute left-5 top-5 flex h-7 w-7 items-center justify-center rounded-full bg-[#014421] text-[11px] font-bold text-white">
+            {step.number}
+          </div>
+
+          <h3 className="mb-3 text-lg font-bold text-[#014421]">{step.title}</h3>
+          <p className="text-sm leading-relaxed text-gray-500">{step.description}</p>
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+};
+
 export default function TradingPage() {
+  const navigate = useNavigate();
   const [shineActive, setShineActive] = useState(false);
   const buttonRef = useRef(null);
 
@@ -164,10 +205,41 @@ export default function TradingPage() {
     },
   ];
 
+  const platformSteps = [
+    {
+      number: "01",
+      title: "Access the Platform",
+      description: "Sign in securely from any device and open your trading workspace.",
+      icon: Download,
+    },
+    {
+      number: "02",
+      title: "Set Up Your Workspace",
+      description: "Choose your markets, charts and tools to match your trading style.",
+      icon: SlidersHorizontal,
+    },
+    {
+      number: "03",
+      title: "Trade with Confidence",
+      description: "Analyse live opportunities and execute your trades with speed.",
+      icon: CandlestickChart,
+    },
+  ];
+
   return (
     <div className="w-full bg-white overflow-hidden">
+      <PageHero
+        eyebrow="Platform"
+        title="Navigate Your"
+        accent="Trading Success!"
+        description="Trade smarter with a fast, secure and user-friendly platform. Everything you need to navigate the markets with confidence."
+        image={heroBg5}
+        imageAlt="NOVAFXM trading platform"
+        actionLabel="Explore Platform"
+        onAction={() => document.getElementById("platform-overview")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      />
       {/* ================= HERO SECTION WITH ANIMATIONS ================= */}
-      <section className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-10 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 sm:py-16 lg:min-h-[calc(100svh-84px)]">
+      <section className="hidden">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -498,6 +570,49 @@ export default function TradingPage() {
                 </span>
               </p>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================= HOW THE PLATFORM WORKS ================= */}
+      <section className="bg-[#f8faf8] px-4 py-14 text-center sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <span className="h-0.5 w-8 bg-[#014421] sm:w-10" />
+              <p className="text-sm font-semibold text-gray-700">How It Works</p>
+              <span className="h-0.5 w-8 bg-[#014421] sm:w-10" />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+              Start Trading on the{" "}
+              <span className="text-[#014421]">NOVAFXM Platform</span>
+            </h2>
+            <p className="mx-auto mb-14 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
+              A simple, secure trading experience designed to take you from
+              sign-in to market execution in just three steps.
+            </p>
+          </ScrollReveal>
+
+          <div className="relative grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-10">
+            {platformSteps.map((step, index) => (
+              <PlatformStepCard key={step.number} step={step} index={index} />
+            ))}
+          </div>
+
+          <ScrollReveal delay={550}>
+            <p className="mx-auto mt-12 max-w-lg text-sm leading-relaxed text-gray-700 sm:mt-14 sm:text-base">
+              Powerful tools, live market data and reliable execution—all in one place.
+            </p>
+            <button
+              type="button"
+              onClick={() => navigate("/login")}
+              className="button-shine mt-5 rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#01351a] hover:shadow-lg"
+            >
+              Launch Platform
+            </button>
           </ScrollReveal>
         </div>
       </section>

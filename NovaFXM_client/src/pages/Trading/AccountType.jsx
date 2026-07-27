@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageHero from "../../components/layout/PageHero";
+import PageIntroduction from "../../components/layout/PageIntroduction";
 import {
   FaChartLine,
   FaCheck,
@@ -265,8 +267,26 @@ export default function AccountTypesPage() {
 
   return (
     <div className="min-h-screen bg-[#f7faf7] text-[#0b1f16] overflow-hidden">
+      <PageHero
+        eyebrow="Account Type"
+        title="Find Your Perfect"
+        accent="Trading Account"
+        description="Choose an account that fits your trading style and goals. Flexible options are available for every level of trader."
+        image="/accounttype.png"
+        imageAlt="NOVAFXM account types"
+        actionLabel="Choose Your Account Plan"
+        onAction={() => document.getElementById("account-cards")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      />
+      <PageIntroduction
+        eyebrow="Choose with confidence"
+        title="An Account for Every Trader"
+        description="Explore account options designed around your trading experience, strategy and goals. Start with the level that suits you today and progress at your own pace."
+        points={["Flexible minimum deposits", "Competitive spreads and leverage", "Dedicated 24/7 support"]}
+        image="/Auto 1.jpeg"
+        imageAlt="NOVAFXM account options"
+      />
       {/* Hero Section */}
-      <section className="relative flex min-h-[calc(100vh-72px)] items-start justify-center overflow-hidden bg-black px-4 pb-16 pt-24 text-center sm:min-h-[calc(100vh-80px)] sm:items-center sm:px-6 sm:py-16 lg:min-h-[calc(100vh-84px)]">
+      <section className="hidden">
         
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
