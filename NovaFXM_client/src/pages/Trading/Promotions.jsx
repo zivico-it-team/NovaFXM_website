@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaGift } from "react-icons/fa";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import PageHero from "../../components/layout/PageHero";
+import PageIntroduction from "../../components/layout/PageIntroduction";
 
 const promotions = [
   {
@@ -302,10 +304,28 @@ export default function Promotions() {
 
   return (
     <main className="min-h-screen bg-[#f5f7f5] text-[#07140d]">
+      <PageHero
+        eyebrow="Promotions"
+        title="Trade Smarter"
+        accent="With Year-Round Bonuses"
+        description="Unlock more opportunities with year-round trading bonuses designed to boost your trading potential."
+        image="/Promotions.png.jpeg"
+        imageAlt="NOVAFXM trading promotions"
+        actionLabel="View Bonuses"
+        onAction={() => document.getElementById("promotion-cards")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      />
+      <PageIntroduction
+        eyebrow="More value for your trading"
+        title="Make Every Deposit Go Further"
+        description="NOVAFXM promotions are designed to help you unlock more potential from your trading account while keeping all bonus terms clear and accessible."
+        points={["Year-round bonus opportunities", "Straightforward promotion terms", "Support when you need it"]}
+        image="/promotion-intro-bonus.png"
+        imageAlt="NOVAFXM bonus promotions"
+      />
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative flex min-h-[calc(100vh-72px)] items-center justify-center overflow-hidden bg-black px-4 py-16 text-center text-white sm:min-h-[calc(100vh-80px)] sm:px-6 lg:min-h-[calc(100vh-84px)]"
+        className="hidden"
       >
         {/* Animated Background Image with Zoom Effect */}
         <div className="absolute inset-0 overflow-hidden">
@@ -380,8 +400,8 @@ export default function Promotions() {
               className={`transition-all duration-700`}
               style={{
                 transitionDelay: `${index * 200}ms`,
-                opacity: heroAnimated ? 1 : 0,
-                transform: heroAnimated ? "translateY(0)" : "translateY(30px)",
+                opacity: 1,
+                transform: "translateY(0)",
               }}
             >
               <PromoCard promo={promo} />
@@ -389,8 +409,6 @@ export default function Promotions() {
           ))}
         </div>
       </section>
-
-      <FAQSection />
 
       <style jsx>{`
         /* Keyframe Animations */
@@ -489,6 +507,9 @@ export default function Promotions() {
           }
         }
       `}</style>
+
+      {/* Keep promotions FAQs as the final page section */}
+      <FAQSection />
     </main>
   );
 }
