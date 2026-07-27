@@ -175,31 +175,31 @@ const CryptocurrencyPage = () => {
       title: "Supply",
       description:
         "The total number of coins available and their release schedule.",
-      icon: <Coins size={34} />,
+      icon: <Coins size={28} />,
     },
     {
       title: "Market Capitalization",
       description:
         "The total value of coins in circulation and market expectations for future movements.",
-      icon: <ChartNoAxesCombined size={34} />,
+      icon: <ChartNoAxesCombined size={28} />,
     },
     {
       title: "Reputation",
       description:
         "The practical use cases and adoption of cryptocurrencies within financial systems.",
-      icon: <BadgeCheck size={34} />,
+      icon: <BadgeCheck size={28} />,
     },
     {
       title: "Utility",
       description:
         "The practical use cases and adoption of cryptocurrencies within financial systems.",
-      icon: <Blocks size={34} />,
+      icon: <Blocks size={28} />,
     },
     {
       title: "Events & News",
       description:
         "Reflects the performance of the market and major global movements.",
-      icon: <Newspaper size={34} />,
+      icon: <Newspaper size={28} />,
     },
   ];
 
@@ -257,42 +257,35 @@ const CryptocurrencyPage = () => {
       </div>
 
       {/* Content Section */}
-      <div className="px-3 py-4 mx-auto max-w-7xl sm:py-6 md:py-8 sm:px-5 md:py-14 lg:px-6">
+      <div className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
         {/* About Crypto Section */}
-        <div className="grid items-start gap-8 mb-12 md:mb-16 md:grid-cols-2 md:gap-12 lg:gap-16">
+        <div className="grid items-center gap-6 mb-12 md:mb-16 lg:grid-cols-[1fr_1.08fr] lg:gap-10">
   
         {/* IMAGE - Slide from Left */}
 <ScrollReveal delay={0} threshold={0.3} direction="left">
-  <div className="order-2 md:order-1 flex items-center justify-center group overflow-hidden rounded-2xl md:rounded-3xl">
+  <div className="order-2 group overflow-hidden rounded-2xl lg:order-1">
     <img
       src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1470&auto=format&fit=crop"
       alt="crypto"
-      className="h-[240px] w-full rounded-2xl object-cover shadow-lg transition-all duration-500 group-hover:scale-105 sm:h-[320px] md:h-[420px] md:rounded-3xl lg:h-[450px]"
+      className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 group-hover:scale-105 sm:h-[300px] lg:h-[360px]"
     />
   </div>
 </ScrollReveal>
           {/* TEXT CONTENT */}
-          <div className="order-1 md:order-2 md:pl-2 lg:pl-4">
+          <div className="order-1 lg:order-2">
             <ScrollReveal delay={100} threshold={0.3} direction="up">
-              <h3 className="mb-2 text-base text-gray-700 md:text-lg">
-                Maximize Opportunities, Manage Risk
-              </h3>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={200} threshold={0.3} direction="up">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#014421] mb-4">
-                Trade Crypto CFDs with
+              <h2 className="leading-tight">
+                <span className="block text-base font-bold text-[#111827] sm:text-lg">
+                  Maximize Opportunities, Manage Risk
+                </span>
+                <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
+                  Trade Crypto CFDs with NOVAFXM
+                </span>
               </h2>
             </ScrollReveal>
-            
-            <ScrollReveal delay={300} threshold={0.3} direction="up">
-              <p className="text-[#D4AF37] font-bold mb-4 text-2xl">
-                NOVAFXM
-              </p>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={400} threshold={0.3} direction="up">
-              <p className="mb-6 text-sm leading-7 text-center sm:text-left text-gray-600 md:text-base">
+
+            <ScrollReveal delay={200} threshold={0.3} direction="up">
+              <p className="mt-4 text-sm text-center sm:text-left leading-7 text-gray-600 sm:text-base lg:leading-8">
                 Gain exposure to leading cryptocurrencies like Bitcoin, Ethereum, Ripple and
                 more through Contract for Difference (CFD) trading. 
                 Trade with advanced market analysis tools, real-time price tracking and
@@ -303,23 +296,23 @@ const CryptocurrencyPage = () => {
               </p>
             </ScrollReveal>
             
-            <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4">
-              <ScrollReveal delay={500} threshold={0.3} direction="up">
-                <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-4 lg:flex-nowrap">
+              <ScrollReveal delay={300} threshold={0.3} direction="up">
+                <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                   <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Potential Returns
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal delay={600} threshold={0.3} direction="up">
-                <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+              <ScrollReveal delay={400} threshold={0.3} direction="up">
+                <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                   <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Simplified Trading
                 </div>
               </ScrollReveal>
              
-              <ScrollReveal delay={700} threshold={0.3} direction="up">
-                <div className="flex basis-full items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+              <ScrollReveal delay={500} threshold={0.3} direction="up">
+                <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                   <Check className="shrink-0 text-[#014421] transition-transform duration-300 group-hover:scale-110" size={20} strokeWidth={3} />
                   Portfolio Diversification
                 </div>
@@ -334,18 +327,18 @@ const CryptocurrencyPage = () => {
 
      {/* What are Crypto CFDs Section */}
 <ScrollReveal delay={0} threshold={0.2} direction="up">
- <div className="mx-auto w-full -mt-2 sm:mt-0 max-w-7xl rounded-2xl bg-[#014421] px-6 py-8 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-  <div className="mx-auto max-w-3xl px-4">
-    <h2 className="mb-4 text-2xl font-bold text-[#D4AF37] md:mb-4 md:text-3xl lg:text-4xl">
+ <div className="mx-auto w-[calc(100%_-_2rem)] -mt-2 max-w-5xl rounded-2xl bg-[#014421] px-6 py-7 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:mt-0 sm:rounded-3xl sm:px-8 sm:py-8 lg:px-10 lg:py-9">
+  <div className="mx-auto max-w-4xl text-left">
+    <h2 className="mb-4 text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">
       What are Crypto CFDs?
     </h2>
-    <p className="mb-3 text-sm leading-7 text-gray-200 md:mb-4 md:text-base md:leading-8">
+    <p className="mb-4 text-sm leading-7 text-gray-200 md:text-base">
       Cryptocurrencies, since Bitcoin's introduction in 2009, have
       redefined the financial landscape. These digital assets function on
       a decentralized online ledger secured by cryptography, making them
       one of the safest online payment methods.
     </p>
-    <p className="text-sm leading-7 text-gray-200 md:text-base md:leading-8">
+    <p className="text-sm leading-7 text-gray-200 md:text-base">
       While cryptocurrencies like Bitcoin have gained significant
       recognition globally, they operate outside the traditional banking
       system and remain unaffected by conventional economic factors.
@@ -373,23 +366,23 @@ const CryptocurrencyPage = () => {
   </ScrollReveal>
 
   {/* Cards Layout - All cards slide from LEFT */}
-  <div className="grid gap-4 sm:gap-5 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+  <div className="grid grid-cols-1 gap-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:grid-cols-5">
     {factors.map((factor, index) => (
       <div
         key={index}
-        className={`relative flex min-h-[220px] sm:min-h-[260px] md:min-h-[300px] flex-col overflow-hidden rounded-3xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-4 py-5 sm:px-5 sm:py-6 md:px-6 md:py-7 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards] opacity-0`}
+        className="relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md opacity-0 transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] animate-[slideInLeft_0.6s_ease-out_forwards]"
         style={{ animationDelay: `${index * 0.1}s` }}
       >
         {/* Icon */}
-        <div className="relative z-10 mx-auto mb-4 sm:mb-5 md:mb-6 flex h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full bg-[#014421] text-white transition-all duration-300 group-hover:scale-110">
+        <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
           {factor.icon}
         </div>
         {/* Title */}
-        <h3 className="relative z-10 mb-3 sm:mb-4 md:mb-5 flex min-h-[44px] sm:min-h-[48px] md:min-h-[52px] items-center justify-center px-2 text-center text-base sm:text-lg md:text-xl font-bold leading-tight text-[#014421]">
+        <h3 className="relative z-10 text-lg font-bold leading-snug text-gray-800">
           {factor.title}
         </h3>
         {/* Description */}
-        <p className="relative z-10 px-2 text-xs sm:text-sm md:text-sm leading-6 sm:leading-7 text-center text-gray-600">
+        <p className="relative z-10 mt-3 text-sm leading-6 text-gray-500">
           {factor.description}
         </p>
       </div>

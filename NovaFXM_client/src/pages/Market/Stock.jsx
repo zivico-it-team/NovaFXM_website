@@ -148,24 +148,31 @@ const Stock = () => {
       </section>
 
       {/* ================= INTRO ================= */}
-      <section className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-7 sm:px-6 sm:py-9 md:grid-cols-2 md:gap-8 lg:py-10">
-        
-        <div className="pt-2 md:pt-0">
-          
-          <ScrollReveal delay={100} threshold={0.3} direction="up">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#D4AF37] sm:text-sm sm:normal-case sm:tracking-normal">
-              Ever Dreamed Of Investing In Your Favourite Companies?
-            </p>
+      <section className="px-4 pb-5 pt-8 mx-auto max-w-7xl sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
+        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
+          <ScrollReveal delay={0} threshold={0.3} direction="left">
+            <div className="group overflow-hidden rounded-2xl">
+              <img
+                src="/Stock2.jpeg"
+                alt="Stock market chart"
+                className="h-[220px] w-full rounded-2xl object-cover shadow-xl transition-all duration-500 group-hover:scale-105 sm:h-[300px] lg:h-[360px]"
+              />
+            </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={200} threshold={0.3} direction="up">
-            <h2 className="mt-2 text-2xl font-bold leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
-              Start Stock Trading Today <br className="hidden sm:block" />
-              <span className="text-[#014421]">with Markets</span>
+          <div>
+          <ScrollReveal delay={100} threshold={0.3} direction="up">
+            <h2 className="leading-tight">
+              <span className="block text-base font-bold text-[#111827] sm:text-lg">
+                Ever Dreamed Of Investing In Your Favourite Companies?
+              </span>
+              <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
+                Start Stock Trading Today with Markets
+              </span>
             </h2>
           </ScrollReveal>
 
-          <ScrollReveal delay={300} threshold={0.3} direction="up">
+          <ScrollReveal delay={200} threshold={0.3} direction="up">
             <p className="mt-4 text-center sm:text-left text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
               Unlock the potential of stock trading by investing in some of the world’s
               leading companies and growing your portfolio with confidence. Stock markets
@@ -177,8 +184,8 @@ const Stock = () => {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={400} threshold={0.3} direction="up">
-            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
+          <ScrollReveal delay={300} threshold={0.3} direction="up">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
               <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
                 <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
                 Higher Returns
@@ -195,15 +202,8 @@ const Stock = () => {
               </div>
             </div>
           </ScrollReveal>
+          </div>
         </div>
-
-        <ScrollReveal delay={0} threshold={0.3} direction="right">
-          <img
-            src="/Stock2.jpeg"
-            alt="chart"
-            className="h-[260px] w-full rounded-xl object-cover shadow-lg transition-all duration-500 hover:scale-105 sm:h-[360px] sm:rounded-2xl md:h-[430px] md:justify-self-end lg:h-[480px]"
-          />
-        </ScrollReveal>
       </section>
 
       {/* ================= TRADINGVIEW MARKET OVERVIEW ================= */}
