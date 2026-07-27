@@ -410,8 +410,6 @@ export default function Promotions() {
         </div>
       </section>
 
-      <FAQSection />
-
       <style jsx>{`
         /* Keyframe Animations */
         @keyframes slowZoom {
@@ -509,6 +507,9 @@ export default function Promotions() {
           }
         }
       `}</style>
+
+      {/* Keep promotions FAQs as the final page section */}
+      <FAQSection />
     </main>
   );
 }
