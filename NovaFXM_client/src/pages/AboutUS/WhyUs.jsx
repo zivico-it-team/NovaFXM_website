@@ -383,10 +383,6 @@ const WhyUs = () => {
                 alt="building"
                 className="rounded-[30px] shadow-2xl w-full h-[380px] md:h-[420px] object-cover transition-all duration-500 group-hover:scale-105"
               />
-              <div className="absolute -bottom-4 -left-4 bg-[#014421] text-white rounded-2xl px-5 py-4 shadow-xl transition-all duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold">10+</h3>
-                <p className="text-sm mt-0.5">Years Experience</p>
-              </div>
             </div>
           </ScrollReveal>
 
