@@ -437,51 +437,63 @@ const IndicesPage = () => {
   WHAT MOVES INDEX PRICE
 ========================================= */}
 
-<section className="bg-[#f6f7f6] px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:pb-7 lg:pt-12">
-  <div className="grid items-center gap-8 mx-auto max-w-7xl lg:grid-cols-3 lg:gap-10">
+<section className="mx-auto max-w-7xl bg-[#f6f7f6] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+  <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+    <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
+      <div className="text-left">
+        <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
+          What Moves an{" "}
+          <span className="text-[#014421]">Index Price</span>
+        </h2>
+        <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
+        <p className="mt-4 text-sm leading-7 text-gray-500">
+          Several factors influence index prices including economic data,
+          political events, corporate announcements and industry trends.
+        </p>
+      </div>
 
-    {/* LEFT CARDS - Staggered */}
-    <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:gap-5">
+      <ScrollReveal delay={0} threshold={0.2} direction="left">
+        <div className="relative flex justify-center overflow-hidden rounded-2xl">
+          <div className="relative group">
+            <img
+              src="src/assets/images/image.png"
+              alt="Index Price Movement Chart"
+              className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
+            />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+
+    <div className="grid gap-4 sm:grid-cols-2">
       {factors.map((item, index) => (
         <StaggeredCard key={index} index={index}>
-          <div className="rounded-2xl bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl lg:p-8 h-full min-h-[280px] flex flex-col">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
-              {item.icon}
+          <div className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6">
+            <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                {item.icon}
+              </div>
+              <h3 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                {item.title}
+              </h3>
+              <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
+              <p className="relative z-10 mt-3 text-sm font-medium leading-6 text-slate-700 sm:leading-7">
+                {item.desc}
+              </p>
             </div>
-            <h3 className="mt-6 text-xl font-bold leading-snug text-gray-800">
-              {item.title}
-            </h3>
-            <p className="mt-3 text-sm leading-7 text-gray-600 flex-grow">
-              {item.desc}
-            </p>
+            <div className="absolute bottom-5 left-5 z-0 grid grid-cols-3 gap-2 opacity-50">
+              {Array.from({ length: 9 }).map((_, dotIndex) => (
+                <span
+                  key={dotIndex}
+                  className="h-2 w-2 rounded-full bg-green-100"
+                />
+              ))}
+            </div>
           </div>
         </StaggeredCard>
       ))}
     </div>
-
-    {/* RIGHT TEXT AND IMAGE */}
-    <ScrollReveal delay={0} threshold={0.2} direction="right">
-      <div className="lg:pl-10">
-        <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
-          What Moves an{" "}
-          <span className="text-[#014421]">Index Price</span>
-        </h2>
-        <div className="mx-auto mb-4 mt-5 h-1 w-20 rounded-full bg-[#014421] sm:mx-0"></div>
-        <p className="text-center text-sm leading-7 text-gray-500 sm:text-left">
-          Several factors influence index prices including economic data,
-          political events, corporate announcements and industry trends.
-        </p>
-        
-        {/* ADDED IMAGE HERE */}
-        <div className="mt-8 flex justify-center lg:mt-10">
-          <img
-            src="src/assets/images/image.png"
-            alt="Index Price Movement Chart"
-            className="w-full max-w-[300px] rounded-xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl sm:max-w-[350px] lg:max-w-full"
-          />
-        </div>
-      </div>
-    </ScrollReveal>
   </div>
 </section>
 

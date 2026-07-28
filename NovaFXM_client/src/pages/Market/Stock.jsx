@@ -224,13 +224,13 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-2xl font-bold text-[#014421] sm:text-3xl">
+            <h3 className="text-2xl font-bold leading-tight text-[#014421] md:text-3xl">
               What are Stocks?
             </h3>
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-sm leading-7 text-gray-700 md:text-base">
               A stock represents a unit of ownership in a company. By purchasing
               shares, you become a part-owner. If the company thrives, its stock
               price rises, offering you potential gains. If the company
@@ -313,13 +313,13 @@ const Stock = () => {
               <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
 
               {/* Description */}
-              <p className="mt-3 text-sm leading-6 text-slate-600 sm:leading-7">
+              <p className="relative z-10 mt-3 text-sm font-medium leading-6 text-slate-700 sm:leading-7">
                 {item.desc}
               </p>
             </div>
 
             {/* Dots */}
-            <div className="absolute bottom-5 left-5 z-10 grid grid-cols-3 gap-2">
+            <div className="absolute bottom-5 left-5 z-0 grid grid-cols-3 gap-2 opacity-50">
               {Array.from({ length: 9 }).map((_, dotIndex) => (
                 <span
                   key={dotIndex}
@@ -340,13 +340,13 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl bg-[#014421] p-5 text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-2xl font-bold text-[#D4AF37] sm:text-3xl">
+            <h3 className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">
               Why Trade Stocks?
             </h3>
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-center text-sm leading-7 sm:text-left sm:text-base sm:leading-7 lg:text-lg">
+            <p className="mt-4 text-sm leading-7 text-gray-200 md:text-base">
               Stock trading offers access to a broad range of companies across
               various sectors, allowing you to diversify your investment strategy
               and manage risk. With the right stock trading approach, you can
@@ -362,13 +362,13 @@ const Stock = () => {
         <ScrollReveal delay={0} threshold={0.2} direction="up">
           <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
             
-            <h3 className="text-2xl font-bold text-[#014421] sm:text-3xl">
+            <h3 className="text-2xl font-bold leading-tight text-[#014421] md:text-3xl">
               How Does Stock Trading Work?
             </h3>
 
             <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
 
-            <p className="mt-4 text-center text-sm leading-7 text-gray-700 sm:text-left sm:text-base sm:leading-8 lg:text-lg">
+            <p className="mt-4 text-sm leading-7 text-gray-700 md:text-base">
               Stock trading involves buying and selling shares of companies on
               exchanges. You can also trade stocks CFDs (Contracts for Difference),
               which allow you to speculate on price movements with leverage. Many

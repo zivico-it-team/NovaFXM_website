@@ -327,8 +327,8 @@ const CryptocurrencyPage = () => {
 
      {/* What are Crypto CFDs Section */}
 <ScrollReveal delay={0} threshold={0.2} direction="up">
- <div className="mx-auto w-[calc(100%_-_2rem)] -mt-2 max-w-5xl rounded-2xl bg-[#014421] px-6 py-7 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:mt-0 sm:rounded-3xl sm:px-8 sm:py-8 lg:px-10 lg:py-9">
-  <div className="mx-auto max-w-4xl text-left">
+ <div className="mx-auto w-[calc(100%_-_2rem)] -mt-2 max-w-7xl rounded-2xl bg-[#014421] p-5 text-white shadow-lg transition-all duration-100 hover:shadow-xl sm:mt-0 sm:rounded-3xl sm:p-6 lg:p-7">
+  <div className="text-left">
     <h2 className="mb-4 text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">
       What are Crypto CFDs?
     </h2>
@@ -464,52 +464,61 @@ const CryptocurrencyPage = () => {
         </div>
       </ScrollReveal>
 
-      {/* Why Trade Crypto CFDs Section with Background Image - FIXED VERSION */}
-      <div className="px-3 py-10 bg-gray-50 sm:px-5 md:py-14 lg:px-6">
-        <div className="grid mx-auto overflow-hidden max-w-7xl rounded-2xl bg-gray-50 lg:grid-cols-2">
-          <ScrollReveal delay={0} threshold={0.2} direction="left">
-            <div className="py-4 text-center md:py-8 lg:pr-8">
-              <h2 className="mb-6 text-xl font-bold md:mb-8 md:text-2xl">
-                Why Trade Crypto CFDs?
+      {/* Why Trade Crypto CFDs Section */}
+      <div className="mx-auto max-w-7xl bg-gray-50 px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+        <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
+            <div className="text-left">
+              <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
+                Why Trade <span className="text-[#014421]">Crypto CFDs?</span>
               </h2>
-              <div className="grid max-w-xl gap-5 mx-auto md:grid-cols-2 md:gap-6">
-                {promoFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`rounded-lg bg-white p-5 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6 ${
-                      index === 2 ? "md:col-span-2" : ""
-                    }`}
-                  >
-                    <div className="flex justify-center mb-3 md:mb-4">
-                      {feature.icon}
-                    </div>
-                    <h3 className="mb-2 text-base font-bold md:text-lg">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-gray-600 md:text-base">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
             </div>
-          </ScrollReveal>
 
-          {/* FIXED: Image with curved border and spacing below */}
-       <ScrollReveal delay={0} threshold={0.6} direction="right">
-  <div className="mt-16 mb-12 mr-4 lg:mt-20 lg:mr-10">
-    <div
-      className="min-h-[300px] bg-gray-50 md:min-h-[400px]"
-      style={{
-        backgroundImage: `url(${cryptoBottom})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        borderRadius: "24px",
-      }}
-    />
-  </div>
-</ScrollReveal>
+            <ScrollReveal delay={0} threshold={0.2} direction="left">
+              <div className="relative overflow-hidden rounded-2xl">
+                <div
+                  className="min-h-[300px] w-full rounded-2xl bg-cover bg-center shadow-lg transition-all duration-500 hover:shadow-xl sm:min-h-[360px] lg:min-h-[400px]"
+                  style={{ backgroundImage: `url(${cryptoBottom})` }}
+                />
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {promoFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className={`group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6 ${
+                  index === 2 ? "sm:col-span-2" : ""
+                }`}
+              >
+                <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                    {React.cloneElement(feature.icon, {
+                      className: "h-7 w-7 text-[#014421]",
+                    })}
+                  </div>
+                  <h3 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                    {feature.title}
+                  </h3>
+                  <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
+                  <p className="relative z-10 mt-3 text-sm font-medium leading-6 text-slate-700 sm:leading-7">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className="absolute bottom-5 left-5 z-0 grid grid-cols-3 gap-2 opacity-50">
+                  {Array.from({ length: 9 }).map((_, dotIndex) => (
+                    <span
+                      key={dotIndex}
+                      className="h-2 w-2 rounded-full bg-green-100"
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

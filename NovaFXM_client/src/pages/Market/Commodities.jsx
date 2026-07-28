@@ -197,7 +197,7 @@ export default function CommoditiesSection() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} threshold={0.3} direction="up">
-                <p className="mt-4 text-center sm:text-left text-sm leading-7 text-gray-600 sm:text-base lg:leading-8">
+                <p className="mt-4 text-center text-sm leading-7 text-gray-600 sm:text-left sm:text-base lg:leading-8">
                   Step into the dynamic world of commodities and discover lucrative
                   opportunities in Earth's most essential resources. Commodities are
                   the raw materials that fuel the global economy, including oil,
@@ -207,11 +207,11 @@ export default function CommoditiesSection() {
               </ScrollReveal>
 
               <ScrollReveal delay={300} threshold={0.3} direction="up">
-                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-4 lg:flex-nowrap">
                   {["Liquidity", "Transparency", "Leverage"].map((item, index) => (
                     <div 
                       key={index} 
-                      className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg"
+                      className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base"
                     >
                       <span className="text-[#014421] text-xl">✔</span>
                       {item}
@@ -340,10 +340,32 @@ export default function CommoditiesSection() {
       </section>
 
       {/* Factors Affecting Commodity Prices */}
-      <section className="bg-[#f7f7f7] px-4 sm:px-5 pb-16 sm:pb-20 pt-4">
-        <div className="mx-auto max-w-[1120px]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.12fr_0.88fr] items-center gap-8 lg:gap-12">
-            <div className="grid order-2 grid-cols-1 gap-5 sm:grid-cols-2 lg:order-1">
+      <section className="mx-auto max-w-7xl bg-[#f7f7f7] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+        <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
+            <div className="text-left">
+              <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
+                Factors Affecting{" "}
+                <span className="text-[#014421]">Commodity Prices</span>
+              </h2>
+              <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
+            </div>
+
+            <ScrollReveal delay={0} threshold={0.2} direction="left">
+              <div className="relative flex justify-center overflow-hidden rounded-2xl">
+                <div className="relative group">
+                  <img
+                    src="https://www.suttergoldmining.com/wp-content/uploads/2023/10/where-to-buy-gold-coins-and-bars.jpg"
+                    alt="Gold bars representing commodity prices"
+                    className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
+                  />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
               {[
                 { icon: FaChartBar, title: "Supply and Demand", desc: "The balance between production and consumption heavily influences commodity prices." },
                 { icon: FaLandmark, title: "Economic Indicators", desc: "Data like GDP growth, inflation and employment rates can indicate market direction and commodity values." },
@@ -351,33 +373,30 @@ export default function CommoditiesSection() {
                 { icon: MdShowChart, title: "Market Speculation", desc: "Expectations about future price movements often drive the short-term fluctuations of commodities." }
               ].map((item, index) => (
                 <StaggeredCard key={index} index={index}>
-                  <div className="group rounded-2xl md:rounded-3xl bg-white px-4 sm:px-5 py-6 sm:py-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <div className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#e8f5ee] transition-all duration-300 group-hover:scale-110">
-                      <item.icon className="h-6 w-6 sm:h-7 sm:w-7 text-[#014421]" />
+                  <div className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6">
+                    <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                        <item.icon className="h-6 w-6 sm:h-7 sm:w-7" />
+                      </div>
+                      <h3 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
+                      <p className="relative z-10 mt-3 text-sm font-medium leading-6 text-slate-700 sm:leading-7">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 className="mt-3 text-base font-bold text-gray-800 sm:mt-4 md:text-lg">{item.title}</h3>
-                    <p className="mt-3 text-sm sm:text-base font-regular leading-relaxed sm:leading-[1.75] text-gray-600">{item.desc}</p>
+                    <div className="absolute bottom-5 left-5 z-0 grid grid-cols-3 gap-2 opacity-50">
+                      {Array.from({ length: 9 }).map((_, dotIndex) => (
+                        <span
+                          key={dotIndex}
+                          className="h-2 w-2 rounded-full bg-green-100"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </StaggeredCard>
               ))}
-            </div>
-
-            <ScrollReveal delay={0} threshold={0.2} direction="right">
-              <div className="flex flex-col items-center order-1 lg:order-2">
-                <h2 className="px-0 text-center text-2xl font-bold leading-tight text-black md:text-4xl">
-                  Factors Affecting<br />
-                  <span className="text-[#014421] relative inline-block">Commodity Prices</span>
-                </h2>
-                <div className="mt-5 sm:mt-7 h-[2px] w-[70px] sm:w-[84px] rounded-full bg-[#014421]"></div>
-                <div className="mt-6 overflow-hidden rounded-lg sm:mt-9 floating-image">
-                  <img
-                    src="https://www.suttergoldmining.com/wp-content/uploads/2023/10/where-to-buy-gold-coins-and-bars.jpg"
-                    alt="Gold bars representing commodity prices"
-                    className="h-[180px] sm:h-[220px] lg:h-[300px] w-full max-w-[430px] object-cover transition-all duration-500 hover:scale-110"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>
