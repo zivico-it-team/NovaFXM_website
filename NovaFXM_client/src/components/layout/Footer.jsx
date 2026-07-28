@@ -201,7 +201,13 @@ const Footer = () => {
         <div className="mt-5 space-y-4 text-base text-justify">
           <p>
             NOVAFXM is operated under Nova Finance Tech Ltd, Registered with the Financial Services Authority (FSA) of
-            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC.   <br />  (Since 2024)
+            EURO-CARIBBEAN TRUSTEES LTD. Registration No. 27139 BC
+           
+           And NOVA INVESTORS LIMITED
+           registered in the United Kingdom under Company No. 03757588. Company information is available on the GOV.UK.
+            
+            (Since 2024)
+            
           </p>
           <p>
             Risk Statement: Trading derivatives, CFDs, forex, commodities, stocks and other financial instruments carries a high level of risk and may not be suitable for all investors. Investors may lose part or all of their invested capital and in some cases losses may exceed the original investment amount. Before engaging in trading activities, clients should carefully consider their investment objectives, level of experience and risk appetite. It is strongly recommended to seek independent financial, legal and tax advice before making any investment decisions.
