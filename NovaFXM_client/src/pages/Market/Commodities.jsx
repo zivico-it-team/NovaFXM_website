@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   FaGlobe,
   FaShieldAlt,
@@ -33,6 +32,16 @@ import {
 import {
   TbCurrencyDollar,
 } from "react-icons/tb";
+import { Gem } from "lucide-react";
+import LiveMarketCards from "./LiveMarketCards";
+
+const topCommodities = [
+  { symbol: "XAUUSD", name: "Gold", description: "Gold Spot / U.S. Dollar", tradingViewSymbol: "OANDA:XAUUSD" },
+  { symbol: "XAGUSD", name: "Silver", description: "Silver Spot / U.S. Dollar", tradingViewSymbol: "OANDA:XAGUSD" },
+  { symbol: "WTI", name: "Crude Oil", description: "West Texas Intermediate", tradingViewSymbol: "TVC:USOIL" },
+  { symbol: "BRENT", name: "Brent Crude Oil", description: "Brent Crude Oil", tradingViewSymbol: "TVC:UKOIL" },
+  { symbol: "NG", name: "Natural Gas", description: "Natural Gas / U.S. Dollar", tradingViewSymbol: "OANDA:NATGASUSD" },
+];
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -121,7 +130,7 @@ const StaggeredCard = ({ children, index }) => {
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-700 ease-out ${
+      className={`h-full transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'
@@ -134,10 +143,8 @@ const StaggeredCard = ({ children, index }) => {
 };
 
 export default function CommoditiesSection() {
-  const navigate = useNavigate();
-
   return (
-    <div className="w-full overflow-x-hidden bg-white">
+    <div className="w-full max-w-none overflow-x-hidden bg-white">
       {/* Hero Section with Animations */}
       <section className="relative min-h-[calc(100svh-72px)] w-full overflow-hidden bg-black sm:min-h-[calc(100svh-80px)] lg:min-h-[calc(100svh-84px)]">
         {/* Animated Background with Zoom */}
@@ -223,42 +230,56 @@ export default function CommoditiesSection() {
         </div>
       </section>
 
+      <section className="bg-[#f7f7f7] px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
+        <ScrollReveal delay={0} threshold={0.2} direction="up">
+          <div className="mx-auto max-w-7xl">
+            <LiveMarketCards
+              title="Commodities"
+              subtitle="Live global commodities market data"
+              items={topCommodities}
+              Icon={Gem}
+            />
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* Main Content Section */}
       <section className="bg-[#f7f7f7] pb-12 sm:pb-20">
         <div className="mx-auto max-w-[1160px] px-4 sm:px-5 lg:px-6">
           {/* What are Commodities */}
           <ScrollReveal delay={0} threshold={0.2} direction="up">
-            <div className="bg-white px-5 sm:px-8 lg:px-12 py-6 sm:py-7 rounded-xl sm:rounded-none">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-black">
-                What are{" "}
-                <span className="text-[#014421]">Commodities?</span>
+            <div className="relative overflow-hidden rounded-2xl bg-[#014421] px-6 py-8 shadow-[0_18px_45px_rgba(1,68,33,0.22)] sm:rounded-3xl sm:px-9 sm:py-10 lg:px-12">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.10),transparent_38%)]" />
+              <div className="relative z-10">
+              <h2 className="text-2xl font-bold leading-tight text-[#F4C542] md:text-3xl">
+                What are Commodities?
               </h2>
-              <div className="mt-3 sm:mt-4 h-[2px] w-[75px] sm:w-[95px] bg-[#014421]"></div>
-              <p className="mt-4 text-center text-sm font-regular leading-6 text-gray-600 sm:mt-6 sm:pl-7 sm:text-left sm:text-base">
+              <p className="mt-5 text-center text-sm leading-7 text-white sm:text-left sm:text-base sm:leading-8">
                 Commodities are basic goods used in commerce and they can be
                 classified into two main categories:
               </p>
-              <div className="mt-4 space-y-4 sm:space-y-3 sm:pl-7">
+              <div className="mt-4 space-y-4 sm:space-y-3">
                 <div className="flex flex-wrap items-start text-sm leading-6 cursor-pointer gap-x-2 gap-y-2 group">
-                  <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#014421] text-white shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125">
+                  <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#F4C542] text-[#014421] shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125">
                     <GiGoldBar className="text-[10px]" />
                   </div>
-                  <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Hard Commodities</span>
-                  <span className="font-bold text-black">:</span>
-                  <span className="flex-1 text-center text-sm font-regular text-gray-600 sm:text-left sm:text-base">
+                  <span className="text-sm font-semibold text-white sm:text-base">Hard Commodities</span>
+                  <span className="font-bold text-white">:</span>
+                  <span className="flex-1 text-center text-sm text-white/90 sm:text-left sm:text-base">
                     Natural resources like oil, gold and metals gas, which are extracted from the Earth.
                   </span>
                 </div>
                 <div className="flex flex-wrap items-start text-sm leading-6 cursor-pointer gap-x-2 gap-y-2 group">
-                  <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#014421] text-white shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125">
+                  <div className="flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#F4C542] text-[#014421] shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-125">
                     <GiWheat className="text-[10px]" />
                   </div>
-                  <span className="font-semibold text-black text-sm sm:text-base transition-colors duration-300 group-hover:text-[#014421]">Soft Commodities</span>
-                  <span className="font-bold text-black">:</span>
-                  <span className="flex-1 text-center text-sm font-regular text-gray-600 sm:text-left sm:text-base">
+                  <span className="text-sm font-semibold text-white sm:text-base">Soft Commodities</span>
+                  <span className="font-bold text-white">:</span>
+                  <span className="flex-1 text-center text-sm text-white/90 sm:text-left sm:text-base">
                     Agricultural products or livestock, such as wheat, coffee and sugar.
                   </span>
                 </div>
+              </div>
               </div>
             </div>
           </ScrollReveal>
@@ -271,9 +292,9 @@ export default function CommoditiesSection() {
               </h2>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
               <StaggeredCard index={0}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
+                <div className="group relative h-full min-h-[245px] overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <FaChartPie className="text-2xl md:text-3xl" />
                   </div>
@@ -285,7 +306,7 @@ export default function CommoditiesSection() {
               </StaggeredCard>
 
               <StaggeredCard index={1}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
+                <div className="group relative h-full min-h-[245px] overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <FaShieldAlt className="text-2xl md:text-3xl" />
                   </div>
@@ -297,7 +318,7 @@ export default function CommoditiesSection() {
               </StaggeredCard>
 
               <StaggeredCard index={2}>
-                <div className="group relative overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-6">
+                <div className="group relative h-full min-h-[245px] overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
                     <BiTrendingUp className="text-2xl md:text-3xl" />
                   </div>
@@ -307,18 +328,50 @@ export default function CommoditiesSection() {
                   </div>
                 </div>
               </StaggeredCard>
+
+              <StaggeredCard index={3}>
+                <div className="group relative h-full min-h-[245px] overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+                    <FaGlobe className="text-2xl md:text-3xl" />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">Global Exposure</h3>
+                    <p className="text-sm leading-6 text-gray-600">Access opportunities influenced by economic activity and demand across global markets.</p>
+                  </div>
+                </div>
+              </StaggeredCard>
+
+              <StaggeredCard index={4}>
+                <div className="group relative h-full min-h-[245px] overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
+                    <FaChartLine className="text-2xl md:text-3xl" />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 md:text-xl">Trading Opportunities</h3>
+                    <p className="text-sm leading-6 text-gray-600">Capture potential opportunities from changing prices in active commodity markets.</p>
+                  </div>
+                </div>
+              </StaggeredCard>
             </div>
           </div>
 
           {/* How Are Commodities Traded */}
-          <div className="mt-12 sm:mt-14">
+          <div className="mt-12 py-10 sm:mt-14 sm:py-14">
             <ScrollReveal delay={0} threshold={0.2} direction="up">
-              <h2 className="px-0 text-center text-2xl font-bold leading-tight text-black md:text-4xl">
-                How Are <span className="text-[#014421]">Commodities Traded?</span>
-              </h2>
+              <div className="mx-auto max-w-6xl text-center">
+                <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+                  How Are <span className="text-[#014421]">Commodities Traded?</span>
+                </h2>
+                <p className="mx-auto mt-5 max-w-5xl text-sm leading-7 text-[#111827] sm:text-base sm:leading-8">
+                  Commodities can be traded through spot markets for immediate
+                  delivery, futures contracts that set a price for a future date,
+                  and exchange-traded funds that provide broad commodity exposure
+                  without requiring traders to purchase or store physical assets.
+                </p>
+              </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 gap-5 mt-7 sm:mt-9 sm:gap-6 md:grid-cols-3">
+            <div className="hidden">
   {[
     { icon: FaStore, title: "Spot Market", desc: "Immediate delivery of commodities, ideal for short-term trading." },
     { icon: RiExchangeFundsLine, title: "Futures Market", desc: "Contracts to buy or sell a commodity at a predetermined price on a future date—perfect for long-term strategies." },
@@ -340,8 +393,8 @@ export default function CommoditiesSection() {
       </section>
 
       {/* Factors Affecting Commodity Prices */}
-      <section className="mx-auto max-w-7xl bg-[#f7f7f7] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-        <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+      <section className="w-full bg-[#e7f0eb] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
             <div className="text-left">
               <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
@@ -398,79 +451,6 @@ export default function CommoditiesSection() {
                 </StaggeredCard>
               ))}
           </div>
-        </div>
-      </section>
-
-      {/* Popular Commodities Section */}
-      <section className="bg-[#f7f7f7] px-4 sm:px-5 pb-16 sm:pb-20">
-        <div className="mx-auto max-w-[1160px]">
-          <ScrollReveal delay={0} threshold={0.2} direction="up">
-            <h2 className="px-0 text-center text-2xl font-bold leading-tight text-black md:text-4xl">
-              Popular <span className="text-[#014421]">Commodities</span>
-            </h2>
-            <div className="flex justify-center mt-3">
-              <div className="h-[2px] w-[70px] sm:w-[84px] rounded-full bg-[#014421]"></div>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 gap-6 mt-10 sm:gap-8 md:grid-cols-3 lg:grid-cols-5">
-            {[
-              { icon: GiGoldBar, name: "Gold", type: "Precious Metal", color: "from-[#014421] to-[#0D7A43]", rotate: "rotate-12" },
-              { icon: null, name: "Silver", type: "Precious Metal", color: "from-gray-500 to-gray-400", rotate: "-rotate-12", isSilver: true },
-              { icon: GiOilPump, name: "Crude Oil", type: "Energy", color: "from-gray-800 to-gray-700", rotate: "rotate-12" },
-              { icon: GiWheat, name: "Wheat", type: "Agriculture", color: "from-amber-600 to-amber-500", rotate: "-rotate-12" },
-              { icon: GiCoffeeBeans, name: "Coffee", type: "Agriculture", color: "from-amber-800 to-amber-700", rotate: "rotate-12" }
-            ].map((item, index) => (
-              <StaggeredCard key={index} index={index}>
-                <div className="group rounded-xl bg-white p-5 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                  <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:${item.rotate}`}>
-                    {item.isSilver ? (
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="1" fill="none" />
-                        <circle cx="12" cy="12" r="3" fill="white" />
-                      </svg>
-                    ) : (
-                      <item.icon className="text-3xl" />
-                    )}
-                  </div>
-                  <h3 className="mt-4 text-base font-extrabold text-black transition-colors duration-300 group-hover:text-[#014421]">{item.name}</h3>
-                  <p className="mt-1 text-xs text-gray-500">{item.type}</p>
-                </div>
-              </StaggeredCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trading Benefits Section */}
-      <section className="bg-gradient-to-r from-[#014421] to-[#014421] px-4 sm:px-5 py-12 sm:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/5"></div>
-        <div className="absolute w-64 h-64 rounded-full -top-24 -right-24 bg-white/10 blur-3xl"></div>
-        <div className="absolute w-64 h-64 rounded-full -bottom-24 -left-24 bg-white/10 blur-3xl"></div>
-        
-        <div className="mx-auto max-w-[1160px] text-center relative z-10">
-          <ScrollReveal delay={0} threshold={0.2} direction="up">
-            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-              Start Trading Commodities Today
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={100} threshold={0.2} direction="up">
-            <p className="max-w-2xl mx-auto mt-4 text-sm sm:text-base text-white/90">
-              Join Novafxm and access global commodity markets with competitive spreads,
-              advanced trading tools and dedicated support.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={200} threshold={0.2} direction="up">
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <button
-                type="button"
-                onClick={() => navigate("/signup")}
-                className="rounded-full bg-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-[#014421] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95"
-              >
-                Open Account
-              </button>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

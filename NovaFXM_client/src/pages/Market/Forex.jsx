@@ -8,13 +8,21 @@ import {
   CreditCard,
   Gauge,
   Check,
-  Headphones,
   LineChart,
   MonitorSmartphone,
   WalletCards,
 } from "lucide-react";
 import forexToolsImage from "../../assets/images/frx1.avif";
 import forexAboutImage from "../../assets/images/stock2.avif";
+import LiveMarketCards from "./LiveMarketCards";
+
+const topForexPairs = [
+  { symbol: "EURUSD", name: "EUR/USD", description: "Euro / U.S. Dollar", tradingViewSymbol: "OANDA:EURUSD" },
+  { symbol: "GBPUSD", name: "GBP/USD", description: "British Pound / U.S. Dollar", tradingViewSymbol: "OANDA:GBPUSD" },
+  { symbol: "USDJPY", name: "USD/JPY", description: "U.S. Dollar / Japanese Yen", tradingViewSymbol: "OANDA:USDJPY" },
+  { symbol: "USDCHF", name: "USD/CHF", description: "U.S. Dollar / Swiss Franc", tradingViewSymbol: "OANDA:USDCHF" },
+  { symbol: "AUDUSD", name: "AUD/USD", description: "Australian Dollar / U.S. Dollar", tradingViewSymbol: "OANDA:AUDUSD" },
+];
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -103,7 +111,7 @@ const StaggeredCard = ({ children, index }) => {
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-700 ease-out ${
+      className={`h-full transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'
@@ -145,11 +153,6 @@ const features = [
     title: "Educational Resources",
     desc: "Enhance your Forex knowledge with webinars and expert analysis.",
     icon: BookOpenCheck,
-  },
-  {
-    title: "24/5 Customer Support",
-    desc: "A dedicated Forex support team ready to assist anytime.",
-    icon: Headphones,
   },
 ];
 
@@ -212,59 +215,15 @@ function SectionTitle({ children, accent = false }) {
 
 // ── TradingView Forex Cross Rates Widget — height increased ──────────────────
 function ForexRatesWidget() {
-  const containerRef = useRef(null);
-  const hasLoadedWidget = useRef(false);
-
-  useEffect(() => {
-    if (!containerRef.current || hasLoadedWidget.current) return;
-
-    hasLoadedWidget.current = true;
-    containerRef.current.innerHTML = "";
-
-    const widget = document.createElement("div");
-    widget.className = "tradingview-widget-container__widget";
-    widget.style.height = "100%";
-    widget.style.width = "100%";
-    containerRef.current.appendChild(widget);
-
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js";
-    script.async = true;
-    script.type = "text/javascript";
-    script.innerHTML = JSON.stringify({
-      width: "100%",
-      height: "100%",
-      currencies: tradingViewCurrencies,
-      isTransparent: false,
-      colorTheme: "light",
-      locale: "en",
-    });
-    containerRef.current.appendChild(script);
-  }, []);
-
   return (
     <ScrollReveal delay={0} threshold={0.2} direction="up">
       <section className="mx-auto max-w-[1280px] px-4 pb-10 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div className="mb-4 flex flex-col items-start justify-between gap-3 sm:mb-6 sm:flex-row sm:items-end">
-          <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#014421] sm:text-sm">
-              Live Forex Rates
-            </p>
-            <h2 className="mt-1 text-2xl font-bold leading-tight text-[#014421] sm:text-3xl lg:text-4xl">
-              TradingView Cross Rates
-            </h2>
-          </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-            <span className="w-2 h-2 rounded-full animate-pulse bg-emerald-500" />
-            Real-time
-          </span>
-        </div>
-        <div className="min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_38px_rgba(15,23,42,0.10)] sm:rounded-2xl sm:p-3 sm:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
-          <div
-            ref={containerRef}
-            className="tradingview-widget-container h-[360px] min-w-0 overflow-hidden rounded-lg bg-white sm:h-[520px] sm:rounded-xl lg:h-[600px]"
-          />
-        </div>
+        <LiveMarketCards
+          title="Forex"
+          subtitle="Live currency pair market data"
+          items={topForexPairs}
+          Icon={CircleDollarSign}
+        />
       </section>
     </ScrollReveal>
   );
@@ -356,30 +315,21 @@ function AboutSection() {
 
 function FeatureGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:pb-20">
-      <SectionTitle>
-        Why Trade Forex with <span className="text-[#014421]">NOVAFXM</span>
-      </SectionTitle>
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-        {features.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <StaggeredCard key={item.title} index={index}>
-              <div className="relative flex h-full min-h-[170px] flex-col items-center overflow-hidden rounded-xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[185px] md:border-b-[5px] lg:min-h-[195px] lg:px-5">
-                <div className="relative z-10 mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-13 sm:w-13">
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.2} />
-                </div>
-                <h3 className="relative z-10 text-sm font-bold leading-snug text-gray-800 sm:text-base lg:text-lg">
-                  {item.title}
-                </h3>
-                <p className="relative z-10 mt-2 text-sm leading-6 text-gray-500">
-                  {item.desc}
-                </p>
-              </div>
-            </StaggeredCard>
-          );
-        })}
-      </div>
+    <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <ScrollReveal delay={0} threshold={0.2} direction="up">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+            Why Trade Forex with <span className="text-[#014421]">NOVAFXM?</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-5xl text-sm leading-7 text-[#111827] sm:text-base sm:leading-8">
+            Trade the global forex market with competitive spreads, fast and
+            reliable execution, flexible leverage and access across multiple
+            trading platforms. NOVAFXM also provides educational resources
+            designed to help traders strengthen their market knowledge and make
+            more informed trading decisions.
+          </p>
+        </div>
+      </ScrollReveal>
     </section>
   );
 }
@@ -387,54 +337,37 @@ function FeatureGrid() {
 function MarketOfferingsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:pb-20">
-      <div className="grid gap-5 lg:grid-cols-[0.85fr_1.35fr] lg:items-stretch">
-        <ScrollReveal delay={0} threshold={0.2} direction="left">
-          <div className="rounded-2xl bg-[#014421] px-5 py-7 text-white shadow-[0_18px_42px_rgba(1,68,33,0.18)] transition-all duration-300 hover:shadow-xl sm:px-8 sm:py-9 lg:px-10 h-full min-h-[360px] flex flex-col justify-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#D4AF37] sm:text-sm">
-                Forex Products
-              </p>
-              <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
-                Forex Market Offerings
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-white/85 sm:text-base">
-                Access a focused range of currency markets and trading conditions
-                designed for active forex strategies.
-              </p>
-            </div>
-            <div className="mt-6 flex items-center gap-4 border-t border-white/20 pt-5">
-              <span className="text-4xl font-bold text-[#D4AF37]">
-                {String(marketOfferings.length).padStart(2, "0")}
-              </span>
-              <span className="text-sm font-semibold leading-5 text-white/80">
-                Trading categories available
-              </span>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        <div className="space-y-3">
-          {marketOfferings.map(([title, desc], index) => (
-            <StaggeredCard key={title} index={index}>
-              <div className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white px-5 py-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#014421]/20 hover:shadow-md sm:px-6">
-                <div className="absolute bottom-0 left-0 top-0 w-1 bg-[#014421]" />
-                <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#014421]">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="text-base font-bold leading-snug text-gray-900 sm:text-lg">
-                      {title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-6 text-gray-500">
-                      {desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </StaggeredCard>
-          ))}
+      <ScrollReveal delay={0} threshold={0.2} direction="up">
+        <div className="mb-8 text-center sm:mb-12">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#D4AF37] sm:text-sm">
+            Forex Products
+          </p>
+          <h2 className="mt-2 text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+            Forex Market <span className="text-[#014421]">Offerings</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-4xl text-sm leading-7 text-gray-600 sm:text-base">
+            Access a focused range of currency markets and trading conditions
+            designed for active forex strategies.
+          </p>
         </div>
+      </ScrollReveal>
+
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5 lg:gap-4">
+        {marketOfferings.map(([title, desc], index) => (
+          <StaggeredCard key={title} index={index}>
+            <article className="relative flex h-full min-h-[235px] flex-col items-center overflow-hidden rounded-2xl border border-gray-200 border-b-[5px] border-b-[#014421] bg-white px-4 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#014421]">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <h3 className="mt-5 text-base font-bold leading-snug text-gray-900 lg:text-lg">
+                {title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-gray-500">
+                {desc}
+              </p>
+            </article>
+          </StaggeredCard>
+        ))}
       </div>
     </section>
   );
@@ -486,8 +419,8 @@ function ToolsSection() {
   const toolIcons = [BookOpenCheck, MonitorSmartphone, BarChart3, LineChart];
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-      <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+    <section className="w-full bg-[#e7f0eb] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2 lg:gap-16">
         <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
           <div className="text-left">
             <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
@@ -586,15 +519,13 @@ function SecuritySection() {
 }
 export default function ForexPage() {
   return (
-    <div className="w-full overflow-hidden bg-[#f7f7f7] font-sans">
+    <div className="w-full max-w-none overflow-hidden bg-[#f7f7f7] font-sans">
       <HeroSection />
       <AboutSection />
       <ForexRatesWidget />
-      <FeatureGrid />
       <MarketOfferingsSection />
-      <FundingSection />
+      <FeatureGrid />
       <ToolsSection />
-      <SecuritySection />
 
       <style jsx>{`
         /* Keyframe Animations */

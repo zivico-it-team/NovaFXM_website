@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import heroBg from "../../assets/images/tech-analysis-1024x577 1.png";
 import heroBg2 from "../../assets/images/image 106.png";
-import TradingViewWidget from "../../pages/Market/TradingViewWidget";
-
 import {
   Star,
   BarChart3,
@@ -12,6 +10,7 @@ import {
   Landmark,
   TrendingUp,
   Briefcase,
+  LineChart,
 } from "lucide-react";
 
 // Scroll Animation Component
@@ -101,7 +100,7 @@ const StaggeredCard = ({ children, index }) => {
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-700 ease-out ${
+      className={`h-full transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'
@@ -133,6 +132,10 @@ const indices = [
   {
     title: "DAX (Germany 40)",
     desc: "Reflects the performance of Germany's 40 largest companies.",
+  },
+  {
+    title: "Nikkei 225",
+    desc: "Tracks 225 leading companies listed on the Tokyo Stock Exchange.",
   },
 ];
 
@@ -198,13 +201,151 @@ const factors = [
   },
 ];
 
+const liveIndices = [
+  {
+    symbol: "US500",
+    name: "S&P 500",
+    description: "S&P 500 Index / U.S. Dollar",
+    tradingViewSymbol: "OANDA:SPX500USD",
+  },
+  {
+    symbol: "NAS100",
+    name: "NASDAQ-100",
+    description: "NASDAQ 100 Index / U.S. Dollar",
+    tradingViewSymbol: "OANDA:NAS100USD",
+  },
+  {
+    symbol: "US30",
+    name: "Dow Jones Industrial Average",
+    description: "Dow Jones 30 Index / U.S. Dollar",
+    tradingViewSymbol: "OANDA:US30USD",
+  },
+  {
+    symbol: "GERMANY40",
+    name: "DAX 40",
+    description: "Germany 40 Index / Euro",
+    tradingViewSymbol: "OANDA:DE30EUR",
+  },
+  {
+    symbol: "JAPAN225",
+    name: "Nikkei 225",
+    description: "Japan 225 Index / Japanese Yen",
+    tradingViewSymbol: "OANDA:JP225USD",
+  },
+];
+
+const LiveIndexQuote = ({ symbol }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return undefined;
+
+    containerRef.current.innerHTML = "";
+    const widget = document.createElement("div");
+    widget.className = "tradingview-widget-container__widget";
+
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbol,
+      width: "100%",
+      isTransparent: true,
+      colorTheme: "dark",
+      locale: "en",
+    });
+
+    containerRef.current.appendChild(widget);
+    containerRef.current.appendChild(script);
+
+    return () => {
+      if (containerRef.current) containerRef.current.innerHTML = "";
+    };
+  }, [symbol]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
+    />
+  );
+};
+
+const IndicesMarketCards = () => (
+  <div className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/35 bg-black px-3 py-6 shadow-2xl sm:rounded-[32px] sm:px-6 sm:py-9 lg:px-8">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_30%),radial-gradient(circle_at_bottom,rgba(1,68,33,0.25),transparent_42%)]" />
+    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+
+    <div className="relative z-10">
+      <div className="mb-6 flex items-center gap-4 sm:mb-8">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black text-[#F4D35E] sm:h-16 sm:w-16">
+          <BarChart3 size={27} strokeWidth={1.8} />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-white sm:text-4xl">Indices</h2>
+          <p className="mt-1 text-sm text-white/65 sm:text-base">
+            Live global index market data
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {liveIndices.map((item) => (
+          <article
+            key={item.symbol}
+            className="group relative min-h-[245px] overflow-hidden rounded-xl border border-[#D4AF37]/80 bg-[#050505] p-4 transition duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_20px_45px_rgba(212,175,55,0.13)]"
+          >
+            <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-30" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-black/30 to-black/80" />
+
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="mb-5 flex items-start justify-between gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37] bg-black/75 text-[#F4D35E]">
+                  <BarChart3 size={24} strokeWidth={1.8} />
+                </div>
+                <div className="min-w-0 text-right">
+                  <h3 className="text-xl font-black tracking-tight text-white sm:text-2xl">
+                    {item.symbol}
+                  </h3>
+                  <p className="mt-1 text-xs text-white/65 sm:text-sm">{item.name}</p>
+                </div>
+              </div>
+
+              <div className="min-h-[80px]">
+                <LiveIndexQuote symbol={item.tradingViewSymbol} />
+              </div>
+
+              <div className="mt-auto flex items-end justify-between gap-3 pt-3">
+                <p className="max-w-[75%] text-[10px] uppercase tracking-wide text-white/45 sm:text-xs">
+                  {item.description}
+                </p>
+                <a
+                  href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${item.name} chart`}
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4D35E] text-black transition hover:scale-110"
+                >
+                  <LineChart size={16} strokeWidth={2} />
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 /* =========================
    MAIN COMPONENT
 ========================= */
 
 const IndicesPage = () => {
   return (
-    <div className="w-full overflow-hidden bg-white">
+    <div className="w-full max-w-none overflow-hidden bg-white">
 
       {/* =========================================
           HERO SECTION
@@ -322,30 +463,29 @@ const IndicesPage = () => {
 
       <section className="bg-[#f8faf9] px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-6 lg:pb-12 lg:pt-7">
         
-        {/* TRADINGVIEW WIDGET CARD */}
+        {/* LIVE INDICES MARKET CARDS */}
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-7xl rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:rounded-3xl sm:p-6 lg:p-8">
-            <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-              <TradingViewWidget />
-            </div>
+          <div className="mx-auto max-w-7xl">
+            <IndicesMarketCards />
           </div>
         </ScrollReveal>
 
         {/* WHAT ARE INDICES */}
         <ScrollReveal delay={100} threshold={0.2} direction="up">
-          <div className="mx-auto mt-8 max-w-7xl rounded-2xl border border-gray-100 bg-white px-5 py-6 shadow-sm sm:mt-10 sm:px-8 sm:py-8 lg:px-12">
-            <div className="max-w-5xl border-l-4 border-[#014421] pl-5 sm:pl-7">
-              <h2 className="text-2xl font-bold leading-tight text-[#014421] sm:text-3xl">
+          <div className="relative mx-auto mt-8 max-w-7xl overflow-hidden rounded-2xl bg-[#014421] px-6 py-8 shadow-[0_18px_45px_rgba(1,68,33,0.22)] sm:mt-10 sm:rounded-3xl sm:px-9 sm:py-10 lg:px-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.10),transparent_38%)]" />
+            <div className="relative z-10 max-w-6xl">
+              <h2 className="text-2xl font-bold leading-tight text-[#F4C542] sm:text-3xl">
                 What Are Indices?
               </h2>
-              <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base sm:leading-8">
+              <p className="mt-5 text-sm leading-7 text-white sm:text-base sm:leading-8">
                 Indices track the performance of a collection of stocks, helping
                 investors assess the strength and overall health of a market
                 segment. Instead of focusing on a single company's performance,
                 indices like the NASDAQ, S&amp;P 500, FTSE 100, and Nikkei 225
                 offer a broader perspective.
               </p>
-              <p className="mt-3 text-sm leading-7 text-gray-500 sm:text-base sm:leading-8">
+              <p className="mt-3 text-sm leading-7 text-white/90 sm:text-base sm:leading-8">
                 These indices can be country-specific or sector-focused, making
                 it easier for investors to diversify their portfolios.
               </p>
@@ -367,10 +507,10 @@ const IndicesPage = () => {
         </ScrollReveal>
 
         {/* INDEX CARDS - Staggered */}
-        <div className="grid grid-cols-1 gap-4 mx-auto mt-6 max-w-6xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-4 lg:gap-5">
+        <div className="grid grid-cols-1 gap-4 mx-auto mt-6 max-w-7xl sm:grid-cols-2 lg:mt-8 lg:grid-cols-5 lg:gap-4">
           {indices.map((item, index) => (
             <StaggeredCard key={index} index={index}>
-              <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5">
+              <div className="relative flex min-h-[235px] h-full w-full flex-col items-center overflow-hidden rounded-2xl border border-gray-200 border-b-[4px] border-b-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:border-b-[5px] lg:p-5">
                 <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8f5ee] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
                   <Star className="fill-[#014421] text-[#014421]" size={28} />
                 </div>
@@ -392,53 +532,29 @@ const IndicesPage = () => {
     HOW INDICES ARE CALCULATED
 ========================================= */}
 
-<section className="px-4 py-8 bg-white sm:px-6 sm:py-10 lg:py-12">
-
-  {/* HEADER */}
+<section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
   <ScrollReveal delay={0} threshold={0.2} direction="up">
-    <div className="text-center">
+    <div className="mx-auto max-w-6xl text-center">
       <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
-        How Are Indices{" "}
-        <span className="text-[#014421]">Calculated?</span>
+        How Are <span className="text-[#014421]">Indices Calculated?</span>
       </h2>
-      <p className="mt-4 text-sm text-gray-500 sm:text-base">
-        Indices are calculated in two primary ways
+      <p className="mx-auto mt-5 max-w-5xl text-sm leading-7 text-[#111827] sm:text-base sm:leading-8">
+        Indices are calculated primarily through market capitalization-weighted
+        and price-weighted methods. Market capitalization-based indices give
+        larger companies more influence over index movements, while
+        price-weighted indices give higher-priced stocks a greater impact,
+        offering different perspectives on overall market performance.
       </p>
     </div>
   </ScrollReveal>
-
-  {/* TOP CARDS - Both cards same size */}
-  <div className="grid max-w-6xl gap-5 mx-auto mt-8 lg:mt-10 lg:grid-cols-2">
-    {topCards.map((card, index) => (
-      <ScrollReveal key={index} delay={index * 150} threshold={0.2} direction="up">
-        <div className="rounded-2xl border-b-[4px] border-[#014421] bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:border-b-[6px] h-full min-h-[220px]">
-          <div className="flex items-start gap-4 p-5 sm:gap-5 sm:p-6 lg:p-8">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421] sm:h-16 sm:w-16">
-              {card.icon}
-            </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-800 sm:text-xl">
-                {card.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-gray-600">
-                {card.desc}
-              </p>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-    ))}
-  </div>
-
-  
 </section>
 
       {/* =========================================
   WHAT MOVES INDEX PRICE
 ========================================= */}
 
-<section className="mx-auto max-w-7xl bg-[#f6f7f6] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-  <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+<section className="w-full bg-[#e7f0eb] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+  <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2 lg:gap-16">
     <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
       <div className="text-left">
         <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">

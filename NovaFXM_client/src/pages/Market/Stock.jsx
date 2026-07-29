@@ -6,7 +6,15 @@ import {
   Landmark,
   Torus,
 } from "lucide-react";
-import TradingViewWidget from "./TradingViewWidget";
+import LiveMarketCards from "./LiveMarketCards";
+
+const topStocks = [
+  { symbol: "AAPL", name: "Apple", description: "Apple Inc.", tradingViewSymbol: "NASDAQ:AAPL" },
+  { symbol: "MSFT", name: "Microsoft", description: "Microsoft Corporation", tradingViewSymbol: "NASDAQ:MSFT" },
+  { symbol: "NVDA", name: "NVIDIA", description: "NVIDIA Corporation", tradingViewSymbol: "NASDAQ:NVDA" },
+  { symbol: "AMZN", name: "Amazon", description: "Amazon.com, Inc.", tradingViewSymbol: "NASDAQ:AMZN" },
+  { symbol: "TSLA", name: "Tesla", description: "Tesla, Inc.", tradingViewSymbol: "NASDAQ:TSLA" },
+];
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -109,9 +117,42 @@ const StaggeredCard = ({ children, index }) => {
 
 const exchangeIcons = [Landmark, ChartNoAxesCombined, Clock3, Torus];
 
+const stockTradingBenefits = [
+  {
+    title: "Growth Potential",
+    description:
+      "Benefit from the long-term growth of leading companies and expanding industries.",
+    icon: ChartNoAxesCombined,
+  },
+  {
+    title: "Diversification",
+    description:
+      "Spread exposure across different companies and sectors to better manage portfolio risk.",
+    icon: Torus,
+  },
+  {
+    title: "High Liquidity",
+    description:
+      "Trade popular shares in active markets with efficient entry and exit opportunities.",
+    icon: Clock3,
+  },
+  {
+    title: "Dividend Income",
+    description:
+      "Selected companies may provide dividend payments alongside potential capital growth.",
+    icon: Landmark,
+  },
+  {
+    title: "Global Access",
+    description:
+      "Access well-known companies and market opportunities from major global exchanges.",
+    icon: ChartNoAxesCombined,
+  },
+];
+
 const Stock = () => {
   return (
-    <div className="overflow-x-hidden bg-[#f5f5f5] font-sans">
+    <div className="w-full max-w-none overflow-x-hidden bg-[#f5f5f5] font-sans">
       
       {/* ================= FULL SCREEN HERO ================= */}
       <section className="relative flex min-h-[calc(100svh-72px)] w-full items-center justify-center overflow-hidden bg-black px-4 py-14 text-center sm:min-h-[calc(100svh-80px)] sm:px-6 lg:min-h-[calc(100svh-84px)]">
@@ -210,10 +251,13 @@ const Stock = () => {
       <section className="bg-[#f8faf9] px-3 py-7 sm:px-6 sm:py-9 lg:py-10">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="mx-auto max-w-7xl overflow-hidden rounded-xl border border-gray-100 bg-white p-2 shadow-sm sm:rounded-3xl sm:p-5 lg:p-6">
-            <div className="h-[300px] w-full min-w-0 sm:h-[430px] lg:h-[500px]">
-              <TradingViewWidget />
-            </div>
+          <div className="mx-auto max-w-7xl">
+            <LiveMarketCards
+              title="Stocks"
+              subtitle="Live top company market data"
+              items={topStocks}
+              Icon={ChartNoAxesCombined}
+            />
           </div>
         </ScrollReveal>
       </section>
@@ -222,28 +266,91 @@ const Stock = () => {
       <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:py-6">
         
         <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
+          <div className="relative overflow-hidden rounded-2xl bg-[#014421] p-6 shadow-[0_18px_45px_rgba(1,68,33,0.22)] transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-8 lg:px-12 lg:py-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.10),transparent_38%)]" />
+            <div className="relative z-10">
             
-            <h3 className="text-2xl font-bold leading-tight text-[#014421] md:text-3xl">
+            <h3 className="text-2xl font-bold leading-tight text-[#F4C542] md:text-3xl">
               What are Stocks?
             </h3>
 
-            <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
-
-            <p className="mt-4 text-sm leading-7 text-gray-700 md:text-base">
+            <p className="mt-5 text-sm leading-7 text-white md:text-base md:leading-8">
               A stock represents a unit of ownership in a company. By purchasing
               shares, you become a part-owner. If the company thrives, its stock
               price rises, offering you potential gains. If the company
               underperforms, the stock price may fall.
             </p>
+            </div>
             
           </div>
         </ScrollReveal>
       </section>
 
+      {/* ================= WHY TRADE STOCKS ================= */}
+      <section className="bg-[#f8faf9] px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal delay={0} threshold={0.2} direction="up">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+                Why Trade <span className="text-[#014421]">Stocks?</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-5xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
+                Stock trading gives you access to leading companies across
+                diverse sectors, creating opportunities to manage risk, pursue
+                long-term growth and respond to changing global markets.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-5 lg:gap-5">
+            {stockTradingBenefits.map((benefit, index) => {
+              const BenefitIcon = benefit.icon;
+              return (
+                <ScrollReveal
+                  key={benefit.title}
+                  delay={index * 100}
+                  threshold={0.1}
+                  direction="up"
+                >
+                  <article className="flex h-full min-h-[255px] flex-col items-center rounded-2xl border border-gray-200 border-b-[5px] border-b-[#014421] bg-white p-5 text-center shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-[#014421]">
+                      <BenefitIcon size={28} strokeWidth={1.9} />
+                    </div>
+                    <h3 className="mt-5 text-lg font-bold text-gray-800">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-6 text-gray-500">
+                      {benefit.description}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= HOW STOCK TRADING WORKS ================= */}
+      <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+        <ScrollReveal delay={0} threshold={0.2} direction="up">
+          <div className="mx-auto max-w-6xl text-center">
+            <h2 className="text-2xl font-bold leading-tight text-[#111827] sm:text-3xl lg:text-4xl">
+              How Does Stock Trading <span className="text-[#014421]">Work?</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-5xl text-sm leading-7 text-[#111827] sm:text-base sm:leading-8">
+              Stock trading involves buying and selling shares of companies on
+              exchanges. You can also trade stock CFDs (Contracts for
+              Difference), which allow you to speculate on price movements with
+              leverage. Many traders diversify their portfolios across a variety
+              of sectors, balancing risk between industries and companies.
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
+
     {/* ================= EXCHANGES ================= */}
-<section className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-  <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+<section className="w-full bg-[#e7f0eb] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+  <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2 lg:gap-16">
     {/* LEFT SIDE - HEADING + IMAGE */}
     <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
       <div className="text-left">
@@ -333,51 +440,6 @@ const Stock = () => {
     </div>
   </div>
 </section>
-
-      {/* ================= WHY TRADE ================= */}
-      <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-0">
-        
-        <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-2xl bg-[#014421] p-5 text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
-            
-            <h3 className="text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">
-              Why Trade Stocks?
-            </h3>
-
-            <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
-
-            <p className="mt-4 text-sm leading-7 text-gray-200 md:text-base">
-              Stock trading offers access to a broad range of companies across
-              various sectors, allowing you to diversify your investment strategy
-              and manage risk. With the right stock trading approach, you can
-              maximize returns and build wealth over time.
-            </p>
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* ================= HOW IT WORKS ================= */}
-      <section className="mx-auto max-w-7xl px-4 pb-8 pt-5 sm:px-6 lg:px-0">
-        
-        <ScrollReveal delay={0} threshold={0.2} direction="up">
-          <div className="rounded-2xl border-b-4 border-[#D4AF37] bg-gradient-to-r from-[#f8f6f1] to-[#f1efe8] p-5 shadow-md transition-all duration-300 hover:shadow-xl sm:rounded-3xl sm:p-6 lg:p-7">
-            
-            <h3 className="text-2xl font-bold leading-tight text-[#014421] md:text-3xl">
-              How Does Stock Trading Work?
-            </h3>
-
-            <div className="mt-3 h-1 w-20 rounded-full bg-[#D4AF37]"></div>
-
-            <p className="mt-4 text-sm leading-7 text-gray-700 md:text-base">
-              Stock trading involves buying and selling shares of companies on
-              exchanges. You can also trade stocks CFDs (Contracts for Difference),
-              which allow you to speculate on price movements with leverage. Many
-              traders diversify their portfolios by investing in a variety of
-              sectors, balancing risk across industries and companies.
-            </p>
-          </div>
-        </ScrollReveal>
-      </section>
 
       <style jsx>{`
         /* Keyframe Animations */

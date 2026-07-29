@@ -8,6 +8,7 @@ import {
   Blocks,
   Newspaper,
   Check,
+  LineChart,
 } from "lucide-react";
 import { FaBitcoin, FaChartLine, FaLock } from "react-icons/fa";
 
@@ -111,61 +112,121 @@ const StaggeredCard = ({ children, index }) => {
 };
 
 // ── Live TradingView Crypto Screener Widget ──────────────────────────────────
-const CryptoLiveTable = () => {
+const liveCryptocurrencies = [
+  { symbol: "BTC", name: "Bitcoin", tradingViewSymbol: "BINANCE:BTCUSDT" },
+  { symbol: "ETH", name: "Ethereum", tradingViewSymbol: "BINANCE:ETHUSDT" },
+  { symbol: "SOL", name: "Solana", tradingViewSymbol: "BINANCE:SOLUSDT" },
+  { symbol: "XRP", name: "XRP", tradingViewSymbol: "BINANCE:XRPUSDT" },
+  { symbol: "BNB", name: "BNB", tradingViewSymbol: "BINANCE:BNBUSDT" },
+];
+
+const LiveCryptoQuote = ({ symbol }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) return undefined;
     containerRef.current.innerHTML = "";
 
-    const widgetDiv = document.createElement("div");
-    widgetDiv.className = "tradingview-widget-container__widget";
-    containerRef.current.appendChild(widgetDiv);
-
+    const widget = document.createElement("div");
+    widget.className = "tradingview-widget-container__widget";
     const script = document.createElement("script");
     script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-screener.js";
+      "https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js";
+    script.type = "text/javascript";
     script.async = true;
     script.innerHTML = JSON.stringify({
+      symbol,
       width: "100%",
-      height: 550,
-      defaultColumn: "overview",
-      screener_type: "crypto_mkt",
-      displayCurrency: "USD",
-      colorTheme: "light",
+      isTransparent: true,
+      colorTheme: "dark",
       locale: "en",
     });
 
+    containerRef.current.appendChild(widget);
     containerRef.current.appendChild(script);
 
     return () => {
       if (containerRef.current) containerRef.current.innerHTML = "";
     };
-  }, []);
+  }, [symbol]);
 
   return (
-    <ScrollReveal delay={0} threshold={0.2} direction="up">
-      <div className="mb-12 overflow-hidden bg-white shadow-lg rounded-2xl md:rounded-3xl md:mb-16">
-        <div
-          className="tradingview-widget-container"
-          ref={containerRef}
-          style={{ width: "100%", minHeight: 550 }}
-        />
-        <div className="px-4 py-2 text-xs text-right text-gray-400">
-          <a
-            href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="text-blue-400 hover:underline"
-          >
-            Cryptocurrency Prices
-          </a>{" "}
-          by TradingView
-        </div>
-      </div>
-    </ScrollReveal>
+    <div
+      ref={containerRef}
+      className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
+    />
   );
 };
+
+const CryptoLiveTable = () => (
+  <ScrollReveal delay={0} threshold={0.2} direction="up">
+    <div className="relative mb-12 overflow-hidden rounded-2xl border border-[#D4AF37]/35 bg-black px-3 py-6 shadow-2xl sm:rounded-[32px] sm:px-6 sm:py-9 md:mb-16 lg:px-8">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_30%),radial-gradient(circle_at_bottom,rgba(1,68,33,0.25),transparent_42%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+
+      <div className="relative z-10">
+        <div className="mb-6 flex items-center gap-4 sm:mb-8">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4AF37] bg-black text-[#F4D35E] sm:h-16 sm:w-16">
+            <FaBitcoin size={27} />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white sm:text-4xl">Crypto</h2>
+            <p className="mt-1 text-sm text-white/65 sm:text-base">
+              Live digital asset market data
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {liveCryptocurrencies.map((item) => (
+            <article
+              key={item.symbol}
+              className="group relative min-h-[245px] overflow-hidden rounded-xl border border-[#D4AF37]/80 bg-[#050505] p-4 transition duration-300 hover:-translate-y-1 hover:border-[#F4D35E] hover:shadow-[0_20px_45px_rgba(212,175,55,0.13)]"
+            >
+              <div className="absolute inset-0 bg-[url('/m2.png')] bg-cover bg-center opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-black/30 to-black/80" />
+
+              <div className="relative z-10 flex h-full flex-col">
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37] bg-black/75 text-[#F4D35E]">
+                    <FaBitcoin size={23} />
+                  </div>
+                  <div className="min-w-0 text-right">
+                    <h3 className="text-xl font-black tracking-tight text-white sm:text-2xl">
+                      {item.symbol}USD
+                    </h3>
+                    <p className="mt-1 text-xs text-white/65 sm:text-sm">
+                      {item.name}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="min-h-[80px]">
+                  <LiveCryptoQuote symbol={item.tradingViewSymbol} />
+                </div>
+
+                <div className="mt-auto flex items-end justify-between gap-3 pt-3">
+                  <p className="text-[10px] uppercase tracking-wide text-white/45 sm:text-xs">
+                    {item.name} / U.S. Dollar
+                  </p>
+                  <a
+                    href={`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(item.tradingViewSymbol)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${item.name} chart`}
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4D35E] text-black transition hover:scale-110"
+                  >
+                    <LineChart size={16} strokeWidth={2} />
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </ScrollReveal>
+);
 // ────────────────────────────────────────────────────────────────────────────
 
 const CryptocurrencyPage = () => {
@@ -222,10 +283,16 @@ const CryptocurrencyPage = () => {
         "Unlike stocks and commodities, Crypto CFDs are easier to trade, providing straightforward opportunities for both beginners and experienced traders.",
       icon: <FaBitcoin className="text-4xl text-yellow-500" />,
     },
+    {
+      title: "24/7 Market Access",
+      description:
+        "Access cryptocurrency markets around the clock and respond to global price movements whenever opportunities arise.",
+      icon: <ChartNoAxesCombined className="text-[#014421]" size={36} />,
+    },
   ];
 
   return (
-    <div className="bg-[#f5f5f5] min-h-screen font-sans">
+    <div className="min-h-screen w-full max-w-none overflow-x-hidden bg-[#f5f5f5] font-sans">
       {/* Hero Section */}
       <div className="relative flex min-h-[calc(100svh-72px)] items-center justify-center overflow-hidden px-3 py-16 sm:min-h-[calc(100svh-80px)] sm:px-5 lg:min-h-[calc(100svh-84px)] lg:px-6">
         {/* Animated Background Image */}
@@ -465,8 +532,8 @@ const CryptocurrencyPage = () => {
       </ScrollReveal>
 
       {/* Why Trade Crypto CFDs Section */}
-      <div className="mx-auto max-w-7xl bg-gray-50 px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-        <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+      <section className="w-full bg-[#e7f0eb] px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
             <div className="text-left">
               <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
@@ -490,9 +557,7 @@ const CryptocurrencyPage = () => {
             {promoFeatures.map((feature, index) => (
               <div
                 key={index}
-                className={`group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6 ${
-                  index === 2 ? "sm:col-span-2" : ""
-                }`}
+                className="group relative flex h-full min-h-[230px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:rounded-3xl sm:px-6 sm:py-6"
               >
                 <div className="relative z-10 flex flex-1 flex-col items-center text-center">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
@@ -520,7 +585,7 @@ const CryptocurrencyPage = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       <style jsx>{`
         /* Keyframe Animations */
