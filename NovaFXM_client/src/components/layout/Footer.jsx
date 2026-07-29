@@ -136,29 +136,30 @@ const Footer = () => {
             <p className="flex items-center gap-2">
               <MailIcon />
               <a
-                href="mailto:support@fxtrade.com"
+                href="mailto:support@novafxm.com"
                 className="break-all hover:text-green-700"
               >
-                support@fxtrade.com
+                support@novafxm.com
               </a>
             </p>
 
             <p className="flex items-center gap-2">
               <PhoneIcon />
-              <a href="tel:+15551234567" className="hover:text-green-700">
-                +1 (555) 123-4567
+              <a href="tel:+4412345678" className="hover:text-green-700">
+                +44 12345678
               </a>
             </p>
 
             <p className="flex items-start gap-2">
               <MapPinIcon />
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/search/?api=1&query=Mazars%20Neville%20Russell%2C%2026%20High%20Street%2C%20Huddersfield%2C%20West%20Yorkshire%2C%20HD1%202LN"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-green-700"
               >
-                Global Tech Hub, London, United Kingdom
+                Mazars Neville Russell, 26 High Street, Huddersfield, West
+                Yorkshire, HD1 2LN
               </a>
             </p>
 

@@ -5,6 +5,9 @@ import { FaUser } from "react-icons/fa";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../../assets/images/logo.png"; // adjust path if needed
 
+const PLATFORM_LOGIN_URL = "https://platform.novafxm.com/login";
+const PLATFORM_REGISTER_URL = "https://platform.novafxm.com/register";
+
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -210,8 +213,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => {
-              navigate("/signup");
-              scrollPageTop();
+              window.location.assign(PLATFORM_REGISTER_URL);
             }}
             className="button-shine px-4 py-2 rounded-full text-xs font-medium
               bg-white/80 backdrop-blur-md border border-gray-300 text-gray-700
@@ -225,8 +227,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => {
-              navigate("/login");
-              scrollPageTop();
+              window.location.assign(PLATFORM_LOGIN_URL);
             }}
             className="button-shine px-6 py-2 rounded-full text-xs font-medium
               bg-[#014421] text-white
@@ -245,8 +246,7 @@ export default function Navbar() {
               isScrolled ? "bg-gray-100 hover:bg-gray-200" : "hover:bg-white"
             }`}
             onClick={() => {
-              navigate("/login");
-              scrollPageTop();
+              window.location.assign(PLATFORM_LOGIN_URL);
             }}
           >
             <FaUser className="w-5 h-5 text-gray-700" />
@@ -316,9 +316,8 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => {
-                      navigate("/signup");
                       closeMobileMenu();
-                      scrollPageTop();
+                      window.location.assign(PLATFORM_REGISTER_URL);
                     }}
                     className="flex-1 py-2 rounded-full text-xs font-medium border border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700 transition-colors"
                   >
@@ -327,9 +326,8 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => {
-                      navigate("/login");
                       closeMobileMenu();
-                      scrollPageTop();
+                      window.location.assign(PLATFORM_LOGIN_URL);
                     }}
                     className="flex-1 py-2 rounded-full text-xs font-medium bg-[#014421] text-white hover:bg-green-800 transition-colors"
                   >

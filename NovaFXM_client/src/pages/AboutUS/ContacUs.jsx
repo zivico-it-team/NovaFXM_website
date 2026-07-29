@@ -341,7 +341,7 @@ export default function ContactPage() {
                 <div className="space-y-5 mt-6">
                   <div className="flex gap-4 pt-6 pb-6 border-b border-white/15">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><MapPin size={20} /></div>
-                    <div><h4 className="text-base font-bold">Address</h4><p className="mt-1 text-sm leading-6 text-white/85">Global Tech Hub, London,<br />United Kingdom</p></div>
+                    <div><h4 className="text-base font-bold">Address</h4><p className="mt-1 text-sm leading-6 text-white/85">Mazars Neville Russell,<br />26 High Street, Huddersfield,<br />West Yorkshire, HD1 2LN</p></div>
                   </div>
                   <div className="flex gap-4 pb-6 border-b border-white/15">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Phone size={20} /></div>
@@ -356,7 +356,7 @@ export default function ContactPage() {
                     <div><h4 className="text-base font-bold">Working Hours</h4><p className="mt-1 text-sm leading-6 text-white/85">Monday - Friday<br />9:00 AM - 6:00 PM (GMT)</p></div>
                   </div>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Global+Tech+Hub+London+United+Kingdom" target="_blank" rel="noopener noreferrer" className={contactMapButtonClass}>
+                <a href="https://www.google.com/maps/search/?api=1&query=Mazars%20Neville%20Russell%2C%2026%20High%20Street%2C%20Huddersfield%2C%20West%20Yorkshire%2C%20HD1%202LN" target="_blank" rel="noopener noreferrer" className={contactMapButtonClass}>
                   <MapPin size={18} />View on Google Map<ArrowRight size={18} className="transition-transform duration-300 group-hover/action:translate-x-1" />
                 </a>
               </div>
