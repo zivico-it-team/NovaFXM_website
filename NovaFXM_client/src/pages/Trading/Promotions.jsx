@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaGift } from "react-icons/fa";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { BadgePercent, ChevronDown, ChevronUp, CircleDollarSign, UserPlus } from "lucide-react";
 import PageHero from "../../components/layout/PageHero";
 import PageIntroduction from "../../components/layout/PageIntroduction";
 
@@ -38,6 +38,27 @@ const faqs = [
     question: "How can i withdraw the bonus received from NOVAFXM?",
     answer:
       "You can request a bonus withdrawal after meeting the required trading volume and account conditions.",
+  },
+];
+
+const promotionSteps = [
+  {
+    icon: UserPlus,
+    title: "Create Your Account",
+    description:
+      "Register securely on the NOVAFXM platform and complete your account setup.",
+  },
+  {
+    icon: BadgePercent,
+    title: "Activate Your Promotion",
+    description:
+      "Select an eligible bonus, review the offer terms, and activate your promotion.",
+  },
+  {
+    icon: CircleDollarSign,
+    title: "Deposit & Start Trading",
+    description:
+      "Fund your account, receive the applicable bonus, and begin your trading journey.",
   },
 ];
 
@@ -275,6 +296,83 @@ function FAQSection() {
   );
 }
 
+function PromotionHowItWorks() {
+  return (
+    <section className="relative overflow-hidden bg-[#f8faf8] px-4 py-14 sm:px-6 md:py-20">
+      <div className="absolute left-8 top-10 h-20 w-20 opacity-25 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
+      <div className="absolute bottom-8 right-8 h-20 w-20 opacity-25 [background-image:radial-gradient(circle,#D4AF37_1px,transparent_1.5px)] [background-size:10px_10px]" />
+
+      <div className="relative mx-auto max-w-6xl">
+        <div className="text-center">
+          <div className="mx-auto flex w-fit items-center gap-3 text-sm font-medium text-[#014421]">
+            <span className="h-px w-8 bg-[#014421]" />
+            How It Works
+            <span className="h-px w-8 bg-[#014421]" />
+          </div>
+          <h2 className="mt-5 text-2xl font-black leading-tight text-[#07140d] sm:text-3xl md:text-4xl">
+            Unlock Your{" "}
+            <span className="text-[#014421]">NOVAFXM Promotion</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">
+            Claim an eligible trading bonus through a simple, transparent
+            three-step process.
+          </p>
+        </div>
+
+        <div className="mt-12 grid items-center gap-5 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
+          {promotionSteps.map((step, index) => {
+            const Icon = step.icon;
+
+            return (
+              <React.Fragment key={step.title}>
+                <article className="group relative min-h-[190px] rounded-2xl border border-[#014421]/25 border-b-4 border-b-[#014421] bg-white px-6 pb-7 pt-12 text-center shadow-[0_10px_26px_rgba(1,68,33,0.07)] transition-all duration-300 hover:-translate-y-2 hover:border-b-[#D4AF37] hover:shadow-[0_18px_38px_rgba(1,68,33,0.14)]">
+                  <div className="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#014421] text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={23} strokeWidth={2} />
+                  </div>
+
+                  <span className="absolute left-5 top-5 flex h-7 w-7 items-center justify-center rounded-full bg-[#014421] text-[11px] font-black text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3 className="text-lg font-extrabold text-[#014421]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-6 text-gray-600">
+                    {step.description}
+                  </p>
+                </article>
+
+                {index < promotionSteps.length - 1 && (
+                  <div className="flex items-center justify-center gap-2 text-[#014421]">
+                    <span className="h-2 w-2 rounded-full bg-[#014421]" />
+                    <span className="h-2 w-2 rounded-full bg-[#014421]" />
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+
+        <div className="mt-9 text-center">
+          <button
+            type="button"
+            onClick={() =>
+              window.location.assign("https://platform.novafxm.com/register")
+            }
+            className="button-shine inline-flex items-center justify-center rounded-full bg-[#014421] px-8 py-3 text-sm font-bold text-white shadow-lg shadow-green-900/15 transition-all duration-300 hover:-translate-y-1 hover:bg-green-800"
+          >
+            Claim Your Bonus
+          </button>
+          <p className="mx-auto mt-4 max-w-xl text-xs leading-5 text-gray-500">
+            Promotions are subject to eligibility requirements and the
+            applicable terms and conditions.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Promotions() {
   const [heroAnimated, setHeroAnimated] = useState(false);
   const heroRef = useRef(null);
@@ -508,8 +606,7 @@ export default function Promotions() {
         }
       `}</style>
 
-      {/* Keep promotions FAQs as the final page section */}
-      <FAQSection />
+      <PromotionHowItWorks />
     </main>
   );
 }
