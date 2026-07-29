@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import stockExchangeImage from "../../assets/images/OIP.webp";
 import {
   ChartNoAxesCombined,
   Check,
@@ -367,7 +368,7 @@ const Stock = () => {
         <div className="relative flex justify-center overflow-hidden rounded-2xl">
           <div className="relative group">
             <img
-              src="/src/assets/images/OIP.webp"
+              src={stockExchangeImage}
               alt="Stock Exchange Trading Floor"
               className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
             />
