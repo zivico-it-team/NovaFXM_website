@@ -13,6 +13,8 @@ import {
   MonitorSmartphone,
   WalletCards,
 } from "lucide-react";
+import forexToolsImage from "../../assets/images/frx1.avif";
+import forexAboutImage from "../../assets/images/stock2.avif";
 
 // Scroll Animation Component
 const ScrollReveal = ({ children, delay = 0, threshold = 0.2, direction = "up" }) => {
@@ -301,29 +303,29 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
-      <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className="grid items-start gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
         <ScrollReveal delay={0} threshold={0.3} direction="left">
           <img
-            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
+            src={forexAboutImage}
             alt="forex"
             className="h-[210px] w-full rounded-xl object-cover shadow-md transition-all duration-500 hover:scale-105 sm:h-[320px] sm:rounded-2xl lg:h-[350px] lg:rounded-[30px]"
           />
         </ScrollReveal>
         
         <div>
-          <ScrollReveal delay={100} threshold={0.3} direction="up">
-            <p className="mb-3 text-sm font-semibold text-[#014421] sm:mb-4">Forex Trading</p>
-          </ScrollReveal>
+          
           <ScrollReveal delay={200} threshold={0.3} direction="up">
-            <h2 className="text-2xl font-bold leading-tight text-[#1f1f1f] sm:text-4xl">
-              Your Trusted Forex Trading Partner
+            <h2 className="leading-tight">
+              <span className="block text-base font-bold text-[#111827] sm:text-lg">
+                Your Trusted Forex Trading Partner
+              </span>
+              <span className="mt-2 block text-2xl font-semibold text-[#014421] sm:text-3xl">
+                NOVAFXM
+              </span>
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={300} threshold={0.3} direction="up">
-            <h3 className="mt-2 text-2xl font-bold text-[#014421] sm:mt-3 sm:text-3xl">NOVAFXM</h3>
-          </ScrollReveal>
           <ScrollReveal delay={400} threshold={0.3} direction="up">
-            <p className="mt-4 text-center text-sm leading-7 text-gray-600 sm:mt-5 sm:text-left sm:text-base lg:leading-8">
+            <p className="mt-4 text-center text-sm leading-7 text-gray-600 sm:text-left sm:text-base lg:leading-8">
               At NOVAFXM, we specialize in providing an exceptional Forex trading
               experience. Our platform offers access to major, minor and exotic
               currency pairs with deep liquidity, competitive spreads and
@@ -331,16 +333,16 @@ function AboutSection() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={500} threshold={0.3} direction="up">
-            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4 lg:flex-nowrap">
-              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-4 lg:flex-nowrap">
+              <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                 <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
                 Higher Returns
               </div>
-              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+              <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                 <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
                 Portfolio Diversification
               </div>
-              <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base lg:text-lg">
+              <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 hover:translate-x-1 sm:text-base">
                 <Check className="shrink-0 text-[#014421]" size={20} strokeWidth={3} />
                 Tax Benefits
               </div>
@@ -481,23 +483,65 @@ function FundingSection() {
   );
 }
 function ToolsSection() {
+  const toolIcons = [BookOpenCheck, MonitorSmartphone, BarChart3, LineChart];
+
   return (
-    <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-20 lg:pb-24">
-      <SectionTitle accent>Forex Trading Tools & Market Insights</SectionTitle>
-      <div className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+    <section className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
+      <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col justify-center gap-8 pl-4 sm:pl-8 lg:pl-10">
+          <div className="text-left">
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-slate-950 sm:mb-8 sm:text-4xl">
+              Forex Trading Tools &{" "}
+              <span className="text-[#014421]">Market Insights</span>
+            </h2>
+            <div className="h-1 w-20 rounded-full bg-[#014421]"></div>
+          </div>
+
+          <ScrollReveal delay={0} threshold={0.2} direction="left">
+            <div className="relative flex justify-center overflow-hidden rounded-2xl">
+              <div className="relative group">
+                <img
+                  src={forexToolsImage}
+                  alt="Forex trading tools and market analysis"
+                  className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#014421]/20 to-transparent"></div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
         {tools.map((tool, index) => (
           <StaggeredCard key={tool.title} index={index}>
-            <div className={`flex min-h-[155px] flex-col items-center justify-start rounded-2xl border border-gray-100 bg-white px-5 py-6 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[175px] lg:min-h-[190px] lg:px-6`}>
-              <h3 className="flex min-h-[44px] items-center justify-center text-base font-bold leading-snug text-gray-800 sm:min-h-[56px] sm:text-lg">
-                {tool.title}
-              </h3>
-              <div className="mt-2 h-[3px] w-10 rounded-full bg-[#D4AF37]" />
-              <p className="mt-3 text-sm leading-6 text-gray-500">
-                {tool.desc}
-              </p>
+            <div className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl border border-gray-200 border-b-4 border-b-[#014421] bg-gradient-to-br from-white to-[#f5f7f2] px-5 py-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:min-h-[230px] sm:rounded-3xl sm:px-6 sm:py-6">
+              <div className="relative z-10 flex flex-1 flex-col items-center text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-[#014421] transition-all duration-300 group-hover:scale-110 sm:h-16 sm:w-16">
+                  {(() => {
+                    const Icon = toolIcons[index];
+                    return <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2.4} />;
+                  })()}
+                </div>
+                <h3 className="mt-4 text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                  {tool.title}
+                </h3>
+                <div className="mt-3 h-[3px] w-10 rounded-full bg-[#014421]"></div>
+                <p className="relative z-10 mt-3 text-sm font-medium leading-6 text-slate-700 sm:leading-7">
+                  {tool.desc}
+                </p>
+              </div>
+              <div className="absolute bottom-5 left-5 z-0 grid grid-cols-3 gap-2 opacity-50">
+                {Array.from({ length: 9 }).map((_, dotIndex) => (
+                  <span
+                    key={dotIndex}
+                    className="h-2 w-2 rounded-full bg-green-100"
+                  />
+                ))}
+              </div>
             </div>
           </StaggeredCard>
         ))}
+        </div>
       </div>
     </section>
   );
@@ -512,10 +556,10 @@ function SecuritySection() {
               <p className="text-xs font-semibold uppercase tracking-wide text-white sm:text-sm">
                 Client Protection
               </p>
-              <h2 className="mt-2 text-2xl font-bold leading-tight text-[#D4AF37] sm:text-3xl">
+              <h2 className="mb-4 mt-2 text-2xl font-bold leading-tight text-[#D4AF37] md:text-3xl">
                 Security & Compliance
               </h2>
-              <p className="mt-5 max-w-4xl text-center text-sm leading-7 text-white sm:text-left sm:text-base">
+              <p className="max-w-4xl text-sm leading-7 text-gray-200 md:text-base">
                 NOVAFXM is committed to the highest standards of financial security
                 and regulatory compliance. We follow strict anti-money laundering
                 (AML) policies and implement robust Know Your Customer (KYC)
@@ -529,7 +573,7 @@ function SecuritySection() {
                 {compliancePoints.map((point) => (
                   <div key={point} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-white" strokeWidth={2.4} />
-                    <span className="font-semibold text-white">{point}</span>
+                    <span className="text-sm font-semibold leading-7 text-white md:text-base">{point}</span>
                   </div>
                 ))}
               </div>
