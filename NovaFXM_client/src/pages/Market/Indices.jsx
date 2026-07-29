@@ -222,7 +222,7 @@ const liveIndices = [
     tradingViewSymbol: "OANDA:US30USD",
   },
   {
-    symbol: "GERMANY40",
+    symbol: "GER40",
     name: "DAX 40",
     description: "Germany 40 Index / Euro",
     tradingViewSymbol: "OANDA:DE30EUR",
@@ -307,7 +307,13 @@ const IndicesMarketCards = () => (
                   <BarChart3 size={24} strokeWidth={1.8} />
                 </div>
                 <div className="min-w-0 text-right">
-                  <h3 className="text-xl font-black tracking-tight text-white sm:text-2xl">
+                  <h3
+                    className={`whitespace-nowrap font-black tracking-tight text-white ${
+                      item.symbol.length > 7
+                        ? "text-base sm:text-lg lg:text-sm xl:text-base"
+                        : "text-xl sm:text-2xl lg:text-lg xl:text-xl"
+                    }`}
+                  >
                     {item.symbol}
                   </h3>
                   <p className="mt-1 text-xs text-white/65 sm:text-sm">{item.name}</p>
