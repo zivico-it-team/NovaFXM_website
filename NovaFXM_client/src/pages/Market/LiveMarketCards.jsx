@@ -31,10 +31,16 @@ const LiveQuote = ({ symbol }) => {
   }, [symbol]);
 
   return (
-    <div
-      ref={containerRef}
-      className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
-    />
+    <div className="relative min-h-[78px] w-full overflow-hidden">
+      <div
+        ref={containerRef}
+        className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 z-20 w-12 bg-[#050505]"
+      />
+    </div>
   );
 };
 
@@ -72,7 +78,7 @@ export default function LiveMarketCards({ title, subtitle, items, Icon = BarChar
                     <h3 className="text-xl font-black tracking-tight text-white sm:text-2xl">
                       {item.symbol}
                     </h3>
-                    <p className="mt-1 text-xs text-white/65 sm:text-sm">{item.name}</p>
+                    <p className="mt-1 max-w-full truncate text-xs text-white/65 sm:text-sm">{item.name}</p>
                   </div>
                 </div>
                 <div className="min-h-[80px]">

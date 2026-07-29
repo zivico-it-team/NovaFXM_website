@@ -217,7 +217,7 @@ const liveIndices = [
   },
   {
     symbol: "US30",
-    name: "Dow Jones Industrial Average",
+    name: "Dow Jones",
     description: "Dow Jones 30 Index / U.S. Dollar",
     tradingViewSymbol: "OANDA:US30USD",
   },
@@ -267,10 +267,16 @@ const LiveIndexQuote = ({ symbol }) => {
   }, [symbol]);
 
   return (
-    <div
-      ref={containerRef}
-      className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
-    />
+    <div className="relative min-h-[78px] w-full overflow-hidden">
+      <div
+        ref={containerRef}
+        className="tradingview-widget-container min-h-[78px] w-full overflow-hidden"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 z-20 w-12 bg-[#050505]"
+      />
+    </div>
   );
 };
 
@@ -316,7 +322,7 @@ const IndicesMarketCards = () => (
                   >
                     {item.symbol}
                   </h3>
-                  <p className="mt-1 text-xs text-white/65 sm:text-sm">{item.name}</p>
+                  <p className="mt-1 max-w-full truncate text-xs text-white/65 sm:text-sm">{item.name}</p>
                 </div>
               </div>
 
