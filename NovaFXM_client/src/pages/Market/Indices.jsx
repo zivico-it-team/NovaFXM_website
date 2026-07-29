@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import heroBg from "../../assets/images/tech-analysis-1024x577 1.png";
 import heroBg2 from "../../assets/images/image 106.png";
+import indexPriceImage from "../../assets/images/image.png";
 import {
   Star,
   BarChart3,
@@ -572,7 +573,7 @@ const IndicesPage = () => {
         <div className="relative flex justify-center overflow-hidden rounded-2xl">
           <div className="relative group">
             <img
-              src="src/assets/images/image.png"
+              src={indexPriceImage}
               alt="Index Price Movement Chart"
               className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
             />

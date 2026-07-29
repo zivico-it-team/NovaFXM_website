@@ -12,7 +12,6 @@ import {
   MonitorSmartphone,
   WalletCards,
 } from "lucide-react";
-import forexToolsImage from "../../assets/images/frx1.avif";
 import forexAboutImage from "../../assets/images/stock2.avif";
 import LiveMarketCards from "./LiveMarketCards";
 
@@ -434,7 +433,7 @@ function ToolsSection() {
             <div className="relative flex justify-center overflow-hidden rounded-2xl">
               <div className="relative group">
                 <img
-                  src={forexToolsImage}
+                  src="/EconomicCalendar.png"
                   alt="Forex trading tools and market analysis"
                   className="w-full max-w-[700px] rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-100 group-hover:shadow-xl"
                 />
