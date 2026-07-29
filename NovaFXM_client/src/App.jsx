@@ -108,7 +108,7 @@ function App() {
           path="/login"
           element={
             <AuthLayout>
-                   <LoginPage onSignUpClick={() => window.location.href = "/signup"} />
+                   <LoginPage onSignUpClick={() => window.location.assign("https://platform.novafxm.com/register")} />
 
             </AuthLayout>
           }
@@ -117,7 +117,7 @@ function App() {
           path="/signup"
           element={
             <AuthLayout>
-            <RegisterPage onLoginClick={() => window.location.href = "/login"} />
+            <RegisterPage onLoginClick={() => window.location.assign("https://platform.novafxm.com/login")} />
 
             </AuthLayout>
           }

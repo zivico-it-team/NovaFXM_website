@@ -1,42 +1,47 @@
 import { Users, Globe, Headset } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import arjunPhoto from "../../assets/images/testimonials/arjun-mehta.jpg";
+import priyaPhoto from "../../assets/images/testimonials/priya-sharma.jpg";
+import rohanPhoto from "../../assets/images/testimonials/rohan-kapoor.jpg";
+import ananyaPhoto from "../../assets/images/testimonials/ananya-iyer.jpg";
+import vikramPhoto from "../../assets/images/testimonials/vikram-singh.jpg";
 
 const reviews = [
   {
-    name: "David Chen",
+    name: "Arjun Mehta",
     role: "Day Trader",
-    image: "/src/assets/images/1.jpeg",
-    text: "Execution speed is extremely fast and reliable. Perfect for short-term trading strategies.",
+    image: arjunPhoto,
+    text: "The platform is easy to navigate, and placing trades feels straightforward. I can quickly find the information I need.",
   },
   {
-    name: "Sarah Jenkins",
+    name: "Priya Sharma",
     role: "Forex Analyst",
-    image: "/src/assets/images/2.jpeg",
-    text: "Customer support is very responsive and professional. Always available even during market volatility.",
+    image: priyaPhoto,
+    text: "The market insights are clearly presented and help me review opportunities before making a decision.",
   },
   {
-    name: "John Silva",
+    name: "Rohan Kapoor",
     role: "Investor",
-    image: "/src/assets/images/1.jpeg",
-    text: "Stable and secure trading platform. Clean UI makes trading smooth and easy.",
+    image: rohanPhoto,
+    text: "I like the clean dashboard and the simple account overview. It makes monitoring my activity much more convenient.",
   },
   {
-    name: "Amal Perera",
+    name: "Ananya Iyer",
     role: "Retail Trader",
-    image: "/src/assets/images/2.jpeg",
-    text: "Very beginner-friendly platform. Simple tools helped me start trading quickly.",
+    image: ananyaPhoto,
+    text: "As a newer trader, I found the tools easy to understand. The overall experience has been smooth and comfortable.",
   },
   {
-    name: "Nimal Fernando",
+    name: "Vikram Singh",
     role: "Crypto Trader",
-    image: "/src/assets/images/1.jpeg",
-    text: "Great performance across crypto & forex markets. Reliable execution even in volatility.",
+    image: vikramPhoto,
+    text: "Switching between markets is simple, and the layout keeps everything organised without feeling overwhelming.",
   },
 ];
 
 const ReviewCard = ({ name, role, image, text, index }) => (
   <div
-    className="review-card-animate relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px] md:rounded-2xl md:p-6"
+    className="relative w-[calc(100vw-2rem)] max-w-[280px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-xl sm:w-[300px] sm:max-w-[300px] md:w-[350px] md:max-w-[350px] md:rounded-2xl md:p-6"
     style={{ animationDelay: `${(index % reviews.length) * 0.18}s` }}
   >
     <span className="absolute inset-0 pointer-events-none review-gold-border rounded-xl md:rounded-2xl"></span>
@@ -170,7 +175,7 @@ export default function Review() {
         Traders Experience With Us
       </h2>
 
-      <div className="mx-auto overflow-hidden max-w-7xl">
+      <div className="mx-auto max-w-7xl overflow-hidden py-4">
         <div className="flex gap-4 w-max animate-scroll sm:gap-5 md:gap-8">
           {[...reviews, ...reviews].map((review, index) => (
             <ReviewCard key={index} index={index} {...review} />
@@ -199,44 +204,46 @@ export default function Review() {
 
           .animate-scroll {
             animation: scroll 45s linear infinite;
-          }
-
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-
-          @keyframes reviewFloat {
-            0%, 100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-8px);
-            }
-          }
-
-          .review-card-animate {
-            animation: reviewFloat 5s ease-in-out infinite;
-          }
-
-          .animate-scroll:hover .review-card-animate {
-            animation-play-state: paused;
-          }
-
-          @keyframes goldBorderGlow {
-            0%, 100% {
-              opacity: 0.55;
-              box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
-            }
-            50% {
-              opacity: 1;
-              box-shadow:
-                inset 0 0 0 2px rgba(212, 175, 55, 0.95),
-                0 0 22px rgba(212, 175, 55, 0.24);
-            }
+            will-change: transform;
           }
 
           .review-gold-border {
-            animation: goldBorderGlow 2.8s ease-in-out infinite;
+            padding: 1.5px;
+            overflow: hidden;
+            background: rgba(212, 175, 55, 0.2);
+            -webkit-mask:
+              linear-gradient(#000 0 0) content-box,
+              linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+          }
+
+          .review-gold-border::before {
+            content: "";
+            position: absolute;
+            inset: -150%;
+            background: conic-gradient(
+              from 0deg,
+              transparent 0deg 292deg,
+              rgba(212, 175, 55, 0.15) 310deg,
+              #d4af37 334deg,
+              #fff1a8 346deg,
+              #d4af37 356deg,
+              transparent 360deg
+            );
+            animation: goldBorderOrbit 4s linear infinite;
+          }
+
+          @keyframes goldBorderOrbit {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .review-gold-border::before {
+              animation: none;
+            }
           }
         `}
       </style>

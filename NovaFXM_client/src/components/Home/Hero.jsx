@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
   let letterIndex = 0;
@@ -32,7 +31,6 @@ function LetterReveal({ text, delay = 0, step = 0.035, className = "" }) {
 }
 
 export default function Hero() {
-  const navigate = useNavigate();
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -162,7 +160,7 @@ export default function Hero() {
   <button
     ref={buttonRef}
     type="button"
-    onClick={() => navigate("/login")}
+    onClick={() => window.location.assign("https://platform.novafxm.com/login")}
     className="mobile-shine-button relative w-auto cursor-pointer overflow-hidden rounded-4xl bg-[#014421] px-5 py-2.5 text-xs text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#01351a] hover:shadow-xl active:scale-95 active:shadow-lg sm:w-auto sm:max-w-none sm:px-10 sm:py-3 sm:text-base"
     style={{
       WebkitTapHighlightColor: 'transparent',

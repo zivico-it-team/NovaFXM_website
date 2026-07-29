@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import heroBg from "../../assets/images/bro.png";
 import {
   ChevronLeft,
@@ -349,14 +348,14 @@ export default function IntroducingBrokers() {
                         <p className="max-w-lg text-16px font-regular leading-7 text-white">
                           {step.description}
                         </p>
-                        <Link
-                          to="/signup"
+                        <a
+                          href="https://platform.novafxm.com/register"
                           className="button-shine group/action w-fit rounded-full bg-[#D4AF37] px-9 py-3 text-16px font-semibold text-black shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37]/80 hover:shadow-lg hover:shadow-green-900/20 active:translate-y-0"
                         >
                           <span className="inline-block transition-transform duration-300 ease-out group-hover/action:translate-x-0.5">
                             {step.action}
                           </span>
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </article>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaGift } from "react-icons/fa";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, BadgePercent, CircleDollarSign, UserPlus } from "lucide-react";
 import PageHero from "../../components/layout/PageHero";
 import PageIntroduction from "../../components/layout/PageIntroduction";
 
@@ -18,32 +17,28 @@ const promotions = [
   },
 ];
 
-const faqs = [
+const promotionSteps = [
   {
-    question: "What happens if my account becomes inactive for three months?",
-    answer:
-      "If your account holds only Bonus Funds with no deposited funds and remains inactive for three months, your bonus funds will be returned to the platform.",
+    icon: UserPlus,
+    title: "Create Your Account",
+    description:
+      "Register on the NOVAFXM platform and complete your account setup.",
   },
   {
-    question: "Can i withdraw my profits before meeting the withdrawal threshold?",
-    answer:
-      "Profits can be withdrawn once all bonus terms and withdrawal requirements have been completed.",
+    icon: BadgePercent,
+    title: "Activate Your Bonus",
+    description:
+      "Choose an available promotion and review its terms before activating it.",
   },
   {
-    question: "What happens if i do not meet the withdrawal threshold within 90 days?",
-    answer:
-      "If the threshold is not met within 90 days, the bonus may expire according to the promotion terms.",
-  },
-  {
-    question: "How can i withdraw the bonus received from NOVAFXM?",
-    answer:
-      "You can request a bonus withdrawal after meeting the required trading volume and account conditions.",
+    icon: CircleDollarSign,
+    title: "Deposit & Start Trading",
+    description:
+      "Fund your account, receive the eligible bonus, and begin your trading journey.",
   },
 ];
 
 function PromoCard({ promo }) {
-  const navigate = useNavigate();
-
   return (
     <article className="bonus-card account-plan-card reveal-up group relative grid min-h-[200px] overflow-hidden rounded-lg bg-white shadow-[0_8px_22px_rgba(15,23,42,0.14)] ring-1 ring-black/10 md:min-h-[260px] md:grid-cols-[1fr_360px]">
       {/* Left side - Content */}
@@ -68,7 +63,7 @@ function PromoCard({ promo }) {
 
         <button
           type="button"
-          onClick={() => navigate("/signup")}
+          onClick={() => window.location.assign("https://platform.novafxm.com/register")}
           className="button-shine relative mt-4 inline-flex items-center gap-3 rounded-md bg-[#D4AF37] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#c79f26] md:mt-7 md:gap-4 md:px-7 md:py-3 md:text-sm"
         >
           View Bonus
@@ -98,179 +93,75 @@ function PromoCard({ promo }) {
   );
 }
 
-function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
+function PromotionSteps() {
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-[#f7f8f7] px-4 pb-8 pt-14 sm:px-6 md:pb-10 md:pt-20"
-    >
-      <div className="absolute left-10 top-10 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
-      <div className="absolute bottom-8 right-8 h-12 w-12 opacity-45 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
+    <section className="relative overflow-hidden bg-white px-4 py-14 sm:px-6 md:py-20">
+      <div className="absolute left-10 top-12 h-20 w-20 opacity-30 [background-image:radial-gradient(circle,#014421_1px,transparent_1.5px)] [background-size:10px_10px]" />
+      <div className="absolute bottom-10 right-10 h-20 w-20 opacity-30 [background-image:radial-gradient(circle,#d4af37_1px,transparent_1.5px)] [background-size:10px_10px]" />
 
-      <div className="mx-auto max-w-3xl">
-        {/* Header with fade-in animation */}
-        <div
-          className={`mb-8 text-center transition-all duration-700 ${
-            hasAnimated
-              ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0"
-          }`}
-        >
-          <p className="mb-2 text-sm font-semibold text-[#014421]">FAQ's</p>
-          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-none text-[#014421] sm:text-4xl">
-            Find Answers to Common
-            <span className="block">Questions</span>
-          </h2>
-          <div className="mx-auto mt-5 flex w-32 items-center justify-center gap-1">
-            <span className="h-[2px] flex-1 bg-[#014421]" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#014421]" />
-            <span className="h-[2px] flex-1 bg-[#014421]" />
+      <div className="relative mx-auto max-w-5xl">
+        <div className="text-center">
+          <div className="mx-auto mb-3 flex w-fit items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#014421]">
+            <span className="h-px w-8 bg-[#014421]" />
+            How It Works
+            <span className="h-px w-8 bg-[#014421]" />
           </div>
+          <h2 className="text-2xl font-black text-[#07140d] sm:text-3xl md:text-4xl">
+            Claim Your Promotion in 3 Simple Steps
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">
+            Create your account, activate an eligible offer, and add more value to your trading journey.
+          </p>
         </div>
 
-        {/* FAQ Items with staggered animation */}
-        <div className="space-y-5">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+        <div className="relative mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
+          <div className="absolute left-[16.5%] right-[16.5%] top-9 hidden border-t-2 border-dashed border-[#d4af37]/55 md:block" />
+
+          {promotionSteps.map((step, index) => {
+            const Icon = step.icon;
 
             return (
-              <div
-                key={faq.question}
-                className={`overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-black/[0.03] transition-all duration-700 ${
-                  hasAnimated
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-12 opacity-0"
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <button
-                  type="button"
-                  className="flex w-full items-stretch text-left transition-all duration-300 hover:bg-gray-50"
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                >
-                  <span
-                    className={`flex w-14 shrink-0 items-center justify-center font-bold transition-all duration-300 ${
-                      isOpen
-                        ? "bg-[#014421] text-xs text-white"
-                        : "bg-white text-[#014421]"
-                    }`}
-                  >
-                    <span
-                      className={`transition-all duration-300 ${
-                        isOpen
-                          ? ""
-                          : "flex h-7 w-7 items-center justify-center rounded-full bg-[#014421] text-[11px] text-white"
-                      }`}
-                    >
-                      {String(index + 1).padStart(2, "0")}
+              <React.Fragment key={step.title}>
+                <article className="group relative rounded-2xl border border-[#014421]/15 bg-white px-5 pb-6 pt-10 text-center shadow-[0_10px_30px_rgba(1,68,33,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-[#d4af37]/70 hover:shadow-[0_18px_42px_rgba(1,68,33,0.14)]">
+                  <div className="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#014421] text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={23} strokeWidth={2} />
+                    <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[10px] font-black text-[#014421]">
+                      {index + 1}
                     </span>
-                  </span>
-
-                  <span className="flex min-h-14 flex-1 items-center justify-between gap-4 px-4 py-3">
-                    <span className="text-sm font-extrabold text-[#014421] transition-all duration-300 sm:text-base">
-                      {faq.question}
-                    </span>
-                    <span
-                      className={`shrink-0 text-[#014421] transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    >
-                      {isOpen ? (
-                        <ChevronUp size={20} strokeWidth={2.5} />
-                      ) : (
-                        <ChevronDown size={20} strokeWidth={2.5} />
-                      )}
-                    </span>
-                  </span>
-                </button>
-
-                {/* Animated Answer Panel */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="bg-[#dbead9] px-4 py-4 text-sm leading-relaxed text-[#213b2c] sm:pl-[72px]">
-                    {faq.answer}
                   </div>
-                </div>
-              </div>
+
+                  <h3 className="mt-2 text-lg font-extrabold text-[#014421]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-gray-600">
+                    {step.description}
+                  </p>
+                </article>
+
+                {index < promotionSteps.length - 1 && (
+                  <div className="flex justify-center text-[#D4AF37] md:hidden">
+                    <ArrowRight className="rotate-90" size={22} />
+                  </div>
+                )}
+              </React.Fragment>
             );
           })}
         </div>
+
+        <div className="mt-9 text-center">
+          <button
+            type="button"
+            onClick={() => window.location.assign("https://platform.novafxm.com/register")}
+            className="button-shine inline-flex items-center gap-3 rounded-full bg-[#014421] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-green-900/15 transition-all duration-300 hover:-translate-y-1 hover:bg-green-800"
+          >
+            Claim Your Bonus
+            <ArrowRight size={18} />
+          </button>
+          <p className="mx-auto mt-4 max-w-xl text-xs leading-5 text-gray-500">
+            Promotions are subject to eligibility requirements and the applicable bonus terms and conditions.
+          </p>
+        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-          .transition-all,
-          .transition-transform,
-          .transition-opacity,
-          .transition-colors {
-            transition: none !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
@@ -508,8 +399,7 @@ export default function Promotions() {
         }
       `}</style>
 
-      {/* Keep promotions FAQs as the final page section */}
-      <FAQSection />
+      <PromotionSteps />
     </main>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { FaChartLine, FaCreditCard, FaUserAlt } from "react-icons/fa";
 
 const steps = [
@@ -127,7 +126,6 @@ const StepCard = ({ step, index, isActive, onActivate }) => {
 };
 
 export default function Account() {
-  const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);
@@ -225,7 +223,7 @@ export default function Account() {
         {/* CTA Button */}
         <button
           type="button"
-          onClick={() => navigate("/login")}
+          onClick={() => window.location.assign("https://platform.novafxm.com/login")}
           className={`button-shine relative mt-5 w-full max-w-[220px] overflow-hidden rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto ${
             hasAnimated ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}

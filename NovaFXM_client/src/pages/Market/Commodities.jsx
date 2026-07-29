@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   FaGlobe,
   FaShieldAlt,
@@ -134,7 +133,6 @@ const StaggeredCard = ({ children, index }) => {
 };
 
 export default function CommoditiesSection() {
-  const navigate = useNavigate();
 
   return (
     <div className="w-full overflow-x-hidden bg-white">
@@ -464,7 +462,7 @@ export default function CommoditiesSection() {
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <button
                 type="button"
-                onClick={() => navigate("/signup")}
+                onClick={() => window.location.assign("https://platform.novafxm.com/register")}
                 className="rounded-full bg-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-[#014421] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95"
               >
                 Open Account

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import heroBg5 from "/platform.png";
 import heroBg6 from "../../assets/images/Rectangle 90.png";
 import PageHero from "../../components/layout/PageHero";
@@ -148,7 +147,6 @@ const PlatformStepCard = ({ step, index }) => {
 };
 
 export default function TradingPage() {
-  const navigate = useNavigate();
   const [shineActive, setShineActive] = useState(false);
   const buttonRef = useRef(null);
 
@@ -608,7 +606,7 @@ export default function TradingPage() {
             </p>
             <button
               type="button"
-              onClick={() => navigate("/login")}
+              onClick={() => window.location.assign("https://platform.novafxm.com/login")}
               className="button-shine mt-5 rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#01351a] hover:shadow-lg"
             >
               Launch Platform

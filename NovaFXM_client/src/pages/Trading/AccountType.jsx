@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import PageHero from "../../components/layout/PageHero";
 import PageIntroduction from "../../components/layout/PageIntroduction";
 import {
@@ -139,7 +138,6 @@ const ScrollReveal = ({ children, delay = 0, threshold = 0.2 }) => {
 // Animated Account Card Component - WITH SHINE EFFECT ON BUTTONS
 const AnimatedAccountCard = ({ account, index }) => {
   const { Icon, ...accountData } = account;
-  const navigate = useNavigate();
   
   return (
     <ScrollReveal delay={index * 150} threshold={0.1}>
@@ -175,7 +173,7 @@ const AnimatedAccountCard = ({ account, index }) => {
 
       <button
   type="button"
-  onClick={() => navigate("/signup")}
+  onClick={() => window.location.assign("https://platform.novafxm.com/register")}
   className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
     accountData.popular
       ? "border-[#014421] bg-[#014421] text-white hover:shadow-[#014421]/20"
@@ -231,7 +229,6 @@ const AnimatedStepCard = ({ step, index, Icon }) => {
 };
 
 export default function AccountTypesPage() {
-  const navigate = useNavigate();
 
   const steps = [
     {
@@ -512,7 +509,7 @@ export default function AccountTypesPage() {
         <ScrollReveal delay={600}>
         <button
   type="button"
-  onClick={() => navigate("/login")}
+  onClick={() => window.location.assign("https://platform.novafxm.com/login")}
   className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
 >
   Trade Now

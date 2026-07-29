@@ -143,7 +143,7 @@ export default function PricingSection() {
               {/* Button */}
               <button
                 type="button"
-                onClick={() => navigate("/login")}
+                onClick={() => window.location.assign("https://platform.novafxm.com/login")}
                 className="
                   button-shine
                   relative overflow-hidden
