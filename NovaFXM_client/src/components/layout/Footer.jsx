@@ -146,7 +146,7 @@ const Footer = () => {
             <p className="flex items-center gap-2">
               <PhoneIcon />
               <a href="tel:+4412345678" className="hover:text-green-700">
-                +44 12345678
+                +44 7999098414 
               </a>
             </p>
 

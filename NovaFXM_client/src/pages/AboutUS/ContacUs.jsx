@@ -345,7 +345,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex gap-4 pb-6 border-b border-white/15">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Phone size={20} /></div>
-                    <div><h4 className="text-base font-bold">Phone</h4><p className="mt-1 text-sm text-white/85">+44 12345678</p></div>
+                    <div><h4 className="text-base font-bold">Phone</h4><p className="mt-1 text-sm text-white/85">+44 7999098414 </p></div>
                   </div>
                   <div className="flex gap-4 pb-6 border-b border-white/15">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Mail size={20} /></div>
