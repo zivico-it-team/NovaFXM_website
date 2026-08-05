@@ -333,10 +333,10 @@ export default function ContactPage() {
 
           {/* RIGHT SIDE */}
           <ScrollReveal delay={0} threshold={0.2} direction="right">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00381f] via-[#004b2a] to-[#005f36] p-5 sm:p-6 text-white shadow-[0_14px_34px_rgba(0,40,22,0.22)]">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00381f] via-[#004b2a] to-[#005f36] p-5 sm:p-6 md:p-8 text-white shadow-[0_14px_34px_rgba(0,40,22,0.22)]">
               <div className="absolute right-5 top-5 h-28 w-28 bg-[radial-gradient(rgba(185,255,120,0.4)_1px,transparent_1.5px)] [background-size:10px_10px] opacity-70"></div>
               <div className="relative z-10 flex h-full flex-col">
-                <h3 className="mt-6 mb-2 text-2xl font-bold md:text-3xl">Contact Info</h3>
+                <h3 className="mt-5 mb-2 text-2xl font-bold md:text-3xl">Contact Info</h3>
                 <div className="mt-4 h-[3px] w-12 rounded-full bg-[#D4AF37]"></div>
                 <div className="space-y-5 mt-6">
                   <div className="flex gap-4 pt-6 pb-6 border-b border-white/15">
@@ -351,10 +351,10 @@ export default function ContactPage() {
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Mail size={20} /></div>
                     <div><h4 className="text-base font-bold">Email</h4><p className="mt-1 text-sm break-all text-white/85">support@novafxm.com</p></div>
                   </div>
-                  <div className="flex gap-4 pb-6">
+                  {/* <div className="flex gap-4 pb-6">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] shadow-[0_8px_24px_rgba(117,214,43,0.30)]"><Clock size={20} /></div>
                     <div><h4 className="text-base font-bold">Working Hours</h4><p className="mt-1 text-sm leading-6 text-white/85">Monday - Friday<br />9:00 AM - 6:00 PM (GMT)</p></div>
-                  </div>
+                  </div> */}
                 </div>
                 <a href="https://www.google.com/maps/search/?api=1&query=Mazars%20Neville%20Russell%2C%2026%20High%20Street%2C%20Huddersfield%2C%20West%20Yorkshire%2C%20HD1%202LN" target="_blank" rel="noopener noreferrer" className={contactMapButtonClass}>
                   <MapPin size={18} />View on Google Map<ArrowRight size={18} className="transition-transform duration-300 group-hover/action:translate-x-1" />
