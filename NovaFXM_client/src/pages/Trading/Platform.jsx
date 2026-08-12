@@ -608,7 +608,7 @@ export default function TradingPage() {
             </p>
             <button
               type="button"
-              onClick={() => navigate("/login")}
+              onClick={() => window.location.assign("https://platform.novafxm.com/login")}
               className="button-shine mt-5 rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#01351a] hover:shadow-lg"
             >
               Launch Platform

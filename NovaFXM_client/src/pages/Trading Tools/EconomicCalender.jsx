@@ -279,7 +279,7 @@ export default function EconomicCalendar() {
         <ScrollReveal delay={500} threshold={0.2} direction="up">
           <button
             type="button"
-            onClick={() => navigate("/login")}
+            onClick={() => window.location.assign("https://platform.novafxm.com/login")}
             className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
           >
             Trade Now

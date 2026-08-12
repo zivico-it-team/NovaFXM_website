@@ -492,7 +492,7 @@ export default function DepositWithdrawSection() {
 
                   <button
                     type="button"
-                    onClick={() => navigate("/signup")}
+                    onClick={() => window.location.assign("https://platform.novafxm.com/register")}
                     className="button-shine mt-5 w-full rounded-md border border-[#014421] bg-[#014421] py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0"
                   >
                     Open Your Account

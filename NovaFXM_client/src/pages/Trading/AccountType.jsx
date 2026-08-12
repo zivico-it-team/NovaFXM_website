@@ -175,7 +175,7 @@ const AnimatedAccountCard = ({ account, index }) => {
 
       <button
   type="button"
-  onClick={() => navigate("/signup")}
+  onClick={() => window.location.assign("https://platform.novafxm.com/register")}
   className={`button-shine w-full rounded-md border py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${
     accountData.popular
       ? "border-[#014421] bg-[#014421] text-white hover:shadow-[#014421]/20"
@@ -512,7 +512,7 @@ export default function AccountTypesPage() {
         <ScrollReveal delay={600}>
         <button
   type="button"
-  onClick={() => navigate("/login")}
+  onClick={() => window.location.assign("https://platform.novafxm.com/login")}
   className="button-shine mt-5 w-full max-w-[220px] rounded-full bg-[#014421] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#014421] hover:shadow-lg hover:shadow-[#014421]/20 active:translate-y-0 sm:w-auto"
 >
   Trade Now
